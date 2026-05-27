@@ -5,28 +5,38 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Outfit:wght@300;400;500;600;700;800&display=swap');
 
 :root {
-  /* Colors - Antigravity Agentic/Tech Theme */
+  /* Colors - Champagne Gold & Ice Blue Theme */
   --bg-dark: #030304;
   --bg-darker: #070709;
   --bg-card: rgba(8, 8, 12, 0.65);
   --bg-card-hover: rgba(14, 14, 22, 0.8);
   
-  --cyan-primary: #00f5ff;
-  --cyan-secondary: #00d2ff;
-  --cyan-glow: rgba(0, 245, 255, 0.08);
-  --cyan-glow-intense: rgba(0, 245, 255, 0.2);
+  /* Brand Color Concept: Gold & Ice Blue Symbiosis */
+  --gold-primary: #E5C397;
+  --gold-secondary: #F8E6CD;
+  --gold-shadow: #C29965;
+  
+  --ice-primary: #AEC8E6;
+  --ice-secondary: #7B9CBE;
+  --ice-shadow: #597A9B;
 
-  --blue-accent: #3b82f6;
-  --blue-glow: rgba(59, 130, 246, 0.12);
-  --indigo-accent: #6366f1;
-  --indigo-glow: rgba(99, 102, 241, 0.08);
+  /* Semantic Mapping for backward compatibility */
+  --cyan-primary: var(--gold-primary);
+  --cyan-secondary: var(--gold-secondary);
+  --cyan-glow: rgba(229, 195, 151, 0.05);
+  --cyan-glow-intense: rgba(229, 195, 151, 0.15);
+
+  --blue-accent: var(--ice-primary);
+  --blue-glow: rgba(174, 200, 230, 0.08);
+  --indigo-accent: var(--ice-secondary);
+  --indigo-glow: rgba(123, 156, 190, 0.05);
   
   --text-primary: #f3f4f6;
   --text-secondary: #9ca3af;
   --text-muted: #4b5563;
   
   --border-glass: rgba(255, 255, 255, 0.07);
-  --border-glass-hover: rgba(0, 245, 255, 0.2);
+  --border-glass-hover: rgba(229, 195, 151, 0.15);
   
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
   --font-title: 'Outfit', sans-serif;
@@ -45,23 +55,30 @@
   --bg-card: rgba(255, 255, 255, 0.75);
   --bg-card-hover: rgba(255, 255, 255, 0.95);
   
-  /* Adjusted neon colors for high contrast and readability on light background */
-  --cyan-primary: #008fa3;
-  --cyan-secondary: #00b4d8;
-  --cyan-glow: rgba(0, 245, 255, 0.04);
-  --cyan-glow-intense: rgba(0, 245, 255, 0.12);
+  /* Brand Color Concept for Light Mode */
+  --gold-primary: #C29965;
+  --gold-secondary: #E5C397;
+  
+  --ice-primary: #7B9CBE;
+  --ice-secondary: #597A9B;
 
-  --blue-accent: #1d4ed8;
-  --blue-glow: rgba(59, 130, 246, 0.06);
-  --indigo-accent: #4f46e5;
-  --indigo-glow: rgba(99, 102, 241, 0.04);
+  /* Semantic Mapping for Light Mode */
+  --cyan-primary: var(--gold-primary);
+  --cyan-secondary: var(--gold-secondary);
+  --cyan-glow: rgba(194, 153, 101, 0.03);
+  --cyan-glow-intense: rgba(194, 153, 101, 0.1);
+
+  --blue-accent: var(--ice-primary);
+  --blue-glow: rgba(123, 156, 190, 0.04);
+  --indigo-accent: var(--ice-secondary);
+  --indigo-glow: rgba(89, 122, 155, 0.03);
   
   --text-primary: #0f172a;
   --text-secondary: #475569;
   --text-muted: #94a3b8;
   
   --border-glass: rgba(15, 23, 42, 0.08);
-  --border-glass-hover: rgba(0, 143, 163, 0.25);
+  --border-glass-hover: rgba(194, 153, 101, 0.2);
   
   --glow-opacity: 0.35;
   --grid-color: rgba(15, 23, 42, 0.04);
@@ -99,11 +116,11 @@ html, body {
   background: var(--bg-dark);
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(0, 245, 255, 0.15);
+  background: rgba(229, 195, 151, 0.15);
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(0, 245, 255, 0.35);
+  background: rgba(229, 195, 151, 0.35);
 }
 
 /* Typography helper classes */
@@ -341,4 +358,38 @@ a {
   background: var(--cyan-primary);
   border-radius: 50%;
   box-shadow: 0 0 8px var(--cyan-primary);
+}
+
+/* Interactive Logo Hover Classes */
+.hero-logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  transition: var(--transition-smooth);
+}
+
+.hero-logo-half {
+  object-fit: contain;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s ease;
+}
+
+.hero-logo-half.top {
+  filter: drop-shadow(0 0 15px rgba(229, 195, 151, 0.25));
+}
+
+.hero-logo-half.bottom {
+  filter: drop-shadow(0 0 15px rgba(174, 200, 230, 0.25));
+}
+
+.hero-logo-container:hover .hero-logo-half.top {
+  transform: translateY(-8px) scale(1.04) !important;
+  filter: drop-shadow(0 0 25px rgba(229, 195, 151, 0.45)) !important;
+}
+
+.hero-logo-container:hover .hero-logo-half.bottom {
+  transform: translateY(8px) scale(1.04) !important;
+  filter: drop-shadow(0 0 25px rgba(174, 200, 230, 0.45)) !important;
 }

@@ -35,10 +35,10 @@ export const Hero: React.FC = () => {
           gap: '8px',
           padding: '6px 14px',
           borderRadius: '30px',
-          background: 'rgba(0, 245, 255, 0.05)',
-          border: '1px solid rgba(0, 245, 255, 0.25)',
+          background: 'rgba(229, 195, 151, 0.05)',
+          border: '1px solid rgba(229, 195, 151, 0.25)',
           marginBottom: '28px',
-          boxShadow: '0 0 20px rgba(0, 245, 255, 0.08)',
+          boxShadow: '0 0 20px rgba(229, 195, 151, 0.08)',
         }}>
           <span style={{
             width: '6px',
@@ -90,7 +90,7 @@ export const Hero: React.FC = () => {
             background: 'linear-gradient(90deg, var(--cyan-primary) 20%, var(--blue-accent) 100%)',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
-            textShadow: '0 0 60px rgba(0, 245, 255, 0.15)',
+            textShadow: '0 0 60px rgba(229, 195, 151, 0.15)',
           }}>
             {t('heroTitle3')}
           </span>
@@ -168,10 +168,44 @@ export const Hero: React.FC = () => {
           borderRadius: '24px',
           border: '1px solid rgba(255,255,255,0.04)',
           background: 'rgba(5, 5, 8, 0.3)',
-          boxShadow: 'inset 0 0 40px rgba(0, 245, 255, 0.02)',
+          boxShadow: 'inset 0 0 40px rgba(229, 195, 151, 0.02)',
           overflow: 'visible',
         }} className="glass-panel animate-float">
           
+          {/* Interactive Splitting Logo in the center of the Gravity Field */}
+          <div className="hero-logo-container" style={{
+            position: 'absolute',
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)',
+            width: '100px',
+            height: '100px',
+            zIndex: 5,
+          }}>
+            <img 
+              src="/logo-top.png" 
+              alt="Symaira Gold Half" 
+              className="hero-logo-half top"
+              style={{
+                width: '76px',
+                height: '42px',
+                objectFit: 'contain',
+                transform: 'translateY(1.5px)',
+              }}
+            />
+            <img 
+              src="/logo-bottom.png" 
+              alt="Symaira Ice-Blue Half" 
+              className="hero-logo-half bottom"
+              style={{
+                width: '76px',
+                height: '42px',
+                objectFit: 'contain',
+                transform: 'translateY(-1.5px)',
+              }}
+            />
+          </div>
+
           {/* Dashboard overlay data ticks */}
           <div style={{
             position: 'absolute',
@@ -227,22 +261,22 @@ export const Hero: React.FC = () => {
           >
             {/* Coordinate Grid Planes */}
             <path d="M 0 100 H 400" stroke="rgba(255,255,255,0.015)" strokeWidth="1" />
-            <path d="M 0 200 H 400" stroke="rgba(0, 245, 255, 0.06)" strokeWidth="1" />
+            <path d="M 0 200 H 400" stroke="rgba(229, 195, 151, 0.08)" strokeWidth="1" />
             <path d="M 0 300 H 400" stroke="rgba(255,255,255,0.015)" strokeWidth="1" />
             
             <path d="M 100 0 V 400" stroke="rgba(255,255,255,0.015)" strokeWidth="1" />
-            <path d="M 200 0 V 400" stroke="rgba(0, 245, 255, 0.06)" strokeWidth="1" />
+            <path d="M 200 0 V 400" stroke="rgba(229, 195, 151, 0.08)" strokeWidth="1" />
             <path d="M 300 0 V 400" stroke="rgba(255,255,255,0.015)" strokeWidth="1" />
 
             {/* Circular Orbiting Channels */}
             <circle cx="200" cy="200" r="140" stroke="rgba(255,255,255,0.03)" strokeWidth="1" />
-            <circle cx="200" cy="200" r="110" stroke="rgba(0, 245, 255, 0.06)" strokeWidth="1" />
-            <circle cx="200" cy="200" r="80" stroke="rgba(59, 130, 246, 0.08)" strokeWidth="1.5" strokeDasharray="6 6" />
+            <circle cx="200" cy="200" r="110" stroke="rgba(229, 195, 151, 0.06)" strokeWidth="1" />
+            <circle cx="200" cy="200" r="80" stroke="rgba(174, 200, 230, 0.1)" strokeWidth="1.5" strokeDasharray="6 6" />
 
             {/* Pulsing gravitational vector lines */}
             <path 
               d="M 200 200 L 90 90 M 200 200 L 310 90 M 200 200 L 90 310 M 200 200 L 310 310" 
-              stroke="rgba(0, 245, 255, 0.1)" 
+              stroke="rgba(229, 195, 151, 0.1)" 
               strokeWidth="1.5" 
               strokeDasharray="4 8"
             />
@@ -251,10 +285,10 @@ export const Hero: React.FC = () => {
             <g className="animate-slow-spin" style={{ transformOrigin: '200px 200px' }}>
               {/* Outer nodes */}
               <circle cx="200" cy="60" r="5" fill="var(--cyan-primary)" filter="url(#cyanGlow)" />
-              <line x1="200" y1="60" x2="200" y2="200" stroke="rgba(0, 245, 255, 0.05)" strokeWidth="1" />
+              <line x1="200" y1="60" x2="200" y2="200" stroke="rgba(229, 195, 151, 0.05)" strokeWidth="1" />
               
               <circle cx="310" cy="200" r="4" fill="var(--blue-accent)" />
-              <line x1="310" y1="200" x2="200" y2="200" stroke="rgba(59, 130, 246, 0.04)" strokeWidth="1" />
+              <line x1="310" y1="200" x2="200" y2="200" stroke="rgba(174, 200, 230, 0.04)" strokeWidth="1" />
               
               <circle cx="90" cy="200" r="4" fill="var(--cyan-secondary)" />
               <circle cx="200" cy="340" r="5" fill="var(--cyan-primary)" filter="url(#cyanGlow)" />
@@ -262,19 +296,13 @@ export const Hero: React.FC = () => {
 
             {/* Core Gravity Node */}
             <circle cx="200" cy="200" r="42" fill="url(#coreGlow)" />
-            <circle cx="200" cy="200" r="26" fill="var(--bg-dark)" stroke="rgba(0, 245, 255, 0.2)" strokeWidth="1.5" />
+            <circle cx="200" cy="200" r="26" fill="var(--bg-dark)" stroke="rgba(229, 195, 151, 0.2)" strokeWidth="1.5" />
             
             {/* Expanding pulse animation */}
             <circle cx="200" cy="200" r="26" fill="none" stroke="var(--cyan-primary)" strokeWidth="1" opacity="0.8">
               <animate attributeName="r" values="26;65;26" dur="6s" repeatCount="indefinite" />
               <animate attributeName="opacity" values="0.8;0;0.8" dur="6s" repeatCount="indefinite" />
             </circle>
-
-            {/* Inner tech target grid */}
-            <path d="M 188 200 H 212" stroke="var(--cyan-primary)" strokeWidth="1.5" />
-            <path d="M 200 188 V 212" stroke="var(--cyan-primary)" strokeWidth="1.5" />
-            <circle cx="200" cy="200" r="6" stroke="var(--cyan-primary)" strokeWidth="1.5" fill="var(--bg-dark)" />
-            <circle cx="200" cy="200" r="2" fill="#fff" />
 
             {/* Definitions */}
             <defs>

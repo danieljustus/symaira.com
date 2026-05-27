@@ -1,7 +1,7 @@
 import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { useTheme } from '../context/ThemeContext';
-import { Cpu, Sun, Moon } from 'lucide-react';
+import { Sun, Moon } from 'lucide-react';
 
 export const Navigation: React.FC = () => {
   const { language, setLanguage, t } = useLanguage();
@@ -20,14 +20,14 @@ export const Navigation: React.FC = () => {
       alignItems: 'center',
       justifyContent: 'space-between',
       gap: '20px',
-      border: '1px solid rgba(0, 245, 255, 0.1)',
-      boxShadow: '0 8px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(0, 245, 255, 0.02)',
+      border: '1px solid rgba(229, 195, 151, 0.15)',
+      boxShadow: '0 8px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(229, 195, 151, 0.02)',
     }}>
       {/* Brand Logo & Name */}
       <a href="#hero" style={{
         display: 'flex',
         alignItems: 'center',
-        gap: '10px',
+        gap: '12px',
         fontWeight: 800,
         fontFamily: 'var(--font-tech)',
         fontSize: '20px',
@@ -36,7 +36,16 @@ export const Navigation: React.FC = () => {
         WebkitBackgroundClip: 'text',
         WebkitTextFillColor: 'transparent',
       }}>
-        <Cpu size={20} style={{ color: 'var(--cyan-primary)', strokeWidth: 1.5, filter: 'drop-shadow(0 0 6px rgba(0, 245, 255, 0.4))' }} />
+        <img 
+          src="/logo.png" 
+          alt="Symaira Logo" 
+          style={{ 
+            height: '26px', 
+            width: '26px', 
+            objectFit: 'contain',
+            filter: 'drop-shadow(0 0 6px rgba(229, 195, 151, 0.25))' 
+          }} 
+        />
         SYMAIRA
       </a>
 
@@ -70,7 +79,7 @@ export const Navigation: React.FC = () => {
         <div style={{
           width: '1px',
           height: '18px',
-          backgroundColor: 'rgba(0, 245, 255, 0.15)',
+          backgroundColor: 'rgba(229, 195, 151, 0.15)',
         }} />
 
         {/* Theme Toggler (Dark/Light Mode) */}
@@ -84,7 +93,7 @@ export const Navigation: React.FC = () => {
             height: '36px',
             borderRadius: '50%',
             backgroundColor: 'rgba(255, 255, 255, 0.03)',
-            border: '1px solid rgba(0, 245, 255, 0.15)',
+            border: '1px solid rgba(229, 195, 151, 0.15)',
             color: 'var(--text-primary)',
             cursor: 'pointer',
             transition: 'var(--transition-fast)',
@@ -94,9 +103,9 @@ export const Navigation: React.FC = () => {
           title={theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
         >
           {theme === 'dark' ? (
-            <Sun size={16} style={{ color: 'var(--cyan-primary)', filter: 'drop-shadow(0 0 4px rgba(0, 245, 255, 0.3))' }} />
+            <Sun size={16} style={{ color: 'var(--cyan-primary)', filter: 'drop-shadow(0 0 4px rgba(229, 195, 151, 0.3))' }} />
           ) : (
-            <Moon size={16} style={{ color: 'var(--cyan-primary)', filter: 'drop-shadow(0 0 4px rgba(0, 245, 255, 0.3))' }} />
+            <Moon size={16} style={{ color: 'var(--cyan-primary)', filter: 'drop-shadow(0 0 4px rgba(229, 195, 151, 0.3))' }} />
           )}
         </button>
 
@@ -107,7 +116,7 @@ export const Navigation: React.FC = () => {
           backgroundColor: 'rgba(255, 255, 255, 0.03)',
           padding: '2px',
           borderRadius: '20px',
-          border: '1px solid rgba(0, 245, 255, 0.15)',
+          border: '1px solid rgba(229, 195, 151, 0.15)',
         }}>
           <button 
             onClick={() => setLanguage('en')}
@@ -122,7 +131,7 @@ export const Navigation: React.FC = () => {
               backgroundColor: language === 'en' ? 'var(--cyan-primary)' : 'transparent',
               color: language === 'en' ? '#000' : 'var(--text-secondary)',
               transition: 'var(--transition-fast)',
-              boxShadow: language === 'en' ? '0 0 10px rgba(0, 245, 255, 0.3)' : 'none',
+              boxShadow: language === 'en' ? '0 0 10px rgba(229, 195, 151, 0.35)' : 'none',
             }}
           >
             EN
@@ -140,7 +149,7 @@ export const Navigation: React.FC = () => {
               backgroundColor: language === 'de' ? 'var(--cyan-primary)' : 'transparent',
               color: language === 'de' ? '#000' : 'var(--text-secondary)',
               transition: 'var(--transition-fast)',
-              boxShadow: language === 'de' ? '0 0 10px rgba(0, 245, 255, 0.3)' : 'none',
+              boxShadow: language === 'de' ? '0 0 10px rgba(229, 195, 151, 0.35)' : 'none',
             }}
           >
             DE
@@ -160,7 +169,7 @@ export const Navigation: React.FC = () => {
             height: '36px',
             borderRadius: '50%',
             backgroundColor: 'rgba(255,255,255,0.03)',
-            border: '1px solid rgba(0, 245, 255, 0.1)',
+            border: '1px solid rgba(229, 195, 151, 0.12)',
             color: 'var(--text-primary)',
           }}
           className="icon-button"

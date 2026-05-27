@@ -32,6 +32,9 @@ export const Footer: React.FC = () => {
         {/* Left Side: Brand Name & Rights */}
         <div style={{ textAlign: 'left' }}>
           <div style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '8px',
             fontFamily: 'var(--font-tech)',
             fontSize: '16px',
             fontWeight: 700,
@@ -39,6 +42,16 @@ export const Footer: React.FC = () => {
             color: 'var(--text-primary)',
             marginBottom: '4px',
           }}>
+            <img 
+              src="/logo.png" 
+              alt="Symaira Logo" 
+              style={{ 
+                height: '20px', 
+                width: '20px', 
+                objectFit: 'contain',
+                filter: 'drop-shadow(0 0 4px rgba(229, 195, 151, 0.2))' 
+              }} 
+            />
             SYMAIRA
           </div>
           <div style={{ fontSize: '13px', color: 'var(--text-muted)' }}>
