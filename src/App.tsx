@@ -1,4 +1,5 @@
 import { LanguageProvider } from './context/LanguageContext';
+import { ThemeProvider } from './context/ThemeContext';
 import { Navigation } from './components/Navigation';
 import { Hero } from './components/Hero';
 import { Vision } from './components/Vision';
@@ -7,8 +8,9 @@ import { Footer } from './components/Footer';
 
 function App() {
   return (
-    <LanguageProvider>
-      <div style={{ position: 'relative', minHeight: '100vh', overflow: 'hidden' }}>
+    <ThemeProvider>
+      <LanguageProvider>
+        <div style={{ position: 'relative', minHeight: '100vh', overflow: 'hidden' }}>
         {/* Ambient glow blobs */}
         <div className="bg-ambient-glow glow-cyan-top" />
         <div className="bg-ambient-glow glow-blue-right" />
@@ -26,6 +28,7 @@ function App() {
         <Footer />
       </div>
     </LanguageProvider>
+  </ThemeProvider>
   );
 }
 

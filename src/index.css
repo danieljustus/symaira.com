@@ -34,6 +34,37 @@
 
   --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   --transition-fast: all 0.2s ease;
+
+  --grid-color: rgba(255, 255, 255, 0.035);
+  --glow-opacity: 0.7;
+}
+
+[data-theme='light'] {
+  --bg-dark: #f8fafc;
+  --bg-darker: #f1f5f9;
+  --bg-card: rgba(255, 255, 255, 0.75);
+  --bg-card-hover: rgba(255, 255, 255, 0.95);
+  
+  /* Adjusted neon colors for high contrast and readability on light background */
+  --cyan-primary: #008fa3;
+  --cyan-secondary: #00b4d8;
+  --cyan-glow: rgba(0, 245, 255, 0.04);
+  --cyan-glow-intense: rgba(0, 245, 255, 0.12);
+
+  --blue-accent: #1d4ed8;
+  --blue-glow: rgba(59, 130, 246, 0.06);
+  --indigo-accent: #4f46e5;
+  --indigo-glow: rgba(99, 102, 241, 0.04);
+  
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+  
+  --border-glass: rgba(15, 23, 42, 0.08);
+  --border-glass-hover: rgba(0, 143, 163, 0.25);
+  
+  --glow-opacity: 0.35;
+  --grid-color: rgba(15, 23, 42, 0.04);
 }
 
 /* Base resets */
@@ -54,7 +85,7 @@ html, body {
   line-height: 1.6;
   
   /* Blueprint Grid background inspired by Antigravity */
-  background-image: radial-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-image: radial-gradient(var(--grid-color) 1px, transparent 1px);
   background-size: 24px 24px;
   background-position: center;
 }
@@ -104,7 +135,7 @@ a {
   filter: blur(140px);
   z-index: 0;
   pointer-events: none;
-  opacity: 0.7;
+  opacity: var(--glow-opacity);
 }
 
 .glow-cyan-top {

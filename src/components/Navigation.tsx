@@ -1,9 +1,11 @@
 import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
-import { Cpu } from 'lucide-react';
+import { useTheme } from '../context/ThemeContext';
+import { Cpu, Sun, Moon } from 'lucide-react';
 
 export const Navigation: React.FC = () => {
   const { language, setLanguage, t } = useLanguage();
+  const { theme, toggleTheme } = useTheme();
 
   return (
     <nav className="glass-panel" style={{
@@ -70,6 +72,33 @@ export const Navigation: React.FC = () => {
           height: '18px',
           backgroundColor: 'rgba(0, 245, 255, 0.15)',
         }} />
+
+        {/* Theme Toggler (Dark/Light Mode) */}
+        <button 
+          onClick={toggleTheme}
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            width: '36px',
+            height: '36px',
+            borderRadius: '50%',
+            backgroundColor: 'rgba(255, 255, 255, 0.03)',
+            border: '1px solid rgba(0, 245, 255, 0.15)',
+            color: 'var(--text-primary)',
+            cursor: 'pointer',
+            transition: 'var(--transition-fast)',
+            marginRight: '4px',
+          }}
+          className="icon-button"
+          title={theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+        >
+          {theme === 'dark' ? (
+            <Sun size={16} style={{ color: 'var(--cyan-primary)', filter: 'drop-shadow(0 0 4px rgba(0, 245, 255, 0.3))' }} />
+          ) : (
+            <Moon size={16} style={{ color: 'var(--cyan-primary)', filter: 'drop-shadow(0 0 4px rgba(0, 245, 255, 0.3))' }} />
+          )}
+        </button>
 
         {/* Language Toggler */}
         <div style={{
