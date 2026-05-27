@@ -80,7 +80,7 @@ export const Vision: React.FC = () => {
               textAlign: 'left',
               position: 'relative',
               overflow: 'hidden',
-              border: '1px solid rgba(0, 245, 255, 0.08)',
+              border: '1px solid rgba(229, 195, 151, 0.12)',
               boxShadow: '0 8px 32px rgba(0, 0, 0, 0.4)',
             }}
           >
@@ -105,8 +105,8 @@ export const Vision: React.FC = () => {
               right: 0,
               width: '12px',
               height: '12px',
-              borderTop: '1px solid rgba(0, 245, 255, 0.25)',
-              borderRight: '1px solid rgba(0, 245, 255, 0.25)',
+              borderTop: '1px solid rgba(229, 195, 151, 0.25)',
+              borderRight: '1px solid rgba(229, 195, 151, 0.25)',
             }} />
 
             {/* Icon Wrapper */}
@@ -115,14 +115,14 @@ export const Vision: React.FC = () => {
               height: '48px',
               borderRadius: '10px',
               backgroundColor: 'rgba(255, 255, 255, 0.02)',
-              border: '1px solid rgba(0, 245, 255, 0.15)',
+              border: '1px solid rgba(229, 195, 151, 0.2)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               marginBottom: '28px',
               position: 'relative',
               zIndex: 1,
-              boxShadow: 'inset 0 0 10px rgba(0, 245, 255, 0.05)',
+              boxShadow: 'inset 0 0 10px rgba(229, 195, 151, 0.05)',
             }}>
               {pillar.icon}
             </div>

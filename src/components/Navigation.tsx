@@ -129,7 +129,7 @@ export const Navigation: React.FC = () => {
               fontFamily: 'var(--font-tech)',
               fontWeight: 700,
               backgroundColor: language === 'en' ? 'var(--cyan-primary)' : 'transparent',
-              color: language === 'en' ? '#000' : 'var(--text-secondary)',
+              color: language === 'en' ? (theme === 'dark' ? '#000' : '#fff') : 'var(--text-secondary)',
               transition: 'var(--transition-fast)',
               boxShadow: language === 'en' ? '0 0 10px rgba(229, 195, 151, 0.35)' : 'none',
             }}
@@ -147,7 +147,7 @@ export const Navigation: React.FC = () => {
               fontFamily: 'var(--font-tech)',
               fontWeight: 700,
               backgroundColor: language === 'de' ? 'var(--cyan-primary)' : 'transparent',
-              color: language === 'de' ? '#000' : 'var(--text-secondary)',
+              color: language === 'de' ? (theme === 'dark' ? '#000' : '#fff') : 'var(--text-secondary)',
               transition: 'var(--transition-fast)',
               boxShadow: language === 'de' ? '0 0 10px rgba(229, 195, 151, 0.35)' : 'none',
             }}

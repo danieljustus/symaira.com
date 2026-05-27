@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
+import { useTheme } from '../context/ThemeContext';
 import { Shield, ArrowRight, MessageSquare, Workflow, Terminal, ShieldCheck, Eye } from 'lucide-react';
 
 export const Tools: React.FC = () => {
   const { t } = useLanguage();
+  const { theme } = useTheme();
   const [copied, setCopied] = useState(false);
 
   const commandToCopy = 'npm install @symaira/vault-sdk';
@@ -65,8 +67,8 @@ export const Tools: React.FC = () => {
           overflow: 'hidden',
           borderRadius: '24px',
           alignItems: 'stretch',
-          border: '1px solid rgba(0, 245, 255, 0.12)',
-          boxShadow: '0 20px 50px rgba(0, 0, 0, 0.5), 0 0 30px rgba(0, 245, 255, 0.02)',
+          border: '1px solid rgba(229, 195, 151, 0.15)',
+          boxShadow: '0 20px 50px rgba(0, 0, 0, 0.5), 0 0 30px rgba(229, 195, 151, 0.02)',
         }}
       >
         {/* Glow backdrop behind Vault */}
@@ -98,8 +100,8 @@ export const Tools: React.FC = () => {
             alignItems: 'center',
             padding: '5px 12px',
             borderRadius: '4px',
-            backgroundColor: 'rgba(0, 245, 255, 0.08)',
-            border: '1px solid rgba(0, 245, 255, 0.25)',
+            backgroundColor: 'rgba(229, 195, 151, 0.08)',
+            border: '1px solid rgba(229, 195, 151, 0.25)',
             marginBottom: '20px',
           }}>
             <span style={{
@@ -124,7 +126,7 @@ export const Tools: React.FC = () => {
             gap: '12px',
             color: 'var(--text-primary)',
           }}>
-            <Shield size={26} style={{ color: 'var(--cyan-primary)', filter: 'drop-shadow(0 0 6px rgba(0, 245, 255, 0.3))' }} />
+            <Shield size={26} style={{ color: 'var(--cyan-primary)', filter: 'drop-shadow(0 0 6px rgba(229, 195, 151, 0.3))' }} />
             {t('vaultTitle')}
           </h3>
 
@@ -180,7 +182,7 @@ export const Tools: React.FC = () => {
                 gap: '10px',
                 padding: '12px 24px',
                 borderRadius: '8px',
-                color: '#000',
+                color: theme === 'dark' ? '#000' : '#fff',
                 fontWeight: 600,
                 fontSize: '14px',
                 transition: 'var(--transition-fast)',
@@ -208,10 +210,10 @@ export const Tools: React.FC = () => {
             fontFamily: 'var(--font-tech)',
             fontSize: '12px',
             backgroundColor: 'rgba(5, 5, 8, 0.95)',
-            border: '1px solid rgba(0, 245, 255, 0.15)',
+            border: '1px solid rgba(229, 195, 151, 0.2)',
             borderRadius: '12px',
             overflow: 'hidden',
-            boxShadow: '0 20px 40px rgba(0, 0, 0, 0.6), 0 0 20px rgba(0, 245, 255, 0.03)',
+            boxShadow: '0 20px 40px rgba(0, 0, 0, 0.6), 0 0 20px rgba(229, 195, 151, 0.03)',
             display: 'flex',
             flexDirection: 'column',
           }}>
@@ -256,10 +258,10 @@ export const Tools: React.FC = () => {
                   display: 'flex',
                   justifyContent: 'space-between',
                   alignItems: 'center',
-                  background: 'rgba(0, 245, 255, 0.04)',
+                  background: 'rgba(229, 195, 151, 0.04)',
                   padding: '8px 12px',
                   borderRadius: '6px',
-                  border: '1px solid rgba(0, 245, 255, 0.1)',
+                  border: '1px solid rgba(229, 195, 151, 0.15)',
                   cursor: 'pointer',
                   marginBottom: '16px',
                   transition: 'var(--transition-fast)',
@@ -295,10 +297,10 @@ export const Tools: React.FC = () => {
             fontFamily: 'var(--font-tech)',
             fontSize: '11px',
             backgroundColor: 'rgba(5, 5, 8, 0.95)',
-            border: '1px solid rgba(59, 130, 246, 0.15)',
+            border: '1px solid rgba(174, 200, 230, 0.2)',
             borderRadius: '12px',
             overflow: 'hidden',
-            boxShadow: '0 12px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(59, 130, 246, 0.02)',
+            boxShadow: '0 12px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(174, 200, 230, 0.02)',
             display: 'flex',
             flexDirection: 'column',
           }}>
@@ -387,7 +389,7 @@ export const Tools: React.FC = () => {
                   height: '60px',
                   borderRadius: '6px',
                   border: '1px solid var(--cyan-glow-intense)',
-                  background: 'rgba(0, 245, 255, 0.02)',
+                  background: 'rgba(229, 195, 151, 0.02)',
                   position: 'relative',
                   overflow: 'hidden',
                   display: 'flex',
@@ -429,7 +431,7 @@ export const Tools: React.FC = () => {
             padding: '36px 32px',
             opacity: 0.85,
             borderStyle: 'dashed',
-            borderColor: 'rgba(59, 130, 246, 0.3)',
+            borderColor: 'rgba(174, 200, 230, 0.35)',
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'flex-start',
@@ -448,8 +450,8 @@ export const Tools: React.FC = () => {
               width: '42px',
               height: '42px',
               borderRadius: '8px',
-              backgroundColor: 'rgba(59, 130, 246, 0.08)',
-              border: '1px solid rgba(59, 130, 246, 0.25)',
+              backgroundColor: 'rgba(174, 200, 230, 0.08)',
+              border: '1px solid rgba(174, 200, 230, 0.25)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
@@ -496,7 +498,7 @@ export const Tools: React.FC = () => {
             padding: '36px 32px',
             opacity: 0.85,
             borderStyle: 'dashed',
-            borderColor: 'rgba(0, 245, 255, 0.3)',
+            borderColor: 'rgba(229, 195, 151, 0.35)',
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'flex-start',
@@ -515,8 +517,8 @@ export const Tools: React.FC = () => {
               width: '42px',
               height: '42px',
               borderRadius: '8px',
-              backgroundColor: 'rgba(0, 245, 255, 0.08)',
-              border: '1px solid rgba(0, 245, 255, 0.25)',
+              backgroundColor: 'rgba(229, 195, 151, 0.08)',
+              border: '1px solid rgba(229, 195, 151, 0.25)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
