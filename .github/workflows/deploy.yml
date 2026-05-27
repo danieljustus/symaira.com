@@ -1,0 +1,43 @@
+name: Deploy Symaira Website to All-Inkl
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Check out the repository
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Step 2: Set up Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # Step 3: Install dependencies and build static assets
+      - name: Install dependencies & Build
+        run: |
+          npm ci
+          npm run build
+
+      # Step 4: Deploy built files to all-inkl via FTP/SFTP
+      # Using SamKirkland's widely trusted and optimized deployment action.
+      - name: Deploy to All-Inkl Webhosting
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./dist/
+          # Change server-dir if you want to deploy to a specific subfolder on All-Inkl.
+          # Default is the root of the connected FTP user.
+          server-dir: ./
+          # Set to true only if you want to wipe remote files that aren't in your local build.
+          # Keep it false to avoid deleting any existing server assets.
+          dangerous-clean-slate: false
