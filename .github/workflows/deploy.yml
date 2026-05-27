@@ -39,7 +39,7 @@ jobs:
           local-dir: ./dist/
           # Change server-dir if you want to deploy to a specific subfolder on All-Inkl.
           # Default is the root of the connected FTP user.
-          server-dir: ./
+          server-dir: /symaira.com/
           # Set to true only if you want to wipe remote files that aren't in your local build.
           # Keep it false to avoid deleting any existing server assets.
           dangerous-clean-slate: false
