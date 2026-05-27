@@ -34,6 +34,9 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          port: 21
+          security: loose
           local-dir: ./dist/
           # Change server-dir if you want to deploy to a specific subfolder on All-Inkl.
           # Default is the root of the connected FTP user.
