@@ -204,46 +204,28 @@ export const Hero: React.FC = () => {
           boxShadow: 'inset 0 0 40px rgba(229, 195, 151, 0.02)',
           overflow: 'visible',
         }} className="glass-panel animate-float">
-          <img
-            src="/logo-top.png"
-            alt=""
-            aria-hidden="true"
-            className="hero-orbit-half hero-orbit-half-top"
-          />
-          <img
-            src="/logo-bottom.png"
-            alt=""
-            aria-hidden="true"
-            className="hero-orbit-half hero-orbit-half-bottom"
-          />
           
-          {/* Interactive Splitting Logo in the center of the Gravity Field */}
+          {/* Unified Brand Logo Core */}
           <div className="hero-logo-container" style={{
             position: 'absolute',
             top: '50%',
             left: '50%',
             transform: 'translate(-50%, -50%)',
-            width: '168px',
-            height: '168px',
+            width: '140px',
+            height: '140px',
             zIndex: 5,
           }}>
             <img 
-              src="/logo-top.png" 
-              alt="Symaira Gold Half" 
-              className="hero-logo-half top symaira-mark-half"
+              src="/logo.png" 
+              alt="Symaira Logo" 
+              className="hero-logo-unified"
               style={{
-                width: '140px',
-                height: '78px',
-                objectFit: 'contain',
-              }}
-            />
-            <img 
-              src="/logo-bottom.png" 
-              alt="Symaira Ice-Blue Half" 
-              className="hero-logo-half bottom symaira-mark-half"
-              style={{
-                width: '140px',
-                height: '78px',
+                position: 'absolute',
+                top: '50%',
+                left: '50%',
+                transform: 'translate(-50%, -50%)',
+                width: '110px',
+                height: '110px',
                 objectFit: 'contain',
               }}
             />
@@ -294,6 +276,23 @@ export const Hero: React.FC = () => {
             TRUST: ACTIVE
           </div>
 
+          <div style={{
+            position: 'absolute',
+            bottom: '16px',
+            right: '18px',
+            fontFamily: 'var(--font-tech)',
+            fontSize: '9px',
+            color: 'var(--text-muted)',
+            letterSpacing: '0.5px',
+            zIndex: 3,
+            lineHeight: '1.2',
+            textAlign: 'right',
+          }}>
+            SYS.STATUS: NOMINAL<br />
+            LATENCY: 12ms<br />
+            LOC: LOCALHOST
+          </div>
+
           <svg 
             width="100%" 
             height="100%" 
@@ -312,14 +311,14 @@ export const Hero: React.FC = () => {
             <path d="M 300 0 V 400" stroke="rgba(255,255,255,0.015)" strokeWidth="1" />
 
             {/* Circular Orbiting Channels */}
-            <circle cx="200" cy="200" r="140" stroke="rgba(255,255,255,0.03)" strokeWidth="1" />
-            <circle cx="200" cy="200" r="110" stroke="rgba(229, 195, 151, 0.06)" strokeWidth="1" />
-            <circle cx="200" cy="200" r="80" stroke="rgba(174, 200, 230, 0.1)" strokeWidth="1.5" strokeDasharray="6 6" />
+            <circle cx="200" cy="200" r="140" stroke="rgba(255,255,255,0.03)" strokeWidth="1" className="orbit-ring orbit-ring-slow" />
+            <circle cx="200" cy="200" r="110" stroke="rgba(229, 195, 151, 0.06)" strokeWidth="1" className="orbit-ring orbit-ring-fast" />
+            <circle cx="200" cy="200" r="80" stroke="rgba(174, 200, 230, 0.1)" strokeWidth="1.5" strokeDasharray="6 6" className="orbit-ring" />
 
             {/* Pulsing gravitational vector lines */}
             <path 
               d="M 200 200 L 90 90 M 200 200 L 310 90 M 200 200 L 90 310 M 200 200 L 310 310" 
-              stroke="rgba(229, 195, 151, 0.1)" 
+              stroke="rgba(229, 195, 151, 0.08)" 
               strokeWidth="1.5" 
               strokeDasharray="4 8"
             />
@@ -337,13 +336,39 @@ export const Hero: React.FC = () => {
               <circle cx="200" cy="340" r="5" fill="var(--cyan-primary)" filter="url(#cyanGlow)" />
             </g>
 
+            {/* Human Symbiotic Orbit (Gold) */}
+            <g className="orbit-human-group">
+              <circle cx="200" cy="200" r="110" stroke="rgba(229, 195, 151, 0.02)" strokeWidth="0.5" strokeDasharray="3 9" pointerEvents="none" />
+              <circle 
+                cx="200" 
+                cy="90" 
+                r="6" 
+                fill="var(--gold-primary)" 
+                className="orbit-sphere"
+                style={{ color: 'var(--gold-primary)' }}
+              />
+            </g>
+
+            {/* AI Symbiotic Orbit (Ice Blue) */}
+            <g className="orbit-ai-group">
+              <circle cx="200" cy="200" r="120" stroke="rgba(174, 200, 230, 0.02)" strokeWidth="0.5" strokeDasharray="4 12" pointerEvents="none" />
+              <circle 
+                cx="200" 
+                cy="320" 
+                r="5.5" 
+                fill="var(--ice-primary)" 
+                className="orbit-sphere"
+                style={{ color: 'var(--ice-primary)' }}
+              />
+            </g>
+
             {/* Core Gravity Node */}
-            <circle cx="200" cy="200" r="42" fill="url(#coreGlow)" />
-            <circle cx="200" cy="200" r="26" fill="var(--bg-dark)" stroke="rgba(229, 195, 151, 0.2)" strokeWidth="1.5" />
+            <circle cx="200" cy="200" r="70" fill="url(#coreGlow)" />
+            <circle cx="200" cy="200" r="54" fill="var(--bg-dark)" stroke="rgba(229, 195, 151, 0.15)" strokeWidth="1" style={{ opacity: 0.95 }} />
             
             {/* Expanding pulse animation */}
-            <circle cx="200" cy="200" r="26" fill="none" stroke="var(--cyan-primary)" strokeWidth="1" opacity="0.8">
-              <animate attributeName="r" values="26;65;26" dur="6s" repeatCount="indefinite" />
+            <circle cx="200" cy="200" r="54" fill="none" stroke="var(--cyan-primary)" strokeWidth="1" opacity="0.8">
+              <animate attributeName="r" values="54;95;54" dur="6s" repeatCount="indefinite" />
               <animate attributeName="opacity" values="0.8;0;0.8" dur="6s" repeatCount="indefinite" />
             </circle>
 
