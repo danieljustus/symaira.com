@@ -53,14 +53,14 @@ export const Footer: React.FC = () => {
           gap: '8px',
           padding: '8px 16px',
           borderRadius: '20px',
-          backgroundColor: 'rgba(34, 197, 94, 0.05)',
-          border: '1px solid rgba(34, 197, 94, 0.15)',
+          backgroundColor: 'rgba(16, 185, 129, 0.05)',
+          border: '1px solid rgba(16, 185, 129, 0.15)',
         }}>
-          <RefreshCw size={12} style={{ color: '#22c55e' }} className="animate-slow-spin" />
+          <RefreshCw size={12} style={{ color: '#10b981' }} className="animate-slow-spin" />
           <span style={{
             fontSize: '11px',
             fontFamily: 'var(--font-tech)',
-            color: '#22c55e',
+            color: '#10b981',
             letterSpacing: '0.5px',
           }}>
             {t('footerSync')}
@@ -76,7 +76,7 @@ export const Footer: React.FC = () => {
           color: 'var(--text-muted)',
         }}>
           <span>
-            Made with <Heart size={10} style={{ color: 'var(--gold-primary)', fill: 'var(--gold-primary)', display: 'inline', margin: '0 2px' }} /> in Symbiosis
+            Made with <Heart size={10} style={{ color: 'var(--cyan-primary)', fill: 'var(--cyan-primary)', display: 'inline', margin: '0 2px' }} /> in Symbiosis
           </span>
         </div>
       </div>

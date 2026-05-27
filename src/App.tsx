@@ -10,9 +10,9 @@ function App() {
     <LanguageProvider>
       <div style={{ position: 'relative', minHeight: '100vh', overflow: 'hidden' }}>
         {/* Ambient glow blobs */}
-        <div className="bg-ambient-glow glow-gold-top" />
-        <div className="bg-ambient-glow glow-purple-right" />
-        <div className="bg-ambient-glow glow-gold-bottom" />
+        <div className="bg-ambient-glow glow-cyan-top" />
+        <div className="bg-ambient-glow glow-blue-right" />
+        <div className="bg-ambient-glow glow-indigo-bottom" />
 
         {/* Global Page Content */}
         <Navigation />

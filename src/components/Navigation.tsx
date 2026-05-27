@@ -13,26 +13,28 @@ export const Navigation: React.FC = () => {
       margin: '20px auto',
       width: 'calc(100% - 40px)',
       maxWidth: '1200px',
-      padding: '16px 24px',
+      padding: '14px 24px',
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'space-between',
       gap: '20px',
+      border: '1px solid rgba(0, 245, 255, 0.1)',
+      boxShadow: '0 8px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(0, 245, 255, 0.02)',
     }}>
       {/* Brand Logo & Name */}
       <a href="#hero" style={{
         display: 'flex',
         alignItems: 'center',
         gap: '10px',
-        fontWeight: 'bold',
+        fontWeight: 800,
         fontFamily: 'var(--font-tech)',
-        fontSize: '22px',
-        letterSpacing: '2px',
-        background: 'linear-gradient(45deg, var(--text-primary), var(--gold-primary))',
+        fontSize: '20px',
+        letterSpacing: '2.5px',
+        background: 'linear-gradient(45deg, var(--text-primary) 30%, var(--cyan-primary) 100%)',
         WebkitBackgroundClip: 'text',
         WebkitTextFillColor: 'transparent',
       }}>
-        <Cpu size={24} style={{ color: 'var(--gold-primary)', strokeWidth: 1.5 }} />
+        <Cpu size={20} style={{ color: 'var(--cyan-primary)', strokeWidth: 1.5, filter: 'drop-shadow(0 0 6px rgba(0, 245, 255, 0.4))' }} />
         SYMAIRA
       </a>
 
@@ -44,16 +46,20 @@ export const Navigation: React.FC = () => {
         marginLeft: 'auto',
       }}>
         <a href="#vision" style={{
-          fontSize: '15px',
+          fontSize: '14px',
           fontWeight: 500,
           color: 'var(--text-secondary)',
+          fontFamily: 'var(--font-tech)',
+          letterSpacing: '0.5px',
         }} className="nav-link">
           {t('navVision')}
         </a>
         <a href="#tools" style={{
-          fontSize: '15px',
+          fontSize: '14px',
           fontWeight: 500,
           color: 'var(--text-secondary)',
+          fontFamily: 'var(--font-tech)',
+          letterSpacing: '0.5px',
         }} className="nav-link">
           {t('navTools')}
         </a>
@@ -61,32 +67,33 @@ export const Navigation: React.FC = () => {
         {/* Vertical Divider */}
         <div style={{
           width: '1px',
-          height: '20px',
-          backgroundColor: 'rgba(212, 165, 116, 0.2)',
+          height: '18px',
+          backgroundColor: 'rgba(0, 245, 255, 0.15)',
         }} />
 
         {/* Language Toggler */}
         <div style={{
           display: 'flex',
           gap: '4px',
-          backgroundColor: 'rgba(255, 255, 255, 0.05)',
+          backgroundColor: 'rgba(255, 255, 255, 0.03)',
           padding: '2px',
           borderRadius: '20px',
-          border: '1px solid rgba(212, 165, 116, 0.15)',
+          border: '1px solid rgba(0, 245, 255, 0.15)',
         }}>
           <button 
             onClick={() => setLanguage('en')}
             style={{
-              padding: '6px 12px',
+              padding: '5px 12px',
               borderRadius: '20px',
               border: 'none',
               cursor: 'pointer',
-              fontSize: '12px',
+              fontSize: '11px',
               fontFamily: 'var(--font-tech)',
               fontWeight: 700,
-              backgroundColor: language === 'en' ? 'var(--gold-primary)' : 'transparent',
+              backgroundColor: language === 'en' ? 'var(--cyan-primary)' : 'transparent',
               color: language === 'en' ? '#000' : 'var(--text-secondary)',
               transition: 'var(--transition-fast)',
+              boxShadow: language === 'en' ? '0 0 10px rgba(0, 245, 255, 0.3)' : 'none',
             }}
           >
             EN
@@ -94,16 +101,17 @@ export const Navigation: React.FC = () => {
           <button 
             onClick={() => setLanguage('de')}
             style={{
-              padding: '6px 12px',
+              padding: '5px 12px',
               borderRadius: '20px',
               border: 'none',
               cursor: 'pointer',
-              fontSize: '12px',
+              fontSize: '11px',
               fontFamily: 'var(--font-tech)',
               fontWeight: 700,
-              backgroundColor: language === 'de' ? 'var(--gold-primary)' : 'transparent',
+              backgroundColor: language === 'de' ? 'var(--cyan-primary)' : 'transparent',
               color: language === 'de' ? '#000' : 'var(--text-secondary)',
               transition: 'var(--transition-fast)',
+              boxShadow: language === 'de' ? '0 0 10px rgba(0, 245, 255, 0.3)' : 'none',
             }}
           >
             DE
@@ -119,16 +127,16 @@ export const Navigation: React.FC = () => {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            width: '40px',
-            height: '40px',
+            width: '36px',
+            height: '36px',
             borderRadius: '50%',
-            backgroundColor: 'rgba(255,255,255,0.05)',
-            border: '1px solid rgba(212, 165, 116, 0.1)',
+            backgroundColor: 'rgba(255,255,255,0.03)',
+            border: '1px solid rgba(0, 245, 255, 0.1)',
             color: 'var(--text-primary)',
           }}
           className="icon-button"
         >
-          <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" /></svg>
+          <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" /></svg>
         </a>
       </div>
     </nav>
