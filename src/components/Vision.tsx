@@ -40,12 +40,12 @@ export const Vision: React.FC = () => {
         marginBottom: '60px',
       }}>
         <h2 style={{
-          fontSize: 'clamp(28px, 4vw, 40px)',
+          fontSize: 'clamp(28px, 2.5rem, 40px)',
           fontFamily: 'var(--font-title)',
           fontWeight: 700,
-          letterSpacing: '-0.5px',
+          letterSpacing: '0',
           marginBottom: '16px',
-          background: 'linear-gradient(180deg, #fff 0%, #a1a1aa 100%)',
+          background: 'linear-gradient(180deg, var(--text-primary) 0%, var(--text-secondary) 100%)',
           WebkitBackgroundClip: 'text',
           WebkitTextFillColor: 'transparent',
         }}>
@@ -151,6 +151,73 @@ export const Vision: React.FC = () => {
             </p>
           </div>
         ))}
+      </div>
+
+      <div className="brand-meaning-panel" style={{
+        marginTop: '42px',
+        padding: '34px',
+        borderRadius: '18px',
+        border: '1px solid rgba(229, 195, 151, 0.14)',
+        background: 'linear-gradient(135deg, rgba(229, 195, 151, 0.06), rgba(174, 200, 230, 0.04))',
+        position: 'relative',
+        overflow: 'hidden',
+      }}>
+        <img
+          src="/logo.png"
+          alt=""
+          aria-hidden="true"
+          className="brand-meaning-watermark"
+        />
+        <div style={{
+          position: 'relative',
+          zIndex: 1,
+          display: 'grid',
+          gridTemplateColumns: 'minmax(0, 0.9fr) minmax(0, 1.1fr)',
+          gap: '28px',
+          alignItems: 'center',
+        }} className="brand-meaning-content">
+          <div>
+            <h3 style={{
+              fontSize: 'clamp(24px, 2rem, 32px)',
+              fontFamily: 'var(--font-title)',
+              fontWeight: 700,
+              letterSpacing: '0',
+              color: 'var(--text-primary)',
+              marginBottom: '12px',
+            }}>
+              {t('brandMeaningTitle')}
+            </h3>
+            <p style={{
+              fontSize: '15px',
+              color: 'var(--text-secondary)',
+              lineHeight: 1.7,
+              maxWidth: '560px',
+            }}>
+              {t('brandMeaningDesc')}
+            </p>
+          </div>
+
+          <div className="brand-meaning-parts" style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(3, minmax(0, 1fr))',
+            gap: '12px',
+          }}>
+            {[t('brandMeaningSym'), t('brandMeaningAi'), t('brandMeaningRa')].map((part) => (
+              <div key={part} style={{
+                padding: '18px 16px',
+                borderRadius: '12px',
+                border: '1px solid rgba(255, 255, 255, 0.08)',
+                background: 'rgba(5, 5, 8, 0.28)',
+                fontFamily: 'var(--font-tech)',
+                fontSize: '12px',
+                color: 'var(--text-primary)',
+                lineHeight: 1.45,
+              }}>
+                {part}
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );

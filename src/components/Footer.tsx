@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
-import { RefreshCw, Heart } from 'lucide-react';
+import { Heart, ShieldCheck } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   const { t } = useLanguage();
@@ -59,24 +59,24 @@ export const Footer: React.FC = () => {
           </div>
         </div>
 
-        {/* Sync pipeline notice */}
+        {/* Brand statement */}
         <div style={{
           display: 'flex',
           alignItems: 'center',
           gap: '8px',
           padding: '8px 16px',
           borderRadius: '20px',
-          backgroundColor: 'rgba(16, 185, 129, 0.05)',
-          border: '1px solid rgba(16, 185, 129, 0.15)',
+          backgroundColor: 'rgba(229, 195, 151, 0.06)',
+          border: '1px solid rgba(229, 195, 151, 0.18)',
         }}>
-          <RefreshCw size={12} style={{ color: '#10b981' }} className="animate-slow-spin" />
+          <ShieldCheck size={12} style={{ color: 'var(--cyan-primary)' }} />
           <span style={{
             fontSize: '11px',
             fontFamily: 'var(--font-tech)',
-            color: '#10b981',
+            color: 'var(--cyan-primary)',
             letterSpacing: '0.5px',
           }}>
-            {t('footerSync')}
+            {t('footerMessage')}
           </span>
         </div>
 

@@ -8,7 +8,7 @@ export const Navigation: React.FC = () => {
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <nav className="glass-panel" style={{
+    <nav className="glass-panel site-nav" style={{
       position: 'sticky',
       top: '20px',
       zIndex: 100,
@@ -24,7 +24,7 @@ export const Navigation: React.FC = () => {
       boxShadow: '0 8px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(229, 195, 151, 0.02)',
     }}>
       {/* Brand Logo & Name */}
-      <a href="#hero" style={{
+      <a href="#hero" className="site-nav-brand" style={{
         display: 'flex',
         alignItems: 'center',
         gap: '12px',
@@ -50,7 +50,7 @@ export const Navigation: React.FC = () => {
       </a>
 
       {/* Nav Links */}
-      <div style={{
+      <div className="site-nav-actions" style={{
         display: 'flex',
         alignItems: 'center',
         gap: '24px',
@@ -76,7 +76,7 @@ export const Navigation: React.FC = () => {
         </a>
 
         {/* Vertical Divider */}
-        <div style={{
+        <div className="nav-divider" style={{
           width: '1px',
           height: '18px',
           backgroundColor: 'rgba(229, 195, 151, 0.15)',

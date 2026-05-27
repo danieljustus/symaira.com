@@ -22,6 +22,13 @@ export const Hero: React.FC = () => {
         zIndex: 1,
       }}
     >
+      <img
+        src="/logo.png"
+        alt=""
+        aria-hidden="true"
+        className="hero-logo-watermark"
+      />
+
       {/* Hero Content */}
       <div style={{
         flex: '1 1 50%',
@@ -63,11 +70,11 @@ export const Hero: React.FC = () => {
 
         {/* Title */}
         <h1 style={{
-          fontSize: 'clamp(38px, 5.5vw, 64px)',
+          fontSize: 'clamp(38px, 4rem, 64px)',
           lineHeight: 1.1,
           fontFamily: 'var(--font-title)',
           fontWeight: 800,
-          letterSpacing: '-1.5px',
+          letterSpacing: '0',
           marginBottom: '24px',
           color: 'var(--text-primary)',
         }}>
@@ -109,6 +116,30 @@ export const Hero: React.FC = () => {
         }}>
           {t('heroSubtitle')}
         </p>
+
+        <div className="name-explainer" style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(3, minmax(0, 1fr))',
+          gap: '10px',
+          width: '100%',
+          maxWidth: '570px',
+          marginBottom: '34px',
+        }}>
+          {t('heroNameExplainer').split('. ').map((part) => (
+            <div key={part} style={{
+              padding: '12px 14px',
+              borderRadius: '10px',
+              background: 'rgba(255, 255, 255, 0.025)',
+              border: '1px solid rgba(229, 195, 151, 0.14)',
+              color: 'var(--text-secondary)',
+              fontFamily: 'var(--font-tech)',
+              fontSize: '11px',
+              lineHeight: 1.45,
+            }}>
+              {part.replace(/\.$/, '')}
+            </div>
+          ))}
+        </div>
 
         {/* Action Buttons */}
         <div style={{
@@ -164,7 +195,7 @@ export const Hero: React.FC = () => {
         <div style={{
           position: 'relative',
           width: '100%',
-          maxWidth: '440px',
+          maxWidth: '500px',
           aspectRatio: '1',
           padding: '20px',
           borderRadius: '24px',
@@ -173,6 +204,18 @@ export const Hero: React.FC = () => {
           boxShadow: 'inset 0 0 40px rgba(229, 195, 151, 0.02)',
           overflow: 'visible',
         }} className="glass-panel animate-float">
+          <img
+            src="/logo-top.png"
+            alt=""
+            aria-hidden="true"
+            className="hero-orbit-half hero-orbit-half-top"
+          />
+          <img
+            src="/logo-bottom.png"
+            alt=""
+            aria-hidden="true"
+            className="hero-orbit-half hero-orbit-half-bottom"
+          />
           
           {/* Interactive Splitting Logo in the center of the Gravity Field */}
           <div className="hero-logo-container" style={{
@@ -180,30 +223,28 @@ export const Hero: React.FC = () => {
             top: '50%',
             left: '50%',
             transform: 'translate(-50%, -50%)',
-            width: '100px',
-            height: '100px',
+            width: '168px',
+            height: '168px',
             zIndex: 5,
           }}>
             <img 
               src="/logo-top.png" 
               alt="Symaira Gold Half" 
-              className="hero-logo-half top"
+              className="hero-logo-half top symaira-mark-half"
               style={{
-                width: '76px',
-                height: '42px',
+                width: '140px',
+                height: '78px',
                 objectFit: 'contain',
-                transform: 'translateY(1.5px)',
               }}
             />
             <img 
               src="/logo-bottom.png" 
               alt="Symaira Ice-Blue Half" 
-              className="hero-logo-half bottom"
+              className="hero-logo-half bottom symaira-mark-half"
               style={{
-                width: '76px',
-                height: '42px',
+                width: '140px',
+                height: '78px',
                 objectFit: 'contain',
-                transform: 'translateY(-1.5px)',
               }}
             />
           </div>
@@ -220,7 +261,7 @@ export const Hero: React.FC = () => {
             zIndex: 3,
             opacity: 0.8,
           }}>
-            SYS.CORE // ACTIVE
+            SYM.AI.RA // ACTIVE
           </div>
 
           <div style={{
@@ -233,7 +274,7 @@ export const Hero: React.FC = () => {
             letterSpacing: '1px',
             zIndex: 3,
           }}>
-            GRAV.WELL_1.0G
+            BOUNDARY.MODE
           </div>
 
           <div style={{
@@ -248,9 +289,9 @@ export const Hero: React.FC = () => {
             lineHeight: '1.2',
             textAlign: 'left',
           }}>
-            X: 34.092<br />
-            Y: -89.102<br />
-            Z: 0.045
+            HUMAN: IN LOOP<br />
+            AI: SCOPED<br />
+            TRUST: ACTIVE
           </div>
 
           <svg 
@@ -326,10 +367,13 @@ export const Hero: React.FC = () => {
       <style>{`
         @media (max-width: 900px) {
           #hero {
-            flex-direction: column-reverse !important;
+            flex-direction: column !important;
             padding-top: 40px !important;
             padding-bottom: 60px !important;
             text-align: center !important;
+          }
+          #hero h1 {
+            font-size: 46px !important;
           }
           #hero > div {
             align-items: center !important;

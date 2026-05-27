@@ -12,6 +12,7 @@ interface TranslationMap {
   heroTitle2: string;
   heroTitle3: string;
   heroSubtitle: string;
+  heroNameExplainer: string;
   heroButtonTools: string;
   heroButtonVision: string;
   visionTitle: string;
@@ -31,15 +32,20 @@ interface TranslationMap {
   vaultFeature2: string;
   vaultFeature3: string;
   vaultBtn: string;
-  upcomingTitle: string;
-  upcomingSubtitle: string;
-  connectTitle: string;
-  connectDesc: string;
-  flowTitle: string;
-  flowDesc: string;
+  erasemeBadge: string;
+  erasemeTitle: string;
+  erasemeDesc: string;
+  erasemeFeature1: string;
+  erasemeFeature2: string;
+  erasemeFeature3: string;
+  erasemeBtn: string;
+  brandMeaningTitle: string;
+  brandMeaningDesc: string;
+  brandMeaningSym: string;
+  brandMeaningAi: string;
+  brandMeaningRa: string;
   footerRights: string;
-  footerSync: string;
-  comingSoon: string;
+  footerMessage: string;
 }
 
 const translations: Record<Language, TranslationMap> = {
@@ -47,77 +53,89 @@ const translations: Record<Language, TranslationMap> = {
     navVision: 'Vision',
     navTools: 'Tools',
     navGithub: 'GitHub',
-    heroBadge: 'The Symbiosis Era is Here',
-    heroTitle1: 'Seamless Symbiosis',
-    heroTitle2: 'Between',
-    heroTitle3: 'Human & AI',
-    heroSubtitle: 'Symaira creates premium tools designed to securely bridge the gap between human intent and autonomous AI agent execution.',
+    heroBadge: 'Human agency in the AI era',
+    heroTitle1: 'Tools for the era',
+    heroTitle2: 'of Human-AI',
+    heroTitle3: 'symbiosis.',
+    heroSubtitle: 'Symaira builds products that help people work with AI without giving up control over data, decisions, or trust.',
+    heroNameExplainer: 'SYM = Symbiosis. AI = Artificial Intelligence. RA = the new era.',
     heroButtonTools: 'Explore Tools',
-    heroButtonVision: 'Our Vision',
-    visionTitle: 'The Symaira Vision',
-    visionSubtitle: 'Why Human-AI symbiosis is the inevitable next step in technological evolution.',
-    visionPillar1Title: 'Absolute Security',
-    visionPillar1Desc: 'AI agents require access to sensitive credentials, databases, and APIs. We construct bulletproof vaults to shield secrets while enabling autonomous tasks.',
-    visionPillar2Title: 'Dynamic Agency',
-    visionPillar2Desc: 'Empowering AI with the safety boundaries, credentials, and parameters it needs to operate efficiently without continuous human micro-management.',
-    visionPillar3Title: 'Shared Intelligence',
-    visionPillar3Desc: 'Fostering a true partnership where AI agents augment human capability, working hand-in-hand to solve grand engineering challenges.',
-    toolsTitle: 'Symaira Ecosystem',
-    toolsSubtitle: 'Purpose-built open-source components for autonomous agent workflows.',
-    vaultBadge: 'First Release',
+    heroButtonVision: 'Understand the Vision',
+    visionTitle: 'AI is becoming a collaborator. The interface has to change.',
+    visionSubtitle: 'Real collaboration needs boundaries, secure handoffs, traceable decisions, and tools that keep people in control.',
+    visionPillar1Title: 'Human Control',
+    visionPillar1Desc: 'AI can take over work, but responsibility must stay clear. Symaira tools are built around human intent, review, and revocation.',
+    visionPillar2Title: 'Data Sovereignty',
+    visionPillar2Desc: 'Personal data, secrets, and identities should stay protected even when AI systems become part of the workflow.',
+    visionPillar3Title: 'Useful Autonomy',
+    visionPillar3Desc: 'Automation should be explainable, bounded, and safe enough to trust in repeatable work without giving up oversight.',
+    toolsTitle: 'The first Symaira tools',
+    toolsSubtitle: 'Symaira starts where AI collaboration needs the most trust: secrets, identity, privacy, and repeatable workflows.',
+    vaultBadge: 'Secrets & agents',
     vaultTitle: 'Symaira Vault',
-    vaultDesc: 'A specialized credential and password manager built strictly for AI agents. It integrates seamlessly into LLM runtimes, allowing agents to fetch secrets securely on the fly without leaking them into prompts, history, or debugging logs.',
-    vaultFeature1: 'Zero-Leak Prompts: Agents request credentials dynamically using secure placeholders.',
-    vaultFeature2: 'Granular ACL: Strict policy boundaries defining which agent can access which API key.',
-    vaultFeature3: 'Simple SDK: Drop-in TypeScript, Python, and terminal interfaces for agent frameworks.',
+    vaultDesc: 'A secure password and secrets manager for terminal users and AI agents. It keeps credentials encrypted, local-first, and available through scoped workflows instead of raw chat sharing.',
+    vaultFeature1: 'Keep credentials out of prompts, logs, and chat history.',
+    vaultFeature2: 'Give agents scoped access through MCP instead of sharing raw secrets.',
+    vaultFeature3: 'Stay local-first, encrypted, open source, and telemetry-free.',
     vaultBtn: 'View Vault on GitHub',
-    upcomingTitle: 'Future Pipelines',
-    upcomingSubtitle: 'Currently under development to expand agent orchestration capabilities.',
-    connectTitle: 'Symaira Connect',
-    connectDesc: 'Secure, encrypted real-time communication bridges between human operators and multi-agent meshes, enabling collaborative loop interventions.',
-    flowTitle: 'Symaira Flow',
-    flowDesc: 'A visual state-machine and intent-mapping platform to choreograph complex operations and dependency trees across agent clusters.',
+    erasemeBadge: 'Privacy automation',
+    erasemeTitle: 'Symaira EraseMe',
+    erasemeDesc: 'A privacy automation tool that helps people remove their data from brokers and close unwanted accounts.',
+    erasemeFeature1: 'Plan and track GDPR/CCPA erasure campaigns.',
+    erasemeFeature2: 'Use AI-assisted workflows for triage, reminders, and rebuttals.',
+    erasemeFeature3: 'Keep an auditable record of every request and deadline.',
+    erasemeBtn: 'View EraseMe on GitHub',
+    brandMeaningTitle: 'Why Symaira',
+    brandMeaningDesc: 'Symaira is built from three parts. The name describes the product direction: tools for a new era where humans and AI systems work together with clear boundaries.',
+    brandMeaningSym: 'SYM: symbiosis',
+    brandMeaningAi: 'AI: artificial intelligence',
+    brandMeaningRa: 'RA: the new era',
     footerRights: 'All rights reserved.',
-    footerSync: 'Auto-synchronized to All-Inkl via GitHub Actions',
-    comingSoon: 'Coming Soon',
+    footerMessage: 'Built for human agency in the AI era.',
   },
   de: {
     navVision: 'Vision',
     navTools: 'Tools',
     navGithub: 'GitHub',
-    heroBadge: 'Die Symbiose-Ära hat begonnen',
-    heroTitle1: 'Nahtlose Symbiose',
-    heroTitle2: 'Zwischen',
-    heroTitle3: 'Mensch & KI',
-    heroSubtitle: 'Symaira entwickelt erstklassige Tools, um die Lücke zwischen menschlicher Absicht und autonomer KI-Ausführung sicher und elegant zu schließen.',
+    heroBadge: 'Menschliche Handlungsfähigkeit in der AI-Ära',
+    heroTitle1: 'Tools für die Ära',
+    heroTitle2: 'der Mensch-AI',
+    heroTitle3: 'Symbiose.',
+    heroSubtitle: 'Symaira baut Produkte, mit denen Menschen mit AI arbeiten können, ohne Kontrolle über Daten, Entscheidungen oder Vertrauen abzugeben.',
+    heroNameExplainer: 'SYM = Symbiose. AI = Artificial Intelligence. RA = die neue Ära.',
     heroButtonTools: 'Tools entdecken',
-    heroButtonVision: 'Unsere Vision',
-    visionTitle: 'Die Symaira Vision',
-    visionSubtitle: 'Warum die Mensch-KI-Symbiose der unausweichliche nächste Schritt der technologischen Evolution ist.',
-    visionPillar1Title: 'Absolute Sicherheit',
-    visionPillar1Desc: 'KI-Agenten benötigen Zugriff auf sensible Zugangsdaten und APIs. Wir bauen bombensichere Tresore, um Geheimnisse zu schützen und Autonomie zu ermöglichen.',
-    visionPillar2Title: 'Dynamische Autonomie',
-    visionPillar2Desc: 'Wir statten KIs mit Sicherheitsgrenzen und Credentials aus, damit sie effizient arbeiten können, ohne ständiges menschliches Mikromanagement.',
-    visionPillar3Title: 'Gemeinsame Intelligenz',
-    visionPillar3Desc: 'Förderung einer echten Partnerschaft, in der KI-Agenten die menschlichen Fähigkeiten erweitern und Hand in Hand große Herausforderungen lösen.',
-    toolsTitle: 'Symaira Ökosystem',
-    toolsSubtitle: 'Speziell entwickelte Open-Source-Komponenten für autonome Agenten-Workflows.',
-    vaultBadge: 'Erster Release',
+    heroButtonVision: 'Vision verstehen',
+    visionTitle: 'AI wird zum Mitwirkenden. Das Interface muss sich verändern.',
+    visionSubtitle: 'Echte Zusammenarbeit braucht Grenzen, sichere Übergaben, nachvollziehbare Entscheidungen und Tools, die Menschen in Kontrolle halten.',
+    visionPillar1Title: 'Menschliche Kontrolle',
+    visionPillar1Desc: 'AI kann Arbeit übernehmen, aber Verantwortung muss klar bleiben. Symaira-Tools sind auf Absicht, Prüfung und Widerrufbarkeit ausgelegt.',
+    visionPillar2Title: 'Datensouveränität',
+    visionPillar2Desc: 'Persönliche Daten, Secrets und Identitäten müssen geschützt bleiben, auch wenn AI-Systeme Teil des Workflows werden.',
+    visionPillar3Title: 'Nützliche Autonomie',
+    visionPillar3Desc: 'Automatisierung sollte erklärbar, begrenzt und sicher genug sein, um wiederkehrende Arbeit zu unterstützen, ohne Kontrolle abzugeben.',
+    toolsTitle: 'Die ersten Symaira Tools',
+    toolsSubtitle: 'Symaira beginnt dort, wo AI-Zusammenarbeit besonders viel Vertrauen braucht: Secrets, Identität, Privatsphäre und wiederholbare Workflows.',
+    vaultBadge: 'Secrets & Agents',
     vaultTitle: 'Symaira Vault',
-    vaultDesc: 'Ein spezialisierter Passwort- und Credential-Manager für KI-Agenten. Er integriert sich nahtlos in LLM-Runtimes und ermöglicht es Agenten, API-Keys on-the-fly abzurufen, ohne sensible Daten in Prompts oder Logs offenzulegen.',
-    vaultFeature1: 'Zero-Leak Prompts: Agenten fordern Anmeldedaten dynamisch über sichere Platzhalter an.',
-    vaultFeature2: 'Feingranulare ACLs: Strikte Richtlinien, welcher Agent auf welche API-Keys zugreifen darf.',
-    vaultFeature3: 'Einfaches SDK: Drop-in TypeScript-, Python- und CLI-Schnittstellen für Agenten-Frameworks.',
+    vaultDesc: 'Ein sicherer Passwort- und Secrets-Manager für Terminal-Nutzer und AI-Agenten. Credentials bleiben verschlüsselt, lokal kontrolliert und über begrenzte Workflows verfügbar.',
+    vaultFeature1: 'Credentials bleiben aus Prompts, Logs und Chatverläufen heraus.',
+    vaultFeature2: 'Agenten erhalten begrenzten Zugriff über MCP statt rohe Secrets.',
+    vaultFeature3: 'Lokal, verschlüsselt, Open Source und ohne Telemetrie.',
     vaultBtn: 'Vault auf GitHub ansehen',
-    upcomingTitle: 'Zukünftige Pipelines',
-    upcomingSubtitle: 'Derzeit in der Entwicklung, um die Orchestrierung von KI-Agenten zu erweitern.',
-    connectTitle: 'Symaira Connect',
-    connectDesc: 'Sichere, verschlüsselte Echtzeit-Kommunikationsbrücken zwischen menschlichen Operatoren und Multi-Agenten-Netzwerken.',
-    flowTitle: 'Symaira Flow',
-    flowDesc: 'Visuelle State-Machine und Intent-Mapping-Plattform zur Choreographie komplexer Operationen über Agenten-Cluster hinweg.',
+    erasemeBadge: 'Privacy Automation',
+    erasemeTitle: 'Symaira EraseMe',
+    erasemeDesc: 'Ein Privacy-Automation-Tool, das Menschen dabei hilft, ihre Daten bei Datenhändlern löschen zu lassen und unerwünschte Accounts zu schließen.',
+    erasemeFeature1: 'GDPR/CCPA-Löschkampagnen planen und verfolgen.',
+    erasemeFeature2: 'AI-gestützte Workflows für Triage, Erinnerungen und Antworten nutzen.',
+    erasemeFeature3: 'Jede Anfrage und Frist nachvollziehbar dokumentieren.',
+    erasemeBtn: 'EraseMe auf GitHub ansehen',
+    brandMeaningTitle: 'Warum Symaira',
+    brandMeaningDesc: 'Symaira besteht aus drei Teilen. Der Name beschreibt die Produktrichtung: Tools für eine neue Ära, in der Menschen und AI-Systeme mit klaren Grenzen zusammenarbeiten.',
+    brandMeaningSym: 'SYM: Symbiose',
+    brandMeaningAi: 'AI: Artificial Intelligence',
+    brandMeaningRa: 'RA: die neue Ära',
     footerRights: 'Alle Rechte vorbehalten.',
-    footerSync: 'Automatisch synchronisiert mit All-Inkl über GitHub Actions',
-    comingSoon: 'Demnächst',
+    footerMessage: 'Gebaut für menschliche Handlungsfähigkeit in der AI-Ära.',
   },
 };
 
