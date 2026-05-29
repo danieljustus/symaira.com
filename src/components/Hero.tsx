@@ -1,10 +1,57 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { useTheme } from '../context/ThemeContext';
+import { Shield, Lock, Unlock, AlertTriangle, Play, Sparkles, RefreshCw } from 'lucide-react';
 
 export const Hero: React.FC = () => {
   const { t } = useLanguage();
   const { theme } = useTheme();
+
+  const [activeTab, setActiveTab] = useState<'vault' | 'eraseme'>('vault');
+  const [vaultStatus, setVaultStatus] = useState<'blocked' | 'approved'>('blocked');
+  const [brokers, setBrokers] = useState([
+    { id: 1, name: 'Acxiom', cat: 'Marketing', status: 'pending' },
+    { id: 2, name: 'Experian', cat: 'Credit Broker', status: 'pending' },
+    { id: 3, name: 'Equifax', cat: 'Demographics', status: 'pending' },
+  ]);
+  const [isEraseTriggered, setIsEraseTriggered] = useState(false);
+  const [isErasing, setIsErasing] = useState(false);
+
+  const handleVaultApprove = () => {
+    setVaultStatus('approved');
+    setTimeout(() => {
+      setVaultStatus('blocked');
+    }, 4000);
+  };
+
+  const handleTriggerErase = () => {
+    setIsEraseTriggered(true);
+    setIsErasing(true);
+    
+    brokers.forEach((broker, index) => {
+      setTimeout(() => {
+        setBrokers(prev => prev.map(b => b.id === broker.id ? { ...b, status: 'erasing' } : b));
+      }, index * 800 + 400);
+
+      setTimeout(() => {
+        setBrokers(prev => prev.map(b => b.id === broker.id ? { ...b, status: 'erased' } : b));
+      }, index * 800 + 1200);
+    });
+
+    setTimeout(() => {
+      setIsErasing(false);
+    }, 3200);
+  };
+
+  const handleResetErase = () => {
+    setBrokers([
+      { id: 1, name: 'Acxiom', cat: 'Marketing', status: 'pending' },
+      { id: 2, name: 'Experian', cat: 'Credit Broker', status: 'pending' },
+      { id: 3, name: 'Equifax', cat: 'Demographics', status: 'pending' },
+    ]);
+    setIsEraseTriggered(false);
+    setIsErasing(false);
+  };
 
   return (
     <section 
@@ -181,7 +228,7 @@ export const Hero: React.FC = () => {
         </div>
       </div>
 
-      {/* Interactive Gravity Grid Network SVG */}
+      {/* Interactive Trust Deck Dashboard */}
       <div 
         style={{
           flex: '1 1 45%',
@@ -189,203 +236,139 @@ export const Hero: React.FC = () => {
           alignItems: 'center',
           justifyContent: 'center',
           position: 'relative',
+          width: '100%',
         }}
       >
-        {/* Antigravity grid graphic container */}
-        <div style={{
-          position: 'relative',
-          width: '100%',
-          maxWidth: '500px',
-          aspectRatio: '1',
-          padding: '20px',
-          borderRadius: '24px',
-          border: '1px solid rgba(255,255,255,0.04)',
-          background: 'rgba(5, 5, 8, 0.3)',
-          boxShadow: 'inset 0 0 40px rgba(229, 195, 151, 0.02)',
-          overflow: 'visible',
-        }} className="glass-panel animate-float">
-          
-          {/* Unified Brand Logo Core */}
-          <div className="hero-logo-container" style={{
-            position: 'absolute',
-            top: '50%',
-            left: '50%',
-            transform: 'translate(-50%, -50%)',
-            width: '140px',
-            height: '140px',
-            zIndex: 5,
-          }}>
-            <img 
-              src="/logo.png" 
-              alt="Symaira Logo" 
-              className="hero-logo-unified"
-              style={{
-                position: 'absolute',
-                top: '50%',
-                left: '50%',
-                transform: 'translate(-50%, -50%)',
-                width: '110px',
-                height: '110px',
-                objectFit: 'contain',
-              }}
-            />
+        <div className="trust-deck-container animate-float">
+          {/* Header */}
+          <div className="deck-header">
+            <span style={{
+              fontFamily: 'var(--font-tech)',
+              fontSize: '10px',
+              color: 'var(--cyan-primary)',
+              letterSpacing: '1px',
+              fontWeight: 600,
+            }}>
+              SYM.CONTROL_DECK // v1.0
+            </span>
+            <div className="deck-tabs">
+              <button 
+                className={`deck-tab-btn ${activeTab === 'vault' ? 'active' : ''}`}
+                onClick={() => setActiveTab('vault')}
+              >
+                {t('deckVaultTab')}
+              </button>
+              <button 
+                className={`deck-tab-btn ${activeTab === 'eraseme' ? 'active' : ''}`}
+                onClick={() => setActiveTab('eraseme')}
+              >
+                {t('deckEraseTab')}
+              </button>
+            </div>
           </div>
 
-          {/* Dashboard overlay data ticks */}
-          <div style={{
-            position: 'absolute',
-            top: '16px',
-            left: '18px',
-            fontFamily: 'var(--font-tech)',
-            fontSize: '9px',
-            color: 'var(--cyan-primary)',
-            letterSpacing: '1px',
-            zIndex: 3,
-            opacity: 0.8,
-          }}>
-            SYM.AI.RA // ACTIVE
+          {/* Body */}
+          <div className="deck-body">
+            {activeTab === 'vault' ? (
+              <>
+                {/* Vault Tab */}
+                <div className="deck-status-line">
+                  <span>{t('deckVaultStatus')}</span>
+                  <span className="deck-status-indicator">
+                    <span className={`status-dot ${vaultStatus === 'blocked' ? 'blocked' : 'success'}`} />
+                    {vaultStatus === 'blocked' ? t('deckStatusBlocked') : t('deckStatusApproved')}
+                  </span>
+                </div>
+
+                <div className={`vault-card-visual ${vaultStatus === 'approved' ? 'approved' : ''}`}>
+                  {vaultStatus === 'blocked' ? (
+                    <div className="vault-request-overlay">
+                      <div className="vault-request-header">
+                        <AlertTriangle size={10} style={{ marginRight: '4px', verticalAlign: 'middle' }} />
+                        {t('deckAgentRequest').toUpperCase()}
+                      </div>
+                      <div className="vault-request-body">
+                        <div className="vault-agent-badge">
+                          <Shield size={16} style={{ color: 'var(--cyan-primary)' }} />
+                          <div>
+                            <div style={{ fontSize: '12px', fontWeight: 600 }}>{t('deckAgentName')}</div>
+                            <div style={{ fontSize: '10px', color: 'var(--text-muted)' }}>Action: read_secret</div>
+                          </div>
+                        </div>
+                        <div className="vault-key-visual">
+                          <Lock size={14} className="vault-key-icon" />
+                          <span>{t('deckRequestedItem')}</span>
+                        </div>
+                      </div>
+                    </div>
+                  ) : (
+                    <div className="vault-secure-tunnel">
+                      <Unlock size={24} style={{ color: '#10b981' }} />
+                      <span style={{ fontSize: '12px', fontWeight: 600, color: '#10b981' }}>
+                        {t('deckStatusApproved')}
+                      </span>
+                      <div className="tunnel-line">
+                        <div className="tunnel-pulse" />
+                      </div>
+                    </div>
+                  )}
+                </div>
+
+                <div className="vault-action-footer">
+                  {vaultStatus === 'blocked' ? (
+                    <button className="vault-approve-btn" onClick={handleVaultApprove}>
+                      {t('deckButtonApprove')}
+                    </button>
+                  ) : (
+                    <div style={{ textAlign: 'center', fontSize: '11px', color: 'var(--text-muted)', fontFamily: 'var(--font-tech)' }}>
+                      Resetting simulation...
+                    </div>
+                  )}
+                </div>
+              </>
+            ) : (
+              <>
+                {/* EraseMe Tab */}
+                <div className="deck-status-line">
+                  <span>{t('deckEraseStatus')}</span>
+                  <span className="deck-status-indicator">
+                    <span className={`status-dot ${isEraseTriggered ? (isErasing ? 'active' : 'success') : 'active'}`} />
+                    {isEraseTriggered ? (isErasing ? t('deckStatusErasing') : 'COMPLETED') : t('deckBrokerStatusScan')}
+                  </span>
+                </div>
+
+                <div className="eraseme-list">
+                  {brokers.map((broker) => (
+                    <div key={broker.id} className={`eraseme-row ${broker.status}`}>
+                      <Shield size={12} style={{ 
+                        color: broker.status === 'erased' ? '#10b981' : (broker.status === 'erasing' ? 'var(--blue-accent)' : 'var(--text-muted)') 
+                      }} />
+                      <div className="broker-name">{broker.name}</div>
+                      <div className="broker-category">{broker.cat}</div>
+                      <div className={`broker-status-badge ${broker.status}`}>
+                        {broker.status === 'erased' && <Sparkles size={8} style={{ display: 'inline-block', marginRight: '4px', verticalAlign: 'middle' }} />}
+                        {broker.status === 'erased' ? t('deckStatusErased') : (broker.status === 'erasing' ? t('deckStatusErasing') : t('deckStatusPending'))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="vault-action-footer">
+                  {!isEraseTriggered ? (
+                    <button className="eraseme-action-btn" onClick={handleTriggerErase}>
+                      <Play size={12} style={{ display: 'inline-block', marginRight: '6px', verticalAlign: 'middle' }} />
+                      {t('deckButtonTriggerErase')}
+                    </button>
+                  ) : (
+                    <button className="eraseme-action-btn" onClick={handleResetErase} disabled={isErasing}>
+                      <RefreshCw size={12} style={{ display: 'inline-block', marginRight: '6px', verticalAlign: 'middle' }} />
+                      Reset Simulation
+                    </button>
+                  )}
+                </div>
+              </>
+            )}
           </div>
-
-          <div style={{
-            position: 'absolute',
-            top: '16px',
-            right: '18px',
-            fontFamily: 'var(--font-tech)',
-            fontSize: '9px',
-            color: 'var(--text-muted)',
-            letterSpacing: '1px',
-            zIndex: 3,
-          }}>
-            BOUNDARY.MODE
-          </div>
-
-          <div style={{
-            position: 'absolute',
-            bottom: '16px',
-            left: '18px',
-            fontFamily: 'var(--font-tech)',
-            fontSize: '9px',
-            color: 'var(--text-muted)',
-            letterSpacing: '0.5px',
-            zIndex: 3,
-            lineHeight: '1.2',
-            textAlign: 'left',
-          }}>
-            HUMAN: IN LOOP<br />
-            AI: SCOPED<br />
-            TRUST: ACTIVE
-          </div>
-
-          <div style={{
-            position: 'absolute',
-            bottom: '16px',
-            right: '18px',
-            fontFamily: 'var(--font-tech)',
-            fontSize: '9px',
-            color: 'var(--text-muted)',
-            letterSpacing: '0.5px',
-            zIndex: 3,
-            lineHeight: '1.2',
-            textAlign: 'right',
-          }}>
-            SYS.STATUS: NOMINAL<br />
-            LATENCY: 12ms<br />
-            LOC: LOCALHOST
-          </div>
-
-          <svg 
-            width="100%" 
-            height="100%" 
-            viewBox="0 0 400 400" 
-            fill="none" 
-            xmlns="http://www.w3.org/2000/svg"
-            style={{ overflow: 'visible' }}
-          >
-            {/* Coordinate Grid Planes */}
-            <path d="M 0 100 H 400" stroke="rgba(255,255,255,0.015)" strokeWidth="1" />
-            <path d="M 0 200 H 400" stroke="rgba(229, 195, 151, 0.08)" strokeWidth="1" />
-            <path d="M 0 300 H 400" stroke="rgba(255,255,255,0.015)" strokeWidth="1" />
-            
-            <path d="M 100 0 V 400" stroke="rgba(255,255,255,0.015)" strokeWidth="1" />
-            <path d="M 200 0 V 400" stroke="rgba(229, 195, 151, 0.08)" strokeWidth="1" />
-            <path d="M 300 0 V 400" stroke="rgba(255,255,255,0.015)" strokeWidth="1" />
-
-            {/* Circular Orbiting Channels */}
-            <circle cx="200" cy="200" r="140" stroke="rgba(255,255,255,0.03)" strokeWidth="1" className="orbit-ring orbit-ring-slow" />
-            <circle cx="200" cy="200" r="110" stroke="rgba(229, 195, 151, 0.06)" strokeWidth="1" className="orbit-ring orbit-ring-fast" />
-            <circle cx="200" cy="200" r="80" stroke="rgba(174, 200, 230, 0.1)" strokeWidth="1.5" strokeDasharray="6 6" className="orbit-ring" />
-
-            {/* Pulsing gravitational vector lines */}
-            <path 
-              d="M 200 200 L 90 90 M 200 200 L 310 90 M 200 200 L 90 310 M 200 200 L 310 310" 
-              stroke="rgba(229, 195, 151, 0.08)" 
-              strokeWidth="1.5" 
-              strokeDasharray="4 8"
-            />
-            
-            {/* Dynamic rotating outer system */}
-            <g className="animate-slow-spin" style={{ transformOrigin: '200px 200px' }}>
-              {/* Outer nodes */}
-              <circle cx="200" cy="60" r="5" fill="var(--cyan-primary)" filter="url(#cyanGlow)" />
-              <line x1="200" y1="60" x2="200" y2="200" stroke="rgba(229, 195, 151, 0.05)" strokeWidth="1" />
-              
-              <circle cx="310" cy="200" r="4" fill="var(--blue-accent)" />
-              <line x1="310" y1="200" x2="200" y2="200" stroke="rgba(174, 200, 230, 0.04)" strokeWidth="1" />
-              
-              <circle cx="90" cy="200" r="4" fill="var(--cyan-secondary)" />
-              <circle cx="200" cy="340" r="5" fill="var(--cyan-primary)" filter="url(#cyanGlow)" />
-            </g>
-
-            {/* Human Symbiotic Orbit (Gold) */}
-            <g className="orbit-human-group">
-              <circle cx="200" cy="200" r="110" stroke="rgba(229, 195, 151, 0.02)" strokeWidth="0.5" strokeDasharray="3 9" pointerEvents="none" />
-              <circle 
-                cx="200" 
-                cy="90" 
-                r="6" 
-                fill="var(--gold-primary)" 
-                className="orbit-sphere"
-                style={{ color: 'var(--gold-primary)' }}
-              />
-            </g>
-
-            {/* AI Symbiotic Orbit (Ice Blue) */}
-            <g className="orbit-ai-group">
-              <circle cx="200" cy="200" r="120" stroke="rgba(174, 200, 230, 0.02)" strokeWidth="0.5" strokeDasharray="4 12" pointerEvents="none" />
-              <circle 
-                cx="200" 
-                cy="320" 
-                r="5.5" 
-                fill="var(--ice-primary)" 
-                className="orbit-sphere"
-                style={{ color: 'var(--ice-primary)' }}
-              />
-            </g>
-
-            {/* Core Gravity Node */}
-            <circle cx="200" cy="200" r="70" fill="url(#coreGlow)" />
-            <circle cx="200" cy="200" r="54" fill="var(--bg-dark)" stroke="rgba(229, 195, 151, 0.15)" strokeWidth="1" style={{ opacity: 0.95 }} />
-            
-            {/* Expanding pulse animation */}
-            <circle cx="200" cy="200" r="54" fill="none" stroke="var(--cyan-primary)" strokeWidth="1" opacity="0.8">
-              <animate attributeName="r" values="54;95;54" dur="6s" repeatCount="indefinite" />
-              <animate attributeName="opacity" values="0.8;0;0.8" dur="6s" repeatCount="indefinite" />
-            </circle>
-
-            {/* Definitions */}
-            <defs>
-              <filter id="cyanGlow" x="-50%" y="-50%" width="200%" height="200%">
-                <feGaussianBlur stdDeviation="5" result="blur" />
-                <feComposite in="SourceGraphic" in2="blur" operator="over" />
-              </filter>
-              
-              <radialGradient id="coreGlow" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stopColor="var(--cyan-primary)" stopOpacity="0.45" />
-                <stop offset="55%" stopColor="var(--blue-accent)" stopOpacity="0.2" />
-                <stop offset="100%" stopColor="transparent" stopOpacity="0" />
-              </radialGradient>
-            </defs>
-          </svg>
         </div>
       </div>
 

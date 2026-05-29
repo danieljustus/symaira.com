@@ -64,7 +64,7 @@ export const Vision: React.FC = () => {
       {/* Grid Pillars */}
       <div className="vision-grid" style={{
         display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))',
         gap: '24px',
         marginTop: '20px',
       }}>

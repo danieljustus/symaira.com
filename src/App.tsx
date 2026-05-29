@@ -10,7 +10,7 @@ function App() {
   return (
     <ThemeProvider>
       <LanguageProvider>
-        <div style={{ position: 'relative', minHeight: '100vh', overflow: 'hidden' }}>
+        <div style={{ position: 'relative', minHeight: '100vh', overflowX: 'hidden' }}>
         {/* Ambient glow blobs */}
         <div className="bg-ambient-glow glow-cyan-top" />
         <div className="bg-ambient-glow glow-blue-right" />

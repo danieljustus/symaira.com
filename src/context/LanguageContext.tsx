@@ -46,6 +46,21 @@ interface TranslationMap {
   brandMeaningRa: string;
   footerRights: string;
   footerMessage: string;
+  deckVaultTab: string;
+  deckEraseTab: string;
+  deckVaultStatus: string;
+  deckEraseStatus: string;
+  deckAgentRequest: string;
+  deckAgentName: string;
+  deckRequestedItem: string;
+  deckStatusBlocked: string;
+  deckButtonApprove: string;
+  deckStatusApproved: string;
+  deckBrokerStatusScan: string;
+  deckButtonTriggerErase: string;
+  deckStatusErased: string;
+  deckStatusPending: string;
+  deckStatusErasing: string;
 }
 
 const translations: Record<Language, TranslationMap> = {
@@ -92,6 +107,21 @@ const translations: Record<Language, TranslationMap> = {
     brandMeaningRa: 'RA: the new era',
     footerRights: 'All rights reserved.',
     footerMessage: 'Built for human agency in the AI era.',
+    deckVaultTab: '🔑 Vault Safe',
+    deckEraseTab: '🛡️ Privacy Scan',
+    deckVaultStatus: 'SYM.VAULT // SECURED',
+    deckEraseStatus: 'SYM.ERASE // DATA BROKERS',
+    deckAgentRequest: 'ACCESS REQUEST',
+    deckAgentName: 'Agent: Cognitive-09',
+    deckRequestedItem: 'MySQL Prod Credentials',
+    deckStatusBlocked: 'BLOCKED: Awaiting human consent',
+    deckButtonApprove: 'Approve Access',
+    deckStatusApproved: 'APPROVED: Scoped token sent',
+    deckBrokerStatusScan: 'Scanning broker registries...',
+    deckButtonTriggerErase: 'Trigger Privacy Erase',
+    deckStatusErased: 'Erased',
+    deckStatusPending: 'Pending',
+    deckStatusErasing: 'Erasing...',
   },
   de: {
     navVision: 'Vision',
@@ -136,6 +166,21 @@ const translations: Record<Language, TranslationMap> = {
     brandMeaningRa: 'RA: die neue Ära',
     footerRights: 'Alle Rechte vorbehalten.',
     footerMessage: 'Gebaut für menschliche Handlungsfähigkeit in der AI-Ära.',
+    deckVaultTab: '🔑 Vault-Safe',
+    deckEraseTab: '🛡️ Privatsphäre-Scan',
+    deckVaultStatus: 'SYM.VAULT // GESICHERT',
+    deckEraseStatus: 'SYM.ERASE // DATENBROKER',
+    deckAgentRequest: 'ZUGRIFFSANFRAGE',
+    deckAgentName: 'Agent: Cognitive-09',
+    deckRequestedItem: 'MySQL Prod-Credentials',
+    deckStatusBlocked: 'BLOCKIERT: Wartet auf Freigabe',
+    deckButtonApprove: 'Freigabe erteilen',
+    deckStatusApproved: 'ERTEILT: Scoped Token übertragen',
+    deckBrokerStatusScan: 'Scanne Broker-Register...',
+    deckButtonTriggerErase: 'Löschung starten',
+    deckStatusErased: 'Gelöscht',
+    deckStatusPending: 'Ausstehend',
+    deckStatusErasing: 'Löscht...',
   },
 };
 
