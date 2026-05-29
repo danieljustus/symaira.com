@@ -5,20 +5,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Outfit:wght@300;400;500;600;700;800&display=swap');
 
 :root {
-  /* Colors - Champagne Gold & Ice Blue Theme */
+  /* Colors - Champagne Gold & Warm Sand Theme */
   --bg-dark: #0D0C0A; /* Deep Warm Charcoal Obsidian */
   --bg-darker: #070605;
   --bg-card: rgba(18, 17, 14, 0.65);
   --bg-card-hover: rgba(26, 24, 20, 0.8);
   
-  /* Brand Color Concept: Gold & Ice Blue Symbiosis */
+  /* Brand Color Concept: Warm Sand & Champagne Gold Theme */
   --gold-primary: #E5C397;
   --gold-secondary: #F8E6CD;
   --gold-shadow: #C29965;
   
-  --ice-primary: #AEC8E6;
-  --ice-secondary: #7B9CBE;
-  --ice-shadow: #597A9B;
+  --ice-primary: #EEDCC4;
+  --ice-secondary: #D4B285;
+  --ice-shadow: #A38054;
 
   /* Semantic Mapping for backward compatibility */
   --cyan-primary: var(--gold-primary);
@@ -27,9 +27,9 @@
   --cyan-glow-intense: rgba(229, 195, 151, 0.15);
 
   --blue-accent: var(--ice-primary);
-  --blue-glow: rgba(174, 200, 230, 0.08);
+  --blue-glow: rgba(238, 220, 196, 0.08);
   --indigo-accent: var(--ice-secondary);
-  --indigo-glow: rgba(123, 156, 190, 0.05);
+  --indigo-glow: rgba(212, 178, 133, 0.05);
   
   /* High contrast text on warm dark background */
   --text-primary: #F5F4F0; /* Warm Bone */
@@ -61,14 +61,23 @@
   padding: 0;
 }
 
-html, body {
+html {
+  /* Set scrolling offsets for smooth scrolling to sections without overlapping header */
+  scroll-padding-top: 100px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
   background-color: var(--bg-dark);
   color: var(--text-primary);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
-  scroll-behavior: smooth;
   line-height: 1.6;
   
   /* Blueprint Grid background & Subtle Premium Grain overlay */
@@ -81,7 +90,7 @@ html, body {
 }
 
 @media (hover: none) {
-  html, body {
+  body {
     background-attachment: scroll, scroll;
   }
 }
@@ -133,6 +142,9 @@ a {
   z-index: 0;
   pointer-events: none;
   opacity: var(--glow-opacity);
+  /* GPU acceleration to prevent massive CPU repaints of high-blur areas on scroll */
+  will-change: transform;
+  transform: translateZ(0);
 }
 
 .glow-cyan-top {
@@ -384,11 +396,12 @@ a {
   border-radius: 50%;
   background:
     radial-gradient(circle at 48% 36%, rgba(229, 195, 151, 0.22), transparent 24%),
-    radial-gradient(circle at 54% 64%, rgba(174, 200, 230, 0.2), transparent 28%),
+    radial-gradient(circle at 54% 64%, rgba(238, 220, 196, 0.2), transparent 28%),
     radial-gradient(circle, rgba(255, 255, 255, 0.035), transparent 62%);
   filter: blur(18px);
   opacity: calc(0.78 * var(--glow-opacity));
   animation: hero-mark-aura-breathe 12s ease-in-out infinite;
+  will-change: transform, opacity;
 }
 
 .hero-mark-grid {
@@ -397,7 +410,7 @@ a {
   border-radius: 50%;
   background:
     linear-gradient(90deg, transparent calc(50% - 1px), rgba(229, 195, 151, 0.09) 50%, transparent calc(50% + 1px)),
-    linear-gradient(0deg, transparent calc(50% - 1px), rgba(174, 200, 230, 0.09) 50%, transparent calc(50% + 1px));
+    linear-gradient(0deg, transparent calc(50% - 1px), rgba(238, 220, 196, 0.09) 50%, transparent calc(50% + 1px));
   mask-image: radial-gradient(circle, black 0 58%, transparent 68%);
   opacity: 0.48;
 }
@@ -413,12 +426,12 @@ a {
   border-color: rgba(229, 195, 151, 0.12);
   box-shadow:
     inset 0 0 28px rgba(229, 195, 151, 0.03),
-    0 0 42px rgba(174, 200, 230, 0.04);
+    0 0 42px rgba(238, 220, 196, 0.04);
 }
 
 .hero-mark-ring-inner {
   inset: 23%;
-  border-color: rgba(174, 200, 230, 0.14);
+  border-color: rgba(238, 220, 196, 0.14);
 }
 
 .hero-mark-ring-inner::before,
@@ -441,7 +454,7 @@ a {
 .hero-mark-ring-inner::before {
   left: 13%;
   bottom: 18%;
-  color: rgba(174, 200, 230, 0.5);
+  color: rgba(238, 220, 196, 0.5);
 }
 
 .hero-mark-half {
@@ -462,7 +475,7 @@ a {
 
 .hero-mark-half-bottom {
   animation: hero-mark-bottom-converge 12s ease-in-out infinite;
-  filter: drop-shadow(0 0 24px rgba(174, 200, 230, 0.22));
+  filter: drop-shadow(0 0 24px rgba(238, 220, 196, 0.22));
 }
 
 @keyframes hero-mark-top-converge {
@@ -487,19 +500,19 @@ a {
 @keyframes hero-mark-bottom-converge {
   0%, 100% {
     transform: translate(calc(-50% + 22px), calc(-50% + 18px)) scale(0.98);
-    filter: drop-shadow(0 0 18px rgba(174, 200, 230, 0.18));
+    filter: drop-shadow(0 0 18px rgba(238, 220, 196, 0.18));
   }
   20%, 30% {
     transform: translate(-50%, calc(-50% + 5px)) scale(1.02);
-    filter: drop-shadow(0 0 34px rgba(174, 200, 230, 0.34));
+    filter: drop-shadow(0 0 34px rgba(238, 220, 196, 0.34));
   }
   50% {
     transform: translate(calc(-50% - 22px), calc(-50% + 18px)) scale(0.98);
-    filter: drop-shadow(0 0 18px rgba(174, 200, 230, 0.18));
+    filter: drop-shadow(0 0 18px rgba(238, 220, 196, 0.18));
   }
   70%, 80% {
     transform: translate(-50%, calc(-50% + 5px)) scale(1.02);
-    filter: drop-shadow(0 0 34px rgba(174, 200, 230, 0.34));
+    filter: drop-shadow(0 0 34px rgba(238, 220, 196, 0.34));
   }
 }
 
@@ -527,7 +540,7 @@ a {
 
 .glass-panel:hover .orbit-ring-slow {
   animation-duration: 20s !important;
-  stroke: rgba(174, 200, 230, 0.2);
+  stroke: rgba(238, 220, 196, 0.2);
 }
 
 /* Symbiotic Orbits Keyframes with 3D depth simulation */
@@ -544,11 +557,13 @@ a {
 .orbit-human-group {
   animation: orbit-3d-gold 10s linear infinite;
   transform-origin: 200px 200px;
+  will-change: transform;
 }
 
 .orbit-ai-group {
   animation: orbit-3d-ice 14s linear infinite;
   transform-origin: 200px 200px;
+  will-change: transform;
 }
 
 .glass-panel:hover .orbit-human-group {
@@ -636,7 +651,7 @@ a {
 }
 
 .product-card-ice {
-  border-color: rgba(174, 200, 230, 0.2);
+  border-color: rgba(238, 220, 196, 0.2);
 }
 
 .product-card-content {
@@ -666,7 +681,7 @@ a {
 
 .product-card-ice .product-icon {
   color: var(--blue-accent);
-  border-color: rgba(174, 200, 230, 0.22);
+  border-color: rgba(238, 220, 196, 0.22);
 }
 
 .product-badge {
@@ -832,8 +847,8 @@ a {
   gap: 10px;
   padding: 12px;
   border-radius: 10px;
-  background: rgba(174, 200, 230, 0.045);
-  border: 1px solid rgba(174, 200, 230, 0.1);
+  background: rgba(238, 220, 196, 0.045);
+  border: 1px solid rgba(238, 220, 196, 0.1);
   color: var(--text-secondary);
   font-size: 12px;
 }

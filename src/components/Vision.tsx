@@ -158,7 +158,7 @@ export const Vision: React.FC = () => {
         padding: '34px',
         borderRadius: '18px',
         border: '1px solid rgba(229, 195, 151, 0.14)',
-        background: 'linear-gradient(135deg, rgba(229, 195, 151, 0.06), rgba(174, 200, 230, 0.04))',
+        background: 'linear-gradient(135deg, rgba(229, 195, 151, 0.06), rgba(238, 220, 196, 0.04))',
         position: 'relative',
         overflow: 'hidden',
       }}>
