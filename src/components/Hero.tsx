@@ -9,6 +9,15 @@ export const Hero: React.FC = () => {
   const triggerShockwave = () => {
     const stage = markStageRef.current;
     if (!stage) return;
+
+    // Calculate absolute viewport center of the interlocking logo stage
+    const rect = stage.getBoundingClientRect();
+    const x = rect.left + rect.width / 2;
+    const y = rect.top + rect.height / 2;
+
+    // Dispatch the custom event to propagate physical ripple into background canvas
+    window.dispatchEvent(new CustomEvent('logo-shockwave', { detail: { x, y } }));
+
     const shockwaves = stage.querySelectorAll('.hero-mark-shockwave');
     shockwaves.forEach((shockwave) => {
       const el = shockwave as HTMLElement;

@@ -48,9 +48,6 @@
 
   --grid-color: rgba(255, 255, 255, 0.022);
   --glow-opacity: 0.7;
-
-  /* Subtle Premium Grain overlay in dark mode */
-  --noise-url: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.022'/%3E%3C/svg%3E");
   --bg-footer: rgba(3, 3, 4, 0.4);
 }
 
@@ -80,18 +77,16 @@ body {
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.6;
   
-  /* Blueprint Grid background & Subtle Premium Grain overlay */
-  background-image: 
-    radial-gradient(var(--grid-color) 1px, transparent 1px),
-    var(--noise-url);
-  background-size: 24px 24px, auto;
+  /* Blueprint Grid background */
+  background-image: radial-gradient(var(--grid-color) 1px, transparent 1px);
+  background-size: 24px 24px;
   background-position: center;
-  background-attachment: scroll, fixed;
+  background-attachment: scroll;
 }
 
 @media (hover: none) {
   body {
-    background-attachment: scroll, scroll;
+    background-attachment: scroll;
   }
 }
 

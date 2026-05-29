@@ -7,6 +7,7 @@ import { Vision } from './components/Vision';
 import { Tools } from './components/Tools';
 import { Footer } from './components/Footer';
 import { LegalPages } from './components/LegalPages';
+import { SandBackground } from './components/SandBackground';
 
 function App() {
   const [hash, setHash] = useState(window.location.hash);
@@ -31,6 +32,8 @@ function App() {
     <ThemeProvider>
       <LanguageProvider>
         <div style={{ position: 'relative', minHeight: '100vh', overflowX: 'hidden' }}>
+          <SandBackground />
+
           {/* Ambient glow blobs */}
           <div className="bg-ambient-glow glow-cyan-top" />
           <div className="bg-ambient-glow glow-blue-right" />
