@@ -303,12 +303,41 @@ export const LegalPages: React.FC<LegalPagesProps> = ({ view }) => {
                 </section>
 
                 <section>
-                  <h2 style={{ fontSize: '18px', color: 'var(--text-primary)', marginBottom: '8px', fontFamily: 'var(--font-title)' }}>5. Cookies und Tracking-Tools</h2>
+                  <h2 style={{ fontSize: '18px', color: 'var(--text-primary)', marginBottom: '8px', fontFamily: 'var(--font-title)' }}>5. Cookies und Web-Analyse</h2>
                   <p>
-                    Diese Website ist datenschutzfreundlich konzipiert. Wir verwenden <strong>keine Tracking-Cookies</strong>, 
-                    keine Werbetracker (wie Google Analytics, Meta Pixel etc.) und laden keine externen Schriftarten über CDN-Dienste von Drittanbietern. 
-                    Alle Schriftarten sind lokal gehostet.
+                    Um Ihre Privatsphäre bestmöglich zu schützen, verzichten wir standardmäßig auf das Laden von Analyse-Diensten. 
+                    Wir setzen <strong>Google Analytics 4 (GA4)</strong>, einen Webanalysedienst der Google Ireland Limited, erst dann ein, wenn Sie dem aktiv über unser Cookie-Banner zugestimmt haben (<strong>Opt-In</strong>).
                   </p>
+                  <p style={{ marginTop: '8px' }}>
+                    Sollten Sie Ihre Zustimmung erteilen, werden mithilfe von Cookies Informationen über Ihre Nutzung dieser Website (einschließlich Ihrer gekürzten und somit anonymisierten IP-Adresse) erhoben und an Server von Google übertragen, um anonyme Berichte über die Webseitenaktivitäten zu erstellen.
+                  </p>
+                  <p style={{ marginTop: '8px' }}>
+                    Sie können Ihre Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen. Klicken Sie dazu auf den folgenden Button, um Ihre Einstellungen zurückzusetzen:
+                  </p>
+                  <button
+                    onClick={(e) => {
+                      e.preventDefault();
+                      window.dispatchEvent(new CustomEvent('reset-cookie-consent'));
+                    }}
+                    className="action-button-secondary"
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '6px',
+                      padding: '8px 14px',
+                      borderRadius: '6px',
+                      border: '1px solid rgba(229, 195, 151, 0.15)',
+                      background: 'rgba(255, 255, 255, 0.02)',
+                      color: 'var(--cyan-primary)',
+                      fontSize: '13px',
+                      fontFamily: 'var(--font-tech)',
+                      fontWeight: 600,
+                      cursor: 'pointer',
+                      marginTop: '10px'
+                    }}
+                  >
+                    Einwilligung widerrufen / Einstellungen zurücksetzen
+                  </button>
                 </section>
 
                 <section>
@@ -388,12 +417,41 @@ export const LegalPages: React.FC<LegalPagesProps> = ({ view }) => {
                 </section>
 
                 <section>
-                  <h2 style={{ fontSize: '18px', color: 'var(--text-primary)', marginBottom: '8px', fontFamily: 'var(--font-title)' }}>5. Cookies and Tracking Tools</h2>
+                  <h2 style={{ fontSize: '18px', color: 'var(--text-primary)', marginBottom: '8px', fontFamily: 'var(--font-title)' }}>5. Cookies and Web Analytics</h2>
                   <p>
-                    This website is built with privacy in mind. We do <strong>not use tracking cookies</strong>, advertisement trackers 
-                    (e.g., Google Analytics, Meta Pixel), or remote third-party content deliveries. All typography is hosted locally 
-                    for maximum privacy and GDPR compliance.
+                    To protect your privacy, we block all third-party analytics by default. We only utilize <strong>Google Analytics 4 (GA4)</strong>, 
+                    a web analytics service provided by Google Ireland Limited, if you actively grant consent via our cookie preferences banner (<strong>Opt-In</strong>).
                   </p>
+                  <p style={{ marginTop: '8px' }}>
+                    If consent is given, cookies are used to gather information about your website usage (including your shortened and anonymized IP address) and transfer it to Google servers to build anonymous traffic reports.
+                  </p>
+                  <p style={{ marginTop: '8px' }}>
+                    You can withdraw your consent at any time with future effect. Click the button below to reset your preferences and change your choice:
+                  </p>
+                  <button
+                    onClick={(e) => {
+                      e.preventDefault();
+                      window.dispatchEvent(new CustomEvent('reset-cookie-consent'));
+                    }}
+                    className="action-button-secondary"
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '6px',
+                      padding: '8px 14px',
+                      borderRadius: '6px',
+                      border: '1px solid rgba(229, 195, 151, 0.15)',
+                      background: 'rgba(255, 255, 255, 0.02)',
+                      color: 'var(--cyan-primary)',
+                      fontSize: '13px',
+                      fontFamily: 'var(--font-tech)',
+                      fontWeight: 600,
+                      cursor: 'pointer',
+                      marginTop: '10px'
+                    }}
+                  >
+                    Withdraw Consent / Reset Cookie Choices
+                  </button>
                 </section>
 
                 <section>

@@ -9,6 +9,7 @@ import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { LegalPages } from './components/LegalPages';
 import { SandBackground } from './components/SandBackground';
+import { CookieConsent } from './components/CookieConsent';
 
 function App() {
   const [hash, setHash] = useState(window.location.hash);
@@ -57,6 +58,7 @@ function App() {
           </main>
 
           <Footer />
+          <CookieConsent />
         </div>
       </LanguageProvider>
     </ThemeProvider>
