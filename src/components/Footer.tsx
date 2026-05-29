@@ -15,7 +15,7 @@ export const Footer: React.FC = () => {
         marginTop: '80px',
         position: 'relative',
         zIndex: 2,
-        backgroundColor: 'rgba(3, 3, 4, 0.4)',
+        backgroundColor: 'var(--bg-footer)',
       }}
     >
       <div 
