@@ -136,14 +136,14 @@ a {
 
 /* Background Glow Effects */
 .bg-ambient-glow {
-  position: absolute;
+  position: fixed;
   border-radius: 50%;
   filter: blur(140px);
   z-index: 0;
   pointer-events: none;
   opacity: var(--glow-opacity);
-  /* GPU acceleration to prevent massive CPU repaints of high-blur areas on scroll */
-  will-change: transform;
+  /* Keep high-blur ambient layers off the document scroll path. */
+  will-change: auto;
   transform: translateZ(0);
 }
 

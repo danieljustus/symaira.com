@@ -1,26 +1,44 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 
 export const Hero: React.FC = () => {
   const { t } = useLanguage();
+  const markStageRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const stage = document.querySelector('.hero-mark-stage') as HTMLElement;
+    const stage = markStageRef.current;
     if (!stage) return;
 
-    const handleScroll = () => {
+    let frameId = 0;
+    let lastProgress = -1;
+
+    const updateLogoProgress = () => {
+      frameId = 0;
       const scrollY = window.scrollY;
       // Scroll split progress: 0 at top, linearly scaling to 1 at 450px scrolled down
-      const progress = Math.min(scrollY / 450, 1);
-      stage.style.setProperty('--logo-scroll-progress', progress.toString());
+      const progress = Math.round(Math.min(scrollY / 450, 1) * 1000) / 1000;
+
+      if (progress !== lastProgress) {
+        stage.style.setProperty('--logo-scroll-progress', progress.toString());
+        lastProgress = progress;
+      }
+    };
+
+    const handleScroll = () => {
+      if (frameId === 0) {
+        frameId = window.requestAnimationFrame(updateLogoProgress);
+      }
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     // Initialize position in case page was loaded or refreshed while scrolled down
-    handleScroll();
+    updateLogoProgress();
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
+      if (frameId !== 0) {
+        window.cancelAnimationFrame(frameId);
+      }
     };
   }, []);
 
@@ -187,7 +205,7 @@ export const Hero: React.FC = () => {
           width: '100%',
         }}
       >
-        <div className="hero-mark-stage" aria-hidden="true">
+        <div ref={markStageRef} className="hero-mark-stage" aria-hidden="true">
           <div className="hero-mark-aura" />
           <div className="hero-mark-grid" />
           <div className="hero-mark-ring hero-mark-ring-outer" />

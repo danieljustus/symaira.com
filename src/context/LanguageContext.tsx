@@ -195,7 +195,7 @@ const LanguageContext = createContext<LanguageContextProps | undefined>(undefine
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const language: Language = 'en';
 
-  const setLanguage = (_lang: Language) => {
+  const setLanguage: LanguageContextProps['setLanguage'] = () => {
     // No-op: Language switcher has been removed
   };
 
