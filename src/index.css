@@ -2,7 +2,7 @@
    SYMAIRA GLOBAL DESIGN SYSTEM & STYLING (ANTIGRAVITY THEME)
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Outfit:wght@300;400;500;600;700;800&display=swap');
+@import "@fontsource-variable/roboto-flex";
 
 :root {
   /* Colors - Champagne Gold & Warm Sand Theme */
@@ -39,9 +39,9 @@
   --border-glass: rgba(255, 255, 255, 0.05);
   --border-glass-hover: rgba(229, 195, 151, 0.18);
   
-  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
-  --font-title: 'Outfit', sans-serif;
-  --font-tech: 'JetBrains Mono', monospace;
+  --font-sans: 'Roboto Flex Variable', system-ui, -apple-system, sans-serif;
+  --font-title: 'Roboto Flex Variable', sans-serif;
+  --font-tech: 'Roboto Flex Variable', sans-serif;
 
   --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   --transition-fast: all 0.2s ease;
@@ -461,53 +461,88 @@ a {
   object-fit: contain;
   transform: translate(-50%, -50%);
   will-change: transform, filter;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), filter 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease;
 }
 
 .hero-mark-half-top {
-  animation: hero-mark-top-converge 12s ease-in-out infinite;
+  animation: hero-mark-top-converge 2.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   filter: drop-shadow(0 0 22px rgba(229, 195, 151, 0.24));
 }
 
 .hero-mark-half-bottom {
-  animation: hero-mark-bottom-converge 12s ease-in-out infinite;
+  animation: hero-mark-bottom-converge 2.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   filter: drop-shadow(0 0 24px rgba(238, 220, 196, 0.22));
 }
 
+/* Premium Magnetic Hover Reaction - perfect lock scale & glow expansion */
+/* Premium Magnetic Hover Reaction - perfect lock scale & glow expansion */
+.hero-mark-stage:hover .hero-mark-half-top {
+  transform: translate(calc(-50% - (var(--logo-scroll-progress, 0) * 35px)), calc(-50% - (var(--logo-scroll-progress, 0) * 28px))) scale(1.02) !important;
+  filter: drop-shadow(0 0 36px rgba(229, 195, 151, 0.42)) !important;
+}
+
+.hero-mark-stage:hover .hero-mark-half-bottom {
+  transform: translate(calc(-50% + (var(--logo-scroll-progress, 0) * 35px)), calc(-50% + (var(--logo-scroll-progress, 0) * 28px))) scale(1.02) !important;
+  filter: drop-shadow(0 0 38px rgba(238, 220, 196, 0.38)) !important;
+}
+
 @keyframes hero-mark-top-converge {
-  0%, 100% {
-    transform: translate(calc(-50% - 22px), calc(-50% - 18px)) scale(0.98);
-    filter: drop-shadow(0 0 18px rgba(229, 195, 151, 0.18));
+  0% {
+    transform: translate(calc(-50% - 60px), calc(-50% - 50px)) scale(0.94);
+    filter: drop-shadow(0 0 0px rgba(229, 195, 151, 0));
+    opacity: 0;
   }
-  20%, 30% {
-    transform: translate(-50%, calc(-50% - 5px)) scale(1.02);
-    filter: drop-shadow(0 0 34px rgba(229, 195, 151, 0.34));
+  45% {
+    transform: translate(calc(-50% - 25px), calc(-50% - 20px)) scale(0.97);
+    filter: drop-shadow(0 0 12px rgba(229, 195, 151, 0.12));
+    opacity: 0.6;
   }
-  50% {
-    transform: translate(calc(-50% + 22px), calc(-50% - 18px)) scale(0.98);
-    filter: drop-shadow(0 0 18px rgba(229, 195, 151, 0.18));
+  75% {
+    /* Latch/Merge moment - perfectly aligned overlays & peak intensity glow representing symbiosis activation */
+    transform: translate(-50%, -50%) scale(1.025);
+    filter: drop-shadow(0 0 42px rgba(229, 195, 151, 0.48));
+    opacity: 1;
   }
-  70%, 80% {
-    transform: translate(-50%, calc(-50% - 5px)) scale(1.02);
-    filter: drop-shadow(0 0 34px rgba(229, 195, 151, 0.34));
+  86% {
+    /* Premium visual bounce/rebound */
+    transform: translate(-50%, -50%) scale(0.995);
+    filter: drop-shadow(0 0 24px rgba(229, 195, 151, 0.24));
+  }
+  100% {
+    /* Perfect resting converged lock position, reacting to scroll splitting & fade-out */
+    transform: translate(calc(-50% - (var(--logo-scroll-progress, 0) * 35px)), calc(-50% - (var(--logo-scroll-progress, 0) * 28px))) scale(1);
+    filter: drop-shadow(0 0 28px rgba(229, 195, 151, 0.3));
+    opacity: calc(1 - (var(--logo-scroll-progress, 0) * 0.4));
   }
 }
 
 @keyframes hero-mark-bottom-converge {
-  0%, 100% {
-    transform: translate(calc(-50% + 22px), calc(-50% + 18px)) scale(0.98);
-    filter: drop-shadow(0 0 18px rgba(238, 220, 196, 0.18));
+  0% {
+    transform: translate(calc(-50% + 60px), calc(-50% + 50px)) scale(0.94);
+    filter: drop-shadow(0 0 0px rgba(238, 220, 196, 0));
+    opacity: 0;
   }
-  20%, 30% {
-    transform: translate(-50%, calc(-50% + 5px)) scale(1.02);
-    filter: drop-shadow(0 0 34px rgba(238, 220, 196, 0.34));
+  45% {
+    transform: translate(calc(-50% + 25px), calc(-50% + 20px)) scale(0.97);
+    filter: drop-shadow(0 0 12px rgba(238, 220, 196, 0.12));
+    opacity: 0.6;
   }
-  50% {
-    transform: translate(calc(-50% - 22px), calc(-50% + 18px)) scale(0.98);
-    filter: drop-shadow(0 0 18px rgba(238, 220, 196, 0.18));
+  75% {
+    /* Latch/Merge moment */
+    transform: translate(-50%, -50%) scale(1.025);
+    filter: drop-shadow(0 0 44px rgba(238, 220, 196, 0.44));
+    opacity: 1;
   }
-  70%, 80% {
-    transform: translate(-50%, calc(-50% + 5px)) scale(1.02);
-    filter: drop-shadow(0 0 34px rgba(238, 220, 196, 0.34));
+  86% {
+    /* Premium visual bounce/rebound */
+    transform: translate(-50%, -50%) scale(0.995);
+    filter: drop-shadow(0 0 26px rgba(238, 220, 196, 0.22));
+  }
+  100% {
+    /* Perfect resting converged lock position, reacting to scroll splitting & fade-out */
+    transform: translate(calc(-50% + (var(--logo-scroll-progress, 0) * 35px)), calc(-50% + (var(--logo-scroll-progress, 0) * 28px))) scale(1);
+    filter: drop-shadow(0 0 30px rgba(238, 220, 196, 0.26));
+    opacity: calc(1 - (var(--logo-scroll-progress, 0) * 0.4));
   }
 }
 
@@ -988,10 +1023,10 @@ a {
   }
 
   .hero-mark-half-top {
-    transform: translate(-50%, calc(-50% - 10px)) scale(1);
+    transform: translate(-50%, -50%) scale(1);
   }
 
   .hero-mark-half-bottom {
-    transform: translate(-50%, calc(-50% + 10px)) scale(1);
+    transform: translate(-50%, -50%) scale(1);
   }
 }

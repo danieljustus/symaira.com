@@ -1,8 +1,28 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 
 export const Hero: React.FC = () => {
   const { t } = useLanguage();
+
+  useEffect(() => {
+    const stage = document.querySelector('.hero-mark-stage') as HTMLElement;
+    if (!stage) return;
+
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      // Scroll split progress: 0 at top, linearly scaling to 1 at 450px scrolled down
+      const progress = Math.min(scrollY / 450, 1);
+      stage.style.setProperty('--logo-scroll-progress', progress.toString());
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    // Initialize position in case page was loaded or refreshed while scrolled down
+    handleScroll();
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
     <section 
