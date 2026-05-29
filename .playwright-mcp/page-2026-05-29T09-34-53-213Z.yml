@@ -1,0 +1,155 @@
+- generic [ref=e3]:
+  - navigation [ref=e4]:
+    - link "Symaira Logo SYMAIRA" [ref=e5] [cursor=pointer]:
+      - /url: "#hero"
+      - img "Symaira Logo" [ref=e6]
+      - text: SYMAIRA
+    - generic [ref=e7]:
+      - link "Vision" [ref=e8] [cursor=pointer]:
+        - /url: "#vision"
+      - link "Tools" [ref=e9] [cursor=pointer]:
+        - /url: "#tools"
+      - button "Switch to Light Mode" [ref=e11] [cursor=pointer]:
+        - img [ref=e12]
+      - generic [ref=e18]:
+        - button "EN" [ref=e19] [cursor=pointer]
+        - button "DE" [ref=e20] [cursor=pointer]
+      - link [ref=e21] [cursor=pointer]:
+        - /url: https://github.com/danieljustus/symaira-vault
+        - img [ref=e22]
+  - main [ref=e24]:
+    - generic [ref=e25]:
+      - img
+      - generic [ref=e26]:
+        - generic [ref=e29]: Menschliche Handlungsfähigkeit in der AI-Ära
+        - heading "Tools für die Ära der Mensch-AI Symbiose." [level=1] [ref=e30]:
+          - generic [ref=e31]: Tools für die Ära
+          - generic [ref=e32]: der Mensch-AI
+          - generic [ref=e33]: Symbiose.
+        - paragraph [ref=e34]: Symaira baut Produkte, mit denen Menschen mit AI arbeiten können, ohne Kontrolle über Daten, Entscheidungen oder Vertrauen abzugeben.
+        - generic [ref=e35]:
+          - generic [ref=e36]: SYM = Symbiose
+          - generic [ref=e37]: AI = Artificial Intelligence
+          - generic [ref=e38]: RA = die neue Ära
+        - generic [ref=e39]:
+          - link "Tools entdecken" [ref=e40] [cursor=pointer]:
+            - /url: "#tools"
+          - link "Vision verstehen" [ref=e41] [cursor=pointer]:
+            - /url: "#vision"
+    - generic [ref=e43]:
+      - generic [ref=e44]:
+        - heading "AI wird zum Mitwirkenden. Das Interface muss sich verändern." [level=2] [ref=e45]
+        - paragraph [ref=e46]: Echte Zusammenarbeit braucht Grenzen, sichere Übergaben, nachvollziehbare Entscheidungen und Tools, die Menschen in Kontrolle halten.
+      - generic [ref=e47]:
+        - generic [ref=e48]:
+          - img [ref=e51]
+          - heading "Menschliche Kontrolle" [level=3] [ref=e54]
+          - paragraph [ref=e55]: AI kann Arbeit übernehmen, aber Verantwortung muss klar bleiben. Symaira-Tools sind auf Absicht, Prüfung und Widerrufbarkeit ausgelegt.
+        - generic [ref=e56]:
+          - img [ref=e59]
+          - heading "Datensouveränität" [level=3] [ref=e61]
+          - paragraph [ref=e62]: Persönliche Daten, Secrets und Identitäten müssen geschützt bleiben, auch wenn AI-Systeme Teil des Workflows werden.
+        - generic [ref=e63]:
+          - img [ref=e66]
+          - heading "Nützliche Autonomie" [level=3] [ref=e74]
+          - paragraph [ref=e75]: Automatisierung sollte erklärbar, begrenzt und sicher genug sein, um wiederkehrende Arbeit zu unterstützen, ohne Kontrolle abzugeben.
+      - generic [ref=e76]:
+        - img
+        - generic [ref=e77]:
+          - generic [ref=e78]:
+            - heading "Warum Symaira" [level=3] [ref=e79]
+            - paragraph [ref=e80]: "Symaira besteht aus drei Teilen. Der Name beschreibt die Produktrichtung: Tools für eine neue Ära, in der Menschen und AI-Systeme mit klaren Grenzen zusammenarbeiten."
+          - generic [ref=e81]:
+            - generic [ref=e82]: "SYM: Symbiose"
+            - generic [ref=e83]: "AI: Artificial Intelligence"
+            - generic [ref=e84]: "RA: die neue Ära"
+    - generic [ref=e85]:
+      - img
+      - img
+      - generic [ref=e86]:
+        - heading "Die ersten Symaira Tools" [level=2] [ref=e87]
+        - paragraph [ref=e88]: "Symaira beginnt dort, wo AI-Zusammenarbeit besonders viel Vertrauen braucht: Secrets, Identität, Privatsphäre und wiederholbare Workflows."
+      - generic [ref=e89]:
+        - article [ref=e90]:
+          - generic [ref=e91]:
+            - generic [ref=e92]:
+              - img [ref=e94]
+              - generic [ref=e96]: Secrets & Agents
+            - heading "Symaira Vault" [level=3] [ref=e97]
+            - paragraph [ref=e98]: Ein sicherer Passwort- und Secrets-Manager für Terminal-Nutzer und AI-Agenten. Credentials bleiben verschlüsselt, lokal kontrolliert und über begrenzte Workflows verfügbar.
+            - generic [ref=e99]:
+              - generic [ref=e100]:
+                - generic [ref=e101]: //
+                - paragraph [ref=e102]: Credentials bleiben aus Prompts, Logs und Chatverläufen heraus.
+              - generic [ref=e103]:
+                - generic [ref=e104]: //
+                - paragraph [ref=e105]: Agenten erhalten begrenzten Zugriff über MCP statt rohe Secrets.
+              - generic [ref=e106]:
+                - generic [ref=e107]: //
+                - paragraph [ref=e108]: Lokal, verschlüsselt, Open Source und ohne Telemetrie.
+            - link "Vault auf GitHub ansehen" [ref=e109] [cursor=pointer]:
+              - /url: https://github.com/danieljustus/symaira-vault
+              - img [ref=e110]
+              - text: Vault auf GitHub ansehen
+              - img [ref=e112]
+          - generic [ref=e114]:
+            - generic [ref=e120]:
+              - img [ref=e121]
+              - text: symvault
+            - button "symvault serve --stdio --agent codex Copy" [ref=e123] [cursor=pointer]:
+              - generic [ref=e124]: symvault serve --stdio --agent codex
+              - generic [ref=e125]: Copy
+            - generic [ref=e126]:
+              - paragraph [ref=e127]: $ symvault get github.token --agent codex
+              - paragraph [ref=e128]: "policy: scoped token verified"
+              - paragraph [ref=e129]: "secret: injected into environment"
+              - paragraph [ref=e130]: access granted without prompt leakage
+        - article [ref=e131]:
+          - generic [ref=e132]:
+            - generic [ref=e133]:
+              - img [ref=e135]
+              - generic [ref=e138]: Privacy Automation
+            - heading "Symaira EraseMe" [level=3] [ref=e139]
+            - paragraph [ref=e140]: Ein Privacy-Automation-Tool, das Menschen dabei hilft, ihre Daten bei Datenhändlern löschen zu lassen und unerwünschte Accounts zu schließen.
+            - generic [ref=e141]:
+              - generic [ref=e142]:
+                - generic [ref=e143]: //
+                - paragraph [ref=e144]: GDPR/CCPA-Löschkampagnen planen und verfolgen.
+              - generic [ref=e145]:
+                - generic [ref=e146]: //
+                - paragraph [ref=e147]: AI-gestützte Workflows für Triage, Erinnerungen und Antworten nutzen.
+              - generic [ref=e148]:
+                - generic [ref=e149]: //
+                - paragraph [ref=e150]: Jede Anfrage und Frist nachvollziehbar dokumentieren.
+            - link "EraseMe auf GitHub ansehen" [ref=e151] [cursor=pointer]:
+              - /url: https://github.com/danieljustus/symaira-eraseme
+              - img [ref=e152]
+              - text: EraseMe auf GitHub ansehen
+              - img [ref=e154]
+          - generic [ref=e156]:
+            - generic [ref=e157]:
+              - img [ref=e158]
+              - generic [ref=e162]: Campaign planned
+              - strong [ref=e163]: 1,277 brokers
+            - generic [ref=e164]:
+              - img [ref=e165]
+              - generic [ref=e168]: Deadlines tracked
+              - strong [ref=e169]: GDPR / CCPA
+            - generic [ref=e170]:
+              - img [ref=e171]
+              - generic [ref=e174]: Replies triaged
+              - strong [ref=e175]: Audit trail
+  - contentinfo [ref=e180]:
+    - generic [ref=e181]:
+      - generic [ref=e182]:
+        - generic [ref=e183]:
+          - img "Symaira Logo" [ref=e184]
+          - text: SYMAIRA
+        - generic [ref=e185]: © 2026 Symaira. Alle Rechte vorbehalten.
+      - generic [ref=e186]:
+        - img [ref=e187]
+        - generic [ref=e190]: Gebaut für menschliche Handlungsfähigkeit in der AI-Ära.
+      - generic [ref=e192]:
+        - text: Made with
+        - img [ref=e193]
+        - text: in Symbiosis

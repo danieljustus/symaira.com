@@ -1,57 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { useTheme } from '../context/ThemeContext';
-import { Shield, Lock, Unlock, AlertTriangle, Play, Sparkles, RefreshCw } from 'lucide-react';
 
 export const Hero: React.FC = () => {
   const { t } = useLanguage();
   const { theme } = useTheme();
-
-  const [activeTab, setActiveTab] = useState<'vault' | 'eraseme'>('vault');
-  const [vaultStatus, setVaultStatus] = useState<'blocked' | 'approved'>('blocked');
-  const [brokers, setBrokers] = useState([
-    { id: 1, name: 'Acxiom', cat: 'Marketing', status: 'pending' },
-    { id: 2, name: 'Experian', cat: 'Credit Broker', status: 'pending' },
-    { id: 3, name: 'Equifax', cat: 'Demographics', status: 'pending' },
-  ]);
-  const [isEraseTriggered, setIsEraseTriggered] = useState(false);
-  const [isErasing, setIsErasing] = useState(false);
-
-  const handleVaultApprove = () => {
-    setVaultStatus('approved');
-    setTimeout(() => {
-      setVaultStatus('blocked');
-    }, 4000);
-  };
-
-  const handleTriggerErase = () => {
-    setIsEraseTriggered(true);
-    setIsErasing(true);
-    
-    brokers.forEach((broker, index) => {
-      setTimeout(() => {
-        setBrokers(prev => prev.map(b => b.id === broker.id ? { ...b, status: 'erasing' } : b));
-      }, index * 800 + 400);
-
-      setTimeout(() => {
-        setBrokers(prev => prev.map(b => b.id === broker.id ? { ...b, status: 'erased' } : b));
-      }, index * 800 + 1200);
-    });
-
-    setTimeout(() => {
-      setIsErasing(false);
-    }, 3200);
-  };
-
-  const handleResetErase = () => {
-    setBrokers([
-      { id: 1, name: 'Acxiom', cat: 'Marketing', status: 'pending' },
-      { id: 2, name: 'Experian', cat: 'Credit Broker', status: 'pending' },
-      { id: 3, name: 'Equifax', cat: 'Demographics', status: 'pending' },
-    ]);
-    setIsEraseTriggered(false);
-    setIsErasing(false);
-  };
 
   return (
     <section 
@@ -228,7 +181,7 @@ export const Hero: React.FC = () => {
         </div>
       </div>
 
-      {/* Interactive Trust Deck Dashboard */}
+      {/* Symaira split mark visual */}
       <div 
         style={{
           flex: '1 1 45%',
@@ -239,136 +192,23 @@ export const Hero: React.FC = () => {
           width: '100%',
         }}
       >
-        <div className="trust-deck-container animate-float">
-          {/* Header */}
-          <div className="deck-header">
-            <span style={{
-              fontFamily: 'var(--font-tech)',
-              fontSize: '10px',
-              color: 'var(--cyan-primary)',
-              letterSpacing: '1px',
-              fontWeight: 600,
-            }}>
-              SYM.CONTROL_DECK // v1.0
-            </span>
-            <div className="deck-tabs">
-              <button 
-                className={`deck-tab-btn ${activeTab === 'vault' ? 'active' : ''}`}
-                onClick={() => setActiveTab('vault')}
-              >
-                {t('deckVaultTab')}
-              </button>
-              <button 
-                className={`deck-tab-btn ${activeTab === 'eraseme' ? 'active' : ''}`}
-                onClick={() => setActiveTab('eraseme')}
-              >
-                {t('deckEraseTab')}
-              </button>
-            </div>
-          </div>
-
-          {/* Body */}
-          <div className="deck-body">
-            {activeTab === 'vault' ? (
-              <>
-                {/* Vault Tab */}
-                <div className="deck-status-line">
-                  <span>{t('deckVaultStatus')}</span>
-                  <span className="deck-status-indicator">
-                    <span className={`status-dot ${vaultStatus === 'blocked' ? 'blocked' : 'success'}`} />
-                    {vaultStatus === 'blocked' ? t('deckStatusBlocked') : t('deckStatusApproved')}
-                  </span>
-                </div>
-
-                <div className={`vault-card-visual ${vaultStatus === 'approved' ? 'approved' : ''}`}>
-                  {vaultStatus === 'blocked' ? (
-                    <div className="vault-request-overlay">
-                      <div className="vault-request-header">
-                        <AlertTriangle size={10} style={{ marginRight: '4px', verticalAlign: 'middle' }} />
-                        {t('deckAgentRequest').toUpperCase()}
-                      </div>
-                      <div className="vault-request-body">
-                        <div className="vault-agent-badge">
-                          <Shield size={16} style={{ color: 'var(--cyan-primary)' }} />
-                          <div>
-                            <div style={{ fontSize: '12px', fontWeight: 600 }}>{t('deckAgentName')}</div>
-                            <div style={{ fontSize: '10px', color: 'var(--text-muted)' }}>Action: read_secret</div>
-                          </div>
-                        </div>
-                        <div className="vault-key-visual">
-                          <Lock size={14} className="vault-key-icon" />
-                          <span>{t('deckRequestedItem')}</span>
-                        </div>
-                      </div>
-                    </div>
-                  ) : (
-                    <div className="vault-secure-tunnel">
-                      <Unlock size={24} style={{ color: '#10b981' }} />
-                      <span style={{ fontSize: '12px', fontWeight: 600, color: '#10b981' }}>
-                        {t('deckStatusApproved')}
-                      </span>
-                      <div className="tunnel-line">
-                        <div className="tunnel-pulse" />
-                      </div>
-                    </div>
-                  )}
-                </div>
-
-                <div className="vault-action-footer">
-                  {vaultStatus === 'blocked' ? (
-                    <button className="vault-approve-btn" onClick={handleVaultApprove}>
-                      {t('deckButtonApprove')}
-                    </button>
-                  ) : (
-                    <div style={{ textAlign: 'center', fontSize: '11px', color: 'var(--text-muted)', fontFamily: 'var(--font-tech)' }}>
-                      Resetting simulation...
-                    </div>
-                  )}
-                </div>
-              </>
-            ) : (
-              <>
-                {/* EraseMe Tab */}
-                <div className="deck-status-line">
-                  <span>{t('deckEraseStatus')}</span>
-                  <span className="deck-status-indicator">
-                    <span className={`status-dot ${isEraseTriggered ? (isErasing ? 'active' : 'success') : 'active'}`} />
-                    {isEraseTriggered ? (isErasing ? t('deckStatusErasing') : 'COMPLETED') : t('deckBrokerStatusScan')}
-                  </span>
-                </div>
-
-                <div className="eraseme-list">
-                  {brokers.map((broker) => (
-                    <div key={broker.id} className={`eraseme-row ${broker.status}`}>
-                      <Shield size={12} style={{ 
-                        color: broker.status === 'erased' ? '#10b981' : (broker.status === 'erasing' ? 'var(--blue-accent)' : 'var(--text-muted)') 
-                      }} />
-                      <div className="broker-name">{broker.name}</div>
-                      <div className="broker-category">{broker.cat}</div>
-                      <div className={`broker-status-badge ${broker.status}`}>
-                        {broker.status === 'erased' && <Sparkles size={8} style={{ display: 'inline-block', marginRight: '4px', verticalAlign: 'middle' }} />}
-                        {broker.status === 'erased' ? t('deckStatusErased') : (broker.status === 'erasing' ? t('deckStatusErasing') : t('deckStatusPending'))}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="vault-action-footer">
-                  {!isEraseTriggered ? (
-                    <button className="eraseme-action-btn" onClick={handleTriggerErase}>
-                      <Play size={12} style={{ display: 'inline-block', marginRight: '6px', verticalAlign: 'middle' }} />
-                      {t('deckButtonTriggerErase')}
-                    </button>
-                  ) : (
-                    <button className="eraseme-action-btn" onClick={handleResetErase} disabled={isErasing}>
-                      <RefreshCw size={12} style={{ display: 'inline-block', marginRight: '6px', verticalAlign: 'middle' }} />
-                      Reset Simulation
-                    </button>
-                  )}
-                </div>
-              </>
-            )}
-          </div>
+        <div className="hero-mark-stage" aria-hidden="true">
+          <div className="hero-mark-aura" />
+          <div className="hero-mark-grid" />
+          <div className="hero-mark-ring hero-mark-ring-outer" />
+          <div className="hero-mark-ring hero-mark-ring-inner" />
+          <img
+            src="/logo-top.png"
+            alt=""
+            className="hero-mark-half hero-mark-half-top"
+            draggable="false"
+          />
+          <img
+            src="/logo-bottom.png"
+            alt=""
+            className="hero-mark-half hero-mark-half-bottom"
+            draggable="false"
+          />
         </div>
       </div>
 
