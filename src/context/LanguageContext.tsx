@@ -196,7 +196,7 @@ const translations: Record<Language, TranslationMap> = {
     contactCopied: 'Copied to Clipboard!',
     contactShield: 'Protected by client-side anti-spam shielding. Zero trackers.',
     maintainerTitle: 'Creator & Maintainer',
-    maintainerDesc: 'Hi, I\'m Daniel. I design and build the Symaira ecosystem. As a software engineer and privacy advocate, I believe that the future of AI must be local-first, transparent, and entirely under human control. That is why all Symaira tools are fully open-source and run locally on your machine.',
+    maintainerDesc: 'Hi, I\'m Daniel. I design and build the Symaira ecosystem. As an expert in AI integration, digital business, and digital product development, I believe that the future of AI must be local-first, transparent, and entirely under human control. That is why all Symaira tools are fully open-source and run locally on your machine.',
     maintainerBtn: 'Visit daniel-justus.de',
   },
   de: {
@@ -293,7 +293,7 @@ const translations: Record<Language, TranslationMap> = {
     contactCopied: 'In Zwischenablage kopiert!',
     contactShield: 'Geschützt durch clientseitiges Anti-Spam-Shielding. Keine Tracker.',
     maintainerTitle: 'Entwickler & Maintainer',
-    maintainerDesc: 'Hi, ich bin Daniel. Ich konzipiere und entwickle das Symaira-Ökosystem. Als Softwareentwickler und Verfechter digitaler Privatsphäre bin ich überzeugt, dass die Zukunft von KI lokal-kontrolliert, transparent und vollständig unter menschlicher Kontrolle sein muss. Deshalb sind alle Symaira-Tools zu 100 % Open-Source und laufen lokal auf deinem System.',
+    maintainerDesc: 'Hi, ich bin Daniel. Ich konzipiere und entwickle das Symaira-Ökosystem. Als Experte für KI-Integration, Digital Business und digitale Produktentwicklung bin ich überzeugt, dass die Zukunft von KI lokal-kontrolliert, transparent und vollständig unter menschlicher Kontrolle sein muss. Deshalb sind alle Symaira-Tools zu 100 % Open-Source und laufen lokal auf deinem System.',
     maintainerBtn: 'daniel-justus.de besuchen',
   },
 };
