@@ -84,10 +84,17 @@ export const Footer: React.FC = () => {
         <div style={{
           display: 'flex',
           alignItems: 'center',
-          gap: '16px',
+          flexWrap: 'wrap',
+          gap: '20px',
           fontSize: '13px',
           color: 'var(--text-muted)',
         }}>
+          <a href="#/impressum" className="nav-link" style={{ transition: 'var(--transition-fast)' }}>
+            {t('footerImpressum')}
+          </a>
+          <a href="#/privacy" className="nav-link" style={{ transition: 'var(--transition-fast)' }}>
+            {t('footerPrivacy')}
+          </a>
           <span>
             {t('footerSignature')} <Heart size={10} style={{ color: 'var(--cyan-primary)', fill: 'var(--cyan-primary)', display: 'inline', margin: '0 2px' }} />
           </span>

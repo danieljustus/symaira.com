@@ -72,6 +72,8 @@ interface TranslationMap {
   footerRights: string;
   footerMessage: string;
   footerSignature: string;
+  footerImpressum: string;
+  footerPrivacy: string;
   deckVaultTab: string;
   deckEraseTab: string;
   deckVaultStatus: string;
@@ -159,6 +161,8 @@ const translations: Record<Language, TranslationMap> = {
     footerRights: 'All rights reserved.',
     footerMessage: 'Built for human agency in the AI era.',
     footerSignature: 'Made in symbiosis',
+    footerImpressum: 'Imprint',
+    footerPrivacy: 'Privacy Policy',
     deckVaultTab: '🔑 Vault Safe',
     deckEraseTab: '🛡️ Privacy Scan',
     deckVaultStatus: 'SYM.VAULT // SECURED',
@@ -244,6 +248,8 @@ const translations: Record<Language, TranslationMap> = {
     footerRights: 'Alle Rechte vorbehalten.',
     footerMessage: 'Gebaut für menschliche Handlungsfähigkeit in der AI-Ära.',
     footerSignature: 'Gebaut in Symbiose',
+    footerImpressum: 'Impressum',
+    footerPrivacy: 'Datenschutzerklärung',
     deckVaultTab: '🔑 Vault-Safe',
     deckEraseTab: '🛡️ Privatsphäre-Scan',
     deckVaultStatus: 'SYM.VAULT // GESICHERT',
