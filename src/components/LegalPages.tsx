@@ -2,6 +2,71 @@ import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { ArrowLeft, Scale, Shield } from 'lucide-react';
 
+interface SafeContactInfoProps {
+  type: 'name' | 'address' | 'email';
+  lang?: 'de' | 'en';
+}
+
+const SafeContactInfo: React.FC<SafeContactInfoProps> = ({ type, lang = 'en' }) => {
+  const [mounted, setMounted] = React.useState(false);
+
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    if (type === 'email') {
+      return <span style={{ opacity: 0.8 }}>info [at] symaira.com</span>;
+    }
+    return (
+      <span style={{ opacity: 0.5, fontSize: '13px', fontStyle: 'italic' }}>
+        {lang === 'de' ? '[Lade Kontaktdaten...]' : '[Loading contact details...]'}
+      </span>
+    );
+  }
+
+  // Base64 decoded at client side to avoid crawler/scraper harvests
+  const name = atob('RGFuaWVsIEp1c3R1cw=='); // Daniel Justus
+  const street = atob('SW0gS29ycmVzZ2FydGVuIDM3'); // Im Korresgarten 37
+  const city = atob('NTM3OTcgTG9obWFy'); // 53797 Lohmar
+  const country = lang === 'de' ? atob('RGV1dHNjaGxhbmQ=') : atob('R2VybWFueQ=='); // Deutschland / Germany
+  const email = atob('aW5mb0BzeW1haXJhLmNvbQ=='); // info@symaira.com
+
+  if (type === 'email') {
+    return (
+      <a 
+        href={`mailto:${email}`}
+        className="nav-link"
+        style={{ 
+          color: 'var(--cyan-primary)', 
+          textDecoration: 'underline',
+          display: 'inline-flex',
+          alignItems: 'center',
+          transition: 'var(--transition-fast)'
+        }}
+      >
+        {email}
+      </a>
+    );
+  }
+
+  if (type === 'name') {
+    return <span>{name}</span>;
+  }
+
+  if (type === 'address') {
+    return (
+      <span>
+        {street}<br />
+        {city}<br />
+        {country}
+      </span>
+    );
+  }
+
+  return null;
+};
+
 interface LegalPagesProps {
   view: 'impressum' | 'privacy';
 }
@@ -64,28 +129,30 @@ export const LegalPages: React.FC<LegalPagesProps> = ({ view }) => {
               <>
                 <section>
                   <h2 style={{ fontSize: '18px', color: 'var(--text-primary)', marginBottom: '8px', fontFamily: 'var(--font-title)' }}>Dienstanbieter</h2>
-                  <p style={{ fontWeight: 600, color: 'var(--text-primary)' }}>Daniel Justus</p>
-                  <p style={{ whiteSpace: 'pre-line', marginTop: '4px' }}>
-                    [Straße und Hausnummer]
-                    [PLZ und Ort]
-                    Deutschland
+                  <p style={{ fontWeight: 600, color: 'var(--text-primary)' }}>
+                    <SafeContactInfo type="name" lang="de" />
                   </p>
+                  <div style={{ marginTop: '4px', lineHeight: '1.6' }}>
+                    <SafeContactInfo type="address" lang="de" />
+                  </div>
                 </section>
 
                 <section>
                   <h2 style={{ fontSize: '18px', color: 'var(--text-primary)', marginBottom: '8px', fontFamily: 'var(--font-title)' }}>Kontakt</h2>
-                  <p>Telefon: [Deine Telefonnummer]</p>
-                  <p>E-Mail: [Deine E-Mail-Adresse]</p>
+                  <p>
+                    E-Mail:{' '}
+                    <SafeContactInfo type="email" lang="de" />
+                  </p>
                 </section>
 
                 <section>
                   <h2 style={{ fontSize: '18px', color: 'var(--text-primary)', marginBottom: '8px', fontFamily: 'var(--font-title)' }}>Verantwortlich für den Inhalt nach § 18 MStV</h2>
-                  <p style={{ fontWeight: 600, color: 'var(--text-primary)' }}>Daniel Justus</p>
-                  <p style={{ whiteSpace: 'pre-line', marginTop: '4px' }}>
-                    [Straße und Hausnummer]
-                    [PLZ und Ort]
-                    Deutschland
+                  <p style={{ fontWeight: 600, color: 'var(--text-primary)' }}>
+                    <SafeContactInfo type="name" lang="de" />
                   </p>
+                  <div style={{ marginTop: '4px', lineHeight: '1.6' }}>
+                    <SafeContactInfo type="address" lang="de" />
+                  </div>
                 </section>
 
                 <section style={{ borderTop: '1px solid rgba(255, 255, 255, 0.05)', paddingTop: '20px', marginTop: '20px' }}>
@@ -111,28 +178,30 @@ export const LegalPages: React.FC<LegalPagesProps> = ({ view }) => {
               <>
                 <section>
                   <h2 style={{ fontSize: '18px', color: 'var(--text-primary)', marginBottom: '8px', fontFamily: 'var(--font-title)' }}>Service Provider</h2>
-                  <p style={{ fontWeight: 600, color: 'var(--text-primary)' }}>Daniel Justus</p>
-                  <p style={{ whiteSpace: 'pre-line', marginTop: '4px' }}>
-                    [Street and Number]
-                    [Postal Code and City]
-                    Germany
+                  <p style={{ fontWeight: 600, color: 'var(--text-primary)' }}>
+                    <SafeContactInfo type="name" lang="en" />
                   </p>
+                  <div style={{ marginTop: '4px', lineHeight: '1.6' }}>
+                    <SafeContactInfo type="address" lang="en" />
+                  </div>
                 </section>
 
                 <section>
                   <h2 style={{ fontSize: '18px', color: 'var(--text-primary)', marginBottom: '8px', fontFamily: 'var(--font-title)' }}>Contact</h2>
-                  <p>Phone: [Your Phone Number]</p>
-                  <p>Email: [Your Email Address]</p>
+                  <p>
+                    Email:{' '}
+                    <SafeContactInfo type="email" lang="en" />
+                  </p>
                 </section>
 
                 <section>
                   <h2 style={{ fontSize: '18px', color: 'var(--text-primary)', marginBottom: '8px', fontFamily: 'var(--font-title)' }}>Responsible for Editorial Content (under § 18 MStV)</h2>
-                  <p style={{ fontWeight: 600, color: 'var(--text-primary)' }}>Daniel Justus</p>
-                  <p style={{ whiteSpace: 'pre-line', marginTop: '4px' }}>
-                    [Street and Number]
-                    [Postal Code and City]
-                    Germany
+                  <p style={{ fontWeight: 600, color: 'var(--text-primary)' }}>
+                    <SafeContactInfo type="name" lang="en" />
                   </p>
+                  <div style={{ marginTop: '4px', lineHeight: '1.6' }}>
+                    <SafeContactInfo type="address" lang="en" />
+                  </div>
                 </section>
 
                 <section style={{ borderTop: '1px solid rgba(255, 255, 255, 0.05)', paddingTop: '20px', marginTop: '20px' }}>
@@ -189,13 +258,15 @@ export const LegalPages: React.FC<LegalPagesProps> = ({ view }) => {
                   <p>
                     Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:
                   </p>
-                  <p style={{ fontWeight: 600, color: 'var(--text-primary)', marginTop: '8px' }}>Daniel Justus</p>
-                  <p style={{ whiteSpace: 'pre-line' }}>
-                    [Straße und Hausnummer]
-                    [PLZ und Ort]
-                    Deutschland
+                  <p style={{ fontWeight: 600, color: 'var(--text-primary)', marginTop: '8px' }}>
+                    <SafeContactInfo type="name" lang="de" />
                   </p>
-                  <p style={{ marginTop: '8px' }}>E-Mail: [Deine E-Mail-Adresse]</p>
+                  <div style={{ lineHeight: '1.6' }}>
+                    <SafeContactInfo type="address" lang="de" />
+                  </div>
+                  <p style={{ marginTop: '8px' }}>
+                    E-Mail: <SafeContactInfo type="email" lang="de" />
+                  </p>
                 </section>
 
                 <section>
@@ -272,13 +343,15 @@ export const LegalPages: React.FC<LegalPagesProps> = ({ view }) => {
                   <p>
                     The controller responsible for data processing on this website is:
                   </p>
-                  <p style={{ fontWeight: 600, color: 'var(--text-primary)', marginTop: '8px' }}>Daniel Justus</p>
-                  <p style={{ whiteSpace: 'pre-line' }}>
-                    [Street and Number]
-                    [Postal Code and City]
-                    Germany
+                  <p style={{ fontWeight: 600, color: 'var(--text-primary)', marginTop: '8px' }}>
+                    <SafeContactInfo type="name" lang="en" />
                   </p>
-                  <p style={{ marginTop: '8px' }}>Email: [Your Email Address]</p>
+                  <div style={{ lineHeight: '1.6' }}>
+                    <SafeContactInfo type="address" lang="en" />
+                  </div>
+                  <p style={{ marginTop: '8px' }}>
+                    Email: <SafeContactInfo type="email" lang="en" />
+                  </p>
                 </section>
 
                 <section>
