@@ -373,11 +373,6 @@ a {
   z-index: 1;
 }
 
-.name-explainer {
-  position: relative;
-  z-index: 2;
-}
-
 .hero-mark-stage {
   position: relative;
   width: min(46vw, 540px);
@@ -879,7 +874,6 @@ a {
 }
 
 @media (max-width: 960px) {
-  .name-explainer,
   .brand-meaning-parts,
   .product-grid {
     grid-template-columns: 1fr !important;

@@ -115,29 +115,6 @@ export const Hero: React.FC = () => {
           {t('heroSubtitle')}
         </p>
 
-        <div className="name-explainer" style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(3, minmax(0, 1fr))',
-          gap: '10px',
-          width: '100%',
-          maxWidth: '570px',
-          marginBottom: '34px',
-        }}>
-          {t('heroNameExplainer').split('. ').map((part) => (
-            <div key={part} style={{
-              padding: '12px 14px',
-              borderRadius: '10px',
-              background: 'rgba(255, 255, 255, 0.025)',
-              border: '1px solid rgba(229, 195, 151, 0.14)',
-              color: 'var(--text-secondary)',
-              fontFamily: 'var(--font-tech)',
-              fontSize: '11px',
-              lineHeight: 1.45,
-            }}>
-              {part.replace(/\.$/, '')}
-            </div>
-          ))}
-        </div>
 
         {/* Action Buttons */}
         <div style={{
