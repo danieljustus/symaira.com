@@ -182,9 +182,16 @@ export const SandBackground: React.FC = () => {
 
     // High performance animation loop
     let time = 0;
+    let lastScrollY = window.scrollY;
+
     const updateAndRender = () => {
       time += 0.005;
       ctx.clearRect(0, 0, width, height);
+
+      // Track vertical scroll displacement for 3D parallax shifting
+      const currentScrollY = window.scrollY;
+      const deltaScrollY = currentScrollY - lastScrollY;
+      lastScrollY = currentScrollY;
 
       // 1. Lerp cursor coordinates for visual inertia and smoothness
       const cursor = cursorRef.current;
@@ -206,6 +213,9 @@ export const SandBackground: React.FC = () => {
       for (let r = ripples.length - 1; r >= 0; r--) {
         const ripple = ripples[r];
         ripple.radius += ripple.speed;
+        
+        // Shift the ripple's center coordinate along with scrolls to keep it locked to the physical logo
+        ripple.y -= deltaScrollY;
         
         // Draw the visual pulse shockwave expanding on canvas
         const currentFade = 1.0 - ripple.radius / ripple.maxRadius;
@@ -236,6 +246,10 @@ export const SandBackground: React.FC = () => {
       // 3. Render and animate particles
       for (let i = 0; i < particles.length; i++) {
         const p = particles[i];
+
+        // Apply scroll displacement scaled by particle depth 'z' for a rich 3D parallax scrolling feel
+        // We use a factor of 0.42 to ensure scrolling feels completely natural and tactile
+        p.y -= deltaScrollY * 0.42 * p.z;
 
         // Wave lateral drift motion (gentle wind currents simulation)
         const windX = Math.sin(time + p.y * 0.01) * 0.08 * p.z;
