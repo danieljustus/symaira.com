@@ -6,6 +6,7 @@ export type Language = 'en' | 'de';
 interface TranslationMap {
   navVision: string;
   navTools: string;
+  navContact: string;
   navGithub: string;
   navGithubProfile: string;
   languageToggleLabel: string;
@@ -89,12 +90,19 @@ interface TranslationMap {
   deckStatusErased: string;
   deckStatusPending: string;
   deckStatusErasing: string;
+  contactTitle: string;
+  contactSubtitle: string;
+  contactSendBtn: string;
+  contactCopyBtn: string;
+  contactCopied: string;
+  contactShield: string;
 }
 
 const translations: Record<Language, TranslationMap> = {
   en: {
     navVision: 'Vision',
     navTools: 'Tools',
+    navContact: 'Contact',
     navGithub: 'GitHub',
     navGithubProfile: 'Open GitHub profile',
     languageToggleLabel: 'Select language',
@@ -178,10 +186,17 @@ const translations: Record<Language, TranslationMap> = {
     deckStatusErased: 'Erased',
     deckStatusPending: 'Pending',
     deckStatusErasing: 'Erasing...',
+    contactTitle: 'Get in Touch',
+    contactSubtitle: 'Have questions about Symaira\'s tools, or want to discuss human-AI collaboration? Send a direct message.',
+    contactSendBtn: 'Send Email',
+    contactCopyBtn: 'Copy Email Address',
+    contactCopied: 'Copied to Clipboard!',
+    contactShield: 'Protected by client-side anti-spam shielding. Zero trackers.',
   },
   de: {
     navVision: 'Vision',
     navTools: 'Tools',
+    navContact: 'Kontakt',
     navGithub: 'GitHub',
     navGithubProfile: 'GitHub-Profil öffnen',
     languageToggleLabel: 'Sprache auswählen',
@@ -265,6 +280,12 @@ const translations: Record<Language, TranslationMap> = {
     deckStatusErased: 'Gelöscht',
     deckStatusPending: 'Ausstehend',
     deckStatusErasing: 'Löscht...',
+    contactTitle: 'Direkter Kontakt',
+    contactSubtitle: 'Fragen zu den Symaira-Tools oder Lust auf einen Austausch über Mensch-KI-Zusammenarbeit? Schreib mir direkt.',
+    contactSendBtn: 'E-Mail senden',
+    contactCopyBtn: 'Adresse kopieren',
+    contactCopied: 'In Zwischenablage kopiert!',
+    contactShield: 'Geschützt durch clientseitiges Anti-Spam-Shielding. Keine Tracker.',
   },
 };
 

@@ -75,6 +75,15 @@ export const Navigation: React.FC = () => {
         }} className="nav-link">
           {t('navTools')}
         </a>
+        <a href="#contact" style={{
+          fontSize: '14px',
+          fontWeight: 500,
+          color: 'var(--text-secondary)',
+          fontFamily: 'var(--font-tech)',
+          letterSpacing: '0.5px',
+        }} className="nav-link">
+          {t('navContact')}
+        </a>
 
         <div className="language-toggle" role="group" aria-label={t('languageToggleLabel')}>
           {languageOptions.map((languageOption) => (
