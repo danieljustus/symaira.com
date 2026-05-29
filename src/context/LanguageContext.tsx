@@ -96,6 +96,9 @@ interface TranslationMap {
   contactCopyBtn: string;
   contactCopied: string;
   contactShield: string;
+  maintainerTitle: string;
+  maintainerDesc: string;
+  maintainerBtn: string;
 }
 
 const translations: Record<Language, TranslationMap> = {
@@ -125,7 +128,7 @@ const translations: Record<Language, TranslationMap> = {
     visionPillar3Title: 'Useful Autonomy',
     visionPillar3Desc: 'Automation should be explainable, bounded, and safe enough to trust in repeatable work without giving up oversight.',
     toolsTitle: 'The first Symaira tools',
-    toolsSubtitle: 'Symaira starts where AI collaboration needs the most trust: secrets, identity, privacy, and repeatable workflows.',
+    toolsSubtitle: 'All Symaira tools are 100% open-source, local-first, and designed to put trust back in your hands—focusing on secrets, identity, privacy, and repeatable workflows.',
     bestForLabel: 'Best for',
     automatesLabel: 'What it automates',
     vaultBadge: 'Secrets & agents',
@@ -192,6 +195,9 @@ const translations: Record<Language, TranslationMap> = {
     contactCopyBtn: 'Copy Email Address',
     contactCopied: 'Copied to Clipboard!',
     contactShield: 'Protected by client-side anti-spam shielding. Zero trackers.',
+    maintainerTitle: 'Creator & Maintainer',
+    maintainerDesc: 'Hi, I\'m Daniel. I design and build the Symaira ecosystem. As a software engineer and privacy advocate, I believe that the future of AI must be local-first, transparent, and entirely under human control. That is why all Symaira tools are fully open-source and run locally on your machine.',
+    maintainerBtn: 'Visit daniel-justus.de',
   },
   de: {
     navVision: 'Vision',
@@ -219,7 +225,7 @@ const translations: Record<Language, TranslationMap> = {
     visionPillar3Title: 'Nützliche Autonomie',
     visionPillar3Desc: 'Automatisierung sollte erklärbar, begrenzt und sicher genug sein, um wiederkehrende Arbeit zu unterstützen, ohne Kontrolle abzugeben.',
     toolsTitle: 'Die ersten Symaira Tools',
-    toolsSubtitle: 'Symaira beginnt dort, wo AI-Zusammenarbeit besonders viel Vertrauen braucht: Secrets, Identität, Privatsphäre und wiederholbare Workflows.',
+    toolsSubtitle: 'Alle Symaira-Tools sind zu 100 % Open-Source, lokal-kontrolliert und darauf ausgelegt, das Vertrauen zurück in Ihre Hände zu geben – mit Fokus auf Secrets, Identität, Privatsphäre und wiederholbare Workflows.',
     bestForLabel: 'Ideal für',
     automatesLabel: 'Automatisiert',
     vaultBadge: 'Secrets & Agents',
@@ -286,6 +292,9 @@ const translations: Record<Language, TranslationMap> = {
     contactCopyBtn: 'Adresse kopieren',
     contactCopied: 'In Zwischenablage kopiert!',
     contactShield: 'Geschützt durch clientseitiges Anti-Spam-Shielding. Keine Tracker.',
+    maintainerTitle: 'Entwickler & Maintainer',
+    maintainerDesc: 'Hi, ich bin Daniel. Ich konzipiere und entwickle das Symaira-Ökosystem. Als Softwareentwickler und Verfechter digitaler Privatsphäre bin ich überzeugt, dass die Zukunft von KI lokal-kontrolliert, transparent und vollständig unter menschlicher Kontrolle sein muss. Deshalb sind alle Symaira-Tools zu 100 % Open-Source und laufen lokal auf deinem System.',
+    maintainerBtn: 'daniel-justus.de besuchen',
   },
 };
 

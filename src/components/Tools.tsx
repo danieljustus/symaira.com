@@ -96,6 +96,9 @@ export const Tools: React.FC = () => {
                   {product.icon}
                 </div>
                 <div className="product-badge-group">
+                  <span className="product-badge" style={{ borderColor: 'rgba(229, 195, 151, 0.3)', color: 'var(--text-primary)', background: 'rgba(229, 195, 151, 0.05)' }}>
+                    Open Source
+                  </span>
                   <span className="product-badge">
                     {product.badge}
                   </span>
@@ -196,6 +199,54 @@ export const Tools: React.FC = () => {
             )}
           </article>
         ))}
+      </div>
+
+      {/* Creator & Maintainer Panel */}
+      <div className="maintainer-panel">
+        <div className="maintainer-glow" />
+        <div className="maintainer-accent-top" />
+        <div className="maintainer-accent-bottom" />
+        
+        <div className="maintainer-content">
+          <div className="maintainer-avatar-wrapper">
+            <div className="maintainer-avatar-ring-outer" />
+            <div className="maintainer-avatar-ring-inner" />
+            <div className="maintainer-avatar">
+              <img src="/portrait.jpg" alt="Daniel Justus" />
+            </div>
+          </div>
+
+          <div className="maintainer-text">
+            <span className="maintainer-tag">
+              {t('maintainerTitle')}
+            </span>
+            <h3 className="maintainer-name">
+              Daniel Justus
+            </h3>
+            <p className="maintainer-bio">
+              {t('maintainerDesc')}
+            </p>
+            <a
+              href="https://daniel-justus.de"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="action-button-primary"
+              style={{
+                color: '#000',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '8px',
+                padding: '10px 20px',
+                borderRadius: '8px',
+                fontSize: '13.5px',
+                fontWeight: 600,
+              }}
+            >
+              {t('maintainerBtn')}
+              <ArrowRight size={14} />
+            </a>
+          </div>
+        </div>
       </div>
     </section>
   );
