@@ -4,6 +4,19 @@ import { useLanguage } from '../context/LanguageContext';
 export const Hero: React.FC = () => {
   const { t } = useLanguage();
   const markStageRef = useRef<HTMLDivElement>(null);
+  const wasSplitRef = useRef(false);
+
+  const triggerShockwave = () => {
+    const stage = markStageRef.current;
+    if (!stage) return;
+    const shockwaves = stage.querySelectorAll('.hero-mark-shockwave');
+    shockwaves.forEach((shockwave) => {
+      const el = shockwave as HTMLElement;
+      el.classList.remove('active');
+      void el.offsetWidth; // Force DOM reflow to reset/restart animation
+      el.classList.add('active');
+    });
+  };
 
   useEffect(() => {
     const stage = markStageRef.current;
@@ -20,6 +33,15 @@ export const Hero: React.FC = () => {
 
       if (progress !== lastProgress) {
         stage.style.setProperty('--logo-scroll-progress', progress.toString());
+        
+        // Dynamic scroll-up convergence trigger
+        if (progress > 0.15) {
+          wasSplitRef.current = true;
+        } else if (progress === 0 && wasSplitRef.current) {
+          wasSplitRef.current = false;
+          triggerShockwave();
+        }
+
         lastProgress = progress;
       }
     };
@@ -34,7 +56,15 @@ export const Hero: React.FC = () => {
     // Initialize position in case page was loaded or refreshed while scrolled down
     updateLogoProgress();
 
+    // Trigger initial impact shockwave at the exact merge moment (1.65s of 2.2s animation)
+    const initialTimer = setTimeout(() => {
+      if (window.scrollY < 20) {
+        triggerShockwave();
+      }
+    }, 1650);
+
     return () => {
+      clearTimeout(initialTimer);
       window.removeEventListener('scroll', handleScroll);
       if (frameId !== 0) {
         window.cancelAnimationFrame(frameId);
@@ -213,6 +243,12 @@ export const Hero: React.FC = () => {
           <div className="hero-mark-grid" />
           <div className="hero-mark-ring hero-mark-ring-outer" />
           <div className="hero-mark-ring hero-mark-ring-inner" />
+          
+          {/* Shockwave energy ripples (rendered under the logo parts but on top of rings) */}
+          <div className="hero-mark-shockwave wave-1" />
+          <div className="hero-mark-shockwave wave-2" />
+          <div className="hero-mark-shockwave wave-3" />
+
           <img
             src="/logo-top.png"
             alt=""

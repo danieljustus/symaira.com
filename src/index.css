@@ -591,6 +591,93 @@ a {
   }
 }
 
+/* Shockwave / Pressure Wave Effect */
+.hero-mark-shockwave {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 78%;
+  height: 78%;
+  transform: translate(-50%, -50%) scale(0.1);
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 2;
+  will-change: transform, opacity, box-shadow;
+}
+
+/* layered high-performance waves */
+.hero-mark-shockwave.wave-1.active {
+  animation: shockwave-pulse-1 1.2s cubic-bezier(0.08, 0.82, 0.17, 1) forwards;
+}
+
+.hero-mark-shockwave.wave-2.active {
+  animation: shockwave-pulse-2 1.3s cubic-bezier(0.08, 0.82, 0.17, 1) 0.08s forwards;
+}
+
+.hero-mark-shockwave.wave-3.active {
+  animation: shockwave-pulse-3 1.4s cubic-bezier(0.08, 0.82, 0.17, 1) 0.16s forwards;
+}
+
+@keyframes shockwave-pulse-1 {
+  0% {
+    transform: translate(-50%, -50%) scale(0.3);
+    border: 3px solid rgba(229, 195, 151, 0.85);
+    background: radial-gradient(circle, rgba(229, 195, 151, 0.35) 0%, transparent 60%);
+    box-shadow: 
+      0 0 25px rgba(229, 195, 151, 0.5),
+      inset 0 0 15px rgba(229, 195, 151, 0.3);
+    backdrop-filter: blur(0px) saturate(100%);
+    -webkit-backdrop-filter: blur(0px) saturate(100%);
+    opacity: 0.9;
+  }
+  20% {
+    backdrop-filter: blur(6px) saturate(140%);
+    -webkit-backdrop-filter: blur(6px) saturate(140%);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(2.0);
+    border: 1px solid rgba(238, 220, 196, 0);
+    background: radial-gradient(circle, rgba(229, 195, 151, 0) 0%, transparent 100%);
+    box-shadow: 
+      0 0 50px rgba(229, 195, 151, 0),
+      inset 0 0 30px rgba(229, 195, 151, 0);
+    backdrop-filter: blur(0px) saturate(100%);
+    -webkit-backdrop-filter: blur(0px) saturate(100%);
+    opacity: 0;
+  }
+}
+
+@keyframes shockwave-pulse-2 {
+  0% {
+    transform: translate(-50%, -50%) scale(0.3);
+    border: 2px solid rgba(238, 220, 196, 0.7);
+    background: radial-gradient(circle, rgba(238, 220, 196, 0.25) 0%, transparent 65%);
+    box-shadow: 0 0 20px rgba(238, 220, 196, 0.4);
+    opacity: 0.85;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(2.4);
+    border: 1px solid rgba(238, 220, 196, 0);
+    background: radial-gradient(circle, rgba(238, 220, 196, 0) 0%, transparent 100%);
+    box-shadow: 0 0 40px rgba(238, 220, 196, 0);
+    opacity: 0;
+  }
+}
+
+@keyframes shockwave-pulse-3 {
+  0% {
+    transform: translate(-50%, -50%) scale(0.3);
+    border: 1px dashed rgba(229, 195, 151, 0.5);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(2.8);
+    border: 1px dashed rgba(229, 195, 151, 0);
+    opacity: 0;
+  }
+}
+
 @keyframes hero-mark-aura-breathe {
   0%, 100% {
     transform: scale(0.96);
