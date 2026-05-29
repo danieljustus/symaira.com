@@ -92,11 +92,11 @@ export const CookieConsent: React.FC = () => {
   const text = {
     title: language === 'de' ? 'Cookie-Einstellungen' : 'Cookie Preferences',
     desc: language === 'de' 
-      ? 'Wir nutzen Cookies und Web-Technologien, um die Leistung unserer Seite zu analysieren und Ihr Nutzungserlebnis zu veredeln. Google Analytics wird erst nach Ihrer ausdrücklichen Einwilligung geladen.'
+      ? 'Wir nutzen Cookies und Web-Technologien, um die Leistung unserer Seite zu analysieren und dein Nutzungserlebnis zu optimieren. Google Analytics wird erst nach deiner ausdrücklichen Einwilligung geladen.'
       : 'We use cookies and web technologies to analyze page performance and refine your digital experience. Google Analytics will only load after your explicit opt-in consent.',
     essentialTitle: language === 'de' ? 'Notwendige Cookies (Immer aktiv)' : 'Essential Cookies (Always Active)',
     essentialDesc: language === 'de'
-      ? 'Ermöglichen grundlegende Webseiten-Funktionen wie die Sprachwahl, das Farbschema und die lokale Speicherung Ihrer Präferenzen. Sie speichern keine persönlichen Daten.'
+      ? 'Ermöglichen grundlegende Webseiten-Funktionen wie die Sprachwahl, das Farbschema und die lokale Speicherung deiner Präferenzen. Sie speichern keine persönlichen Daten.'
       : 'Enable core website functionalities like language preference, color schemes, and local setting persistence. They do not store personal details.',
     analyticsTitle: language === 'de' ? 'Analyse & Statistik (Google Analytics 4)' : 'Analytics & Statistics (Google Analytics 4)',
     analyticsDesc: language === 'de'
