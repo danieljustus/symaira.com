@@ -1,8 +1,12 @@
 import React from 'react';
+import { GitHubIcon } from './GitHubIcon';
+import type { Language } from '../context/LanguageContext';
 import { useLanguage } from '../context/LanguageContext';
 
+const languageOptions: Language[] = ['en', 'de'];
+
 export const Navigation: React.FC = () => {
-  const { t } = useLanguage();
+  const { t, language, setLanguage } = useLanguage();
 
   return (
     <nav className="glass-panel site-nav" style={{
@@ -72,11 +76,28 @@ export const Navigation: React.FC = () => {
           {t('navTools')}
         </a>
 
+        <div className="language-toggle" role="group" aria-label={t('languageToggleLabel')}>
+          {languageOptions.map((languageOption) => (
+            <button
+              key={languageOption}
+              type="button"
+              className={language === languageOption ? 'language-toggle-option active' : 'language-toggle-option'}
+              onClick={() => setLanguage(languageOption)}
+              aria-pressed={language === languageOption}
+              aria-label={languageOption === 'en' ? t('languageEnglish') : t('languageGerman')}
+            >
+              {languageOption.toUpperCase()}
+            </button>
+          ))}
+        </div>
+
         {/* GitHub Button */}
         <a 
-          href="https://github.com/danieljustus/symaira-vault"
+          href="https://github.com/danieljustus"
           target="_blank" 
           rel="noopener noreferrer"
+          aria-label={t('navGithubProfile')}
+          title={t('navGithub')}
           style={{
             display: 'flex',
             alignItems: 'center',
@@ -90,7 +111,7 @@ export const Navigation: React.FC = () => {
           }}
           className="icon-button"
         >
-          <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" /></svg>
+          <GitHubIcon size={16} />
         </a>
       </div>
     </nav>

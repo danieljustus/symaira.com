@@ -1,28 +1,13 @@
 import React, { useState } from 'react';
 import { ArrowRight, Eye, Shield, ShieldCheck, Terminal, Workflow } from 'lucide-react';
+import { GitHubIcon } from './GitHubIcon';
 import { useLanguage } from '../context/LanguageContext';
-
-const githubIcon = (
-  <svg
-    viewBox="0 0 24 24"
-    width="16"
-    height="16"
-    stroke="currentColor"
-    strokeWidth="2"
-    fill="none"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    aria-hidden="true"
-  >
-    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
-  </svg>
-);
 
 export const Tools: React.FC = () => {
   const { t } = useLanguage();
   const [copied, setCopied] = useState(false);
 
-  const commandToCopy = 'symvault serve --stdio --agent codex';
+  const commandToCopy = 'symvault run --env API_KEY=prod -- deploy';
 
   const copyCommand = () => {
     navigator.clipboard.writeText(commandToCopy);
@@ -35,7 +20,9 @@ export const Tools: React.FC = () => {
       badge: t('vaultBadge'),
       title: t('vaultTitle'),
       desc: t('vaultDesc'),
-      features: [t('vaultFeature1'), t('vaultFeature2'), t('vaultFeature3')],
+      bestFor: t('vaultBestFor'),
+      automates: t('vaultAutomates'),
+      features: [t('vaultFeature1'), t('vaultFeature2'), t('vaultFeature3'), t('vaultFeature4')],
       href: 'https://github.com/danieljustus/symaira-vault',
       button: t('vaultBtn'),
       icon: <Shield size={24} />,
@@ -43,9 +30,12 @@ export const Tools: React.FC = () => {
     },
     {
       badge: t('erasemeBadge'),
+      status: t('erasemeStatus'),
       title: t('erasemeTitle'),
       desc: t('erasemeDesc'),
-      features: [t('erasemeFeature1'), t('erasemeFeature2'), t('erasemeFeature3')],
+      bestFor: t('erasemeBestFor'),
+      automates: t('erasemeAutomates'),
+      features: [t('erasemeFeature1'), t('erasemeFeature2'), t('erasemeFeature3'), t('erasemeFeature4')],
       href: 'https://github.com/danieljustus/symaira-eraseme',
       button: t('erasemeBtn'),
       icon: <Eye size={24} />,
@@ -105,13 +95,31 @@ export const Tools: React.FC = () => {
                 <div className="product-icon">
                   {product.icon}
                 </div>
-                <span className="product-badge">
-                  {product.badge}
-                </span>
+                <div className="product-badge-group">
+                  <span className="product-badge">
+                    {product.badge}
+                  </span>
+                  {product.status ? (
+                    <span className="product-status-badge">
+                      {product.status}
+                    </span>
+                  ) : null}
+                </div>
               </div>
 
               <h3 className="product-title">{product.title}</h3>
               <p className="product-description">{product.desc}</p>
+
+              <div className="product-context">
+                <div className="product-context-row">
+                  <span>{t('bestForLabel')}</span>
+                  <p>{product.bestFor}</p>
+                </div>
+                <div className="product-context-row">
+                  <span>{t('automatesLabel')}</span>
+                  <p>{product.automates}</p>
+                </div>
+              </div>
 
               <div className="product-features">
                 {product.features.map((feature) => (
@@ -131,7 +139,7 @@ export const Tools: React.FC = () => {
                   color: '#000',
                 }}
               >
-                {githubIcon}
+                <GitHubIcon size={16} />
                 {product.button}
                 <ArrowRight size={14} />
               </a>
@@ -152,31 +160,32 @@ export const Tools: React.FC = () => {
                 </div>
                 <button className="terminal-command" onClick={copyCommand} type="button">
                   <span>{commandToCopy}</span>
-                  <small>{copied ? 'Copied' : 'Copy'}</small>
+                  <small>{copied ? t('copiedCommandLabel') : t('copyCommandLabel')}</small>
                 </button>
                 <div className="terminal-lines">
-                  <p><span>$</span> symvault get github.token --agent codex</p>
-                  <p>policy: scoped token verified</p>
-                  <p>secret: injected into environment</p>
-                  <p className="success">access granted without prompt leakage</p>
+                  <p><span>$</span> {commandToCopy}</p>
+                  <p>{t('vaultDemoLine1')}</p>
+                  <p>{t('vaultDemoLine2')}</p>
+                  <p>{t('vaultDemoLine3')}</p>
+                  <p className="success">{t('vaultDemoSuccess')}</p>
                 </div>
               </div>
             ) : (
               <div className="product-demo product-demo-privacy" aria-hidden="true">
                 <div className="privacy-row">
                   <Workflow size={15} />
-                  <span>Campaign planned</span>
-                  <strong>1,277 brokers</strong>
+                  <span>{t('erasemeDemoCampaign')}</span>
+                  <strong>{t('erasemeDemoBrokers')}</strong>
                 </div>
                 <div className="privacy-row">
                   <ShieldCheck size={15} />
-                  <span>Deadlines tracked</span>
-                  <strong>GDPR / CCPA</strong>
+                  <span>{t('erasemeDemoDeadlines')}</span>
+                  <strong>{t('erasemeDemoLaw')}</strong>
                 </div>
                 <div className="privacy-row">
                   <Eye size={15} />
-                  <span>Replies triaged</span>
-                  <strong>Audit trail</strong>
+                  <span>{t('erasemeDemoTriage')}</span>
+                  <strong>{t('erasemeDemoAudit')}</strong>
                 </div>
                 <div className="privacy-progress">
                   <span />

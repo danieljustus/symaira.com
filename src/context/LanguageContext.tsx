@@ -1,5 +1,5 @@
 /* eslint-disable react-refresh/only-export-components */
-import React, { createContext, useContext, useEffect } from 'react';
+import React, { createContext, useContext, useEffect, useState } from 'react';
 
 export type Language = 'en' | 'de';
 
@@ -7,6 +7,10 @@ interface TranslationMap {
   navVision: string;
   navTools: string;
   navGithub: string;
+  navGithubProfile: string;
+  languageToggleLabel: string;
+  languageEnglish: string;
+  languageGerman: string;
   heroBadge: string;
   heroTitle1: string;
   heroTitle2: string;
@@ -25,20 +29,41 @@ interface TranslationMap {
   visionPillar3Desc: string;
   toolsTitle: string;
   toolsSubtitle: string;
+  bestForLabel: string;
+  automatesLabel: string;
   vaultBadge: string;
   vaultTitle: string;
   vaultDesc: string;
+  vaultBestFor: string;
+  vaultAutomates: string;
   vaultFeature1: string;
   vaultFeature2: string;
   vaultFeature3: string;
+  vaultFeature4: string;
   vaultBtn: string;
   erasemeBadge: string;
+  erasemeStatus: string;
   erasemeTitle: string;
   erasemeDesc: string;
+  erasemeBestFor: string;
+  erasemeAutomates: string;
   erasemeFeature1: string;
   erasemeFeature2: string;
   erasemeFeature3: string;
+  erasemeFeature4: string;
   erasemeBtn: string;
+  copyCommandLabel: string;
+  copiedCommandLabel: string;
+  vaultDemoLine1: string;
+  vaultDemoLine2: string;
+  vaultDemoLine3: string;
+  vaultDemoSuccess: string;
+  erasemeDemoCampaign: string;
+  erasemeDemoBrokers: string;
+  erasemeDemoDeadlines: string;
+  erasemeDemoLaw: string;
+  erasemeDemoTriage: string;
+  erasemeDemoAudit: string;
   brandMeaningTitle: string;
   brandMeaningDesc: string;
   brandMeaningSym: string;
@@ -46,6 +71,7 @@ interface TranslationMap {
   brandMeaningRa: string;
   footerRights: string;
   footerMessage: string;
+  footerSignature: string;
   deckVaultTab: string;
   deckEraseTab: string;
   deckVaultStatus: string;
@@ -68,12 +94,16 @@ const translations: Record<Language, TranslationMap> = {
     navVision: 'Vision',
     navTools: 'Tools',
     navGithub: 'GitHub',
+    navGithubProfile: 'Open GitHub profile',
+    languageToggleLabel: 'Select language',
+    languageEnglish: 'English',
+    languageGerman: 'German',
     heroBadge: 'Human agency in the AI era',
     heroTitle1: 'Tools for the era',
     heroTitle2: 'of Human-AI',
     heroTitle3: 'symbiosis.',
     heroSubtitle: 'Symaira builds products that help people work with AI without giving up control over data, decisions, or trust.',
-    heroNameExplainer: 'SYM = Symbiosis. AI = Artificial Intelligence. RA = the new era.',
+    heroNameExplainer: 'SYM = Symbiosis · AI = Artificial Intelligence · RA = the new era',
     heroButtonTools: 'Explore Tools',
     heroButtonVision: 'Understand the Vision',
     visionTitle: 'AI is becoming a collaborator. The interface has to change.',
@@ -86,20 +116,41 @@ const translations: Record<Language, TranslationMap> = {
     visionPillar3Desc: 'Automation should be explainable, bounded, and safe enough to trust in repeatable work without giving up oversight.',
     toolsTitle: 'The first Symaira tools',
     toolsSubtitle: 'Symaira starts where AI collaboration needs the most trust: secrets, identity, privacy, and repeatable workflows.',
+    bestForLabel: 'Best for',
+    automatesLabel: 'What it automates',
     vaultBadge: 'Secrets & agents',
     vaultTitle: 'Symaira Vault',
-    vaultDesc: 'A secure password and secrets manager for terminal users and AI agents. It keeps credentials encrypted, local-first, and available through scoped workflows instead of raw chat sharing.',
-    vaultFeature1: 'Keep credentials out of prompts, logs, and chat history.',
-    vaultFeature2: 'Give agents scoped access through MCP instead of sharing raw secrets.',
-    vaultFeature3: 'Stay local-first, encrypted, open source, and telemetry-free.',
+    vaultDesc: 'A terminal-native password and secrets manager for people and AI agents. Vault keeps credentials age-encrypted, local-first, and available through scoped workflows instead of prompt sharing.',
+    vaultBestFor: 'Terminal users and AI agents that need secrets without prompt leakage.',
+    vaultAutomates: 'symvault run, Git sync, TOTP, autotype, and scoped MCP handoffs.',
+    vaultFeature1: 'age encryption with X25519 and ChaCha20-Poly1305.',
+    vaultFeature2: 'Scoped MCP tokens for agent access instead of raw secret sharing.',
+    vaultFeature3: 'symvault run injects secrets as environment variables for commands.',
+    vaultFeature4: 'TOTP, autotype, Git sync, and zero telemetry built in.',
     vaultBtn: 'View Vault on GitHub',
     erasemeBadge: 'Privacy automation',
+    erasemeStatus: 'Beta',
     erasemeTitle: 'Symaira EraseMe',
-    erasemeDesc: 'A privacy automation tool that helps people remove their data from brokers and close unwanted accounts.',
-    erasemeFeature1: 'Plan and track GDPR/CCPA erasure campaigns.',
-    erasemeFeature2: 'Use AI-assisted workflows for triage, reminders, and rebuttals.',
-    erasemeFeature3: 'Keep an auditable record of every request and deadline.',
+    erasemeDesc: 'A beta CLI for planning, sending, tracking, and proving data broker erasure campaigns without losing the human approval step.',
+    erasemeBestFor: 'People who need data broker opt-outs with deadlines and evidence.',
+    erasemeAutomates: 'Broker planning, inbox triage, reminders, audit trail, and report/export records.',
+    erasemeFeature1: 'Curated registry tracks 1,277 brokers across the EU, UK, and US.',
+    erasemeFeature2: 'GDPR 30-day and CCPA 45-day deadlines are monitored automatically.',
+    erasemeFeature3: 'Event-sourced SQLite audit trail records every request.',
+    erasemeFeature4: 'Manual fallback covers web forms, CAPTCHA, and reports/export.',
     erasemeBtn: 'View EraseMe on GitHub',
+    copyCommandLabel: 'Copy',
+    copiedCommandLabel: 'Copied',
+    vaultDemoLine1: 'policy: scoped token verified',
+    vaultDemoLine2: 'secret: injected into environment',
+    vaultDemoLine3: 'audit: local event recorded',
+    vaultDemoSuccess: 'access granted without prompt leakage',
+    erasemeDemoCampaign: 'Campaign planned',
+    erasemeDemoBrokers: '1,277 brokers',
+    erasemeDemoDeadlines: 'Deadlines tracked',
+    erasemeDemoLaw: 'GDPR / CCPA',
+    erasemeDemoTriage: 'Replies triaged',
+    erasemeDemoAudit: 'Audit trail',
     brandMeaningTitle: 'Why Symaira',
     brandMeaningDesc: 'Symaira is built from three parts. The name describes the product direction: tools for a new era where humans and AI systems work together with clear boundaries.',
     brandMeaningSym: 'SYM: symbiosis',
@@ -107,6 +158,7 @@ const translations: Record<Language, TranslationMap> = {
     brandMeaningRa: 'RA: the new era',
     footerRights: 'All rights reserved.',
     footerMessage: 'Built for human agency in the AI era.',
+    footerSignature: 'Made in symbiosis',
     deckVaultTab: '🔑 Vault Safe',
     deckEraseTab: '🛡️ Privacy Scan',
     deckVaultStatus: 'SYM.VAULT // SECURED',
@@ -127,12 +179,16 @@ const translations: Record<Language, TranslationMap> = {
     navVision: 'Vision',
     navTools: 'Tools',
     navGithub: 'GitHub',
+    navGithubProfile: 'GitHub-Profil öffnen',
+    languageToggleLabel: 'Sprache auswählen',
+    languageEnglish: 'Englisch',
+    languageGerman: 'Deutsch',
     heroBadge: 'Menschliche Handlungsfähigkeit in der AI-Ära',
     heroTitle1: 'Tools für die Ära',
     heroTitle2: 'der Mensch-AI',
     heroTitle3: 'Symbiose.',
     heroSubtitle: 'Symaira baut Produkte, mit denen Menschen mit AI arbeiten können, ohne Kontrolle über Daten, Entscheidungen oder Vertrauen abzugeben.',
-    heroNameExplainer: 'SYM = Symbiose. AI = Artificial Intelligence. RA = die neue Ära.',
+    heroNameExplainer: 'SYM = Symbiose · AI = Artificial Intelligence · RA = die neue Ära',
     heroButtonTools: 'Tools entdecken',
     heroButtonVision: 'Vision verstehen',
     visionTitle: 'AI wird zum Mitwirkenden. Das Interface muss sich verändern.',
@@ -145,20 +201,41 @@ const translations: Record<Language, TranslationMap> = {
     visionPillar3Desc: 'Automatisierung sollte erklärbar, begrenzt und sicher genug sein, um wiederkehrende Arbeit zu unterstützen, ohne Kontrolle abzugeben.',
     toolsTitle: 'Die ersten Symaira Tools',
     toolsSubtitle: 'Symaira beginnt dort, wo AI-Zusammenarbeit besonders viel Vertrauen braucht: Secrets, Identität, Privatsphäre und wiederholbare Workflows.',
+    bestForLabel: 'Ideal für',
+    automatesLabel: 'Automatisiert',
     vaultBadge: 'Secrets & Agents',
     vaultTitle: 'Symaira Vault',
-    vaultDesc: 'Ein sicherer Passwort- und Secrets-Manager für Terminal-Nutzer und AI-Agenten. Credentials bleiben verschlüsselt, lokal kontrolliert und über begrenzte Workflows verfügbar.',
-    vaultFeature1: 'Credentials bleiben aus Prompts, Logs und Chatverläufen heraus.',
-    vaultFeature2: 'Agenten erhalten begrenzten Zugriff über MCP statt rohe Secrets.',
-    vaultFeature3: 'Lokal, verschlüsselt, Open Source und ohne Telemetrie.',
+    vaultDesc: 'Ein terminal-nativer Passwort- und Secrets-Manager für Menschen und AI-Agenten. Vault hält Credentials age-verschlüsselt, lokal kontrolliert und über begrenzte Workflows verfügbar.',
+    vaultBestFor: 'Terminal-Nutzer und AI-Agenten, die Secrets ohne Prompt-Leakage brauchen.',
+    vaultAutomates: 'symvault run, Git-Sync, TOTP, Autotype und begrenzte MCP-Übergaben.',
+    vaultFeature1: 'age-Verschlüsselung mit X25519 und ChaCha20-Poly1305.',
+    vaultFeature2: 'Scoped MCP Tokens für Agentenzugriff statt roher Secret-Weitergabe.',
+    vaultFeature3: 'symvault run injiziert Secrets als Umgebungsvariablen für Befehle.',
+    vaultFeature4: 'TOTP, Autotype, Git-Sync und keine Telemetrie integriert.',
     vaultBtn: 'Vault auf GitHub ansehen',
     erasemeBadge: 'Privacy Automation',
+    erasemeStatus: 'Beta',
     erasemeTitle: 'Symaira EraseMe',
-    erasemeDesc: 'Ein Privacy-Automation-Tool, das Menschen dabei hilft, ihre Daten bei Datenhändlern löschen zu lassen und unerwünschte Accounts zu schließen.',
-    erasemeFeature1: 'GDPR/CCPA-Löschkampagnen planen und verfolgen.',
-    erasemeFeature2: 'AI-gestützte Workflows für Triage, Erinnerungen und Antworten nutzen.',
-    erasemeFeature3: 'Jede Anfrage und Frist nachvollziehbar dokumentieren.',
+    erasemeDesc: 'Eine Beta-CLI zum Planen, Senden, Verfolgen und Belegen von Löschkampagnen bei Datenbrokern, ohne die menschliche Freigabe zu verlieren.',
+    erasemeBestFor: 'Menschen, die Datenbroker-Opt-outs mit Fristen und Nachweisen brauchen.',
+    erasemeAutomates: 'Broker-Planung, Inbox-Triage, Erinnerungen, Audit Trail und Reports/Export.',
+    erasemeFeature1: 'Kuratierte Registry mit 1.277 Brokern in EU, UK und US.',
+    erasemeFeature2: 'GDPR-Fristen von 30 Tagen und CCPA-Fristen von 45 Tagen werden überwacht.',
+    erasemeFeature3: 'Event-sourced SQLite Audit Trail dokumentiert jede Anfrage.',
+    erasemeFeature4: 'Manueller Fallback für Webformulare, CAPTCHA und Reports/Export.',
     erasemeBtn: 'EraseMe auf GitHub ansehen',
+    copyCommandLabel: 'Kopieren',
+    copiedCommandLabel: 'Kopiert',
+    vaultDemoLine1: 'policy: Scoped Token verifiziert',
+    vaultDemoLine2: 'secret: in Umgebung injiziert',
+    vaultDemoLine3: 'audit: lokales Ereignis erfasst',
+    vaultDemoSuccess: 'Zugriff ohne Prompt-Leakage erteilt',
+    erasemeDemoCampaign: 'Kampagne geplant',
+    erasemeDemoBrokers: '1.277 Broker',
+    erasemeDemoDeadlines: 'Fristen verfolgt',
+    erasemeDemoLaw: 'GDPR / CCPA',
+    erasemeDemoTriage: 'Antworten triagiert',
+    erasemeDemoAudit: 'Audit Trail',
     brandMeaningTitle: 'Warum Symaira',
     brandMeaningDesc: 'Symaira besteht aus drei Teilen. Der Name beschreibt die Produktrichtung: Tools für eine neue Ära, in der Menschen und AI-Systeme mit klaren Grenzen zusammenarbeiten.',
     brandMeaningSym: 'SYM: Symbiose',
@@ -166,6 +243,7 @@ const translations: Record<Language, TranslationMap> = {
     brandMeaningRa: 'RA: die neue Ära',
     footerRights: 'Alle Rechte vorbehalten.',
     footerMessage: 'Gebaut für menschliche Handlungsfähigkeit in der AI-Ära.',
+    footerSignature: 'Gebaut in Symbiose',
     deckVaultTab: '🔑 Vault-Safe',
     deckEraseTab: '🛡️ Privatsphäre-Scan',
     deckVaultStatus: 'SYM.VAULT // GESICHERT',
@@ -192,19 +270,51 @@ interface LanguageContextProps {
 
 const LanguageContext = createContext<LanguageContextProps | undefined>(undefined);
 
-export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const language: Language = 'en';
+const LANGUAGE_STORAGE_KEY = 'symaira-language';
 
-  const setLanguage: LanguageContextProps['setLanguage'] = () => {
-    // No-op: Language switcher has been removed
+const isLanguage = (value: string | null): value is Language => value === 'en' || value === 'de';
+
+const detectInitialLanguage = (): Language => {
+  if (typeof window === 'undefined') {
+    return 'en';
+  }
+
+  try {
+    const storedLanguage = window.localStorage.getItem(LANGUAGE_STORAGE_KEY);
+    if (isLanguage(storedLanguage)) {
+      return storedLanguage;
+    }
+  } catch {
+    // Private browsing or restricted storage should not block language detection.
+  }
+
+  const browserLanguages = window.navigator.languages?.length
+    ? window.navigator.languages
+    : [window.navigator.language];
+
+  return browserLanguages.some((browserLanguage) => browserLanguage.toLowerCase().startsWith('de'))
+    ? 'de'
+    : 'en';
+};
+
+export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const [language, setLanguageState] = useState<Language>(detectInitialLanguage);
+
+  const setLanguage: LanguageContextProps['setLanguage'] = (nextLanguage) => {
+    setLanguageState(nextLanguage);
+    try {
+      window.localStorage.setItem(LANGUAGE_STORAGE_KEY, nextLanguage);
+    } catch {
+      // Persisting is nice to have; the in-memory selection still works.
+    }
   };
 
   useEffect(() => {
-    document.documentElement.lang = 'en';
-  }, []);
+    document.documentElement.lang = language;
+  }, [language]);
 
   const t = (key: keyof TranslationMap): string => {
-    return translations['en'][key] || '';
+    return translations[language][key] || translations.en[key] || '';
   };
 
   return (

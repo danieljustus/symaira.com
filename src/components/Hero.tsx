@@ -147,12 +147,15 @@ export const Hero: React.FC = () => {
           color: 'var(--text-secondary)',
           lineHeight: '1.65',
           maxWidth: '540px',
-          marginBottom: '40px',
+          marginBottom: '14px',
           fontWeight: 400,
         }}>
           {t('heroSubtitle')}
         </p>
 
+        <p className="hero-name-explainer">
+          {t('heroNameExplainer')}
+        </p>
 
         {/* Action Buttons */}
         <div style={{

@@ -89,7 +89,7 @@ export const Footer: React.FC = () => {
           color: 'var(--text-muted)',
         }}>
           <span>
-            Made with <Heart size={10} style={{ color: 'var(--cyan-primary)', fill: 'var(--cyan-primary)', display: 'inline', margin: '0 2px' }} /> in Symbiosis
+            {t('footerSignature')} <Heart size={10} style={{ color: 'var(--cyan-primary)', fill: 'var(--cyan-primary)', display: 'inline', margin: '0 2px' }} />
           </span>
         </div>
       </div>
