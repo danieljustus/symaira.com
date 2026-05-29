@@ -256,7 +256,6 @@ export const Hero: React.FC = () => {
           {/* Shockwave energy ripples (rendered under the logo parts but on top of rings) */}
           <div className="hero-mark-shockwave wave-1" />
           <div className="hero-mark-shockwave wave-2" />
-          <div className="hero-mark-shockwave wave-3" />
 
           <img
             src="/logo-top.png"

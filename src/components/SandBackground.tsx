@@ -38,7 +38,7 @@ export const SandBackground: React.FC = () => {
     targetX: -1000,
     targetY: -1000,
     active: false,
-    radius: 120, // Interaction radius in pixels
+    radius: 60, // Interaction radius in pixels (halved from 120 for a more subtle smudge)
   });
 
   // Track active shockwave ripples
@@ -75,9 +75,9 @@ export const SandBackground: React.FC = () => {
     };
 
     const initParticles = () => {
-      // Density-based particle count: 1 particle per 1500 sq pixels, capped at 1100
+      // Density-based particle count: increased by 30% for high visual richness
       const area = width * height;
-      const count = Math.min(Math.floor(area / 1500), 1100);
+      const count = Math.min(Math.floor(area / 1150), 1430);
       
       particles = [];
       for (let i = 0; i < count; i++) {
@@ -142,31 +142,17 @@ export const SandBackground: React.FC = () => {
     const handleLogoShockwave = (e: CustomEvent<{ x: number; y: number }>) => {
       const { x, y } = e.detail;
       
-      // Spawn standard and micro ripples
+      // Spawn a single high-performance impact ripple (halved count from 2 to 1)
       ripplesRef.current.push({
         x,
         y,
         radius: 0,
-        maxRadius: Math.max(width, height) * 0.85, // Expands to cover most of viewport
-        speed: 7.2, // Radial expansion speed in pixels per frame
-        strength: 24, // Physical push force
-        thickness: 90, // Wavefront physical width
-        opacity: 0.28,
+        maxRadius: Math.max(width, height) * 0.9, // Expands to cover most of viewport
+        speed: 7.0, // Radial expansion speed in pixels per frame
+        strength: 2.8, // Physical push force (reduced from 22 for a much gentler displacement/shimmer)
+        thickness: 100, // Wavefront physical width
+        opacity: 0.24,
       });
-
-      // Spawn a second offset echo ripple for dynamic layered pressure depth
-      setTimeout(() => {
-        ripplesRef.current.push({
-          x,
-          y,
-          radius: 0,
-          maxRadius: Math.max(width, height) * 0.95,
-          speed: 6.4,
-          strength: 14,
-          thickness: 120,
-          opacity: 0.16,
-        });
-      }, 90);
     };
 
     // Bind event listeners
