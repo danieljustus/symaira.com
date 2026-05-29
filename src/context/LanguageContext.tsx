@@ -1,5 +1,5 @@
 /* eslint-disable react-refresh/only-export-components */
-import React, { createContext, useState, useContext, useEffect } from 'react';
+import React, { createContext, useContext, useEffect } from 'react';
 
 export type Language = 'en' | 'de';
 
@@ -193,26 +193,18 @@ interface LanguageContextProps {
 const LanguageContext = createContext<LanguageContextProps | undefined>(undefined);
 
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [language, setLanguageState] = useState<Language>(() => {
-    const saved = localStorage.getItem('symaira_lang');
-    if (saved === 'en' || saved === 'de') return saved;
-    // Autodetect browser locale
-    const browserLang = navigator.language.slice(0, 2);
-    return browserLang === 'de' ? 'de' : 'en';
-  });
+  const language: Language = 'en';
 
-  const setLanguage = (lang: Language) => {
-    setLanguageState(lang);
-    localStorage.setItem('symaira_lang', lang);
-    document.documentElement.lang = lang;
+  const setLanguage = (_lang: Language) => {
+    // No-op: Language switcher has been removed
   };
 
   useEffect(() => {
-    document.documentElement.lang = language;
-  }, [language]);
+    document.documentElement.lang = 'en';
+  }, []);
 
   const t = (key: keyof TranslationMap): string => {
-    return translations[language][key] || translations['en'][key] || '';
+    return translations['en'][key] || '';
   };
 
   return (

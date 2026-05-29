@@ -1,11 +1,8 @@
 import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
-import { useTheme } from '../context/ThemeContext';
-import { Sun, Moon } from 'lucide-react';
 
 export const Navigation: React.FC = () => {
-  const { language, setLanguage, t } = useLanguage();
-  const { theme, toggleTheme } = useTheme();
+  const { t } = useLanguage();
 
   return (
     <nav className="glass-panel site-nav" style={{
@@ -74,87 +71,6 @@ export const Navigation: React.FC = () => {
         }} className="nav-link">
           {t('navTools')}
         </a>
-
-        {/* Vertical Divider */}
-        <div className="nav-divider" style={{
-          width: '1px',
-          height: '18px',
-          backgroundColor: 'rgba(229, 195, 151, 0.15)',
-        }} />
-
-        {/* Theme Toggler (Dark/Light Mode) */}
-        <button 
-          onClick={toggleTheme}
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            width: '36px',
-            height: '36px',
-            borderRadius: '50%',
-            backgroundColor: 'rgba(255, 255, 255, 0.03)',
-            border: '1px solid rgba(229, 195, 151, 0.15)',
-            color: 'var(--text-primary)',
-            cursor: 'pointer',
-            transition: 'var(--transition-fast)',
-            marginRight: '4px',
-          }}
-          className="icon-button"
-          title={theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
-        >
-          {theme === 'dark' ? (
-            <Sun size={16} style={{ color: 'var(--cyan-primary)', filter: 'drop-shadow(0 0 4px rgba(229, 195, 151, 0.3))' }} />
-          ) : (
-            <Moon size={16} style={{ color: 'var(--cyan-primary)', filter: 'drop-shadow(0 0 4px rgba(229, 195, 151, 0.3))' }} />
-          )}
-        </button>
-
-        {/* Language Toggler */}
-        <div style={{
-          display: 'flex',
-          gap: '4px',
-          backgroundColor: 'rgba(255, 255, 255, 0.03)',
-          padding: '2px',
-          borderRadius: '20px',
-          border: '1px solid rgba(229, 195, 151, 0.15)',
-        }}>
-          <button 
-            onClick={() => setLanguage('en')}
-            style={{
-              padding: '5px 12px',
-              borderRadius: '20px',
-              border: 'none',
-              cursor: 'pointer',
-              fontSize: '11px',
-              fontFamily: 'var(--font-tech)',
-              fontWeight: 700,
-              backgroundColor: language === 'en' ? 'var(--cyan-primary)' : 'transparent',
-              color: language === 'en' ? (theme === 'dark' ? '#000' : '#fff') : 'var(--text-secondary)',
-              transition: 'var(--transition-fast)',
-              boxShadow: language === 'en' ? '0 0 10px rgba(229, 195, 151, 0.35)' : 'none',
-            }}
-          >
-            EN
-          </button>
-          <button 
-            onClick={() => setLanguage('de')}
-            style={{
-              padding: '5px 12px',
-              borderRadius: '20px',
-              border: 'none',
-              cursor: 'pointer',
-              fontSize: '11px',
-              fontFamily: 'var(--font-tech)',
-              fontWeight: 700,
-              backgroundColor: language === 'de' ? 'var(--cyan-primary)' : 'transparent',
-              color: language === 'de' ? (theme === 'dark' ? '#000' : '#fff') : 'var(--text-secondary)',
-              transition: 'var(--transition-fast)',
-              boxShadow: language === 'de' ? '0 0 10px rgba(229, 195, 151, 0.35)' : 'none',
-            }}
-          >
-            DE
-          </button>
-        </div>
 
         {/* GitHub Button */}
         <a 

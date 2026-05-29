@@ -1,7 +1,7 @@
 /* eslint-disable react-refresh/only-export-components */
-import React, { createContext, useState, useContext, useEffect } from 'react';
+import React, { createContext, useContext, useEffect } from 'react';
 
-export type Theme = 'dark' | 'light';
+export type Theme = 'dark';
 
 interface ThemeContextProps {
   theme: Theme;
@@ -11,23 +11,14 @@ interface ThemeContextProps {
 const ThemeContext = createContext<ThemeContextProps | undefined>(undefined);
 
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [theme, setThemeState] = useState<Theme>(() => {
-    const saved = localStorage.getItem('symaira_theme');
-    if (saved === 'dark' || saved === 'light') return saved;
-    // Check user system preference
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    return prefersDark ? 'dark' : 'light';
-  });
-
+  const theme: Theme = 'dark';
   const toggleTheme = () => {
-    const nextTheme = theme === 'dark' ? 'light' : 'dark';
-    setThemeState(nextTheme);
-    localStorage.setItem('symaira_theme', nextTheme);
+    // No-op: Light mode has been removed
   };
 
   useEffect(() => {
-    document.documentElement.setAttribute('data-theme', theme);
-  }, [theme]);
+    document.documentElement.setAttribute('data-theme', 'dark');
+  }, []);
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>

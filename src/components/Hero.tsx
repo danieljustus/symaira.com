@@ -1,10 +1,8 @@
 import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
-import { useTheme } from '../context/ThemeContext';
 
 export const Hero: React.FC = () => {
   const { t } = useLanguage();
-  const { theme } = useTheme();
 
   return (
     <section 
@@ -152,10 +150,10 @@ export const Hero: React.FC = () => {
             style={{
               padding: '14px 28px',
               borderRadius: '8px',
-              color: theme === 'dark' ? '#000' : '#fff',
+              color: '#000',
               fontWeight: 600,
               fontSize: '15px',
-              boxShadow: theme === 'dark' ? '0 4px 20px rgba(229, 195, 151, 0.2)' : '0 4px 20px rgba(134, 104, 64, 0.25)',
+              boxShadow: '0 4px 20px rgba(229, 195, 151, 0.2)',
               transition: 'var(--transition-fast)',
             }}
             className="action-button-primary"

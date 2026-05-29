@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { ArrowRight, Eye, Shield, ShieldCheck, Terminal, Workflow } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
-import { useTheme } from '../context/ThemeContext';
 
 const githubIcon = (
   <svg
@@ -21,7 +20,6 @@ const githubIcon = (
 
 export const Tools: React.FC = () => {
   const { t } = useLanguage();
-  const { theme } = useTheme();
   const [copied, setCopied] = useState(false);
 
   const commandToCopy = 'symvault serve --stdio --agent codex';
@@ -130,7 +128,7 @@ export const Tools: React.FC = () => {
                 rel="noopener noreferrer"
                 className="action-button-primary product-link"
                 style={{
-                  color: theme === 'dark' ? '#000' : '#fff',
+                  color: '#000',
                 }}
               >
                 {githubIcon}
