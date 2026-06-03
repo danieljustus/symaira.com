@@ -53,6 +53,36 @@ interface TranslationMap {
   erasemeFeature3: string;
   erasemeFeature4: string;
   erasemeBtn: string;
+  memoryBadge: string;
+  memoryStatus: string;
+  memoryTitle: string;
+  memoryDesc: string;
+  memoryBestFor: string;
+  memoryAutomates: string;
+  memoryFeature1: string;
+  memoryFeature2: string;
+  memoryFeature3: string;
+  memoryFeature4: string;
+  memoryBtn: string;
+  seekBadge: string;
+  seekStatus: string;
+  seekTitle: string;
+  seekDesc: string;
+  seekBestFor: string;
+  seekAutomates: string;
+  seekFeature1: string;
+  seekFeature2: string;
+  seekFeature3: string;
+  seekFeature4: string;
+  seekBtn: string;
+  memoryDemoAdd: string;
+  memoryDemoGuard: string;
+  memoryDemoSync: string;
+  memoryDemoStatusIngested: string;
+  memoryDemoStatusSanitized: string;
+  memoryDemoStatusPending: string;
+  seekDemoQuery: string;
+  seekDemoRRF: string;
   copyCommandLabel: string;
   copiedCommandLabel: string;
   vaultDemoLine1: string;
@@ -152,6 +182,36 @@ const translations: Record<Language, TranslationMap> = {
     erasemeFeature3: 'Event-sourced SQLite audit trail records every request.',
     erasemeFeature4: 'Manual fallback covers web forms, CAPTCHA, and reports/export.',
     erasemeBtn: 'View EraseMe on GitHub',
+    memoryBadge: 'Context & memory',
+    memoryStatus: 'Roadmap',
+    memoryTitle: 'Symaira Memory',
+    memoryDesc: 'A persistent context layer and semantic memory base for the Human-AI Symbiosis. Memory enables seamless, long-term context sharing between you and your AI agents with local-first security.',
+    memoryBestFor: 'AI agents needing persistent long-term memory across sessions.',
+    memoryAutomates: 'PII filtering, context sync, memory pruning, and MCP recall.',
+    memoryFeature1: 'Persistent semantic memory layer across agent workflows.',
+    memoryFeature2: 'Local-first SQLite storage with optional end-to-end encrypted sync.',
+    memoryFeature3: 'Model Context Protocol (MCP) server for instant agent integration.',
+    memoryFeature4: 'PII Guard sanitizes sensitive personal data before ingestion.',
+    memoryBtn: 'View Memory on GitHub',
+    seekBadge: 'Hybrid search',
+    seekStatus: 'Roadmap',
+    seekTitle: 'Symaira Seek',
+    seekDesc: 'A fast, local-first document retrieval engine that provides hybrid search by fusing BM25 keyword matching and vector semantic similarity using Reciprocal Rank Fusion (RRF).',
+    seekBestFor: 'Developers and agents requiring fast, offline hybrid document search.',
+    seekAutomates: 'Directory crawling, SQLite FTS5 keyword indexing, and RRF ranking.',
+    seekFeature1: 'Hybrid retrieval: keyword search combined with vector embeddings.',
+    seekFeature2: 'Reciprocal Rank Fusion (RRF) for optimal ranking of search results.',
+    seekFeature3: 'Built-in HTTP REST daemon for lightweight client access.',
+    seekFeature4: '100% CGO-free Go code with local-first vector fallback.',
+    seekBtn: 'View Seek on GitHub',
+    memoryDemoAdd: 'Memory ingested',
+    memoryDemoGuard: 'PII Guard active',
+    memoryDemoSync: 'E2E context sync',
+    memoryDemoStatusIngested: 'Ingested',
+    memoryDemoStatusSanitized: 'Sanitized',
+    memoryDemoStatusPending: 'Pending',
+    seekDemoQuery: 'Search query',
+    seekDemoRRF: 'Fused RRF rank',
     copyCommandLabel: 'Copy',
     copiedCommandLabel: 'Copied',
     vaultDemoLine1: 'policy: scoped token verified',
@@ -249,6 +309,36 @@ const translations: Record<Language, TranslationMap> = {
     erasemeFeature3: 'Ein Event-sourced SQLite-Audit-Trail dokumentiert jede Anfrage.',
     erasemeFeature4: 'Manueller Fallback für Webformulare, CAPTCHAs sowie Daten-Exporte.',
     erasemeBtn: 'EraseMe auf GitHub ansehen',
+    memoryBadge: 'Kontext & Speicher',
+    memoryStatus: 'Roadmap',
+    memoryTitle: 'Symaira Memory',
+    memoryDesc: 'Ein dauerhafter Kontext-Layer und semantische Speicher-Infrastruktur für die Mensch-KI-Ära. Memory ermöglicht nahtloses Langzeitgedächtnis zwischen dir und deinen KI-Agenten.',
+    memoryBestFor: 'KI-Agenten, die ein dauerhaftes Langzeitgedächtnis über Sessions hinweg benötigen.',
+    memoryAutomates: 'DSGVO-Filterung, Kontext-Sync, Memory-Bereinigung und MCP-Abruf.',
+    memoryFeature1: 'Dauerhaftes semantisches Gedächtnis über Agenten-Workflows hinweg.',
+    memoryFeature2: 'Local-first SQLite-Speicher mit optionalem Ende-zu-Ende verschlüsseltem Sync.',
+    memoryFeature3: 'Model Context Protocol (MCP) Server für direkte Agenten-Integration.',
+    memoryFeature4: 'PII-Guard bereinigt sensible persönliche Daten vor der Ingestion.',
+    memoryBtn: 'Memory auf GitHub ansehen',
+    seekBadge: 'Hybride Suche',
+    seekStatus: 'Roadmap',
+    seekTitle: 'Symaira Seek',
+    seekDesc: 'Eine schnelle, lokale Dokumentensuche, die klassischen Keyword-Abruf (BM25) mit semantischer Vektorsuche kombiniert und die Ergebnisse via Reciprocal Rank Fusion (RRF) zusammenführt.',
+    seekBestFor: 'Entwickler und Agenten, die eine schnelle, lokale hybride Dokumentensuche benötigen.',
+    seekAutomates: 'Verzeichnis-Crawling, SQLite FTS5 Keyword-Indexierung und RRF-Ranking.',
+    seekFeature1: 'Hybrider Abruf: Keyword-Suche kombiniert mit Vektor-Embeddings.',
+    seekFeature2: 'Reciprocal Rank Fusion (RRF) für optimales Ranking der Suchergebnisse.',
+    seekFeature3: 'Integrierter HTTP REST-Daemon für leichtgewichtigen Client-Zugriff.',
+    seekFeature4: '100 % CGO-freier Go-Code mit lokalem Vektor-Fallback.',
+    seekBtn: 'Seek auf GitHub ansehen',
+    memoryDemoAdd: 'Fakt erfasst',
+    memoryDemoGuard: 'PII-Guard aktiv',
+    memoryDemoSync: 'E2E Kontext-Sync',
+    memoryDemoStatusIngested: 'Gesichert',
+    memoryDemoStatusSanitized: 'Bereinigt',
+    memoryDemoStatusPending: 'Ausstehend',
+    seekDemoQuery: 'Suchanfrage',
+    seekDemoRRF: 'Zusammengeführtes RRF',
     copyCommandLabel: 'Kopieren',
     copiedCommandLabel: 'Kopiert',
     vaultDemoLine1: 'policy: Scoped-Token verifiziert',

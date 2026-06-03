@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowRight, Eye, Shield, ShieldCheck, Terminal, Workflow } from 'lucide-react';
+import { ArrowRight, Eye, Shield, ShieldCheck, Terminal, Workflow, Brain, Search } from 'lucide-react';
 import { GitHubIcon } from './GitHubIcon';
 import { useLanguage } from '../context/LanguageContext';
 
@@ -27,6 +27,7 @@ export const Tools: React.FC = () => {
       button: t('vaultBtn'),
       icon: <Shield size={24} />,
       tone: 'gold',
+      demoType: 'vault',
     },
     {
       badge: t('erasemeBadge'),
@@ -40,6 +41,35 @@ export const Tools: React.FC = () => {
       button: t('erasemeBtn'),
       icon: <Eye size={24} />,
       tone: 'ice',
+      demoType: 'eraseme',
+    },
+    {
+      badge: t('memoryBadge'),
+      status: t('memoryStatus'),
+      title: t('memoryTitle'),
+      desc: t('memoryDesc'),
+      bestFor: t('memoryBestFor'),
+      automates: t('memoryAutomates'),
+      features: [t('memoryFeature1'), t('memoryFeature2'), t('memoryFeature3'), t('memoryFeature4')],
+      href: 'https://github.com/danieljustus/symaira-memory',
+      button: t('memoryBtn'),
+      icon: <Brain size={24} />,
+      tone: 'violet',
+      demoType: 'memory',
+    },
+    {
+      badge: t('seekBadge'),
+      status: t('seekStatus'),
+      title: t('seekTitle'),
+      desc: t('seekDesc'),
+      bestFor: t('seekBestFor'),
+      automates: t('seekAutomates'),
+      features: [t('seekFeature1'), t('seekFeature2'), t('seekFeature3'), t('seekFeature4')],
+      href: 'https://github.com/danieljustus/symaira-seek',
+      button: t('seekBtn'),
+      icon: <Search size={24} />,
+      tone: 'coral',
+      demoType: 'seek',
     },
   ];
 
@@ -103,7 +133,7 @@ export const Tools: React.FC = () => {
                     {product.badge}
                   </span>
                   {product.status ? (
-                    <span className="product-status-badge">
+                    <span className={`product-status-badge ${product.status.toLowerCase() === 'roadmap' ? 'product-status-badge-roadmap' : ''}`}>
                       {product.status}
                     </span>
                   ) : null}
@@ -148,7 +178,7 @@ export const Tools: React.FC = () => {
               </a>
             </div>
 
-            {product.tone === 'gold' ? (
+            {product.demoType === 'vault' ? (
               <div className="product-demo product-demo-terminal">
                 <div className="demo-header">
                   <div className="demo-dots">
@@ -173,7 +203,7 @@ export const Tools: React.FC = () => {
                   <p className="success">{t('vaultDemoSuccess')}</p>
                 </div>
               </div>
-            ) : (
+            ) : product.demoType === 'eraseme' ? (
               <div className="product-demo product-demo-privacy" aria-hidden="true">
                 <div className="privacy-row">
                   <Workflow size={15} />
@@ -194,6 +224,74 @@ export const Tools: React.FC = () => {
                   <span />
                   <span />
                   <span />
+                </div>
+              </div>
+            ) : product.demoType === 'memory' ? (
+              <div className="product-demo product-demo-memory" aria-hidden="true">
+                <div className="demo-header">
+                  <div className="demo-dots">
+                    <span />
+                    <span />
+                    <span />
+                  </div>
+                  <div className="demo-title">
+                    <Brain size={12} />
+                    symmemory sync
+                  </div>
+                </div>
+                <div className="memory-flow">
+                  <div className="memory-row-item">
+                    <span className="memory-tag tag-add">MEM_ADD</span>
+                    <span className="memory-text">{t('memoryDemoAdd')}</span>
+                    <span className="memory-status status-success">{t('memoryDemoStatusIngested')}</span>
+                  </div>
+                  <div className="memory-row-item">
+                    <span className="memory-tag tag-guard">PII_GUARD</span>
+                    <span className="memory-text">{t('memoryDemoGuard')}</span>
+                    <span className="memory-status status-sanitized">{t('memoryDemoStatusSanitized')}</span>
+                  </div>
+                  <div className="memory-row-item">
+                    <span className="memory-tag tag-sync">SYNC_PUSH</span>
+                    <span className="memory-text">{t('memoryDemoSync')}</span>
+                    <span className="memory-status status-pending">{t('memoryDemoStatusPending')}</span>
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <div className="product-demo product-demo-seek" aria-hidden="true">
+                <div className="demo-header">
+                  <div className="demo-dots">
+                    <span />
+                    <span />
+                    <span />
+                  </div>
+                  <div className="demo-title">
+                    <Search size={12} />
+                    seek hybrid retrieve
+                  </div>
+                </div>
+                <div className="seek-flow">
+                  <div className="seek-search-input">
+                    <Search size={13} />
+                    <span>{t('seekDemoQuery')}: "security policy"</span>
+                  </div>
+                  <div className="seek-results-list">
+                    <div className="seek-result-item">
+                      <span className="seek-badge-rank">#1</span>
+                      <span className="seek-result-file">security_handbook.md</span>
+                      <strong className="seek-result-score">{t('seekDemoRRF')}: 0.032</strong>
+                    </div>
+                    <div className="seek-result-item">
+                      <span className="seek-badge-rank">#2</span>
+                      <span className="seek-result-file">agent_mcp_config.json</span>
+                      <strong className="seek-result-score">{t('seekDemoRRF')}: 0.028</strong>
+                    </div>
+                    <div className="seek-result-item">
+                      <span className="seek-badge-rank">#3</span>
+                      <span className="seek-result-file">keys_rotation.go</span>
+                      <strong className="seek-result-score">{t('seekDemoRRF')}: 0.016</strong>
+                    </div>
+                  </div>
                 </div>
               </div>
             )}
