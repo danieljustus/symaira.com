@@ -75,6 +75,17 @@ interface TranslationMap {
   seekFeature3: string;
   seekFeature4: string;
   seekBtn: string;
+  fetchBadge: string;
+  fetchStatus: string;
+  fetchTitle: string;
+  fetchDesc: string;
+  fetchBestFor: string;
+  fetchAutomates: string;
+  fetchFeature1: string;
+  fetchFeature2: string;
+  fetchFeature3: string;
+  fetchFeature4: string;
+  fetchBtn: string;
   terminalBadge: string;
   terminalStatus: string;
   terminalTitle: string;
@@ -91,6 +102,7 @@ interface TranslationMap {
   erasemeProHint: string;
   memoryProHint: string;
   seekProHint: string;
+  fetchProHint: string;
   terminalProHint: string;
   terminalDemoPane1: string;
   terminalDemoPane2: string;
@@ -104,6 +116,10 @@ interface TranslationMap {
   memoryDemoStatusPending: string;
   seekDemoQuery: string;
   seekDemoRRF: string;
+  fetchDemoInput: string;
+  fetchDemoStatusTls: string;
+  fetchDemoStatusDom: string;
+  fetchDemoStatusTokens: string;
   copyCommandLabel: string;
   copiedCommandLabel: string;
   vaultDemoLine1: string;
@@ -225,6 +241,17 @@ const translations: Record<Language, TranslationMap> = {
     seekFeature3: 'Built-in HTTP REST daemon for lightweight client access.',
     seekFeature4: '100% CGO-free Go code with local-first vector fallback.',
     seekBtn: 'View Seek on GitHub',
+    fetchBadge: 'Web context fetch',
+    fetchStatus: 'Beta',
+    fetchTitle: 'Symaira Fetch',
+    fetchDesc: 'A terminal-native web fetch engine for LLM agents. Fetch web pages using browser-impersonating TLS/HTTP2 and transform HTML into LLM-optimized Markdown or JSON via a semantic DOM pipeline—without JavaScript execution overhead.',
+    fetchBestFor: 'Developers and AI agents requiring clean, structured web content without browser overhead.',
+    fetchAutomates: 'TLS/HTTP2 fingerprinting, semantic DOM filtering, data island extraction, and concurrent batch requests.',
+    fetchFeature1: 'Browser-impersonating TLS/HTTP2 JA4 fingerprints.',
+    fetchFeature2: 'Semantic DOM pipeline cleans HTML to token-compressed Markdown.',
+    fetchFeature3: 'Extracts data islands (__NEXT_DATA__, JSON-LD) without JS execution.',
+    fetchFeature4: 'Model Context Protocol (MCP) server for instant agent integration.',
+    fetchBtn: 'View Fetch on GitHub',
     terminalBadge: 'Agent terminal',
     terminalStatus: 'Beta',
     terminalTitle: 'Symaira Terminal',
@@ -241,6 +268,7 @@ const translations: Record<Language, TranslationMap> = {
     erasemeProHint: 'Pro variant planned: Cloud campaigns, automated weekly scans, and central compliance reporting.',
     memoryProHint: 'Pro variant planned: Team context sync, shared agent memory spaces, and central administrative control.',
     seekProHint: 'Pro variant planned: Cloud vector storage, distributed document ingestion pipelines, and multi-tenant index sharing.',
+    fetchProHint: 'Pro variant planned: Managed browser rendering (JS execution), CAPTCHA solving, and automated crawl pipelines.',
     terminalProHint: 'Pro variant planned: Team session sharing, mobile companion relay, and secure hosted access tunnels.',
     terminalDemoPane1: 'Pane 1: Aider (active)',
     terminalDemoPane2: 'Pane 2: Claude Code (blocked)',
@@ -254,6 +282,10 @@ const translations: Record<Language, TranslationMap> = {
     memoryDemoStatusPending: 'Pending',
     seekDemoQuery: 'Search query',
     seekDemoRRF: 'Fused RRF rank',
+    fetchDemoInput: 'Fetch URL',
+    fetchDemoStatusTls: 'JA4 Fingerprint OK',
+    fetchDemoStatusDom: 'DOM Filtered',
+    fetchDemoStatusTokens: 'Markdown Token Savings',
     copyCommandLabel: 'Copy',
     copiedCommandLabel: 'Copied',
     vaultDemoLine1: 'policy: scoped token verified',
@@ -373,6 +405,17 @@ const translations: Record<Language, TranslationMap> = {
     seekFeature3: 'Integrierter HTTP REST-Daemon für leichtgewichtigen Client-Zugriff.',
     seekFeature4: '100 % CGO-freier Go-Code mit lokalem Vektor-Fallback.',
     seekBtn: 'Seek auf GitHub ansehen',
+    fetchBadge: 'Web-Kontext-Abruf',
+    fetchStatus: 'Beta',
+    fetchTitle: 'Symaira Fetch',
+    fetchDesc: 'Eine terminal-native Web-Fetch-Engine für LLM-Agenten. Ruft Webseiten mittels Browser-imitierendem TLS/HTTP2 ab und transformiert HTML über eine semantische DOM-Pipeline ohne JavaScript-Overhead in LLM-optimiertes Markdown oder JSON.',
+    fetchBestFor: 'Entwickler und KI-Agenten, die saubere, strukturierte Webinhalte ohne den Overhead von Browser-Automatisierung benötigen.',
+    fetchAutomates: 'TLS/HTTP2-Fingerprinting, semantische DOM-Filterung, Data-Island-Extraktion und parallele Batch-Anfragen.',
+    fetchFeature1: 'Browser-imitierende TLS/HTTP2-JA4-Fingerprints.',
+    fetchFeature2: 'Semantische DOM-Pipeline komprimiert HTML zu optimiertem Markdown.',
+    fetchFeature3: 'Extrahiert Data-Islands (__NEXT_DATA__, JSON-LD) ohne JS-Ausführung.',
+    fetchFeature4: 'Model Context Protocol (MCP) Server für direkte Agenten-Integration.',
+    fetchBtn: 'Fetch auf GitHub ansehen',
     terminalBadge: 'Agenten-Terminal',
     terminalStatus: 'Beta',
     terminalTitle: 'Symaira Terminal',
@@ -389,6 +432,7 @@ const translations: Record<Language, TranslationMap> = {
     erasemeProHint: 'Pro-Variante geplant: Cloud-Kampagnen, automatisierte Scans und zentrale Compliance-Berichte.',
     memoryProHint: 'Pro-Variante geplant: Team-Kontext-Sync, geteilte Speicherbereiche für Agenten und und zentrale Administration.',
     seekProHint: 'Pro-Variante geplant: Cloud-Vektorspeicher, verteilte Ingestion-Pipelines und mandantenfähige Index-Freigabe.',
+    fetchProHint: 'Pro-Variante geplant: Verwaltetes Browser-Rendering (JS-Ausführung), CAPTCHA-Lösung und automatisierte Crawl-Pipelines.',
     terminalProHint: 'Pro-Variante geplant: Team-Session-Sharing, Mobile-Companion-Relay und sichere gehostete Tunnels.',
     terminalDemoPane1: 'Panel 1: Aider (aktiv)',
     terminalDemoPane2: 'Panel 2: Claude Code (blockiert)',
@@ -402,6 +446,10 @@ const translations: Record<Language, TranslationMap> = {
     memoryDemoStatusPending: 'Ausstehend',
     seekDemoQuery: 'Suchanfrage',
     seekDemoRRF: 'Zusammengeführtes RRF',
+    fetchDemoInput: 'URL abrufen',
+    fetchDemoStatusTls: 'JA4-Fingerprint OK',
+    fetchDemoStatusDom: 'DOM gefiltert',
+    fetchDemoStatusTokens: 'Markdown Token-Ersparnis',
     copyCommandLabel: 'Kopieren',
     copiedCommandLabel: 'Kopiert',
     vaultDemoLine1: 'policy: Scoped-Token verifiziert',

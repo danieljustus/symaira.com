@@ -877,6 +877,28 @@ a {
   color: #6EE7B7;
 }
 
+/* Sky theme */
+.product-card-sky {
+  border-color: rgba(129, 212, 250, 0.16);
+}
+
+.product-card-sky:hover {
+  box-shadow: 0 12px 40px 0 rgba(129, 212, 250, 0.05);
+}
+
+.product-card-sky .product-icon {
+  color: #81D4FA;
+  border-color: rgba(129, 212, 250, 0.22);
+}
+
+.product-card-sky .product-context-row span {
+  color: #81D4FA;
+}
+
+.product-card-sky .product-feature span {
+  color: #81D4FA;
+}
+
 .product-card-content {
   position: relative;
   z-index: 1;
@@ -1316,6 +1338,72 @@ a {
   color: var(--text-muted);
 }
 
+/* Fetch Demo styling */
+.product-demo-fetch {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.fetch-flow {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.fetch-input-line {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: rgba(5, 5, 8, 0.9);
+  border: 1px solid rgba(129, 212, 250, 0.16);
+  font-family: var(--font-tech);
+  font-size: 11px;
+  color: #81D4FA;
+}
+
+.fetch-pipeline {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.fetch-step {
+  display: grid;
+  grid-template-columns: 20px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: rgba(129, 212, 250, 0.035);
+  border: 1px solid rgba(129, 212, 250, 0.08);
+  font-size: 11px;
+}
+
+.fetch-step-icon {
+  color: #81D4FA;
+  display: flex;
+  align-items: center;
+}
+
+.fetch-step-text {
+  color: var(--text-secondary);
+}
+
+.fetch-step-value {
+  font-family: var(--font-tech);
+  font-size: 9px;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.fetch-step-value.highlight {
+  color: #81D4FA;
+}
+
 /* Pro planned hint styles */
 .product-pro-note {
   margin-top: 10px;
@@ -1398,6 +1486,18 @@ a {
 }
 .product-card-mint .pro-tag {
   color: #6EE7B7;
+}
+
+.product-card-sky .product-pro-note {
+  border-color: rgba(129, 212, 250, 0.15);
+  background: rgba(129, 212, 250, 0.02);
+}
+.product-card-sky:hover .product-pro-note {
+  border-color: rgba(129, 212, 250, 0.28);
+  background: rgba(129, 212, 250, 0.04);
+}
+.product-card-sky .pro-tag {
+  color: #81D4FA;
 }
 
 /* Terminal App Demo */

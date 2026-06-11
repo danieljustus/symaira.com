@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowRight, Eye, Shield, ShieldCheck, Terminal, Workflow, Brain, Search } from 'lucide-react';
+import { ArrowRight, Eye, Shield, ShieldCheck, Terminal, Workflow, Brain, Search, Globe } from 'lucide-react';
 import { GitHubIcon } from './GitHubIcon';
 import { useLanguage } from '../context/LanguageContext';
 
@@ -74,6 +74,21 @@ export const Tools: React.FC = () => {
       tone: 'coral',
       demoType: 'seek',
       proHint: t('seekProHint'),
+    },
+    {
+      badge: t('fetchBadge'),
+      status: t('fetchStatus'),
+      title: t('fetchTitle'),
+      desc: t('fetchDesc'),
+      bestFor: t('fetchBestFor'),
+      automates: t('fetchAutomates'),
+      features: [t('fetchFeature1'), t('fetchFeature2'), t('fetchFeature3'), t('fetchFeature4')],
+      href: 'https://github.com/danieljustus/symaira-fetch',
+      button: t('fetchBtn'),
+      icon: <Globe size={24} />,
+      tone: 'sky',
+      demoType: 'fetch',
+      proHint: t('fetchProHint'),
     },
     {
       badge: t('terminalBadge'),
@@ -314,6 +329,43 @@ export const Tools: React.FC = () => {
                       <span className="seek-badge-rank">#3</span>
                       <span className="seek-result-file">keys_rotation.go</span>
                       <strong className="seek-result-score">{t('seekDemoRRF')}: 0.016</strong>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ) : product.demoType === 'fetch' ? (
+              <div className="product-demo product-demo-fetch" aria-hidden="true">
+                <div className="demo-header">
+                  <div className="demo-dots">
+                    <span />
+                    <span />
+                    <span />
+                  </div>
+                  <div className="demo-title">
+                    <Globe size={12} />
+                    symfetch
+                  </div>
+                </div>
+                <div className="fetch-flow">
+                  <div className="fetch-input-line">
+                    <Globe size={13} />
+                    <span>{t('fetchDemoInput')}: "https://example.com/blog"</span>
+                  </div>
+                  <div className="fetch-pipeline">
+                    <div className="fetch-step">
+                      <span className="fetch-step-icon">//</span>
+                      <span className="fetch-step-text">{t('fetchDemoStatusTls')}</span>
+                      <span className="fetch-step-value highlight">Chrome/124</span>
+                    </div>
+                    <div className="fetch-step">
+                      <span className="fetch-step-icon">//</span>
+                      <span className="fetch-step-text">{t('fetchDemoStatusDom')}</span>
+                      <span className="fetch-step-value">Removed scripts & ads</span>
+                    </div>
+                    <div className="fetch-step">
+                      <span className="fetch-step-icon">//</span>
+                      <span className="fetch-step-text">{t('fetchDemoStatusTokens')}</span>
+                      <span className="fetch-step-value highlight">-82.3%</span>
                     </div>
                   </div>
                 </div>
