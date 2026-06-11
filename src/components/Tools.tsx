@@ -28,6 +28,7 @@ export const Tools: React.FC = () => {
       icon: <Shield size={24} />,
       tone: 'gold',
       demoType: 'vault',
+      proHint: t('vaultProHint'),
     },
     {
       badge: t('erasemeBadge'),
@@ -42,6 +43,7 @@ export const Tools: React.FC = () => {
       icon: <Eye size={24} />,
       tone: 'ice',
       demoType: 'eraseme',
+      proHint: t('erasemeProHint'),
     },
     {
       badge: t('memoryBadge'),
@@ -56,6 +58,7 @@ export const Tools: React.FC = () => {
       icon: <Brain size={24} />,
       tone: 'violet',
       demoType: 'memory',
+      proHint: t('memoryProHint'),
     },
     {
       badge: t('seekBadge'),
@@ -70,6 +73,22 @@ export const Tools: React.FC = () => {
       icon: <Search size={24} />,
       tone: 'coral',
       demoType: 'seek',
+      proHint: t('seekProHint'),
+    },
+    {
+      badge: t('terminalBadge'),
+      status: t('terminalStatus'),
+      title: t('terminalTitle'),
+      desc: t('terminalDesc'),
+      bestFor: t('terminalBestFor'),
+      automates: t('terminalAutomates'),
+      features: [t('terminalFeature1'), t('terminalFeature2'), t('terminalFeature3'), t('terminalFeature4')],
+      href: 'https://github.com/danieljustus/symaira-terminal',
+      button: t('terminalBtn'),
+      icon: <Terminal size={24} />,
+      tone: 'mint',
+      demoType: 'terminal-app',
+      proHint: t('terminalProHint'),
     },
   ];
 
@@ -161,6 +180,11 @@ export const Tools: React.FC = () => {
                     <p>{feature}</p>
                   </div>
                 ))}
+              </div>
+
+              <div className="product-pro-note">
+                <span className="pro-tag">{t('proLabel')}</span>
+                <p>{product.proHint}</p>
               </div>
 
               <a
@@ -257,7 +281,7 @@ export const Tools: React.FC = () => {
                   </div>
                 </div>
               </div>
-            ) : (
+            ) : product.demoType === 'seek' ? (
               <div className="product-demo product-demo-seek" aria-hidden="true">
                 <div className="demo-header">
                   <div className="demo-dots">
@@ -290,6 +314,57 @@ export const Tools: React.FC = () => {
                       <span className="seek-badge-rank">#3</span>
                       <span className="seek-result-file">keys_rotation.go</span>
                       <strong className="seek-result-score">{t('seekDemoRRF')}: 0.016</strong>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <div className="product-demo product-demo-terminal-app" aria-hidden="true">
+                <div className="demo-header">
+                  <div className="demo-dots">
+                    <span />
+                    <span />
+                    <span />
+                  </div>
+                  <div className="demo-title">
+                    <Terminal size={12} />
+                    symaira-terminal // session-1
+                  </div>
+                </div>
+                <div className="terminal-split-view">
+                  <div className="terminal-pane terminal-pane-left">
+                    <div className="pane-header">
+                      <span className="pane-status-ring status-ring-active"></span>
+                      <span className="pane-name">{t('terminalDemoPane1')}</span>
+                    </div>
+                    <div className="pane-terminal-content">
+                      <p className="line-cmd"><span>$</span> aider app.py</p>
+                      <p className="line-log">// Analyzing codebase...</p>
+                      <p className="line-log">// Modifying files...</p>
+                      <p className="line-diff-add">+ def process_secrets():</p>
+                      <p className="line-diff-add">+     return symvault.get()</p>
+                    </div>
+                  </div>
+                  <div className="terminal-pane terminal-pane-right">
+                    <div className="pane-header">
+                      <span className="pane-status-ring status-ring-blocked animate-pulse-ring"></span>
+                      <span className="pane-name">{t('terminalDemoPane2')}</span>
+                    </div>
+                    <div className="pane-terminal-content">
+                      <p className="line-cmd"><span>$</span> claude dev</p>
+                      <div className="terminal-prompt-box">
+                        <div className="prompt-header">
+                          <span>{t('terminalDemoPrompt')}</span>
+                        </div>
+                        <div className="prompt-body">
+                          <p>Write to: index.html</p>
+                          <div className="prompt-actions">
+                            <span className="prompt-btn btn-approve">Approve</span>
+                            <span className="prompt-btn btn-reject">Reject</span>
+                          </div>
+                        </div>
+                      </div>
+                      <p className="line-status-alert">{t('terminalDemoAction')}</p>
                     </div>
                   </div>
                 </div>

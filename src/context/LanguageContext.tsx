@@ -75,6 +75,27 @@ interface TranslationMap {
   seekFeature3: string;
   seekFeature4: string;
   seekBtn: string;
+  terminalBadge: string;
+  terminalStatus: string;
+  terminalTitle: string;
+  terminalDesc: string;
+  terminalBestFor: string;
+  terminalAutomates: string;
+  terminalFeature1: string;
+  terminalFeature2: string;
+  terminalFeature3: string;
+  terminalFeature4: string;
+  terminalBtn: string;
+  proLabel: string;
+  vaultProHint: string;
+  erasemeProHint: string;
+  memoryProHint: string;
+  seekProHint: string;
+  terminalProHint: string;
+  terminalDemoPane1: string;
+  terminalDemoPane2: string;
+  terminalDemoPrompt: string;
+  terminalDemoAction: string;
   memoryDemoAdd: string;
   memoryDemoGuard: string;
   memoryDemoSync: string;
@@ -204,6 +225,27 @@ const translations: Record<Language, TranslationMap> = {
     seekFeature3: 'Built-in HTTP REST daemon for lightweight client access.',
     seekFeature4: '100% CGO-free Go code with local-first vector fallback.',
     seekBtn: 'View Seek on GitHub',
+    terminalBadge: 'Agent terminal',
+    terminalStatus: 'Beta',
+    terminalTitle: 'Symaira Terminal',
+    terminalDesc: 'A native macOS terminal built for the Human-AI era. It allows running multiple CLI coding agents in parallel with per-pane status rings, shell integration, and Git worktree isolation.',
+    terminalBestFor: 'Developers running CLI coding agents who need to monitor status and manage permissions.',
+    terminalAutomates: 'Pane management, agent status tracking, Git worktree isolation, and structured permission prompts.',
+    terminalFeature1: 'Swift 6 & SwiftUI wrapper around Metal-accelerated Ghostty.',
+    terminalFeature2: 'Per-pane agent status rings (active, blocked, error).',
+    terminalFeature3: 'Dual-mode integration supporting plain PTY and structured ACP.',
+    terminalFeature4: 'Git worktree isolation to review agent changes before merge.',
+    terminalBtn: 'View Terminal on GitHub',
+    proLabel: 'Planned Pro Features',
+    vaultProHint: 'Pro variant planned: Secure cloud syncing, team vault sharing, and enterprise audit logging.',
+    erasemeProHint: 'Pro variant planned: Cloud campaigns, automated weekly scans, and central compliance reporting.',
+    memoryProHint: 'Pro variant planned: Team context sync, shared agent memory spaces, and central administrative control.',
+    seekProHint: 'Pro variant planned: Cloud vector storage, distributed document ingestion pipelines, and multi-tenant index sharing.',
+    terminalProHint: 'Pro variant planned: Team session sharing, mobile companion relay, and secure hosted access tunnels.',
+    terminalDemoPane1: 'Pane 1: Aider (active)',
+    terminalDemoPane2: 'Pane 2: Claude Code (blocked)',
+    terminalDemoPrompt: 'Approve file edits?',
+    terminalDemoAction: 'Awaiting human consent',
     memoryDemoAdd: 'Memory ingested',
     memoryDemoGuard: 'PII Guard active',
     memoryDemoSync: 'E2E context sync',
@@ -331,6 +373,27 @@ const translations: Record<Language, TranslationMap> = {
     seekFeature3: 'Integrierter HTTP REST-Daemon für leichtgewichtigen Client-Zugriff.',
     seekFeature4: '100 % CGO-freier Go-Code mit lokalem Vektor-Fallback.',
     seekBtn: 'Seek auf GitHub ansehen',
+    terminalBadge: 'Agenten-Terminal',
+    terminalStatus: 'Beta',
+    terminalTitle: 'Symaira Terminal',
+    terminalDesc: 'Ein natives macOS-Terminal für die Mensch-KI-Ära. Ermöglicht das parallele Ausführen mehrerer CLI-Coding-Agenten mit Statusringen pro Panel, Shell-Integration und Git-Worktree-Isolierung.',
+    terminalBestFor: 'Entwickler, die CLI-Coding-Agenten ausführen und Status/Berechtigungen überwachen wollen.',
+    terminalAutomates: 'Panel-Management, Agenten-Statusverfolgung, Git-Worktree-Isolierung und strukturierte Berechtigungsabfragen.',
+    terminalFeature1: 'Swift 6 & SwiftUI Wrapper auf der Metal-beschleunigten Ghostty-Engine.',
+    terminalFeature2: 'Agenten-Statusringe pro Panel (aktiv, blockiert, fehlerhaft).',
+    terminalFeature3: 'Duale Integration mit Unterstützung für PTY und Agent Client Protocol (ACP).',
+    terminalFeature4: 'Git-Worktree-Isolierung isoliert Agenten-Änderungen vor dem Merge.',
+    terminalBtn: 'Terminal auf GitHub ansehen',
+    proLabel: 'Geplante Pro-Features',
+    vaultProHint: 'Pro-Variante geplant: Sicherer Cloud-Sync, Team-Vault-Freigabe und Enterprise-Audit-Logs.',
+    erasemeProHint: 'Pro-Variante geplant: Cloud-Kampagnen, automatisierte Scans und zentrale Compliance-Berichte.',
+    memoryProHint: 'Pro-Variante geplant: Team-Kontext-Sync, geteilte Speicherbereiche für Agenten und und zentrale Administration.',
+    seekProHint: 'Pro-Variante geplant: Cloud-Vektorspeicher, verteilte Ingestion-Pipelines und mandantenfähige Index-Freigabe.',
+    terminalProHint: 'Pro-Variante geplant: Team-Session-Sharing, Mobile-Companion-Relay und sichere gehostete Tunnels.',
+    terminalDemoPane1: 'Panel 1: Aider (aktiv)',
+    terminalDemoPane2: 'Panel 2: Claude Code (blockiert)',
+    terminalDemoPrompt: 'Änderungen freigeben?',
+    terminalDemoAction: 'Wartet auf Freigabe',
     memoryDemoAdd: 'Fakt erfasst',
     memoryDemoGuard: 'PII-Guard aktiv',
     memoryDemoSync: 'E2E Kontext-Sync',
