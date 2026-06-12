@@ -6,6 +6,7 @@ import { Hero } from './components/Hero';
 import { Vision } from './components/Vision';
 import { Tools } from './components/Tools';
 import { Contact } from './components/Contact';
+import { Stack } from './components/Stack';
 import { Footer } from './components/Footer';
 import { LegalPages } from './components/LegalPages';
 import { SandBackground } from './components/SandBackground';
@@ -28,6 +29,7 @@ function App() {
   }, []);
 
   const isLegalPage = hash === '#/impressum' || hash === '#/privacy' || hash === '#/datenschutz';
+  const isStackPage = hash === '#/stack';
   const legalView = hash === '#/impressum' ? 'impressum' : 'privacy';
 
   return (
@@ -47,6 +49,8 @@ function App() {
           <main style={{ position: 'relative', zIndex: 5 }}>
             {isLegalPage ? (
               <LegalPages view={legalView} />
+            ) : isStackPage ? (
+              <Stack />
             ) : (
               <>
                 <Hero />

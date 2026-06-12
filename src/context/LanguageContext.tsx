@@ -166,6 +166,25 @@ interface TranslationMap {
   maintainerTitle: string;
   maintainerDesc: string;
   maintainerBtn: string;
+  navStack: string;
+  stackTitle: string;
+  stackSubtitle: string;
+  stackPitch: string;
+  stackInstallTitle: string;
+  stackInstallStep1Label: string;
+  stackInstallStep2Label: string;
+  stackInstallStep3Label: string;
+  stackInstallNote: string;
+  stackConfigTitle: string;
+  stackConfigDesc: string;
+  stackWorkflowTitle: string;
+  stackWorkflow1Title: string;
+  stackWorkflow1Desc: string;
+  stackWorkflow2Title: string;
+  stackWorkflow2Desc: string;
+  stackWorkflow3Title: string;
+  stackWorkflow3Desc: string;
+  stackBackToTools: string;
 }
 
 const translations: Record<Language, TranslationMap> = {
@@ -220,7 +239,7 @@ const translations: Record<Language, TranslationMap> = {
     erasemeFeature4: 'Manual fallback covers web forms, CAPTCHA, and reports/export.',
     erasemeBtn: 'View EraseMe on GitHub',
     memoryBadge: 'Context & memory',
-    memoryStatus: 'Roadmap',
+    memoryStatus: 'Available',
     memoryTitle: 'Symaira Memory',
     memoryDesc: 'A persistent context layer and semantic memory base for the Human-AI Symbiosis. Memory enables seamless, long-term context sharing between you and your AI agents with local-first security.',
     memoryBestFor: 'AI agents needing persistent long-term memory across sessions.',
@@ -231,7 +250,7 @@ const translations: Record<Language, TranslationMap> = {
     memoryFeature4: 'PII Guard sanitizes sensitive personal data before ingestion.',
     memoryBtn: 'View Memory on GitHub',
     seekBadge: 'Hybrid search',
-    seekStatus: 'Roadmap',
+    seekStatus: 'Available',
     seekTitle: 'Symaira Seek',
     seekDesc: 'A fast, local-first document retrieval engine that provides hybrid search by fusing BM25 keyword matching and vector semantic similarity using Reciprocal Rank Fusion (RRF).',
     seekBestFor: 'Developers and agents requiring fast, offline hybrid document search.',
@@ -332,6 +351,25 @@ const translations: Record<Language, TranslationMap> = {
     maintainerTitle: 'Creator & Maintainer',
     maintainerDesc: 'Hi, I\'m Daniel. I design and build the Symaira ecosystem. As an expert in AI integration and digital product development, I am convinced that a productive human-AI symbiosis requires open, flexible standards rather than the closed walled gardens of big tech. I build secure, efficient tools that work independently with any AI Agent, keeping you in absolute control. That is why all Symaira tools are 100% open-source and run locally on your machine.',
     maintainerBtn: 'Visit daniel-justus.de',
+    navStack: 'AI Stack',
+    stackTitle: 'The Symaira AI Stack',
+    stackSubtitle: 'All Symaira tools speak MCP. Together, they form a complete local-first AI development stack.',
+    stackPitch: 'Every Symaira tool exposes a Model Context Protocol (MCP) server, making your local agent workflows composable, secure, and privacy-preserving. Install the stack, wire the config, and your AI agents have access to secrets, memory, search, web fetch, and privacy automation — all without sending data to the cloud.',
+    stackInstallTitle: 'Install the Stack',
+    stackInstallStep1Label: 'Add the Homebrew tap',
+    stackInstallStep2Label: 'Install CLI tools + MCP servers',
+    stackInstallStep3Label: 'Install the native terminal',
+    stackInstallNote: 'symfetch joins the stack after its first tagged release.',
+    stackConfigTitle: 'MCP Configuration',
+    stackConfigDesc: 'Drop this into your agent\'s MCP config directory. Each tool runs as a local stdio server — no network, no cloud.',
+    stackWorkflowTitle: 'Example Workflows',
+    stackWorkflow1Title: 'Web Research Pipeline',
+    stackWorkflow1Desc: 'Fetch a web page, convert it to clean Markdown, and index it for hybrid search.',
+    stackWorkflow2Title: 'Secure Agent Context',
+    stackWorkflow2Desc: 'Use Vault to securely inject secrets into a Memory sync session.',
+    stackWorkflow3Title: 'Knowledge Retrieval',
+    stackWorkflow3Desc: 'Search indexed documents and fetch referenced URLs in one pipeline.',
+    stackBackToTools: 'Back to Tools',
   },
   de: {
     navVision: 'Vision',
@@ -384,7 +422,7 @@ const translations: Record<Language, TranslationMap> = {
     erasemeFeature4: 'Manueller Fallback für Webformulare, CAPTCHAs sowie Daten-Exporte.',
     erasemeBtn: 'EraseMe auf GitHub ansehen',
     memoryBadge: 'Kontext & Speicher',
-    memoryStatus: 'Roadmap',
+    memoryStatus: 'Verfügbar',
     memoryTitle: 'Symaira Memory',
     memoryDesc: 'Ein dauerhafter Kontext-Layer und semantische Speicher-Infrastruktur für die Mensch-KI-Ära. Memory ermöglicht nahtloses Langzeitgedächtnis zwischen dir und deinen KI-Agenten.',
     memoryBestFor: 'KI-Agenten, die ein dauerhaftes Langzeitgedächtnis über Sessions hinweg benötigen.',
@@ -395,7 +433,7 @@ const translations: Record<Language, TranslationMap> = {
     memoryFeature4: 'PII-Guard bereinigt sensible persönliche Daten vor der Ingestion.',
     memoryBtn: 'Memory auf GitHub ansehen',
     seekBadge: 'Hybride Suche',
-    seekStatus: 'Roadmap',
+    seekStatus: 'Verfügbar',
     seekTitle: 'Symaira Seek',
     seekDesc: 'Eine schnelle, lokale Dokumentensuche, die klassischen Keyword-Abruf (BM25) mit semantischer Vektorsuche kombiniert und die Ergebnisse via Reciprocal Rank Fusion (RRF) zusammenführt.',
     seekBestFor: 'Entwickler und Agenten, die eine schnelle, lokale hybride Dokumentensuche benötigen.',
@@ -496,6 +534,25 @@ const translations: Record<Language, TranslationMap> = {
     maintainerTitle: 'Entwickler & Maintainer',
     maintainerDesc: 'Hi, ich bin Daniel. Ich konzipiere und entwickle das Symaira-Ökosystem. Als Experte für KI-Integration und digitale Produktentwicklung bin ich überzeugt: Eine produktive Mensch-KI-Symbiose braucht keine geschlossenen Walled Gardens der großen Tech-Konzerne, sondern offene, flexible Standards. Ich baue sichere und effiziente Tools, die unabhängig mit jedem AI-Agenten funktionieren und dir die volle Kontrolle zurückgeben. Deshalb sind alle Symaira-Tools zu 100 % Open-Source und laufen lokal auf deinem System.',
     maintainerBtn: 'daniel-justus.de besuchen',
+    navStack: 'AI Stack',
+    stackTitle: 'Der Symaira AI Stack',
+    stackSubtitle: 'Alle Symaira-Tools sprechen MCP. Zusammen ergeben sie einen vollständigen lokalen AI-Entwicklungs-Stack.',
+    stackPitch: 'Jedes Symaira-Tool stellt einen Model Context Protocol (MCP) Server bereit und macht deine lokalen Agent-Workflows zusammensetzbar, sicher und datenschutzkonform. Installiere den Stack, konfiguriere ihn, und deine AI-Agenten haben Zugriff auf Secrets, Speicher, Suche, Web-Fetch und Privacy-Automatisierung — ohne Daten in die Cloud zu senden.',
+    stackInstallTitle: 'Stack installieren',
+    stackInstallStep1Label: 'Homebrew-Tap hinzufügen',
+    stackInstallStep2Label: 'CLI-Tools + MCP-Server installieren',
+    stackInstallStep3Label: 'Natives Terminal installieren',
+    stackInstallNote: 'symfetch wird nach dem ersten getaggten Release hinzugefügt.',
+    stackConfigTitle: 'MCP-Konfiguration',
+    stackConfigDesc: 'Leg diese Datei in das MCP-Konfigurationsverzeichnis deines Agenten. Jedes Tool läuft als lokaler stdio-Server — kein Netzwerk, keine Cloud.',
+    stackWorkflowTitle: 'Workflow-Beispiele',
+    stackWorkflow1Title: 'Web-Recherche-Pipeline',
+    stackWorkflow1Desc: 'Eine Webseite abrufen, in sauberes Markdown umwandeln und für hybride Suche indexieren.',
+    stackWorkflow2Title: 'Sicherer Agent-Kontext',
+    stackWorkflow2Desc: 'Vault nutzen, um Secrets sicher in eine Memory-Sync-Sitzung zu injizieren.',
+    stackWorkflow3Title: 'Wissensabruf',
+    stackWorkflow3Desc: 'Indexierte Dokumente durchsuchen und referenzierte URLs in einer Pipeline abrufen.',
+    stackBackToTools: 'Zurück zu Tools',
   },
 };
 
