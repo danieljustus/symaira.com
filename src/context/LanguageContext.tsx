@@ -97,6 +97,39 @@ interface TranslationMap {
   terminalFeature3: string;
   terminalFeature4: string;
   terminalBtn: string;
+  scopeBadge: string;
+  scopeStatus: string;
+  scopeTitle: string;
+  scopeDesc: string;
+  scopeBestFor: string;
+  scopeAutomates: string;
+  scopeFeature1: string;
+  scopeFeature2: string;
+  scopeFeature3: string;
+  scopeFeature4: string;
+  scopeBtn: string;
+  operateBadge: string;
+  operateStatus: string;
+  operateTitle: string;
+  operateDesc: string;
+  operateBestFor: string;
+  operateAutomates: string;
+  operateFeature1: string;
+  operateFeature2: string;
+  operateFeature3: string;
+  operateFeature4: string;
+  operateBtn: string;
+  tuneBadge: string;
+  tuneStatus: string;
+  tuneTitle: string;
+  tuneDesc: string;
+  tuneBestFor: string;
+  tuneAutomates: string;
+  tuneFeature1: string;
+  tuneFeature2: string;
+  tuneFeature3: string;
+  tuneFeature4: string;
+  tuneBtn: string;
   proLabel: string;
   vaultProHint: string;
   erasemeProHint: string;
@@ -104,10 +137,32 @@ interface TranslationMap {
   seekProHint: string;
   fetchProHint: string;
   terminalProHint: string;
+  scopeProHint: string;
+  operateProHint: string;
+  tuneProHint: string;
   terminalDemoPane1: string;
   terminalDemoPane2: string;
   terminalDemoPrompt: string;
   terminalDemoAction: string;
+  scopeDemoTitle: string;
+  scopeDemoScanning: string;
+  scopeDemoConflict: string;
+  scopeDemoMcp: string;
+  scopeDemoSuggest: string;
+  operateDemoTitle: string;
+  operateDemoQuery: string;
+  operateDemoSafety: string;
+  operateDemoAction: string;
+  operateDemoSuccess: string;
+  tuneDemoTitle: string;
+  tuneDemoCPU: string;
+  tuneDemoFan: string;
+  tuneDemoPower: string;
+  tuneDemoEDR: string;
+  filterAll: string;
+  filterContext: string;
+  filterSecurity: string;
+  filterSystem: string;
   memoryDemoAdd: string;
   memoryDemoGuard: string;
   memoryDemoSync: string;
@@ -282,6 +337,39 @@ const translations: Record<Language, TranslationMap> = {
     terminalFeature3: 'Dual-mode integration supporting plain PTY and structured ACP.',
     terminalFeature4: 'Git worktree isolation to review agent changes before merge.',
     terminalBtn: 'View Terminal on GitHub',
+    scopeBadge: 'Discovery & Ports',
+    scopeStatus: 'Available',
+    scopeTitle: 'Symaira Scope',
+    scopeDesc: 'A cross-platform scanner to inventory listening ports, active containers, and MCP servers across your AI client configurations.',
+    scopeBestFor: 'Developers wanting to debug port conflicts or auto-discover active MCP servers.',
+    scopeAutomates: 'Port scanning, client configuration discovery, and container port mapping.',
+    scopeFeature1: 'Inventories listening TCP/UDP ports and suggests conflicts.',
+    scopeFeature2: 'Identifies active Docker containers and their published ports.',
+    scopeFeature3: 'Discovers MCP servers registered in Cursor, VS Code, and Windsurf.',
+    scopeFeature4: 'Pure Go, 100% CGO-free for safe, zero-telemetry local runs.',
+    scopeBtn: 'View Scope on GitHub',
+    operateBadge: 'GUI Automation',
+    operateStatus: 'Available',
+    operateTitle: 'Symaira Operate',
+    operateDesc: 'A native macOS desktop-automation MCP server. Allows AI agents to securely observe and control the Mac GUI via accessibility trees and screenshots.',
+    operateBestFor: 'AI agents needing to perform native macOS app automation and UI interactions.',
+    operateAutomates: 'Accessibility tree parsing, screen capturing, keystroke simulation, and mouse actions.',
+    operateFeature1: 'Accessibility tree mapping using ephemeral element ID caching.',
+    operateFeature2: 'Refuses destructive actions (Delete, Trash, Unlock) automatically.',
+    operateFeature3: 'Screen Capture via ScreenCaptureKit with localized ROI processing.',
+    operateFeature4: 'Zero daemon footprint – runs on-demand via secure local stdio MCP.',
+    operateBtn: 'View Operate on GitHub',
+    tuneBadge: 'Hardware Tuning',
+    tuneStatus: 'Available',
+    tuneTitle: 'Symaira Tune',
+    tuneDesc: 'A native macOS hardware tuning CLI and MCP server. Lets AI agents monitor thermal, power, and display states, and safely adjust hardware limits.',
+    tuneBestFor: 'AI agents or developers needing local hardware telemetries and safety-gated system tuning.',
+    tuneAutomates: 'Thermal monitoring, display brightness scaling, SMC sensors reading, and power state restores.',
+    tuneFeature1: 'Monitors CPU thermals, fan speeds, and battery state via IOKit.',
+    tuneFeature2: 'Allows adjusting display brightness and dim overlays dynamically.',
+    tuneFeature3: 'Enforces automatic system-default restores on process exit.',
+    tuneFeature4: 'Clamps all writes through strict safety policies to prevent damage.',
+    tuneBtn: 'View Tune on GitHub',
     proLabel: 'Planned Pro Features',
     vaultProHint: 'Pro variant planned: Secure cloud syncing, team vault sharing, and enterprise audit logging.',
     erasemeProHint: 'Pro variant planned: Cloud campaigns, automated weekly scans, and central compliance reporting.',
@@ -289,10 +377,32 @@ const translations: Record<Language, TranslationMap> = {
     seekProHint: 'Pro variant planned: Cloud vector storage, distributed document ingestion pipelines, and multi-tenant index sharing.',
     fetchProHint: 'Pro variant planned: Managed browser rendering (JS execution), CAPTCHA solving, and automated crawl pipelines.',
     terminalProHint: 'Pro variant planned: Team session sharing, mobile companion relay, and secure hosted access tunnels.',
+    scopeProHint: 'Pro variant planned: Remote fleet scanning, centralized port audit logs, and continuous port state monitoring.',
+    operateProHint: 'Pro variant planned: Multi-user session isolation, cloud-based GUI session recording, and credential-gated approval flows.',
+    tuneProHint: 'Pro variant planned: Centralized hardware health dashboards, custom fan profiles, and privileged SMC controls.',
     terminalDemoPane1: 'Pane 1: Aider (active)',
     terminalDemoPane2: 'Pane 2: Claude Code (blocked)',
     terminalDemoPrompt: 'Approve file edits?',
     terminalDemoAction: 'Awaiting human consent',
+    scopeDemoTitle: 'symscope scan',
+    scopeDemoScanning: 'Scanning ports & processes...',
+    scopeDemoConflict: '[Conflict] Port 3000: Node vs Go',
+    scopeDemoMcp: 'Found Cursor/VSCode MCP configs',
+    scopeDemoSuggest: 'Suggested Port: 8081',
+    operateDemoTitle: 'symoperate UI drive',
+    operateDemoQuery: 'Querying UI tree...',
+    operateDemoSafety: 'Clicking "Trash" blocked',
+    operateDemoAction: 'Keystroke: git commit',
+    operateDemoSuccess: 'Control input sent successfully',
+    tuneDemoTitle: 'symtune status',
+    tuneDemoCPU: 'CPU Temperature',
+    tuneDemoFan: 'Fan Speed',
+    tuneDemoPower: 'Power: Charge limited to 80%',
+    tuneDemoEDR: 'EDR Brightness tuned',
+    filterAll: 'All Tools',
+    filterContext: 'Context & Memory',
+    filterSecurity: 'Security & Integrity',
+    filterSystem: 'macOS System',
     memoryDemoAdd: 'Memory ingested',
     memoryDemoGuard: 'PII Guard active',
     memoryDemoSync: 'E2E context sync',
@@ -465,6 +575,39 @@ const translations: Record<Language, TranslationMap> = {
     terminalFeature3: 'Duale Integration mit Unterstützung für PTY und Agent Client Protocol (ACP).',
     terminalFeature4: 'Git-Worktree-Isolierung isoliert Agenten-Änderungen vor dem Merge.',
     terminalBtn: 'Terminal auf GitHub ansehen',
+    scopeBadge: 'Discovery & Ports',
+    scopeStatus: 'Verfügbar',
+    scopeTitle: 'Symaira Scope',
+    scopeDesc: 'Ein plattformübergreifender Scanner zur Inventarisierung von Listening-Ports, aktiven Containern und MCP-Servern in deinen KI-Client-Konfigurationen.',
+    scopeBestFor: 'Entwickler, die Port-Konflikte debuggen oder aktive MCP-Server automatisch erkennen wollen.',
+    scopeAutomates: 'Port-Scanning, Erkennung von Client-Konfigurationen und Container-Port-Mapping.',
+    scopeFeature1: 'Inventarisiert Listening-TCP/UDP-Ports und schlägt Konflikte vor.',
+    scopeFeature2: 'Identifiziert aktive Docker-Container und deren veröffentlichte Ports.',
+    scopeFeature3: 'Erkennt registrierte MCP-Server in Cursor, VS Code und Windsurf.',
+    scopeFeature4: 'Reines Go, 100 % CGO-frei für sichere, telemetriefreie lokale Ausführung.',
+    scopeBtn: 'Scope auf GitHub ansehen',
+    operateBadge: 'GUI-Automatisierung',
+    operateStatus: 'Verfügbar',
+    operateTitle: 'Symaira Operate',
+    operateDesc: 'Ein nativer macOS-GUI-Automatisierungs-MCP-Server. Ermöglicht es KI-Agenten, die Mac-GUI über Barrierefreiheitsbäume und Screenshots sicher zu steuern.',
+    operateBestFor: 'KI-Agenten, die eine native macOS-App-Automatisierung und GUI-Interaktionen durchführen müssen.',
+    operateAutomates: 'Accessibility-Tree-Parsing, Screenshot-Erstellung, Tastatur-Simulation und Maus-Aktionen.',
+    operateFeature1: 'Accessibility-Tree-Mapping mit flüchtigem Element-ID-Caching.',
+    operateFeature2: 'Verweigert destruktive Aktionen (Löschen, Papierkorb, Freigabe) automatisch.',
+    operateFeature3: 'Bildschirmaufnahme via ScreenCaptureKit mit lokalisierter ROI-Verarbeitung.',
+    operateFeature4: 'Kein Hintergrund-Daemon – läuft on-demand über sicheres lokales stdio MCP.',
+    operateBtn: 'Operate auf GitHub ansehen',
+    tuneBadge: 'Hardware-Tuning',
+    tuneStatus: 'Verfügbar',
+    tuneTitle: 'Symaira Tune',
+    tuneDesc: 'Ein CLI- und MCP-Server für macOS-Hardware-Tuning. Ermöglicht es KI-Agenten, Temperatur-, Strom- und Display-Zustände zu überwachen und Limits anzupassen.',
+    tuneBestFor: 'KI-Agenten oder Entwickler, die lokale Hardware-Telemetrie und sicherheitsüberwachtes Systemtuning benötigen.',
+    tuneAutomates: 'Temperaturüberwachung, Helligkeitsskalierung, Lesen von SMC-Sensoren und Wiederherstellen des Systemzustands.',
+    tuneFeature1: 'Überwacht CPU-Temperatur, Lüftergeschwindigkeit und Batteriestatus via IOKit.',
+    tuneFeature2: 'Ermöglicht dynamisches Anpassen der Bildschirmhelligkeit und von Dimm-Overlays.',
+    tuneFeature3: 'Erzwingt automatische Wiederherstellung der Systemstandards beim Beenden.',
+    tuneFeature4: 'Begrenzt alle Schreibvorgänge durch strenge Sicherheitsrichtlinien zur Schadensvermeidung.',
+    tuneBtn: 'Tune auf GitHub ansehen',
     proLabel: 'Geplante Pro-Features',
     vaultProHint: 'Pro-Variante geplant: Sicherer Cloud-Sync, Team-Vault-Freigabe und Enterprise-Audit-Logs.',
     erasemeProHint: 'Pro-Variante geplant: Cloud-Kampagnen, automatisierte Scans und zentrale Compliance-Berichte.',
@@ -472,10 +615,32 @@ const translations: Record<Language, TranslationMap> = {
     seekProHint: 'Pro-Variante geplant: Cloud-Vektorspeicher, verteilte Ingestion-Pipelines und mandantenfähige Index-Freigabe.',
     fetchProHint: 'Pro-Variante geplant: Verwaltetes Browser-Rendering (JS-Ausführung), CAPTCHA-Lösung und automatisierte Crawl-Pipelines.',
     terminalProHint: 'Pro-Variante geplant: Team-Session-Sharing, Mobile-Companion-Relay und sichere gehostete Tunnels.',
+    scopeProHint: 'Pro-Variante geplant: Remote-Fleet-Scanning, zentralisierte Port-Audit-Logs und kontinuierliche Überwachung des Port-Status.',
+    operateProHint: 'Pro-Variante geplant: Multi-User-Sitzungsisolation, cloudbasierte GUI-Sitzungsaufzeichnung und zugriffsgeschützte Freigabe-Workflows.',
+    tuneProHint: 'Pro-Variante geplant: Zentralisierte Hardware-Zustands-Dashboards, benutzerdefinierte Lüfterprofile und privilegierte SMC-Steuerungen.',
     terminalDemoPane1: 'Panel 1: Aider (aktiv)',
     terminalDemoPane2: 'Panel 2: Claude Code (blockiert)',
     terminalDemoPrompt: 'Änderungen freigeben?',
     terminalDemoAction: 'Wartet auf Freigabe',
+    scopeDemoTitle: 'symscope scan',
+    scopeDemoScanning: 'Scanne Ports & Prozesse...',
+    scopeDemoConflict: '[Konflikt] Port 3000: Node vs Go',
+    scopeDemoMcp: 'Cursor/VSCode MCP-Configs gefunden',
+    scopeDemoSuggest: 'Empfohlener Port: 8081',
+    operateDemoTitle: 'symoperate UI-Drive',
+    operateDemoQuery: 'Frage UI-Baum ab...',
+    operateDemoSafety: 'Klick auf "Papierkorb" blockiert',
+    operateDemoAction: 'Tastendruck: git commit',
+    operateDemoSuccess: 'Steuerungseingabe erfolgreich gesendet',
+    tuneDemoTitle: 'symtune status',
+    tuneDemoCPU: 'CPU-Temperatur',
+    tuneDemoFan: 'Lüftergeschwindigkeit',
+    tuneDemoPower: 'Strom: Laden limitiert auf 80%',
+    tuneDemoEDR: 'EDR-Helligkeit angepasst',
+    filterAll: 'Alle Tools',
+    filterContext: 'Kontext & Speicher',
+    filterSecurity: 'Sicherheit & Integrität',
+    filterSystem: 'macOS-System',
     memoryDemoAdd: 'Fakt erfasst',
     memoryDemoGuard: 'PII-Guard aktiv',
     memoryDemoSync: 'E2E Kontext-Sync',

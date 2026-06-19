@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Terminal, ArrowRight, Copy, Check, Shield, Brain, Search, Globe, Eye } from 'lucide-react';
+import { Terminal, ArrowRight, Copy, Check, Shield, Brain, Search, Globe, Eye, Compass, Cpu, MousePointerClick } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 const mcpConfigJson = `{
@@ -20,6 +20,18 @@ const mcpConfigJson = `{
       "command": "symfetch",
       "args": ["mcp", "serve"]
     },
+    "symscope": {
+      "command": "symscope",
+      "args": ["serve"]
+    },
+    "symoperate": {
+      "command": "symoperate",
+      "args": ["serve"]
+    },
+    "symtune": {
+      "command": "symtune",
+      "args": ["serve"]
+    },
     "symeraseme": {
       "command": "symeraseme",
       "args": ["mcp", "serve"]
@@ -38,11 +50,11 @@ export const Stack: React.FC = () => {
     },
     {
       label: t('stackInstallStep2Label'),
-      command: 'brew install symvault symmemory symseek symeraseme',
+      command: 'brew install symvault symmemory symseek symeraseme symscope',
     },
     {
       label: t('stackInstallStep3Label'),
-      command: 'brew install --cask symterminal',
+      command: 'brew install --cask symterminal symoperate symtune',
     },
   ];
 
@@ -108,10 +120,28 @@ export const Stack: React.FC = () => {
       tone: 'sky',
     },
     {
+      icon: <Compass size={18} />,
+      title: 'Symaira Scope',
+      status: 'available',
+      tone: 'indigo',
+    },
+    {
       icon: <Terminal size={18} />,
       title: 'Symaira Terminal',
       status: 'available',
       tone: 'mint',
+    },
+    {
+      icon: <MousePointerClick size={18} />,
+      title: 'Symaira Operate',
+      status: 'available',
+      tone: 'rose',
+    },
+    {
+      icon: <Cpu size={18} />,
+      title: 'Symaira Tune',
+      status: 'available',
+      tone: 'amber',
     },
   ];
 

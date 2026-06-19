@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowRight, Eye, Shield, ShieldCheck, Terminal, Workflow, Brain, Search, Globe } from 'lucide-react';
+import { ArrowRight, Eye, Shield, ShieldCheck, Terminal, Workflow, Brain, Search, Globe, Compass, Cpu, MousePointerClick } from 'lucide-react';
 import { GitHubIcon } from './GitHubIcon';
 import { useLanguage } from '../context/LanguageContext';
 
@@ -15,6 +15,8 @@ export const Tools: React.FC = () => {
     setTimeout(() => setCopied(false), 2000);
   };
 
+  const [activeCategory, setActiveCategory] = useState<'all' | 'context' | 'security' | 'system'>('all');
+
   const products = [
     {
       badge: t('vaultBadge'),
@@ -29,21 +31,7 @@ export const Tools: React.FC = () => {
       tone: 'gold',
       demoType: 'vault',
       proHint: t('vaultProHint'),
-    },
-    {
-      badge: t('erasemeBadge'),
-      status: t('erasemeStatus'),
-      title: t('erasemeTitle'),
-      desc: t('erasemeDesc'),
-      bestFor: t('erasemeBestFor'),
-      automates: t('erasemeAutomates'),
-      features: [t('erasemeFeature1'), t('erasemeFeature2'), t('erasemeFeature3'), t('erasemeFeature4')],
-      href: 'https://github.com/danieljustus/symaira-eraseme',
-      button: t('erasemeBtn'),
-      icon: <Eye size={24} />,
-      tone: 'ice',
-      demoType: 'eraseme',
-      proHint: t('erasemeProHint'),
+      category: 'security',
     },
     {
       badge: t('memoryBadge'),
@@ -59,6 +47,7 @@ export const Tools: React.FC = () => {
       tone: 'violet',
       demoType: 'memory',
       proHint: t('memoryProHint'),
+      category: 'context',
     },
     {
       badge: t('seekBadge'),
@@ -74,6 +63,7 @@ export const Tools: React.FC = () => {
       tone: 'coral',
       demoType: 'seek',
       proHint: t('seekProHint'),
+      category: 'context',
     },
     {
       badge: t('fetchBadge'),
@@ -89,6 +79,39 @@ export const Tools: React.FC = () => {
       tone: 'sky',
       demoType: 'fetch',
       proHint: t('fetchProHint'),
+      category: 'context',
+    },
+    {
+      badge: t('scopeBadge'),
+      status: t('scopeStatus'),
+      title: t('scopeTitle'),
+      desc: t('scopeDesc'),
+      bestFor: t('scopeBestFor'),
+      automates: t('scopeAutomates'),
+      features: [t('scopeFeature1'), t('scopeFeature2'), t('scopeFeature3'), t('scopeFeature4')],
+      href: 'https://github.com/danieljustus/symaira-scope',
+      button: t('scopeBtn'),
+      icon: <Compass size={24} />,
+      tone: 'indigo',
+      demoType: 'scope',
+      proHint: t('scopeProHint'),
+      category: 'security',
+    },
+    {
+      badge: t('erasemeBadge'),
+      status: t('erasemeStatus'),
+      title: t('erasemeTitle'),
+      desc: t('erasemeDesc'),
+      bestFor: t('erasemeBestFor'),
+      automates: t('erasemeAutomates'),
+      features: [t('erasemeFeature1'), t('erasemeFeature2'), t('erasemeFeature3'), t('erasemeFeature4')],
+      href: 'https://github.com/danieljustus/symaira-eraseme',
+      button: t('erasemeBtn'),
+      icon: <Eye size={24} />,
+      tone: 'ice',
+      demoType: 'eraseme',
+      proHint: t('erasemeProHint'),
+      category: 'security',
     },
     {
       badge: t('terminalBadge'),
@@ -104,8 +127,45 @@ export const Tools: React.FC = () => {
       tone: 'mint',
       demoType: 'terminal-app',
       proHint: t('terminalProHint'),
+      category: 'system',
+    },
+    {
+      badge: t('operateBadge'),
+      status: t('operateStatus'),
+      title: t('operateTitle'),
+      desc: t('operateDesc'),
+      bestFor: t('operateBestFor'),
+      automates: t('operateAutomates'),
+      features: [t('operateFeature1'), t('operateFeature2'), t('operateFeature3'), t('operateFeature4')],
+      href: 'https://github.com/danieljustus/symaira-operate',
+      button: t('operateBtn'),
+      icon: <MousePointerClick size={24} />,
+      tone: 'rose',
+      demoType: 'operate',
+      proHint: t('operateProHint'),
+      category: 'system',
+    },
+    {
+      badge: t('tuneBadge'),
+      status: t('tuneStatus'),
+      title: t('tuneTitle'),
+      desc: t('tuneDesc'),
+      bestFor: t('tuneBestFor'),
+      automates: t('tuneAutomates'),
+      features: [t('tuneFeature1'), t('tuneFeature2'), t('tuneFeature3'), t('tuneFeature4')],
+      href: 'https://github.com/danieljustus/symaira-tune',
+      button: t('tuneBtn'),
+      icon: <Cpu size={24} />,
+      tone: 'amber',
+      demoType: 'tune',
+      proHint: t('tuneProHint'),
+      category: 'system',
     },
   ];
+
+  const filteredProducts = activeCategory === 'all'
+    ? products
+    : products.filter((p) => p.category === activeCategory);
 
   return (
     <section
@@ -148,8 +208,38 @@ export const Tools: React.FC = () => {
         </p>
       </div>
 
+      <div className="tools-filter-tabs">
+        <button
+          className={`tools-filter-tab ${activeCategory === 'all' ? 'active' : ''}`}
+          onClick={() => setActiveCategory('all')}
+        >
+          {t('filterAll')}
+        </button>
+        <button
+          className={`tools-filter-tab ${activeCategory === 'context' ? 'active' : ''}`}
+          onClick={() => setActiveCategory('context')}
+        >
+          <Brain size={14} />
+          {t('filterContext')}
+        </button>
+        <button
+          className={`tools-filter-tab ${activeCategory === 'security' ? 'active' : ''}`}
+          onClick={() => setActiveCategory('security')}
+        >
+          <Shield size={14} />
+          {t('filterSecurity')}
+        </button>
+        <button
+          className={`tools-filter-tab ${activeCategory === 'system' ? 'active' : ''}`}
+          onClick={() => setActiveCategory('system')}
+        >
+          <Terminal size={14} />
+          {t('filterSystem')}
+        </button>
+      </div>
+
       <div className="product-grid">
-        {products.map((product) => (
+        {filteredProducts.map((product) => (
           <article
             key={product.title}
             className={`glass-panel product-card product-card-${product.tone}`}
@@ -367,6 +457,108 @@ export const Tools: React.FC = () => {
                       <span className="fetch-step-text">{t('fetchDemoStatusTokens')}</span>
                       <span className="fetch-step-value highlight">-82.3%</span>
                     </div>
+                  </div>
+                </div>
+              </div>
+            ) : product.demoType === 'scope' ? (
+              <div className="product-demo product-demo-scope" aria-hidden="true">
+                <div className="demo-header">
+                  <div className="demo-dots">
+                    <span />
+                    <span />
+                    <span />
+                  </div>
+                  <div className="demo-title">
+                    <Compass size={12} />
+                    {t('scopeDemoTitle')}
+                  </div>
+                </div>
+                <div className="scope-flow">
+                  <div className="scope-step scanning">
+                    <span className="scope-indicator animate-pulse" />
+                    <span className="scope-text">{t('scopeDemoScanning')}</span>
+                  </div>
+                  <div className="scope-step conflict">
+                    <span className="scope-step-icon">⚠</span>
+                    <span className="scope-text">{t('scopeDemoConflict')}</span>
+                  </div>
+                  <div className="scope-step mcp">
+                    <span className="scope-step-icon">✔</span>
+                    <span className="scope-text">{t('scopeDemoMcp')}</span>
+                  </div>
+                  <div className="scope-step suggest">
+                    <span className="scope-step-icon">»</span>
+                    <span className="scope-text highlight">{t('scopeDemoSuggest')}</span>
+                  </div>
+                </div>
+              </div>
+            ) : product.demoType === 'operate' ? (
+              <div className="product-demo product-demo-operate" aria-hidden="true">
+                <div className="demo-header">
+                  <div className="demo-dots">
+                    <span />
+                    <span />
+                    <span />
+                  </div>
+                  <div className="demo-title">
+                    <MousePointerClick size={12} />
+                    {t('operateDemoTitle')}
+                  </div>
+                </div>
+                <div className="operate-flow">
+                  <div className="operate-step query">
+                    <span className="operate-tag tag-query">UI_QUERY</span>
+                    <span className="operate-text">{t('operateDemoQuery')}</span>
+                  </div>
+                  <div className="operate-step safety">
+                    <span className="operate-tag tag-block">BLOCKED</span>
+                    <span className="operate-text warning">{t('operateDemoSafety')}</span>
+                  </div>
+                  <div className="operate-step action">
+                    <span className="operate-tag tag-action">ACTION</span>
+                    <span className="operate-text">{t('operateDemoAction')}</span>
+                  </div>
+                  <div className="operate-step success">
+                    <span className="operate-status status-success">✔</span>
+                    <span className="operate-text success-text">{t('operateDemoSuccess')}</span>
+                  </div>
+                </div>
+              </div>
+            ) : product.demoType === 'tune' ? (
+              <div className="product-demo product-demo-tune" aria-hidden="true">
+                <div className="demo-header">
+                  <div className="demo-dots">
+                    <span />
+                    <span />
+                    <span />
+                  </div>
+                  <div className="demo-title">
+                    <Cpu size={12} />
+                    {t('tuneDemoTitle')}
+                  </div>
+                </div>
+                <div className="tune-flow">
+                  <div className="tune-row">
+                    <span className="tune-label">{t('tuneDemoCPU')}</span>
+                    <div className="tune-bar-wrapper">
+                      <div className="tune-bar-fill" style={{ width: '58%' }} />
+                    </div>
+                    <span className="tune-value">58°C</span>
+                  </div>
+                  <div className="tune-row">
+                    <span className="tune-label">{t('tuneDemoFan')}</span>
+                    <div className="tune-bar-wrapper">
+                      <div className="tune-bar-fill" style={{ width: '40%' }} />
+                    </div>
+                    <span className="tune-value">2400 RPM</span>
+                  </div>
+                  <div className="tune-row">
+                    <span className="tune-label">{t('tuneDemoPower')}</span>
+                    <span className="tune-status-text">80% limit</span>
+                  </div>
+                  <div className="tune-row">
+                    <span className="tune-label">{t('tuneDemoEDR')}</span>
+                    <span className="tune-status-text highlight">800 nits</span>
                   </div>
                 </div>
               </div>
