@@ -2538,3 +2538,75 @@ a {
   color: var(--cyan-primary);
 }
 
+/* Vibecoder Demo */
+.product-demo-vibecoder {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.vibecoder-flow {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-family: var(--font-tech);
+  font-size: 11.5px;
+}
+.vibecoder-card {
+  display: grid;
+  grid-template-columns: 24px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.015);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+}
+.vibecoder-card.card-done {
+  border-color: rgba(134, 239, 172, 0.15);
+  background: rgba(134, 239, 172, 0.02);
+}
+.vibecoder-card.card-running {
+  border-color: rgba(0, 255, 200, 0.25);
+  background: rgba(0, 255, 200, 0.03);
+  box-shadow: 0 0 10px rgba(0, 255, 200, 0.05);
+}
+.vibecoder-card.card-pending {
+  opacity: 0.6;
+}
+.vibecoder-status-dot {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: bold;
+}
+.vibecoder-status-dot.status-done {
+  color: #86efac;
+  background: rgba(134, 239, 172, 0.1);
+  border: 1px solid rgba(134, 239, 172, 0.3);
+}
+.vibecoder-status-dot.status-running {
+  color: var(--cyan-primary);
+  background: rgba(0, 255, 200, 0.1);
+  border: 1px solid rgba(0, 255, 200, 0.3);
+  box-shadow: 0 0 5px rgba(0, 255, 200, 0.2);
+}
+.vibecoder-status-dot.status-pending {
+  color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.vibecoder-step-name {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+.vibecoder-running-text {
+  font-size: 10px;
+  color: var(--cyan-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}

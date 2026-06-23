@@ -20,6 +20,7 @@ export const Tools: React.FC = () => {
   const products = [
     {
       badge: t('vaultBadge'),
+      status: t('vaultStatus'),
       title: t('vaultTitle'),
       desc: t('vaultDesc'),
       bestFor: t('vaultBestFor'),
@@ -127,6 +128,22 @@ export const Tools: React.FC = () => {
       tone: 'mint',
       demoType: 'terminal-app',
       proHint: t('terminalProHint'),
+      category: 'system',
+    },
+    {
+      badge: t('vibecoderBadge'),
+      status: t('vibecoderStatus'),
+      title: t('vibecoderTitle'),
+      desc: t('vibecoderDesc'),
+      bestFor: t('vibecoderBestFor'),
+      automates: t('vibecoderAutomates'),
+      features: [t('vibecoderFeature1'), t('vibecoderFeature2'), t('vibecoderFeature3'), t('vibecoderFeature4')],
+      href: 'https://github.com/danieljustus/symaira-vibecoder',
+      button: t('vibecoderBtn'),
+      icon: <Workflow size={24} />,
+      tone: 'violet',
+      demoType: 'vibecoder',
+      proHint: t('vibecoderProHint'),
       category: 'system',
     },
     {
@@ -559,6 +576,35 @@ export const Tools: React.FC = () => {
                   <div className="tune-row">
                     <span className="tune-label">{t('tuneDemoEDR')}</span>
                     <span className="tune-status-text highlight">800 nits</span>
+                  </div>
+                </div>
+              </div>
+            ) : product.demoType === 'vibecoder' ? (
+              <div className="product-demo product-demo-vibecoder" aria-hidden="true">
+                <div className="demo-header">
+                  <div className="demo-dots">
+                    <span />
+                    <span />
+                    <span />
+                  </div>
+                  <div className="demo-title">
+                    <Workflow size={12} />
+                    {t('vibecoderDemoTitle')}
+                  </div>
+                </div>
+                <div className="vibecoder-flow">
+                  <div className="vibecoder-card card-done">
+                    <div className="vibecoder-status-dot status-done">✔</div>
+                    <span className="vibecoder-step-name">{t('vibecoderDemoPhase1')}</span>
+                  </div>
+                  <div className="vibecoder-card card-running">
+                    <div className="vibecoder-status-dot status-running animate-pulse">◐</div>
+                    <span className="vibecoder-step-name">{t('vibecoderDemoPhase2')}</span>
+                    <span className="vibecoder-running-text">{t('vibecoderDemoStatusRunning')}</span>
+                  </div>
+                  <div className="vibecoder-card card-pending">
+                    <div className="vibecoder-status-dot status-pending">○</div>
+                    <span className="vibecoder-step-name">{t('vibecoderDemoPhase3')}</span>
                   </div>
                 </div>
               </div>

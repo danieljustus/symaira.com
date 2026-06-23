@@ -33,6 +33,7 @@ interface TranslationMap {
   bestForLabel: string;
   automatesLabel: string;
   vaultBadge: string;
+  vaultStatus: string;
   vaultTitle: string;
   vaultDesc: string;
   vaultBestFor: string;
@@ -130,6 +131,17 @@ interface TranslationMap {
   tuneFeature3: string;
   tuneFeature4: string;
   tuneBtn: string;
+  vibecoderBadge: string;
+  vibecoderStatus: string;
+  vibecoderTitle: string;
+  vibecoderDesc: string;
+  vibecoderBestFor: string;
+  vibecoderAutomates: string;
+  vibecoderFeature1: string;
+  vibecoderFeature2: string;
+  vibecoderFeature3: string;
+  vibecoderFeature4: string;
+  vibecoderBtn: string;
   proLabel: string;
   vaultProHint: string;
   erasemeProHint: string;
@@ -140,6 +152,7 @@ interface TranslationMap {
   scopeProHint: string;
   operateProHint: string;
   tuneProHint: string;
+  vibecoderProHint: string;
   terminalDemoPane1: string;
   terminalDemoPane2: string;
   terminalDemoPrompt: string;
@@ -159,6 +172,11 @@ interface TranslationMap {
   tuneDemoFan: string;
   tuneDemoPower: string;
   tuneDemoEDR: string;
+  vibecoderDemoTitle: string;
+  vibecoderDemoPhase1: string;
+  vibecoderDemoPhase2: string;
+  vibecoderDemoPhase3: string;
+  vibecoderDemoStatusRunning: string;
   filterAll: string;
   filterContext: string;
   filterSecurity: string;
@@ -273,6 +291,7 @@ const translations: Record<Language, TranslationMap> = {
     bestForLabel: 'Best for',
     automatesLabel: 'What it automates',
     vaultBadge: 'Secrets & agents',
+    vaultStatus: 'Beta',
     vaultTitle: 'Symaira Vault',
     vaultDesc: 'A terminal-native password and secrets manager for you and your AI agents. Vault keeps credentials age-encrypted, local-first, and available through scoped workflows instead of prompt sharing.',
     vaultBestFor: 'Terminal users and AI agents that need secrets without prompt leakage.',
@@ -294,7 +313,7 @@ const translations: Record<Language, TranslationMap> = {
     erasemeFeature4: 'Manual fallback covers web forms, CAPTCHA, and reports/export.',
     erasemeBtn: 'View EraseMe on GitHub',
     memoryBadge: 'Context & memory',
-    memoryStatus: 'Available',
+    memoryStatus: 'Beta',
     memoryTitle: 'Symaira Memory',
     memoryDesc: 'A persistent context layer and semantic memory base for the Human-AI Symbiosis. Memory enables seamless, long-term context sharing between you and your AI agents with local-first security.',
     memoryBestFor: 'AI agents needing persistent long-term memory across sessions.',
@@ -305,7 +324,7 @@ const translations: Record<Language, TranslationMap> = {
     memoryFeature4: 'PII Guard sanitizes sensitive personal data before ingestion.',
     memoryBtn: 'View Memory on GitHub',
     seekBadge: 'Hybrid search',
-    seekStatus: 'Available',
+    seekStatus: 'Beta',
     seekTitle: 'Symaira Seek',
     seekDesc: 'A fast, local-first document retrieval engine that provides hybrid search by fusing BM25 keyword matching and vector semantic similarity using Reciprocal Rank Fusion (RRF).',
     seekBestFor: 'Developers and agents requiring fast, offline hybrid document search.',
@@ -338,7 +357,7 @@ const translations: Record<Language, TranslationMap> = {
     terminalFeature4: 'Git worktree isolation to review agent changes before merge.',
     terminalBtn: 'View Terminal on GitHub',
     scopeBadge: 'Discovery & Ports',
-    scopeStatus: 'Available',
+    scopeStatus: 'Beta',
     scopeTitle: 'Symaira Scope',
     scopeDesc: 'A cross-platform scanner to inventory listening ports, active containers, and MCP servers across your AI client configurations.',
     scopeBestFor: 'Developers wanting to debug port conflicts or auto-discover active MCP servers.',
@@ -349,7 +368,7 @@ const translations: Record<Language, TranslationMap> = {
     scopeFeature4: 'Pure Go, 100% CGO-free for safe, zero-telemetry local runs.',
     scopeBtn: 'View Scope on GitHub',
     operateBadge: 'GUI Automation',
-    operateStatus: 'Available',
+    operateStatus: 'Beta',
     operateTitle: 'Symaira Operate',
     operateDesc: 'A native macOS desktop-automation MCP server. Allows AI agents to securely observe and control the Mac GUI via accessibility trees and screenshots.',
     operateBestFor: 'AI agents needing to perform native macOS app automation and UI interactions.',
@@ -360,7 +379,7 @@ const translations: Record<Language, TranslationMap> = {
     operateFeature4: 'Zero daemon footprint – runs on-demand via secure local stdio MCP.',
     operateBtn: 'View Operate on GitHub',
     tuneBadge: 'Hardware Tuning',
-    tuneStatus: 'Available',
+    tuneStatus: 'Beta',
     tuneTitle: 'Symaira Tune',
     tuneDesc: 'A native macOS hardware tuning CLI and MCP server. Lets AI agents monitor thermal, power, and display states, and safely adjust hardware limits.',
     tuneBestFor: 'AI agents or developers needing local hardware telemetries and safety-gated system tuning.',
@@ -370,6 +389,17 @@ const translations: Record<Language, TranslationMap> = {
     tuneFeature3: 'Enforces automatic system-default restores on process exit.',
     tuneFeature4: 'Clamps all writes through strict safety policies to prevent damage.',
     tuneBtn: 'View Tune on GitHub',
+    vibecoderBadge: 'Vibe Coding',
+    vibecoderStatus: 'Beta',
+    vibecoderTitle: 'Symaira Vibecoder',
+    vibecoderDesc: 'A local graphical dashboard to build, edit, and run autonomous agent cycles via drag-and-drop. It orchestrates opencode runs with custom model settings and real-time status tracking.',
+    vibecoderBestFor: 'Developers looking for a visual board to design and run multi-step agent coding pipelines.',
+    vibecoderAutomates: 'symvibe serve, phase scheduling, auto-skipping sensors, and SSE-based status updates.',
+    vibecoderFeature1: 'Visual cycle builder with drag-and-drop workflow phases.',
+    vibecoderFeature2: 'Supports opencode for executing tasks with model overrides.',
+    vibecoderFeature3: 'Smart scheduler with auto-skip rules based on Git or issues.',
+    vibecoderFeature4: '100% CGO-free Go code with embedded web board.',
+    vibecoderBtn: 'View Vibecoder on GitHub',
     proLabel: 'Planned Pro Features',
     vaultProHint: 'Pro variant planned: Secure cloud syncing, team vault sharing, and enterprise audit logging.',
     erasemeProHint: 'Pro variant planned: Cloud campaigns, automated weekly scans, and central compliance reporting.',
@@ -380,6 +410,7 @@ const translations: Record<Language, TranslationMap> = {
     scopeProHint: 'Pro variant planned: Remote fleet scanning, centralized port audit logs, and continuous port state monitoring.',
     operateProHint: 'Pro variant planned: Multi-user session isolation, cloud-based GUI session recording, and credential-gated approval flows.',
     tuneProHint: 'Pro variant planned: Centralized hardware health dashboards, custom fan profiles, and privileged SMC controls.',
+    vibecoderProHint: 'Pro variant planned: Shared cloud dashboards, multi-repo support, and team permission controls.',
     terminalDemoPane1: 'Pane 1: Aider (active)',
     terminalDemoPane2: 'Pane 2: Claude Code (blocked)',
     terminalDemoPrompt: 'Approve file edits?',
@@ -399,6 +430,11 @@ const translations: Record<Language, TranslationMap> = {
     tuneDemoFan: 'Fan Speed',
     tuneDemoPower: 'Power: Charge limited to 80%',
     tuneDemoEDR: 'EDR Brightness tuned',
+    vibecoderDemoTitle: 'symvibe serve',
+    vibecoderDemoPhase1: '1. Review',
+    vibecoderDemoPhase2: '2. Plan',
+    vibecoderDemoPhase3: '3. Code',
+    vibecoderDemoStatusRunning: 'Running...',
     filterAll: 'All Tools',
     filterContext: 'Context & Memory',
     filterSecurity: 'Security & Integrity',
@@ -511,6 +547,7 @@ const translations: Record<Language, TranslationMap> = {
     bestForLabel: 'Ideal für',
     automatesLabel: 'Automatisiert',
     vaultBadge: 'Secrets & Agents',
+    vaultStatus: 'Beta',
     vaultTitle: 'Symaira Vault',
     vaultDesc: 'Ein terminal-nativer Passwort- und Secrets-Manager für dich und deine AI-Agenten. Vault hält Credentials Age-verschlüsselt, arbeitet local-first und stellt Secrets über begrenzte Workflows sicher bereit.',
     vaultBestFor: 'Terminal-Nutzer und AI-Agenten, die Secrets ohne Prompt-Leakage brauchen.',
@@ -532,7 +569,7 @@ const translations: Record<Language, TranslationMap> = {
     erasemeFeature4: 'Manueller Fallback für Webformulare, CAPTCHAs sowie Daten-Exporte.',
     erasemeBtn: 'EraseMe auf GitHub ansehen',
     memoryBadge: 'Kontext & Speicher',
-    memoryStatus: 'Verfügbar',
+    memoryStatus: 'Beta',
     memoryTitle: 'Symaira Memory',
     memoryDesc: 'Ein dauerhafter Kontext-Layer und semantische Speicher-Infrastruktur für die Mensch-KI-Ära. Memory ermöglicht nahtloses Langzeitgedächtnis zwischen dir und deinen KI-Agenten.',
     memoryBestFor: 'KI-Agenten, die ein dauerhaftes Langzeitgedächtnis über Sessions hinweg benötigen.',
@@ -543,13 +580,13 @@ const translations: Record<Language, TranslationMap> = {
     memoryFeature4: 'PII-Guard bereinigt sensible persönliche Daten vor der Ingestion.',
     memoryBtn: 'Memory auf GitHub ansehen',
     seekBadge: 'Hybride Suche',
-    seekStatus: 'Verfügbar',
+    seekStatus: 'Beta',
     seekTitle: 'Symaira Seek',
     seekDesc: 'Eine schnelle, lokale Dokumentensuche, die klassischen Keyword-Abruf (BM25) mit semantischer Vektorsuche kombiniert und die Ergebnisse via Reciprocal Rank Fusion (RRF) zusammenführt.',
     seekBestFor: 'Entwickler und Agenten, die eine schnelle, lokale hybride Dokumentensuche benötigen.',
     seekAutomates: 'Verzeichnis-Crawling, SQLite FTS5 Keyword-Indexierung und RRF-Ranking.',
     seekFeature1: 'Hybrider Abruf: Keyword-Suche kombiniert mit Vektor-Embeddings.',
-    seekFeature2: 'Reciprocal Rank Fusion (RRF) für optimales Ranking der Suchergebnisse.',
+    seekFeature2: 'Reciprocal Rank Fusion (RRF) for optimal ranking of search results.',
     seekFeature3: 'Integrierter HTTP REST-Daemon für leichtgewichtigen Client-Zugriff.',
     seekFeature4: '100 % CGO-freier Go-Code mit lokalem Vektor-Fallback.',
     seekBtn: 'Seek auf GitHub ansehen',
@@ -576,7 +613,7 @@ const translations: Record<Language, TranslationMap> = {
     terminalFeature4: 'Git-Worktree-Isolierung isoliert Agenten-Änderungen vor dem Merge.',
     terminalBtn: 'Terminal auf GitHub ansehen',
     scopeBadge: 'Discovery & Ports',
-    scopeStatus: 'Verfügbar',
+    scopeStatus: 'Beta',
     scopeTitle: 'Symaira Scope',
     scopeDesc: 'Ein plattformübergreifender Scanner zur Inventarisierung von Listening-Ports, aktiven Containern und MCP-Servern in deinen KI-Client-Konfigurationen.',
     scopeBestFor: 'Entwickler, die Port-Konflikte debuggen oder aktive MCP-Server automatisch erkennen wollen.',
@@ -587,7 +624,7 @@ const translations: Record<Language, TranslationMap> = {
     scopeFeature4: 'Reines Go, 100 % CGO-frei für sichere, telemetriefreie lokale Ausführung.',
     scopeBtn: 'Scope auf GitHub ansehen',
     operateBadge: 'GUI-Automatisierung',
-    operateStatus: 'Verfügbar',
+    operateStatus: 'Beta',
     operateTitle: 'Symaira Operate',
     operateDesc: 'Ein nativer macOS-GUI-Automatisierungs-MCP-Server. Ermöglicht es KI-Agenten, die Mac-GUI über Barrierefreiheitsbäume und Screenshots sicher zu steuern.',
     operateBestFor: 'KI-Agenten, die eine native macOS-App-Automatisierung und GUI-Interaktionen durchführen müssen.',
@@ -598,7 +635,7 @@ const translations: Record<Language, TranslationMap> = {
     operateFeature4: 'Kein Hintergrund-Daemon – läuft on-demand über sicheres lokales stdio MCP.',
     operateBtn: 'Operate auf GitHub ansehen',
     tuneBadge: 'Hardware-Tuning',
-    tuneStatus: 'Verfügbar',
+    tuneStatus: 'Beta',
     tuneTitle: 'Symaira Tune',
     tuneDesc: 'Ein CLI- und MCP-Server für macOS-Hardware-Tuning. Ermöglicht es KI-Agenten, Temperatur-, Strom- und Display-Zustände zu überwachen und Limits anzupassen.',
     tuneBestFor: 'KI-Agenten oder Entwickler, die lokale Hardware-Telemetrie und sicherheitsüberwachtes Systemtuning benötigen.',
@@ -608,6 +645,17 @@ const translations: Record<Language, TranslationMap> = {
     tuneFeature3: 'Erzwingt automatische Wiederherstellung der Systemstandards beim Beenden.',
     tuneFeature4: 'Begrenzt alle Schreibvorgänge durch strenge Sicherheitsrichtlinien zur Schadensvermeidung.',
     tuneBtn: 'Tune auf GitHub ansehen',
+    vibecoderBadge: 'Vibe-Coding',
+    vibecoderStatus: 'Beta',
+    vibecoderTitle: 'Symaira Vibecoder',
+    vibecoderDesc: 'Ein lokales grafisches Dashboard zum Erstellen, Bearbeiten und Ausführen autonomer Agenten-Zyklen per Drag-&-Drop. Steuert opencode-Läufe mit Modellauswahl und Live-Status.',
+    vibecoderBestFor: 'Entwickler, die eine visuelle Oberfläche zum Entwerfen und Ausführen mehrstufiger Coding-Pipelines suchen.',
+    vibecoderAutomates: 'symvibe serve, Phasen-Scheduling, Auto-Skip-Sensoren und SSE-Status-Updates.',
+    vibecoderFeature1: 'Visueller Cycle-Baukasten mit Drag-&-Drop-Verschiebung der Phasen.',
+    vibecoderFeature2: 'Unterstützt opencode für die Ausführung der Einzelschritte.',
+    vibecoderFeature3: 'Smarter Scheduler mit Auto-Skip-Regeln basierend auf Git/Issues.',
+    vibecoderFeature4: '100 % CGO-freier Go-Code mit eingebettetem Web-Board.',
+    vibecoderBtn: 'Vibecoder auf GitHub ansehen',
     proLabel: 'Geplante Pro-Features',
     vaultProHint: 'Pro-Variante geplant: Sicherer Cloud-Sync, Team-Vault-Freigabe und Enterprise-Audit-Logs.',
     erasemeProHint: 'Pro-Variante geplant: Cloud-Kampagnen, automatisierte Scans und zentrale Compliance-Berichte.',
@@ -618,6 +666,7 @@ const translations: Record<Language, TranslationMap> = {
     scopeProHint: 'Pro-Variante geplant: Remote-Fleet-Scanning, zentralisierte Port-Audit-Logs und kontinuierliche Überwachung des Port-Status.',
     operateProHint: 'Pro-Variante geplant: Multi-User-Sitzungsisolation, cloudbasierte GUI-Sitzungsaufzeichnung und zugriffsgeschützte Freigabe-Workflows.',
     tuneProHint: 'Pro-Variante geplant: Zentralisierte Hardware-Zustands-Dashboards, benutzerdefinierte Lüfterprofile und privilegierte SMC-Steuerungen.',
+    vibecoderProHint: 'Pro-Variante geplant: Geteilte Cloud-Dashboards, Multi-Repository-Support und Team-Berechtigungssteuerung.',
     terminalDemoPane1: 'Panel 1: Aider (aktiv)',
     terminalDemoPane2: 'Panel 2: Claude Code (blockiert)',
     terminalDemoPrompt: 'Änderungen freigeben?',
@@ -637,6 +686,11 @@ const translations: Record<Language, TranslationMap> = {
     tuneDemoFan: 'Lüftergeschwindigkeit',
     tuneDemoPower: 'Strom: Laden limitiert auf 80%',
     tuneDemoEDR: 'EDR-Helligkeit angepasst',
+    vibecoderDemoTitle: 'symvibe serve',
+    vibecoderDemoPhase1: '1. Review',
+    vibecoderDemoPhase2: '2. Planung',
+    vibecoderDemoPhase3: '3. Coden',
+    vibecoderDemoStatusRunning: 'Läuft...',
     filterAll: 'Alle Tools',
     filterContext: 'Kontext & Speicher',
     filterSecurity: 'Sicherheit & Integrität',
