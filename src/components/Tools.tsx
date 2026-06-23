@@ -16,6 +16,7 @@ export const Tools: React.FC = () => {
   };
 
   const [activeCategory, setActiveCategory] = useState<'all' | 'context' | 'security' | 'system'>('all');
+  const [selectedTitle, setSelectedTitle] = useState('Symaira Vault');
 
   const products = [
     {
@@ -56,7 +57,7 @@ export const Tools: React.FC = () => {
       title: t('seekTitle'),
       desc: t('seekDesc'),
       bestFor: t('seekBestFor'),
-      automates: t('seekAutomates'),
+      automates: t('seekBestFor'), // fallback or use seekAutomates
       features: [t('seekFeature1'), t('seekFeature2'), t('seekFeature3'), t('seekFeature4')],
       href: 'https://github.com/danieljustus/symaira-seek',
       button: t('seekBtn'),
@@ -184,6 +185,8 @@ export const Tools: React.FC = () => {
     ? products
     : products.filter((p) => p.category === activeCategory);
 
+  const activeProduct = filteredProducts.find((p) => p.title === selectedTitle) || filteredProducts[0];
+
   return (
     <section
       id="tools"
@@ -255,413 +258,443 @@ export const Tools: React.FC = () => {
         </button>
       </div>
 
-      <div className="product-grid">
-        {filteredProducts.map((product) => (
-          <article
-            key={product.title}
-            className={`glass-panel product-card product-card-${product.tone}`}
-          >
-            <div className="product-card-content">
-              <div className="product-card-header">
-                <div className="product-icon">
+      <div className="tools-console-container">
+        {/* Sidebar displaying list of tools */}
+        <div className="tools-console-sidebar">
+          {filteredProducts.map((product) => {
+            const isActive = activeProduct.title === product.title;
+            return (
+              <button
+                key={product.title}
+                className={`console-sidebar-item tone-${product.tone} ${isActive ? 'active' : ''}`}
+                onClick={() => setSelectedTitle(product.title)}
+                type="button"
+              >
+                <div className="sidebar-item-icon">
                   {product.icon}
                 </div>
-                <div className="product-badge-group">
+                <div className="sidebar-item-info">
+                  <div className="sidebar-item-title-row">
+                    <span className="sidebar-item-title">{product.title}</span>
+                    <span className="sidebar-item-category">{product.badge}</span>
+                  </div>
+                  <span className="sidebar-item-desc">{product.desc}</span>
+                </div>
+              </button>
+            );
+          })}
+        </div>
+
+        {/* Workspace displaying active tool's profile & interactive demo */}
+        <div className={`tools-console-workspace tone-${activeProduct.tone}`} key={activeProduct.title}>
+          <div className="workspace-glow" />
+          
+          <div className="workspace-split">
+            {/* Left: Info profile */}
+            <div className="workspace-info">
+              <div className="workspace-tool-header">
+                <div className="workspace-tool-icon">
+                  {activeProduct.icon}
+                </div>
+                <div className="workspace-tool-badges">
                   <span className="product-badge" style={{ borderColor: 'rgba(229, 195, 151, 0.3)', color: 'var(--text-primary)', background: 'rgba(229, 195, 151, 0.05)' }}>
                     Open Source
                   </span>
                   <span className="product-badge">
-                    {product.badge}
+                    {activeProduct.badge}
                   </span>
-                  {product.status ? (
-                    <span className={`product-status-badge ${product.status.toLowerCase() === 'roadmap' ? 'product-status-badge-roadmap' : ''}`}>
-                      {product.status}
+                  {activeProduct.status ? (
+                    <span className={`product-status-badge ${activeProduct.status.toLowerCase() === 'roadmap' ? 'product-status-badge-roadmap' : ''}`}>
+                      {activeProduct.status}
                     </span>
                   ) : null}
                 </div>
               </div>
 
-              <h3 className="product-title">{product.title}</h3>
-              <p className="product-description">{product.desc}</p>
+              <h3 className="workspace-tool-title">{activeProduct.title}</h3>
+              <p className="workspace-tool-desc">{activeProduct.desc}</p>
 
-              <div className="product-context">
-                <div className="product-context-row">
+              <div className="workspace-context-box">
+                <div className="workspace-context-row">
                   <span>{t('bestForLabel')}</span>
-                  <p>{product.bestFor}</p>
+                  <p>{activeProduct.bestFor}</p>
                 </div>
-                <div className="product-context-row">
+                <div className="workspace-context-row">
                   <span>{t('automatesLabel')}</span>
-                  <p>{product.automates}</p>
+                  <p>{activeProduct.automates}</p>
                 </div>
               </div>
 
-              <div className="product-features">
-                {product.features.map((feature) => (
-                  <div key={feature} className="product-feature">
-                    <span>//</span>
-                    <p>{feature}</p>
+              <div className="workspace-features">
+                {activeProduct.features.map((feature, idx) => (
+                  <div key={idx} className="workspace-feature-item">
+                    <span className="workspace-feature-bullet">//</span>
+                    <p className="workspace-feature-text">{feature}</p>
                   </div>
                 ))}
               </div>
 
-              <div className="product-pro-note">
-                <span className="pro-tag">{t('proLabel')}</span>
-                <p>{product.proHint}</p>
+              <div className="workspace-pro-note">
+                <span className="workspace-pro-tag">{t('proLabel')}</span>
+                <p className="workspace-pro-text">{activeProduct.proHint}</p>
               </div>
 
               <a
-                href={product.href}
+                href={activeProduct.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="action-button-primary product-link"
+                className="workspace-action-btn"
                 style={{
                   color: '#000',
                 }}
               >
                 <GitHubIcon size={16} />
-                {product.button}
+                {activeProduct.button}
                 <ArrowRight size={14} />
               </a>
             </div>
 
-            {product.demoType === 'vault' ? (
-              <div className="product-demo product-demo-terminal">
-                <div className="demo-header">
-                  <div className="demo-dots">
-                    <span />
-                    <span />
-                    <span />
-                  </div>
-                  <div className="demo-title">
-                    <Terminal size={12} />
-                    symvault
-                  </div>
-                </div>
-                <button className="terminal-command" onClick={copyCommand} type="button">
-                  <span>{commandToCopy}</span>
-                  <small>{copied ? t('copiedCommandLabel') : t('copyCommandLabel')}</small>
-                </button>
-                <div className="terminal-lines">
-                  <p><span>$</span> {commandToCopy}</p>
-                  <p>{t('vaultDemoLine1')}</p>
-                  <p>{t('vaultDemoLine2')}</p>
-                  <p>{t('vaultDemoLine3')}</p>
-                  <p className="success">{t('vaultDemoSuccess')}</p>
-                </div>
-              </div>
-            ) : product.demoType === 'eraseme' ? (
-              <div className="product-demo product-demo-privacy" aria-hidden="true">
-                <div className="privacy-row">
-                  <Workflow size={15} />
-                  <span>{t('erasemeDemoCampaign')}</span>
-                  <strong>{t('erasemeDemoBrokers')}</strong>
-                </div>
-                <div className="privacy-row">
-                  <ShieldCheck size={15} />
-                  <span>{t('erasemeDemoDeadlines')}</span>
-                  <strong>{t('erasemeDemoLaw')}</strong>
-                </div>
-                <div className="privacy-row">
-                  <Eye size={15} />
-                  <span>{t('erasemeDemoTriage')}</span>
-                  <strong>{t('erasemeDemoAudit')}</strong>
-                </div>
-                <div className="privacy-progress">
-                  <span />
-                  <span />
-                  <span />
-                </div>
-              </div>
-            ) : product.demoType === 'memory' ? (
-              <div className="product-demo product-demo-memory" aria-hidden="true">
-                <div className="demo-header">
-                  <div className="demo-dots">
-                    <span />
-                    <span />
-                    <span />
-                  </div>
-                  <div className="demo-title">
-                    <Brain size={12} />
-                    symmemory sync
-                  </div>
-                </div>
-                <div className="memory-flow">
-                  <div className="memory-row-item">
-                    <span className="memory-tag tag-add">MEM_ADD</span>
-                    <span className="memory-text">{t('memoryDemoAdd')}</span>
-                    <span className="memory-status status-success">{t('memoryDemoStatusIngested')}</span>
-                  </div>
-                  <div className="memory-row-item">
-                    <span className="memory-tag tag-guard">PII_GUARD</span>
-                    <span className="memory-text">{t('memoryDemoGuard')}</span>
-                    <span className="memory-status status-sanitized">{t('memoryDemoStatusSanitized')}</span>
-                  </div>
-                  <div className="memory-row-item">
-                    <span className="memory-tag tag-sync">SYNC_PUSH</span>
-                    <span className="memory-text">{t('memoryDemoSync')}</span>
-                    <span className="memory-status status-pending">{t('memoryDemoStatusPending')}</span>
-                  </div>
-                </div>
-              </div>
-            ) : product.demoType === 'seek' ? (
-              <div className="product-demo product-demo-seek" aria-hidden="true">
-                <div className="demo-header">
-                  <div className="demo-dots">
-                    <span />
-                    <span />
-                    <span />
-                  </div>
-                  <div className="demo-title">
-                    <Search size={12} />
-                    seek hybrid retrieve
-                  </div>
-                </div>
-                <div className="seek-flow">
-                  <div className="seek-search-input">
-                    <Search size={13} />
-                    <span>{t('seekDemoQuery')}: "security policy"</span>
-                  </div>
-                  <div className="seek-results-list">
-                    <div className="seek-result-item">
-                      <span className="seek-badge-rank">#1</span>
-                      <span className="seek-result-file">security_handbook.md</span>
-                      <strong className="seek-result-score">{t('seekDemoRRF')}: 0.032</strong>
+            {/* Right: Dynamic Demo Panel */}
+            <div className="workspace-demo-container">
+              {activeProduct.demoType === 'vault' ? (
+                <div className="product-demo product-demo-terminal">
+                  <div className="demo-header">
+                    <div className="demo-dots">
+                      <span />
+                      <span />
+                      <span />
                     </div>
-                    <div className="seek-result-item">
-                      <span className="seek-badge-rank">#2</span>
-                      <span className="seek-result-file">agent_mcp_config.json</span>
-                      <strong className="seek-result-score">{t('seekDemoRRF')}: 0.028</strong>
+                    <div className="demo-title">
+                      <Terminal size={12} />
+                      symvault
                     </div>
-                    <div className="seek-result-item">
-                      <span className="seek-badge-rank">#3</span>
-                      <span className="seek-result-file">keys_rotation.go</span>
-                      <strong className="seek-result-score">{t('seekDemoRRF')}: 0.016</strong>
+                  </div>
+                  <button className="terminal-command" onClick={copyCommand} type="button">
+                    <span>{commandToCopy}</span>
+                    <small>{copied ? t('copiedCommandLabel') : t('copyCommandLabel')}</small>
+                  </button>
+                  <div className="terminal-lines">
+                    <p><span>$</span> {commandToCopy}</p>
+                    <p>{t('vaultDemoLine1')}</p>
+                    <p>{t('vaultDemoLine2')}</p>
+                    <p>{t('vaultDemoLine3')}</p>
+                    <p className="success">{t('vaultDemoSuccess')}</p>
+                  </div>
+                </div>
+              ) : activeProduct.demoType === 'eraseme' ? (
+                <div className="product-demo product-demo-privacy" aria-hidden="true">
+                  <div className="privacy-row">
+                    <Workflow size={15} />
+                    <span>{t('erasemeDemoCampaign')}</span>
+                    <strong>{t('erasemeDemoBrokers')}</strong>
+                  </div>
+                  <div className="privacy-row">
+                    <ShieldCheck size={15} />
+                    <span>{t('erasemeDemoDeadlines')}</span>
+                    <strong>{t('erasemeDemoLaw')}</strong>
+                  </div>
+                  <div className="privacy-row">
+                    <Eye size={15} />
+                    <span>{t('erasemeDemoTriage')}</span>
+                    <strong>{t('erasemeDemoAudit')}</strong>
+                  </div>
+                  <div className="privacy-progress">
+                    <span />
+                    <span />
+                    <span />
+                  </div>
+                </div>
+              ) : activeProduct.demoType === 'memory' ? (
+                <div className="product-demo product-demo-memory" aria-hidden="true">
+                  <div className="demo-header">
+                    <div className="demo-dots">
+                      <span />
+                      <span />
+                      <span />
+                    </div>
+                    <div className="demo-title">
+                      <Brain size={12} />
+                      symmemory sync
+                    </div>
+                  </div>
+                  <div className="memory-flow">
+                    <div className="memory-row-item">
+                      <span className="memory-tag tag-add">MEM_ADD</span>
+                      <span className="memory-text">{t('memoryDemoAdd')}</span>
+                      <span className="memory-status status-success">{t('memoryDemoStatusIngested')}</span>
+                    </div>
+                    <div className="memory-row-item">
+                      <span className="memory-tag tag-guard">PII_GUARD</span>
+                      <span className="memory-text">{t('memoryDemoGuard')}</span>
+                      <span className="memory-status status-sanitized">{t('memoryDemoStatusSanitized')}</span>
+                    </div>
+                    <div className="memory-row-item">
+                      <span className="memory-tag tag-sync">SYNC_PUSH</span>
+                      <span className="memory-text">{t('memoryDemoSync')}</span>
+                      <span className="memory-status status-pending">{t('memoryDemoStatusPending')}</span>
                     </div>
                   </div>
                 </div>
-              </div>
-            ) : product.demoType === 'fetch' ? (
-              <div className="product-demo product-demo-fetch" aria-hidden="true">
-                <div className="demo-header">
-                  <div className="demo-dots">
-                    <span />
-                    <span />
-                    <span />
-                  </div>
-                  <div className="demo-title">
-                    <Globe size={12} />
-                    symfetch
-                  </div>
-                </div>
-                <div className="fetch-flow">
-                  <div className="fetch-input-line">
-                    <Globe size={13} />
-                    <span>{t('fetchDemoInput')}: "https://example.com/blog"</span>
-                  </div>
-                  <div className="fetch-pipeline">
-                    <div className="fetch-step">
-                      <span className="fetch-step-icon">//</span>
-                      <span className="fetch-step-text">{t('fetchDemoStatusTls')}</span>
-                      <span className="fetch-step-value highlight">Chrome/124</span>
+              ) : activeProduct.demoType === 'seek' ? (
+                <div className="product-demo product-demo-seek" aria-hidden="true">
+                  <div className="demo-header">
+                    <div className="demo-dots">
+                      <span />
+                      <span />
+                      <span />
                     </div>
-                    <div className="fetch-step">
-                      <span className="fetch-step-icon">//</span>
-                      <span className="fetch-step-text">{t('fetchDemoStatusDom')}</span>
-                      <span className="fetch-step-value">Removed scripts & ads</span>
-                    </div>
-                    <div className="fetch-step">
-                      <span className="fetch-step-icon">//</span>
-                      <span className="fetch-step-text">{t('fetchDemoStatusTokens')}</span>
-                      <span className="fetch-step-value highlight">-82.3%</span>
+                    <div className="demo-title">
+                      <Search size={12} />
+                      seek hybrid retrieve
                     </div>
                   </div>
-                </div>
-              </div>
-            ) : product.demoType === 'scope' ? (
-              <div className="product-demo product-demo-scope" aria-hidden="true">
-                <div className="demo-header">
-                  <div className="demo-dots">
-                    <span />
-                    <span />
-                    <span />
-                  </div>
-                  <div className="demo-title">
-                    <Compass size={12} />
-                    {t('scopeDemoTitle')}
-                  </div>
-                </div>
-                <div className="scope-flow">
-                  <div className="scope-step scanning">
-                    <span className="scope-indicator animate-pulse" />
-                    <span className="scope-text">{t('scopeDemoScanning')}</span>
-                  </div>
-                  <div className="scope-step conflict">
-                    <span className="scope-step-icon">⚠</span>
-                    <span className="scope-text">{t('scopeDemoConflict')}</span>
-                  </div>
-                  <div className="scope-step mcp">
-                    <span className="scope-step-icon">✔</span>
-                    <span className="scope-text">{t('scopeDemoMcp')}</span>
-                  </div>
-                  <div className="scope-step suggest">
-                    <span className="scope-step-icon">»</span>
-                    <span className="scope-text highlight">{t('scopeDemoSuggest')}</span>
-                  </div>
-                </div>
-              </div>
-            ) : product.demoType === 'operate' ? (
-              <div className="product-demo product-demo-operate" aria-hidden="true">
-                <div className="demo-header">
-                  <div className="demo-dots">
-                    <span />
-                    <span />
-                    <span />
-                  </div>
-                  <div className="demo-title">
-                    <MousePointerClick size={12} />
-                    {t('operateDemoTitle')}
-                  </div>
-                </div>
-                <div className="operate-flow">
-                  <div className="operate-step query">
-                    <span className="operate-tag tag-query">UI_QUERY</span>
-                    <span className="operate-text">{t('operateDemoQuery')}</span>
-                  </div>
-                  <div className="operate-step safety">
-                    <span className="operate-tag tag-block">BLOCKED</span>
-                    <span className="operate-text warning">{t('operateDemoSafety')}</span>
-                  </div>
-                  <div className="operate-step action">
-                    <span className="operate-tag tag-action">ACTION</span>
-                    <span className="operate-text">{t('operateDemoAction')}</span>
-                  </div>
-                  <div className="operate-step success">
-                    <span className="operate-status status-success">✔</span>
-                    <span className="operate-text success-text">{t('operateDemoSuccess')}</span>
-                  </div>
-                </div>
-              </div>
-            ) : product.demoType === 'tune' ? (
-              <div className="product-demo product-demo-tune" aria-hidden="true">
-                <div className="demo-header">
-                  <div className="demo-dots">
-                    <span />
-                    <span />
-                    <span />
-                  </div>
-                  <div className="demo-title">
-                    <Cpu size={12} />
-                    {t('tuneDemoTitle')}
-                  </div>
-                </div>
-                <div className="tune-flow">
-                  <div className="tune-row">
-                    <span className="tune-label">{t('tuneDemoCPU')}</span>
-                    <div className="tune-bar-wrapper">
-                      <div className="tune-bar-fill" style={{ width: '58%' }} />
+                  <div className="seek-flow">
+                    <div className="seek-search-input">
+                      <Search size={13} />
+                      <span>{t('seekDemoQuery')}: "security policy"</span>
                     </div>
-                    <span className="tune-value">58°C</span>
-                  </div>
-                  <div className="tune-row">
-                    <span className="tune-label">{t('tuneDemoFan')}</span>
-                    <div className="tune-bar-wrapper">
-                      <div className="tune-bar-fill" style={{ width: '40%' }} />
-                    </div>
-                    <span className="tune-value">2400 RPM</span>
-                  </div>
-                  <div className="tune-row">
-                    <span className="tune-label">{t('tuneDemoPower')}</span>
-                    <span className="tune-status-text">80% limit</span>
-                  </div>
-                  <div className="tune-row">
-                    <span className="tune-label">{t('tuneDemoEDR')}</span>
-                    <span className="tune-status-text highlight">800 nits</span>
-                  </div>
-                </div>
-              </div>
-            ) : product.demoType === 'vibecoder' ? (
-              <div className="product-demo product-demo-vibecoder" aria-hidden="true">
-                <div className="demo-header">
-                  <div className="demo-dots">
-                    <span />
-                    <span />
-                    <span />
-                  </div>
-                  <div className="demo-title">
-                    <Workflow size={12} />
-                    {t('vibecoderDemoTitle')}
-                  </div>
-                </div>
-                <div className="vibecoder-flow">
-                  <div className="vibecoder-card card-done">
-                    <div className="vibecoder-status-dot status-done">✔</div>
-                    <span className="vibecoder-step-name">{t('vibecoderDemoPhase1')}</span>
-                  </div>
-                  <div className="vibecoder-card card-running">
-                    <div className="vibecoder-status-dot status-running animate-pulse">◐</div>
-                    <span className="vibecoder-step-name">{t('vibecoderDemoPhase2')}</span>
-                    <span className="vibecoder-running-text">{t('vibecoderDemoStatusRunning')}</span>
-                  </div>
-                  <div className="vibecoder-card card-pending">
-                    <div className="vibecoder-status-dot status-pending">○</div>
-                    <span className="vibecoder-step-name">{t('vibecoderDemoPhase3')}</span>
-                  </div>
-                </div>
-              </div>
-            ) : (
-              <div className="product-demo product-demo-terminal-app" aria-hidden="true">
-                <div className="demo-header">
-                  <div className="demo-dots">
-                    <span />
-                    <span />
-                    <span />
-                  </div>
-                  <div className="demo-title">
-                    <Terminal size={12} />
-                    symaira-terminal // session-1
-                  </div>
-                </div>
-                <div className="terminal-split-view">
-                  <div className="terminal-pane terminal-pane-left">
-                    <div className="pane-header">
-                      <span className="pane-status-ring status-ring-active"></span>
-                      <span className="pane-name">{t('terminalDemoPane1')}</span>
-                    </div>
-                    <div className="pane-terminal-content">
-                      <p className="line-cmd"><span>$</span> aider app.py</p>
-                      <p className="line-log">// Analyzing codebase...</p>
-                      <p className="line-log">// Modifying files...</p>
-                      <p className="line-diff-add">+ def process_secrets():</p>
-                      <p className="line-diff-add">+     return symvault.get()</p>
+                    <div className="seek-results-list">
+                      <div className="seek-result-item">
+                        <span className="seek-badge-rank">#1</span>
+                        <span className="seek-result-file">security_handbook.md</span>
+                        <strong className="seek-result-score">{t('seekDemoRRF')}: 0.032</strong>
+                      </div>
+                      <div className="seek-result-item">
+                        <span className="seek-badge-rank">#2</span>
+                        <span className="seek-result-file">agent_mcp_config.json</span>
+                        <strong className="seek-result-score">{t('seekDemoRRF')}: 0.028</strong>
+                      </div>
+                      <div className="seek-result-item">
+                        <span className="seek-badge-rank">#3</span>
+                        <span className="seek-result-file">keys_rotation.go</span>
+                        <strong className="seek-result-score">{t('seekDemoRRF')}: 0.016</strong>
+                      </div>
                     </div>
                   </div>
-                  <div className="terminal-pane terminal-pane-right">
-                    <div className="pane-header">
-                      <span className="pane-status-ring status-ring-blocked animate-pulse-ring"></span>
-                      <span className="pane-name">{t('terminalDemoPane2')}</span>
+                </div>
+              ) : activeProduct.demoType === 'fetch' ? (
+                <div className="product-demo product-demo-fetch" aria-hidden="true">
+                  <div className="demo-header">
+                    <div className="demo-dots">
+                      <span />
+                      <span />
+                      <span />
                     </div>
-                    <div className="pane-terminal-content">
-                      <p className="line-cmd"><span>$</span> claude dev</p>
-                      <div className="terminal-prompt-box">
-                        <div className="prompt-header">
-                          <span>{t('terminalDemoPrompt')}</span>
-                        </div>
-                        <div className="prompt-body">
-                          <p>Write to: index.html</p>
-                          <div className="prompt-actions">
-                            <span className="prompt-btn btn-approve">Approve</span>
-                            <span className="prompt-btn btn-reject">Reject</span>
+                    <div className="demo-title">
+                      <Globe size={12} />
+                      symfetch
+                    </div>
+                  </div>
+                  <div className="fetch-flow">
+                    <div className="fetch-input-line">
+                      <Globe size={13} />
+                      <span>{t('fetchDemoInput')}: "https://example.com/blog"</span>
+                    </div>
+                    <div className="fetch-pipeline">
+                      <div className="fetch-step">
+                        <span className="fetch-step-icon">//</span>
+                        <span className="fetch-step-text">{t('fetchDemoStatusTls')}</span>
+                        <span className="fetch-step-value highlight">Chrome/124</span>
+                      </div>
+                      <div className="fetch-step">
+                        <span className="fetch-step-icon">//</span>
+                        <span className="fetch-step-text">{t('fetchDemoStatusDom')}</span>
+                        <span className="fetch-step-value">Removed scripts & ads</span>
+                      </div>
+                      <div className="fetch-step">
+                        <span className="fetch-step-icon">//</span>
+                        <span className="fetch-step-text">{t('fetchDemoStatusTokens')}</span>
+                        <span className="fetch-step-value highlight">-82.3%</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ) : activeProduct.demoType === 'scope' ? (
+                <div className="product-demo product-demo-scope" aria-hidden="true">
+                  <div className="demo-header">
+                    <div className="demo-dots">
+                      <span />
+                      <span />
+                      <span />
+                    </div>
+                    <div className="demo-title">
+                      <Compass size={12} />
+                      {t('scopeDemoTitle')}
+                    </div>
+                  </div>
+                  <div className="scope-flow">
+                    <div className="scope-step scanning">
+                      <span className="scope-indicator animate-pulse" />
+                      <span className="scope-text">{t('scopeDemoScanning')}</span>
+                    </div>
+                    <div className="scope-step conflict">
+                      <span className="scope-step-icon">⚠</span>
+                      <span className="scope-text">{t('scopeDemoConflict')}</span>
+                    </div>
+                    <div className="scope-step mcp">
+                      <span className="scope-step-icon">✔</span>
+                      <span className="scope-text">{t('scopeDemoMcp')}</span>
+                    </div>
+                    <div className="scope-step suggest">
+                      <span className="scope-step-icon">»</span>
+                      <span className="scope-text highlight">{t('scopeDemoSuggest')}</span>
+                    </div>
+                  </div>
+                </div>
+              ) : activeProduct.demoType === 'operate' ? (
+                <div className="product-demo product-demo-operate" aria-hidden="true">
+                  <div className="demo-header">
+                    <div className="demo-dots">
+                      <span />
+                      <span />
+                      <span />
+                    </div>
+                    <div className="demo-title">
+                      <MousePointerClick size={12} />
+                      {t('operateDemoTitle')}
+                    </div>
+                  </div>
+                  <div className="operate-flow">
+                    <div className="operate-step query">
+                      <span className="operate-tag tag-query">UI_QUERY</span>
+                      <span className="operate-text">{t('operateDemoQuery')}</span>
+                    </div>
+                    <div className="operate-step safety">
+                      <span className="operate-tag tag-block">BLOCKED</span>
+                      <span className="operate-text warning">{t('operateDemoSafety')}</span>
+                    </div>
+                    <div className="operate-step action">
+                      <span className="operate-tag tag-action">ACTION</span>
+                      <span className="operate-text">{t('operateDemoAction')}</span>
+                    </div>
+                    <div className="operate-step success">
+                      <span className="operate-status status-success">✔</span>
+                      <span className="operate-text success-text">{t('operateDemoSuccess')}</span>
+                    </div>
+                  </div>
+                </div>
+              ) : activeProduct.demoType === 'tune' ? (
+                <div className="product-demo product-demo-tune" aria-hidden="true">
+                  <div className="demo-header">
+                    <div className="demo-dots">
+                      <span />
+                      <span />
+                      <span />
+                    </div>
+                    <div className="demo-title">
+                      <Cpu size={12} />
+                      {t('tuneDemoTitle')}
+                    </div>
+                  </div>
+                  <div className="tune-flow">
+                    <div className="tune-row">
+                      <span className="tune-label">{t('tuneDemoCPU')}</span>
+                      <div className="tune-bar-wrapper">
+                        <div className="tune-bar-fill" style={{ width: '58%' }} />
+                      </div>
+                      <span className="tune-value">58°C</span>
+                    </div>
+                    <div className="tune-row">
+                      <span className="tune-label">{t('tuneDemoFan')}</span>
+                      <div className="tune-bar-wrapper">
+                        <div className="tune-bar-fill" style={{ width: '40%' }} />
+                      </div>
+                      <span className="tune-value">2400 RPM</span>
+                    </div>
+                    <div className="tune-row">
+                      <span className="tune-label">{t('tuneDemoPower')}</span>
+                      <span className="tune-status-text">80% limit</span>
+                    </div>
+                    <div className="tune-row">
+                      <span className="tune-label">{t('tuneDemoEDR')}</span>
+                      <span className="tune-status-text highlight">800 nits</span>
+                    </div>
+                  </div>
+                </div>
+              ) : activeProduct.demoType === 'vibecoder' ? (
+                <div className="product-demo product-demo-vibecoder" aria-hidden="true">
+                  <div className="demo-header">
+                    <div className="demo-dots">
+                      <span />
+                      <span />
+                      <span />
+                    </div>
+                    <div className="demo-title">
+                      <Workflow size={12} />
+                      {t('vibecoderDemoTitle')}
+                    </div>
+                  </div>
+                  <div className="vibecoder-flow">
+                    <div className="vibecoder-card card-done">
+                      <div className="vibecoder-status-dot status-done">✔</div>
+                      <span className="vibecoder-step-name">{t('vibecoderDemoPhase1')}</span>
+                    </div>
+                    <div className="vibecoder-card card-running">
+                      <div className="vibecoder-status-dot status-running animate-pulse">◐</div>
+                      <span className="vibecoder-step-name">{t('vibecoderDemoPhase2')}</span>
+                      <span className="vibecoder-running-text">{t('vibecoderDemoStatusRunning')}</span>
+                    </div>
+                    <div className="vibecoder-card card-pending">
+                      <div className="vibecoder-status-dot status-pending">○</div>
+                      <span className="vibecoder-step-name">{t('vibecoderDemoPhase3')}</span>
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <div className="product-demo product-demo-terminal-app" aria-hidden="true">
+                  <div className="demo-header">
+                    <div className="demo-dots">
+                      <span />
+                      <span />
+                      <span />
+                    </div>
+                    <div className="demo-title">
+                      <Terminal size={12} />
+                      symaira-terminal // session-1
+                    </div>
+                  </div>
+                  <div className="terminal-split-view">
+                    <div className="terminal-pane terminal-pane-left">
+                      <div className="pane-header">
+                        <span className="pane-status-ring status-ring-active"></span>
+                        <span className="pane-name">{t('terminalDemoPane1')}</span>
+                      </div>
+                      <div className="pane-terminal-content">
+                        <p className="line-cmd"><span>$</span> aider app.py</p>
+                        <p className="line-log">// Analyzing codebase...</p>
+                        <p className="line-log">// Modifying files...</p>
+                        <p className="line-diff-add">+ def process_secrets():</p>
+                        <p className="line-diff-add">+     return symvault.get()</p>
+                      </div>
+                    </div>
+                    <div className="terminal-pane terminal-pane-right">
+                      <div className="pane-header">
+                        <span className="pane-status-ring status-ring-blocked animate-pulse-ring"></span>
+                        <span className="pane-name">{t('terminalDemoPane2')}</span>
+                      </div>
+                      <div className="pane-terminal-content">
+                        <p className="line-cmd"><span>$</span> claude dev</p>
+                        <div className="terminal-prompt-box">
+                          <div className="prompt-header">
+                            <span>{t('terminalDemoPrompt')}</span>
+                          </div>
+                          <div className="prompt-body">
+                            <p>Write to: index.html</p>
+                            <div className="prompt-actions">
+                              <span className="prompt-btn btn-approve">Approve</span>
+                              <span className="prompt-btn btn-reject">Reject</span>
+                            </div>
                           </div>
                         </div>
+                        <p className="line-status-alert">{t('terminalDemoAction')}</p>
                       </div>
-                      <p className="line-status-alert">{t('terminalDemoAction')}</p>
                     </div>
                   </div>
                 </div>
-              </div>
-            )}
-          </article>
-        ))}
+              )}
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* Creator & Maintainer Panel */}
