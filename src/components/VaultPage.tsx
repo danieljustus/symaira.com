@@ -305,25 +305,23 @@ export const VaultPage: React.FC = () => {
                 </li>
               </ul>
             </div>
-            <a
-              href={proConsoleUrl}
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              disabled
               style={{
                 width: '100%',
                 padding: '12px',
                 borderRadius: '6px',
-                backgroundColor: 'var(--gold-primary)',
-                color: '#000',
+                backgroundColor: 'rgba(229, 195, 151, 0.08)',
+                border: '1px solid rgba(229, 195, 151, 0.2)',
+                color: 'var(--text-muted)',
                 textAlign: 'center',
                 fontSize: '14px',
                 fontWeight: 600,
-                boxShadow: '0 4px 15px rgba(229, 195, 151, 0.15)',
+                cursor: 'not-allowed',
               }}
-              className="action-button-primary"
             >
               {t('vaultPageCTA')}
-            </a>
+            </button>
           </div>
 
           {/* Card 3: AI Suite Bundle */}
