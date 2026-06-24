@@ -143,6 +143,11 @@ interface TranslationMap {
   vibecoderFeature4: string;
   vibecoderBtn: string;
   proLabel: string;
+  heroBadgeGermany: string;
+  proHostingTag: string;
+  footerMadeInGermany: string;
+  vaultPageFAQ3Q: string;
+  vaultPageFAQ3A: string;
   vaultProHint: string;
   erasemeProHint: string;
   memoryProHint: string;
@@ -258,6 +263,36 @@ interface TranslationMap {
   stackWorkflow3Title: string;
   stackWorkflow3Desc: string;
   stackBackToTools: string;
+  navVaultPro: string;
+  vaultPageTitle: string;
+  vaultPageSubtitle: string;
+  vaultPageFreeTitle: string;
+  vaultPageFreePrice: string;
+  vaultPageFreePriceSub: string;
+  vaultPageProTitle: string;
+  vaultPageProPrice: string;
+  vaultPageProPriceSub: string;
+  vaultPageSuiteTitle: string;
+  vaultPageSuitePrice: string;
+  vaultPageSuitePriceSub: string;
+  vaultPageCompareTitle: string;
+  vaultPageFeatureSync: string;
+  vaultPageFeatureSyncDesc: string;
+  vaultPageFeatureSSO: string;
+  vaultPageFeatureSSODesc: string;
+  vaultPageFeatureWeb: string;
+  vaultPageFeatureWebDesc: string;
+  vaultPageFeatureEncryption: string;
+  vaultPageFeatureEncryptionDesc: string;
+  vaultPageFeatureMcp: string;
+  vaultPageFeatureMcpDesc: string;
+  vaultPageCTA: string;
+  vaultPageCTAFree: string;
+  vaultPageFAQTitle: string;
+  vaultPageFAQ1Q: string;
+  vaultPageFAQ1A: string;
+  vaultPageFAQ2Q: string;
+  vaultPageFAQ2A: string;
 }
 
 const translations: Record<Language, TranslationMap> = {
@@ -283,7 +318,7 @@ const translations: Record<Language, TranslationMap> = {
     visionPillar1Title: 'Human Control',
     visionPillar1Desc: 'AI can take over tasks, but responsibility must remain clear. Symaira tools are designed around your intent, manual review, and instant revocation.',
     visionPillar2Title: 'Data Sovereignty',
-    visionPillar2Desc: 'Your personal data, secrets, and identity must remain protected, even as autonomous AI systems integrate into your workflows.',
+    visionPillar2Desc: 'Your personal data, secrets, and identity must remain protected, even as autonomous AI systems integrate into your workflows. Our planned Pro cloud tools are hosted entirely in Germany, ensuring 100% GDPR compliance.',
     visionPillar3Title: 'Useful Autonomy',
     visionPillar3Desc: 'Automation should be explainable, bounded, and safe enough to trust with repeatable work without ever sacrificing human oversight.',
     toolsTitle: 'The first Symaira tools',
@@ -516,6 +551,41 @@ const translations: Record<Language, TranslationMap> = {
     stackWorkflow3Title: 'Knowledge Retrieval',
     stackWorkflow3Desc: 'Search indexed documents and fetch referenced URLs in one pipeline.',
     stackBackToTools: 'Back to Tools',
+    navVaultPro: 'Vault Pro',
+    vaultPageTitle: 'Symaira Vault Pro',
+    vaultPageSubtitle: 'Enterprise-grade secret management, synced securely across your devices and AI agents.',
+    vaultPageFreeTitle: 'Local-First Core',
+    vaultPageFreePrice: 'Free',
+    vaultPageFreePriceSub: 'Open Source & self-hosted',
+    vaultPageProTitle: 'Vault Pro',
+    vaultPageProPrice: '€10',
+    vaultPageProPriceSub: 'per month (draft mode)',
+    vaultPageSuiteTitle: 'AI Suite Bundle',
+    vaultPageSuitePrice: '€20',
+    vaultPageSuitePriceSub: 'per month (coming soon)',
+    vaultPageCompareTitle: 'Compare Core vs. Pro',
+    vaultPageFeatureSync: 'Cloud Secret Syncing',
+    vaultPageFeatureSyncDesc: 'Synchronize your vaults end-to-end encrypted via our secure cloud service.',
+    vaultPageFeatureSSO: 'Enterprise SSO & Teams',
+    vaultPageFeatureSSODesc: 'Authenticate via Okta, Entra ID, or Google. Manage access control for your team\'s agents.',
+    vaultPageFeatureWeb: 'Web Management Console',
+    vaultPageFeatureWebDesc: 'Manage memberships, view audit logs, and configure access tokens in a premium web dashboard.',
+    vaultPageFeatureEncryption: 'Local-First Encryption',
+    vaultPageFeatureEncryptionDesc: 'All secrets are age-encrypted on your machine before they ever touch the cloud.',
+    vaultPageFeatureMcp: 'Zero-Trust MCP Server',
+    vaultPageFeatureMcpDesc: 'Provide scoped credentials to AI agents instead of sharing raw passwords.',
+    vaultPageCTA: 'Start Free Trial (Draft)',
+    vaultPageCTAFree: 'Download Free Core',
+    vaultPageFAQTitle: 'Frequently Asked Questions',
+    vaultPageFAQ1Q: 'How is Vault Pro encrypted?',
+    vaultPageFAQ1A: 'Vault Pro is local-first. Your secrets are encrypted using age (X25519 and ChaCha20-Poly1305) on your local machine using your master key. The cloud service only stores encrypted blobs and cannot read your data.',
+    vaultPageFAQ2Q: 'Is this a live service?',
+    vaultPageFAQ2A: 'No, this is currently a draft and concept representation. The dashboard is interactive, but no real accounts can be created and no real payments are processed yet.',
+    heroBadgeGermany: 'Made in Germany · GDPR compliant',
+    proHostingTag: 'German Hosting · GDPR',
+    footerMadeInGermany: 'Made in Germany · 100% GDPR Compliant',
+    vaultPageFAQ3Q: 'Where are the cloud features hosted?',
+    vaultPageFAQ3A: 'All planned cloud and Pro components are hosted entirely on servers in Germany and built in strict compliance with the General Data Protection Regulation (GDPR). Since the core application is local-first, the majority of your data never leaves your own hardware.',
   },
   de: {
     navVision: 'Vision',
@@ -539,7 +609,7 @@ const translations: Record<Language, TranslationMap> = {
     visionPillar1Title: 'Volle Kontrolle',
     visionPillar1Desc: 'AI kann Aufgaben übernehmen, doch die Verantwortung muss klar definiert bleiben. Symaira-Tools basieren auf bewusster Steuerung, menschlicher Prüfung und jederzeitiger Widerrufbarkeit.',
     visionPillar2Title: 'Datensouveränität',
-    visionPillar2Desc: 'Persönliche Daten, Secrets und Identitäten müssen geschützt bleiben – selbst wenn AI-Systeme tief in deine Workflows integriert werden.',
+    visionPillar2Desc: 'Persönliche Daten, Secrets und Identitäten müssen geschützt bleiben – selbst wenn AI-Systeme tief in deine Workflows integriert werden. Unsere geplanten Pro-Cloud-Tools werden in Deutschland gehostet und sind zu 100 % DSGVO-konform.',
     visionPillar3Title: 'Sinnvolle Autonomie',
     visionPillar3Desc: 'Automatisierung muss erklärbar, klar begrenzt und so sicher sein, dass man ihr wiederkehrende Aufgaben anvertrauen kann, ohne je die Kontrolle zu verlieren.',
     toolsTitle: 'Die ersten Symaira-Tools',
@@ -772,6 +842,41 @@ const translations: Record<Language, TranslationMap> = {
     stackWorkflow3Title: 'Wissensabruf',
     stackWorkflow3Desc: 'Indexierte Dokumente durchsuchen und referenzierte URLs in einer Pipeline abrufen.',
     stackBackToTools: 'Zurück zu Tools',
+    navVaultPro: 'Vault Pro',
+    vaultPageTitle: 'Symaira Vault Pro',
+    vaultPageSubtitle: 'Sichere Verwaltung von Passwörtern und Secrets für dich, deine Teams und deine AI-Agenten.',
+    vaultPageFreeTitle: 'Lokaler Core',
+    vaultPageFreePrice: 'Kostenlos',
+    vaultPageFreePriceSub: 'Open Source & self-hosted',
+    vaultPageProTitle: 'Vault Pro',
+    vaultPageProPrice: '10 €',
+    vaultPageProPriceSub: 'pro Monat (Entwurf)',
+    vaultPageSuiteTitle: 'AI Suite Bundle',
+    vaultPageSuitePrice: '20 €',
+    vaultPageSuitePriceSub: 'pro Monat (in Kürze)',
+    vaultPageCompareTitle: 'Core vs. Pro im Vergleich',
+    vaultPageFeatureSync: 'Cloud-Sync für Secrets',
+    vaultPageFeatureSyncDesc: 'Synchronisiere deine Vaults Ende-zu-Ende verschlüsselt über unseren sicheren Cloud-Dienst.',
+    vaultPageFeatureSSO: 'Enterprise SSO & Teams',
+    vaultPageFeatureSSODesc: 'Authentifizierung über Okta, Entra ID oder Google. Verwalte Berechtigungen für Team-Agenten.',
+    vaultPageFeatureWeb: 'Web-Verwaltungskonsole',
+    vaultPageFeatureWebDesc: 'Verwalte Mitgliedschaften, prüfe Audit-Logs und erstelle Token in einem modernen Web-Dashboard.',
+    vaultPageFeatureEncryption: 'Local-First Verschlüsselung',
+    vaultPageFeatureEncryptionDesc: 'Alle Secrets werden lokal per Age verschlüsselt, bevor sie die Cloud berühren.',
+    vaultPageFeatureMcp: 'Zero-Trust MCP-Server',
+    vaultPageFeatureMcpDesc: 'Stelle AI-Agenten begrenzte Credentials bereit, statt rohe Passwörter zu teilen.',
+    vaultPageCTA: 'Kostenlose Testphase starten (Entwurf)',
+    vaultPageCTAFree: 'Free Core herunterladen',
+    vaultPageFAQTitle: 'Häufig gestellte Fragen',
+    vaultPageFAQ1Q: 'Wie wird Vault Pro verschlüsselt?',
+    vaultPageFAQ1A: 'Vault Pro arbeitet local-first. Deine Secrets werden auf deinem Rechner mit age (X25519 und ChaCha20-Poly1305) verschlüsselt. Der Cloud-Dienst speichert nur verschlüsselte Blobs und kann deine Daten niemals lesen.',
+    vaultPageFAQ2Q: 'Ist dieser Dienst bereits live?',
+    vaultPageFAQ2A: 'Nein, dies ist derzeit ein Entwurf und Konzept-Visualisierung. Das Dashboard is interaktiv, aber es können noch keine echten Accounts erstellt oder Zahlungen durchgeführt werden.',
+    heroBadgeGermany: 'Made in Germany · DSGVO-konform',
+    proHostingTag: 'Deutsches Hosting · DSGVO',
+    footerMadeInGermany: 'Made in Germany · 100% DSGVO-konform',
+    vaultPageFAQ3Q: 'Wo werden die Cloud-Features gehostet?',
+    vaultPageFAQ3A: 'Alle geplanten Cloud- und Pro-Komponenten werden vollständig auf Servern in Deutschland gehostet und unter strenger Einhaltung der Datenschutz-Grundverordnung (DSGVO) entwickelt. Da die Kernanwendung local-first arbeitet, verlassen die meisten Daten Ihre eigene Hardware ohnehin nicht.',
   },
 };
 

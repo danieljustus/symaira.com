@@ -59,25 +59,52 @@ export const Footer: React.FC = () => {
           </div>
         </div>
 
-        {/* Brand statement */}
+        {/* Brand statement & Compliance badges */}
         <div style={{
           display: 'flex',
-          alignItems: 'center',
-          gap: '8px',
-          padding: '8px 16px',
-          borderRadius: '20px',
-          backgroundColor: 'rgba(229, 195, 151, 0.06)',
-          border: '1px solid rgba(229, 195, 151, 0.18)',
+          gap: '12px',
+          flexWrap: 'wrap',
+          justifyContent: 'center',
         }}>
-          <ShieldCheck size={12} style={{ color: 'var(--cyan-primary)' }} />
-          <span style={{
-            fontSize: '11px',
-            fontFamily: 'var(--font-tech)',
-            color: 'var(--cyan-primary)',
-            letterSpacing: '0.5px',
+          <div style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '8px',
+            padding: '8px 16px',
+            borderRadius: '20px',
+            backgroundColor: 'rgba(229, 195, 151, 0.06)',
+            border: '1px solid rgba(229, 195, 151, 0.18)',
           }}>
-            {t('footerMessage')}
-          </span>
+            <ShieldCheck size={12} style={{ color: 'var(--cyan-primary)' }} />
+            <span style={{
+              fontSize: '11px',
+              fontFamily: 'var(--font-tech)',
+              color: 'var(--cyan-primary)',
+              letterSpacing: '0.5px',
+            }}>
+              {t('footerMessage')}
+            </span>
+          </div>
+
+          <div style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '8px',
+            padding: '8px 16px',
+            borderRadius: '20px',
+            backgroundColor: 'rgba(229, 195, 151, 0.06)',
+            border: '1px solid rgba(229, 195, 151, 0.18)',
+          }}>
+            <span style={{ fontSize: '12px', lineHeight: 1 }}>🇩🇪</span>
+            <span style={{
+              fontSize: '11px',
+              fontFamily: 'var(--font-tech)',
+              color: 'var(--cyan-primary)',
+              letterSpacing: '0.5px',
+            }}>
+              {t('footerMadeInGermany')}
+            </span>
+          </div>
         </div>
 
         {/* Right Side: Signature / Links */}
@@ -89,6 +116,9 @@ export const Footer: React.FC = () => {
           fontSize: '13px',
           color: 'var(--text-muted)',
         }}>
+          <a href="#/vault" className="nav-link" style={{ transition: 'var(--transition-fast)' }}>
+            {t('navVaultPro')}
+          </a>
           <a href="#/impressum" className="nav-link" style={{ transition: 'var(--transition-fast)' }}>
             {t('footerImpressum')}
           </a>

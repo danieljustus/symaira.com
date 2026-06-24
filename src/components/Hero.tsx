@@ -112,35 +112,66 @@ export const Hero: React.FC = () => {
         alignItems: 'flex-start',
         textAlign: 'left',
       }}>
-        {/* Glow Badge */}
+        {/* Glow Badges */}
         <div style={{
-          display: 'inline-flex',
+          display: 'flex',
+          flexDirection: 'row',
           alignItems: 'center',
-          gap: '8px',
-          padding: '6px 14px',
-          borderRadius: '30px',
-          background: 'rgba(229, 195, 151, 0.05)',
-          border: '1px solid rgba(229, 195, 151, 0.25)',
+          gap: '12px',
+          flexWrap: 'wrap',
           marginBottom: '28px',
-          boxShadow: '0 0 20px rgba(229, 195, 151, 0.08)',
         }}>
-          <span style={{
-            width: '6px',
-            height: '6px',
-            borderRadius: '50%',
-            backgroundColor: 'var(--cyan-primary)',
-            boxShadow: '0 0 8px var(--cyan-primary)',
-          }} className="animate-pulse" />
-          <span style={{
-            fontFamily: 'var(--font-tech)',
-            fontSize: '11px',
-            letterSpacing: '1.5px',
-            color: 'var(--cyan-primary)',
-            fontWeight: 700,
-            textTransform: 'uppercase',
+          <div style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: '8px',
+            padding: '6px 14px',
+            borderRadius: '30px',
+            background: 'rgba(229, 195, 151, 0.05)',
+            border: '1px solid rgba(229, 195, 151, 0.25)',
+            boxShadow: '0 0 20px rgba(229, 195, 151, 0.08)',
           }}>
-            {t('heroBadge')}
-          </span>
+            <span style={{
+              width: '6px',
+              height: '6px',
+              borderRadius: '50%',
+              backgroundColor: 'var(--cyan-primary)',
+              boxShadow: '0 0 8px var(--cyan-primary)',
+            }} className="animate-pulse" />
+            <span style={{
+              fontFamily: 'var(--font-tech)',
+              fontSize: '11px',
+              letterSpacing: '1.5px',
+              color: 'var(--cyan-primary)',
+              fontWeight: 700,
+              textTransform: 'uppercase',
+            }}>
+              {t('heroBadge')}
+            </span>
+          </div>
+
+          <div style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: '8px',
+            padding: '6px 14px',
+            borderRadius: '30px',
+            background: 'rgba(229, 195, 151, 0.05)',
+            border: '1px solid rgba(229, 195, 151, 0.25)',
+            boxShadow: '0 0 20px rgba(229, 195, 151, 0.08)',
+          }}>
+            <span style={{ fontSize: '12px', lineHeight: 1 }}>🇩🇪</span>
+            <span style={{
+              fontFamily: 'var(--font-tech)',
+              fontSize: '11px',
+              letterSpacing: '1.5px',
+              color: 'var(--cyan-primary)',
+              fontWeight: 700,
+              textTransform: 'uppercase',
+            }}>
+              {t('heroBadgeGermany')}
+            </span>
+          </div>
         </div>
 
         {/* Title */}

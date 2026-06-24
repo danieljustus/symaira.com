@@ -84,6 +84,15 @@ export const Navigation: React.FC = () => {
         }} className="nav-link">
           {t('navStack')}
         </a>
+        <a href="#/vault" style={{
+          fontSize: '14px',
+          fontWeight: 600,
+          color: 'var(--gold-primary)',
+          fontFamily: 'var(--font-tech)',
+          letterSpacing: '0.5px',
+        }} className="nav-link">
+          {t('navVaultPro')}
+        </a>
         <a href="#contact" style={{
           fontSize: '14px',
           fontWeight: 500,

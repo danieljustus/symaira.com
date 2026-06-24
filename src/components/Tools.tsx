@@ -335,23 +335,44 @@ export const Tools: React.FC = () => {
               </div>
 
               <div className="workspace-pro-note">
-                <span className="workspace-pro-tag">{t('proLabel')}</span>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', flexShrink: 0 }}>
+                  <span className="workspace-pro-tag">{t('proLabel')}</span>
+                  <span className="workspace-pro-tag" style={{ opacity: 0.8 }}>{t('proHostingTag')}</span>
+                </div>
                 <p className="workspace-pro-text">{activeProduct.proHint}</p>
               </div>
 
-              <a
-                href={activeProduct.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="workspace-action-btn"
-                style={{
-                  color: '#000',
-                }}
-              >
-                <GitHubIcon size={16} />
-                {activeProduct.button}
-                <ArrowRight size={14} />
-              </a>
+              <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', marginTop: '16px' }}>
+                <a
+                  href={activeProduct.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="workspace-action-btn"
+                  style={{
+                    color: '#000',
+                    margin: 0,
+                  }}
+                >
+                  <GitHubIcon size={16} />
+                  {activeProduct.button}
+                  <ArrowRight size={14} />
+                </a>
+                {activeProduct.demoType === 'vault' && (
+                  <a
+                    href="#/vault"
+                    className="workspace-action-btn"
+                    style={{
+                      color: 'var(--gold-primary)',
+                      border: '1px solid rgba(229, 195, 151, 0.3)',
+                      backgroundColor: 'transparent',
+                      margin: 0,
+                    }}
+                  >
+                    Compare Pro Features
+                    <ArrowRight size={14} />
+                  </a>
+                )}
+              </div>
             </div>
 
             {/* Right: Dynamic Demo Panel */}

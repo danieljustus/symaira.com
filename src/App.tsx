@@ -7,6 +7,7 @@ import { Vision } from './components/Vision';
 import { Tools } from './components/Tools';
 import { Contact } from './components/Contact';
 import { Stack } from './components/Stack';
+import { VaultPage } from './components/VaultPage';
 import { Footer } from './components/Footer';
 import { LegalPages } from './components/LegalPages';
 import { SandBackground } from './components/SandBackground';
@@ -30,6 +31,7 @@ function App() {
 
   const isLegalPage = hash === '#/impressum' || hash === '#/privacy' || hash === '#/datenschutz';
   const isStackPage = hash === '#/stack';
+  const isVaultPage = hash === '#/vault';
   const legalView = hash === '#/impressum' ? 'impressum' : 'privacy';
 
   return (
@@ -51,6 +53,8 @@ function App() {
               <LegalPages view={legalView} />
             ) : isStackPage ? (
               <Stack />
+            ) : isVaultPage ? (
+              <VaultPage />
             ) : (
               <>
                 <Hero />
