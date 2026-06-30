@@ -8,6 +8,7 @@ import { Tools } from './components/Tools';
 import { Contact } from './components/Contact';
 import { Stack } from './components/Stack';
 import { VaultPage } from './components/VaultPage';
+import { ToolPage } from './components/ToolPage';
 import { Footer } from './components/Footer';
 import { LegalPages } from './components/LegalPages';
 import { SandBackground } from './components/SandBackground';
@@ -32,6 +33,12 @@ function App() {
   const isLegalPage = hash === '#/impressum' || hash === '#/privacy' || hash === '#/datenschutz';
   const isStackPage = hash === '#/stack';
   const isVaultPage = hash === '#/vault';
+  
+  const validTools = ['memory', 'seek', 'fetch', 'scope', 'eraseme', 'terminal', 'vibecoder', 'operate', 'tune', 'fritz', 'guard', 'print', 'skills', 'ingest', 'desktop'];
+  const toolHashMatch = hash.match(/^#\/([a-z-]+)$/);
+  const toolName = toolHashMatch ? toolHashMatch[1] : null;
+  const isDynamicToolPage = toolName && validTools.includes(toolName);
+
   const legalView = hash === '#/impressum' ? 'impressum' : 'privacy';
 
   return (
@@ -55,6 +62,8 @@ function App() {
               <Stack />
             ) : isVaultPage ? (
               <VaultPage />
+            ) : isDynamicToolPage ? (
+              <ToolPage toolId={toolName} />
             ) : (
               <>
                 <Hero />

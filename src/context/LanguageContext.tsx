@@ -365,6 +365,21 @@ interface TranslationMap {
   vaultPageFAQ1A: string;
   vaultPageFAQ2Q: string;
   vaultPageFAQ2A: string;
+  compareProBtn: string;
+  coreFreeTitle: string;
+  coreFreeDesc: string;
+  proPlannedTitle: string;
+  proPlannedDesc: string;
+  priceFree: string;
+  pricePlanned: string;
+  toolPageCompareTitle: string;
+  toolPageFAQTitle: string;
+  toolPageFAQ1Q: string;
+  toolPageFAQ1A: string;
+  toolPageFAQ2Q: string;
+  toolPageFAQ2A: string;
+  toolPageFAQ3Q: string;
+  toolPageFAQ3A: string;
 }
 
 const translations: Record<Language, TranslationMap> = {
@@ -730,6 +745,21 @@ const translations: Record<Language, TranslationMap> = {
     footerMadeInGermany: 'Made in Germany · 100% GDPR Compliant',
     vaultPageFAQ3Q: 'Where are the cloud features hosted?',
     vaultPageFAQ3A: 'All planned cloud and Pro components are hosted entirely on servers in Germany and built in strict compliance with the General Data Protection Regulation (GDPR). Since the core application is local-first, the majority of your data never leaves your own hardware.',
+    compareProBtn: 'Compare Pro Features',
+    coreFreeTitle: 'Local-First Core',
+    coreFreeDesc: 'Open Source & self-hosted',
+    proPlannedTitle: 'Pro Plan (Planned)',
+    proPlannedDesc: 'Cloud features & orchestration',
+    priceFree: 'Free',
+    pricePlanned: 'Planned',
+    toolPageCompareTitle: 'Compare Core vs. Pro Features',
+    toolPageFAQTitle: 'Frequently Asked Questions',
+    toolPageFAQ1Q: 'Where are the cloud features hosted?',
+    toolPageFAQ1A: 'All planned cloud and Pro components are hosted entirely on servers in Germany and built in strict compliance with the General Data Protection Regulation (GDPR). Since the core application is local-first, the majority of your data never leaves your own hardware.',
+    toolPageFAQ2Q: 'Is this a live service?',
+    toolPageFAQ2A: 'No, this is currently a draft and concept representation. The dashboard is interactive, but no real accounts can be created and no real payments are processed yet.',
+    toolPageFAQ3Q: 'Is the local core really free?',
+    toolPageFAQ3A: 'Yes! The CLI tools, MCP servers, and local desktop applications are 100% open-source (Apache-2.0 or AGPLv3) and will remain free forever.',
   },
   de: {
     navVision: 'Vision',
@@ -1093,6 +1123,21 @@ const translations: Record<Language, TranslationMap> = {
     footerMadeInGermany: 'Made in Germany · 100% DSGVO-konform',
     vaultPageFAQ3Q: 'Wo werden die Cloud-Features gehostet?',
     vaultPageFAQ3A: 'Alle geplanten Cloud- und Pro-Komponenten werden vollständig auf Servern in Deutschland gehostet und unter strenger Einhaltung der Datenschutz-Grundverordnung (DSGVO) entwickelt. Da die Kernanwendung local-first arbeitet, verlassen die meisten Daten Ihre eigene Hardware ohnehin nicht.',
+    compareProBtn: 'Pro-Features vergleichen',
+    coreFreeTitle: 'Lokaler Core',
+    coreFreeDesc: 'Open Source & self-hosted',
+    proPlannedTitle: 'Pro-Variante (Geplant)',
+    proPlannedDesc: 'Cloud-Features & Orchestrierung',
+    priceFree: 'Kostenlos',
+    pricePlanned: 'Geplant',
+    toolPageCompareTitle: 'Vergleich: Core vs. Pro Features',
+    toolPageFAQTitle: 'Häufig gestellte Fragen',
+    toolPageFAQ1Q: 'Wo werden die Cloud-Features gehostet?',
+    toolPageFAQ1A: 'Alle geplanten Cloud- und Pro-Komponenten werden ausschließlich auf Servern in Deutschland gehostet und unter strenger Einhaltung der Datenschutz-Grundverordnung (DSGVO) entwickelt. Da die Kernanwendung lokal läuft (local-first), verlassen Ihre Daten Ihre eigene Hardware nicht.',
+    toolPageFAQ2Q: 'Ist dies ein aktiver Dienst?',
+    toolPageFAQ2A: 'Nein, dies ist derzeit ein Entwurf und eine Konzeptdarstellung. Die Benutzeroberfläche ist interaktiv, aber es können noch keine echten Konten erstellt oder Zahlungen abgewickelt werden.',
+    toolPageFAQ3Q: 'Ist der lokale Core wirklich kostenlos?',
+    toolPageFAQ3A: 'Ja! Die CLI-Tools, MCP-Server und lokalen Desktop-Anwendungen sind zu 100 % Open-Source (Apache-2.0 oder AGPLv3) und werden für immer kostenlos bleiben.',
   },
 };
 

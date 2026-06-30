@@ -1,218 +1,241 @@
 import React, { useState } from 'react';
-import { ArrowRight, Eye, Shield, ShieldCheck, Terminal, Workflow, Brain, Search, Globe, Compass, Cpu, MousePointerClick, ShieldAlert, Layers, Upload, Layout } from 'lucide-react';
-import { GitHubIcon } from './GitHubIcon';
 import { useLanguage } from '../context/LanguageContext';
 import { getProducts, getRouteForCmd } from '../config/products';
+import { 
+  ArrowLeft, 
+  Check, 
+  HelpCircle, 
+  ExternalLink,
+  Brain,
+  Search,
+  Globe,
+  Compass,
+  Eye,
+  Terminal,
+  Workflow,
+  MousePointerClick,
+  Cpu,
+  ShieldAlert,
+  Layers,
+  Upload,
+  Layout,
+  ShieldCheck
+} from 'lucide-react';
 
-export const Tools: React.FC = () => {
+interface ToolPageProps {
+  toolId: string;
+}
+
+export const ToolPage: React.FC<ToolPageProps> = ({ toolId }) => {
   const { t } = useLanguage();
-  const [copied, setCopied] = useState(false);
+  const products = getProducts(t);
+  const [activeFaq, setActiveFaq] = useState<number | null>(null);
+  const [copiedCmd, setCopiedCmd] = useState<string | null>(null);
 
-  const commandToCopy = 'symvault run --env API_KEY=prod -- deploy';
+  // Find the product matching the toolId
+  const product = products.find(p => getRouteForCmd(p.cmd) === toolId);
 
-  const copyCommand = () => {
-    navigator.clipboard.writeText(commandToCopy);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
+  if (!product) {
+    return (
+      <div className="constrained-box" style={{ paddingTop: '120px', paddingBottom: '120px', textAlign: 'center' }}>
+        <h2>Tool not found</h2>
+        <a href="#hero" className="back-link" style={{ marginTop: '20px', display: 'inline-block' }}>
+          Back to home
+        </a>
+      </div>
+    );
+  }
+
+  const toggleFaq = (index: number) => {
+    setActiveFaq(activeFaq === index ? null : index);
   };
 
-  const [activeCategory, setActiveCategory] = useState<'all' | 'context' | 'security' | 'system'>('all');
-  const [selectedTitle, setSelectedTitle] = useState('Symaira Vault');
+  const handleCopy = (text: string) => {
+    navigator.clipboard.writeText(text);
+    setCopiedCmd(text);
+    setTimeout(() => setCopiedCmd(null), 2000);
+  };
 
-  const products = getProducts(t);
+  // Parse Pro features from proHint
+  const getProFeaturesList = (proHint: string) => {
+    const parts = proHint.split(/:\s*/);
+    if (parts.length < 2) return [proHint];
+    const features = parts[1].split(/,\s*/);
+    return features.map(f => {
+      let cleaned = f.trim();
+      if (cleaned.endsWith('.')) {
+        cleaned = cleaned.slice(0, -1);
+      }
+      if (cleaned.length > 0) {
+        cleaned = cleaned[0].toUpperCase() + cleaned.slice(1);
+      }
+      return cleaned;
+    });
+  };
 
-  const filteredProducts = activeCategory === 'all'
-    ? products
-    : products.filter((p) => p.category === activeCategory);
+  const proFeatures = getProFeaturesList(product.proHint);
 
-  const activeProduct = filteredProducts.find((p) => p.title === selectedTitle) || filteredProducts[0];
+  const faqs = [
+    {
+      q: t('toolPageFAQ1Q'),
+      a: t('toolPageFAQ1A'),
+    },
+    {
+      q: t('toolPageFAQ2Q'),
+      a: t('toolPageFAQ2A'),
+    },
+    {
+      q: t('toolPageFAQ3Q'),
+      a: t('toolPageFAQ3A'),
+    },
+  ];
 
   return (
-    <section
-      id="tools"
-      className="constrained-box tools-section"
-      style={{
-        paddingTop: '100px',
-        paddingBottom: '120px',
-        position: 'relative',
-        zIndex: 2,
-      }}
-    >
-      <img src="/logo-top.png" alt="" aria-hidden="true" className="section-logo-accent section-logo-accent-top" />
-      <img src="/logo-bottom.png" alt="" aria-hidden="true" className="section-logo-accent section-logo-accent-bottom" />
+    <div className={`tool-page-container animate-fade-in tone-${product.tone}`} style={{
+      paddingTop: '60px',
+      paddingBottom: '120px',
+      position: 'relative',
+      zIndex: 2,
+    }}>
+      {/* Back Button */}
+      <div className="constrained-box" style={{ marginBottom: '40px' }}>
+        <a href="#tools" className="back-link" style={{
+          display: 'inline-flex',
+          alignItems: 'center',
+          gap: '8px',
+          fontSize: '14px',
+          color: 'var(--text-secondary)',
+          fontFamily: 'var(--font-tech)',
+          transition: 'var(--transition-fast)',
+        }}>
+          <ArrowLeft size={16} />
+          {t('stackBackToTools')}
+        </a>
+      </div>
 
-      <div style={{
-        textAlign: 'center',
-        marginBottom: '58px',
-      }}>
-        <h2 style={{
-          fontSize: 'clamp(28px, 2.5rem, 40px)',
-          fontFamily: 'var(--font-title)',
-          fontWeight: 700,
-          letterSpacing: '0',
-          marginBottom: '16px',
+      {/* Hero Header */}
+      <div className="constrained-box" style={{ textAlign: 'center', marginBottom: '80px' }}>
+        <div className="vault-hero-shield-wrapper" style={{
+          display: 'inline-flex',
+          padding: '20px',
+          borderRadius: '50%',
+          backgroundColor: `rgba(229, 195, 151, 0.05)`,
+          border: '1px solid rgba(229, 195, 151, 0.15)',
+          marginBottom: '24px',
+          boxShadow: '0 0 30px rgba(229, 195, 151, 0.1)',
+        }}>
+          <div style={{ color: `var(--gold-primary)` }}>
+            {product.icon}
+          </div>
+        </div>
+        
+        <div style={{ display: 'flex', justifyContent: 'center', gap: '8px', marginBottom: '16px', flexWrap: 'wrap' }}>
+          <span className="product-badge" style={{ borderColor: 'rgba(229, 195, 151, 0.3)', color: 'var(--text-primary)', background: 'rgba(229, 195, 151, 0.05)' }}>
+            Open Source
+          </span>
+          <span className="product-badge">
+            {product.badge}
+          </span>
+          {product.status ? (
+            <span className={`product-status-badge ${product.status.toLowerCase() === 'roadmap' ? 'product-status-badge-roadmap' : ''}`}>
+              {product.status}
+            </span>
+          ) : null}
+        </div>
+
+        <h1 style={{
+          fontSize: 'clamp(32px, 3.5rem, 52px)',
+          fontWeight: 800,
+          marginBottom: '20px',
           background: 'linear-gradient(180deg, var(--text-primary) 0%, var(--text-secondary) 100%)',
           WebkitBackgroundClip: 'text',
           WebkitTextFillColor: 'transparent',
         }}>
-          {t('toolsTitle')}
-        </h2>
+          {product.title}
+        </h1>
         <p style={{
-          fontSize: '16px',
+          fontSize: 'clamp(16px, 1.2rem, 20px)',
           color: 'var(--text-secondary)',
-          maxWidth: '680px',
-          margin: '0 auto',
-          lineHeight: 1.7,
+          maxWidth: '800px',
+          margin: '0 auto 40px auto',
+          lineHeight: 1.6,
         }}>
-          {t('toolsSubtitle')}
+          {product.desc}
         </p>
-      </div>
 
-      <div className="tools-filter-tabs">
-        <button
-          className={`tools-filter-tab ${activeCategory === 'all' ? 'active' : ''}`}
-          onClick={() => setActiveCategory('all')}
-        >
-          {t('filterAll')}
-        </button>
-        <button
-          className={`tools-filter-tab ${activeCategory === 'context' ? 'active' : ''}`}
-          onClick={() => setActiveCategory('context')}
-        >
-          <Brain size={14} />
-          {t('filterContext')}
-        </button>
-        <button
-          className={`tools-filter-tab ${activeCategory === 'security' ? 'active' : ''}`}
-          onClick={() => setActiveCategory('security')}
-        >
-          <Shield size={14} />
-          {t('filterSecurity')}
-        </button>
-        <button
-          className={`tools-filter-tab ${activeCategory === 'system' ? 'active' : ''}`}
-          onClick={() => setActiveCategory('system')}
-        >
-          <Terminal size={14} />
-          {t('filterSystem')}
-        </button>
-      </div>
-
-      <div className="tools-console-container">
-        {/* Sidebar displaying list of tools */}
-        <div className="tools-console-sidebar">
-          {filteredProducts.map((product) => {
-            const isActive = activeProduct.title === product.title;
-            return (
-              <button
-                key={product.title}
-                className={`console-sidebar-item tone-${product.tone} ${isActive ? 'active' : ''}`}
-                onClick={() => setSelectedTitle(product.title)}
-                type="button"
-              >
-                <div className="sidebar-item-icon">
-                  {product.icon}
-                </div>
-                <div className="sidebar-item-info">
-                  <span className="sidebar-item-title">{product.cmd}</span>
-                  <span className="sidebar-item-category">{product.badge}</span>
-                </div>
-              </button>
-            );
-          })}
+        {/* Action CTAs */}
+        <div style={{
+          display: 'flex',
+          justifyContent: 'center',
+          gap: '16px',
+          flexWrap: 'wrap',
+        }}>
+          <a
+            href={product.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              padding: '14px 28px',
+              borderRadius: '8px',
+              color: '#000',
+              fontWeight: 600,
+              fontSize: '15px',
+              boxShadow: '0 4px 20px rgba(229, 195, 151, 0.2)',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '8px',
+            }}
+            className="action-button-primary"
+          >
+            {product.button}
+            <ExternalLink size={16} />
+          </a>
         </div>
+      </div>
 
-        {/* Workspace displaying active tool's profile & interactive demo */}
-        <div className={`tools-console-workspace tone-${activeProduct.tone}`} key={activeProduct.title}>
-          <div className="workspace-glow" />
-          
-          <div className="workspace-split">
-            {/* Left: Info profile */}
-            <div className="workspace-info">
-              <div className="workspace-tool-header">
-                <div className="workspace-tool-icon">
-                  {activeProduct.icon}
-                </div>
-                <div className="workspace-tool-badges">
-                  <span className="product-badge" style={{ borderColor: 'rgba(229, 195, 151, 0.3)', color: 'var(--text-primary)', background: 'rgba(229, 195, 151, 0.05)' }}>
-                    Open Source
-                  </span>
-                  <span className="product-badge">
-                    {activeProduct.badge}
-                  </span>
-                  {activeProduct.status ? (
-                    <span className={`product-status-badge ${activeProduct.status.toLowerCase() === 'roadmap' ? 'product-status-badge-roadmap' : ''}`}>
-                      {activeProduct.status}
-                    </span>
-                  ) : null}
-                </div>
-              </div>
-
-              <h3 className="workspace-tool-title">{activeProduct.title}</h3>
-              <p className="workspace-tool-desc">{activeProduct.desc}</p>
-
-              <div className="workspace-context-box">
-                <div className="workspace-context-row">
-                  <span>{t('bestForLabel')}</span>
-                  <p>{activeProduct.bestFor}</p>
+      {/* Main Content Split: Specs vs Interactive Demo */}
+      <div className="constrained-box" style={{ marginBottom: '100px' }}>
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+          gap: '40px',
+          alignItems: 'start',
+        }}>
+          {/* Specs Panel */}
+          <div className="glass-panel" style={{ padding: '40px', display: 'flex', flexDirection: 'column', gap: '30px' }}>
+            <div>
+              <h3 style={{ fontSize: '20px', fontWeight: 700, marginBottom: '16px', fontFamily: 'var(--font-title)' }}>
+                Specifications
+              </h3>
+              <div className="workspace-context-box" style={{ border: 'none', background: 'none', padding: 0 }}>
+                <div className="workspace-context-row" style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.05)', paddingBottom: '12px', marginBottom: '12px' }}>
+                  <span style={{ fontSize: '12px', fontFamily: 'var(--font-tech)', color: 'var(--text-muted)' }}>{t('bestForLabel')}</span>
+                  <p style={{ fontSize: '14.5px', color: 'var(--text-primary)', marginTop: '4px' }}>{product.bestFor}</p>
                 </div>
                 <div className="workspace-context-row">
-                  <span>{t('automatesLabel')}</span>
-                  <p>{activeProduct.automates}</p>
+                  <span style={{ fontSize: '12px', fontFamily: 'var(--font-tech)', color: 'var(--text-muted)' }}>{t('automatesLabel')}</span>
+                  <p style={{ fontSize: '14.5px', color: 'var(--text-primary)', marginTop: '4px' }}>{product.automates}</p>
                 </div>
-              </div>
-
-              <div className="workspace-features">
-                {activeProduct.features.map((feature, idx) => (
-                  <div key={idx} className="workspace-feature-item">
-                    <span className="workspace-feature-bullet">//</span>
-                    <p className="workspace-feature-text">{feature}</p>
-                  </div>
-                ))}
-              </div>
-
-              <div className="workspace-pro-note">
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', flexShrink: 0 }}>
-                  <span className="workspace-pro-tag">{t('proLabel')}</span>
-                  <span className="workspace-pro-tag" style={{ opacity: 0.8 }}>{t('proHostingTag')}</span>
-                </div>
-                <p className="workspace-pro-text">{activeProduct.proHint}</p>
-              </div>
-
-              <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', marginTop: '16px' }}>
-                <a
-                  href={activeProduct.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="workspace-action-btn"
-                  style={{
-                    color: '#000',
-                    margin: 0,
-                  }}
-                >
-                  <GitHubIcon size={16} />
-                  {activeProduct.button}
-                  <ArrowRight size={14} />
-                </a>
-                <a
-                  href={`#/${getRouteForCmd(activeProduct.cmd)}`}
-                  className="workspace-action-btn"
-                  style={{
-                    color: 'var(--item-accent)',
-                    border: '1px solid var(--item-accent-alpha)',
-                    backgroundColor: 'transparent',
-                    margin: 0,
-                  }}
-                >
-                  {t('compareProBtn')}
-                  <ArrowRight size={14} />
-                </a>
               </div>
             </div>
 
-            {/* Right: Dynamic Demo Panel */}
-            <div className="workspace-demo-container">
-              {activeProduct.demoType === 'vault' ? (
+            <div>
+              <h4 style={{ fontSize: '16px', fontWeight: 600, marginBottom: '12px' }}>Key Capabilities</h4>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                {product.features.map((feature, idx) => (
+                  <div key={idx} style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
+                    <span style={{ color: `var(--gold-primary)`, fontWeight: 'bold', fontFamily: 'var(--font-tech)' }}>//</span>
+                    <p style={{ fontSize: '13.5px', color: 'var(--text-secondary)', margin: 0 }}>{feature}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Demo Panel */}
+          <div className="tools-console-workspace" style={{ border: '1px solid rgba(255,255,255,0.06)', padding: '0', background: 'rgba(7, 6, 5, 0.4)' }}>
+            <div style={{ padding: '24px' }}>
+              {product.demoType === 'vault' ? (
                 <div className="product-demo product-demo-terminal">
                   <div className="demo-header">
                     <div className="demo-dots">
@@ -225,20 +248,24 @@ export const Tools: React.FC = () => {
                       symvault
                     </div>
                   </div>
-                  <button className="terminal-command" onClick={copyCommand} type="button">
-                    <span>{commandToCopy}</span>
-                    <small>{copied ? t('copiedCommandLabel') : t('copyCommandLabel')}</small>
+                  <button 
+                    className="terminal-command" 
+                    onClick={() => handleCopy('symvault run --env API_KEY=prod -- deploy')} 
+                    type="button"
+                  >
+                    <span>symvault run --env API_KEY=prod -- deploy</span>
+                    <small>{copiedCmd === 'symvault run --env API_KEY=prod -- deploy' ? t('copiedCommandLabel') : t('copyCommandLabel')}</small>
                   </button>
                   <div className="terminal-lines">
-                    <p><span>$</span> {commandToCopy}</p>
+                    <p><span>$</span> symvault run --env API_KEY=prod -- deploy</p>
                     <p>{t('vaultDemoLine1')}</p>
                     <p>{t('vaultDemoLine2')}</p>
                     <p>{t('vaultDemoLine3')}</p>
                     <p className="success">{t('vaultDemoSuccess')}</p>
                   </div>
                 </div>
-              ) : activeProduct.demoType === 'eraseme' ? (
-                <div className="product-demo product-demo-privacy" aria-hidden="true">
+              ) : product.demoType === 'eraseme' ? (
+                <div className="product-demo product-demo-privacy" aria-hidden="true" style={{ padding: '20px 0' }}>
                   <div className="privacy-row">
                     <Workflow size={15} />
                     <span>{t('erasemeDemoCampaign')}</span>
@@ -260,7 +287,7 @@ export const Tools: React.FC = () => {
                     <span />
                   </div>
                 </div>
-              ) : activeProduct.demoType === 'memory' ? (
+              ) : product.demoType === 'memory' ? (
                 <div className="product-demo product-demo-memory" aria-hidden="true">
                   <div className="demo-header">
                     <div className="demo-dots">
@@ -291,7 +318,7 @@ export const Tools: React.FC = () => {
                     </div>
                   </div>
                 </div>
-              ) : activeProduct.demoType === 'seek' ? (
+              ) : product.demoType === 'seek' ? (
                 <div className="product-demo product-demo-seek" aria-hidden="true">
                   <div className="demo-header">
                     <div className="demo-dots">
@@ -328,7 +355,7 @@ export const Tools: React.FC = () => {
                     </div>
                   </div>
                 </div>
-              ) : activeProduct.demoType === 'fetch' ? (
+              ) : product.demoType === 'fetch' ? (
                 <div className="product-demo product-demo-fetch" aria-hidden="true">
                   <div className="demo-header">
                     <div className="demo-dots">
@@ -365,7 +392,7 @@ export const Tools: React.FC = () => {
                     </div>
                   </div>
                 </div>
-              ) : activeProduct.demoType === 'scope' ? (
+              ) : product.demoType === 'scope' ? (
                 <div className="product-demo product-demo-scope" aria-hidden="true">
                   <div className="demo-header">
                     <div className="demo-dots">
@@ -397,7 +424,7 @@ export const Tools: React.FC = () => {
                     </div>
                   </div>
                 </div>
-              ) : activeProduct.demoType === 'operate' ? (
+              ) : product.demoType === 'operate' ? (
                 <div className="product-demo product-demo-operate" aria-hidden="true">
                   <div className="demo-header">
                     <div className="demo-dots">
@@ -429,7 +456,7 @@ export const Tools: React.FC = () => {
                     </div>
                   </div>
                 </div>
-              ) : activeProduct.demoType === 'tune' ? (
+              ) : product.demoType === 'tune' ? (
                 <div className="product-demo product-demo-tune" aria-hidden="true">
                   <div className="demo-header">
                     <div className="demo-dots">
@@ -467,7 +494,7 @@ export const Tools: React.FC = () => {
                     </div>
                   </div>
                 </div>
-              ) : activeProduct.demoType === 'vibecoder' ? (
+              ) : product.demoType === 'vibecoder' ? (
                 <div className="product-demo product-demo-vibecoder" aria-hidden="true">
                   <div className="demo-header">
                     <div className="demo-dots">
@@ -496,7 +523,7 @@ export const Tools: React.FC = () => {
                     </div>
                   </div>
                 </div>
-              ) : activeProduct.demoType === 'fritz' ? (
+              ) : product.demoType === 'fritz' ? (
                 <div className="product-demo product-demo-terminal" aria-hidden="true">
                   <div className="demo-header">
                     <div className="demo-dots">
@@ -519,7 +546,7 @@ export const Tools: React.FC = () => {
                     <p style={{ color: '#86efac' }}>✓ TCP 8001 (Paperless) open</p>
                   </div>
                 </div>
-              ) : activeProduct.demoType === 'guard' ? (
+              ) : product.demoType === 'guard' ? (
                 <div className="product-demo product-demo-operate" aria-hidden="true">
                   <div className="demo-header">
                     <div className="demo-dots">
@@ -547,7 +574,7 @@ export const Tools: React.FC = () => {
                     </div>
                   </div>
                 </div>
-              ) : activeProduct.demoType === 'print' ? (
+              ) : product.demoType === 'print' ? (
                 <div className="product-demo product-demo-terminal" aria-hidden="true">
                   <div className="demo-header">
                     <div className="demo-dots">
@@ -569,7 +596,7 @@ export const Tools: React.FC = () => {
                     <p style={{ color: '#86efac' }}>✓ Output: report.pdf (1.2 MB)</p>
                   </div>
                 </div>
-              ) : activeProduct.demoType === 'skills' ? (
+              ) : product.demoType === 'skills' ? (
                 <div className="product-demo product-demo-memory" aria-hidden="true">
                   <div className="demo-header">
                     <div className="demo-dots">
@@ -600,7 +627,7 @@ export const Tools: React.FC = () => {
                     </div>
                   </div>
                 </div>
-              ) : activeProduct.demoType === 'ingest' ? (
+              ) : product.demoType === 'ingest' ? (
                 <div className="product-demo product-demo-fetch" aria-hidden="true">
                   <div className="demo-header">
                     <div className="demo-dots">
@@ -637,7 +664,7 @@ export const Tools: React.FC = () => {
                     </div>
                   </div>
                 </div>
-              ) : activeProduct.demoType === 'desktop' ? (
+              ) : product.demoType === 'desktop' ? (
                 <div className="product-demo product-demo-terminal-app" aria-hidden="true">
                   <div className="demo-header">
                     <div className="demo-dots">
@@ -733,53 +760,229 @@ export const Tools: React.FC = () => {
         </div>
       </div>
 
-      {/* Creator & Maintainer Panel */}
-      <div className="maintainer-panel">
-        <div className="maintainer-glow" />
-        <div className="maintainer-accent-top" />
-        <div className="maintainer-accent-bottom" />
-        
-        <div className="maintainer-content">
-          <div className="maintainer-avatar-wrapper">
-            <div className="maintainer-avatar-ring-outer" />
-            <div className="maintainer-avatar-ring-inner" />
-            <div className="maintainer-avatar">
-              <img src="/portrait.jpg" alt="Daniel Justus" />
-            </div>
-          </div>
+      {/* Pricing Comparison */}
+      <div className="constrained-box" style={{ marginBottom: '100px' }}>
+        <h2 style={{
+          textAlign: 'center',
+          fontSize: '28px',
+          fontWeight: 700,
+          marginBottom: '48px',
+          fontFamily: 'var(--font-title)',
+        }}>
+          {t('toolPageCompareTitle')}
+        </h2>
 
-          <div className="maintainer-text">
-            <span className="maintainer-tag">
-              {t('maintainerTitle')}
-            </span>
-            <h3 className="maintainer-name">
-              Daniel Justus
-            </h3>
-            <p className="maintainer-bio">
-              {t('maintainerDesc')}
-            </p>
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+          gap: '30px',
+          alignItems: 'stretch',
+          maxWidth: '900px',
+          margin: '0 auto',
+        }}>
+          {/* Card 1: Core (Free) */}
+          <div className="glass-panel" style={{
+            padding: '40px',
+            borderRadius: '16px',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'space-between',
+            border: '1px solid rgba(255,255,255,0.05)',
+            backgroundColor: 'rgba(18, 17, 14, 0.45)',
+          }}>
+            <div>
+              <span style={{ fontSize: '12px', fontFamily: 'var(--font-tech)', color: 'var(--text-muted)', letterSpacing: '1px', textTransform: 'uppercase' }}>
+                {t('coreFreeDesc')}
+              </span>
+              <h3 style={{ fontSize: '24px', fontWeight: 700, marginTop: '8px', marginBottom: '16px' }}>
+                {t('coreFreeTitle')}
+              </h3>
+              <div style={{ display: 'flex', alignItems: 'baseline', marginBottom: '24px' }}>
+                <span style={{ fontSize: '40px', fontWeight: 800, color: 'var(--text-primary)' }}>
+                  {t('priceFree')}
+                </span>
+              </div>
+              <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 32px 0' }}>
+                {product.features.map((feature, idx) => (
+                  <li key={idx} style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '14px', color: 'var(--text-secondary)', marginBottom: '12px' }}>
+                    <Check size={14} style={{ color: 'var(--gold-primary)' }} />
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+            </div>
             <a
-              href="https://daniel-justus.de"
+              href={product.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="action-button-primary"
               style={{
-                color: '#000',
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '8px',
-                padding: '10px 20px',
-                borderRadius: '8px',
-                fontSize: '13.5px',
+                width: '100%',
+                padding: '12px',
+                borderRadius: '6px',
+                border: '1px solid rgba(255, 255, 255, 0.08)',
+                color: 'var(--text-primary)',
+                textAlign: 'center',
+                fontSize: '14px',
+                fontWeight: 500,
+                backgroundColor: 'rgba(255,255,255,0.02)',
+              }}
+              className="action-button-secondary"
+            >
+              {product.button}
+            </a>
+          </div>
+
+          {/* Card 2: Pro Variant (Planned) */}
+          <div className="glass-panel" style={{
+            padding: '40px',
+            borderRadius: '16px',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'space-between',
+            border: '1px solid var(--gold-primary)',
+            backgroundColor: 'rgba(229, 195, 151, 0.03)',
+            boxShadow: '0 10px 40px rgba(229, 195, 151, 0.08)',
+            position: 'relative',
+          }}>
+            <div className="pricing-badge" style={{
+              position: 'absolute',
+              top: '20px',
+              right: '20px',
+              backgroundColor: 'var(--gold-primary)',
+              color: '#000',
+              fontSize: '11px',
+              fontWeight: 700,
+              padding: '4px 10px',
+              borderRadius: '12px',
+              fontFamily: 'var(--font-tech)',
+            }}>
+              {t('pricePlanned').toUpperCase()}
+            </div>
+            <div>
+              <span style={{ fontSize: '12px', fontFamily: 'var(--font-tech)', color: 'var(--gold-primary)', letterSpacing: '1px', textTransform: 'uppercase' }}>
+                {t('proPlannedDesc')}
+              </span>
+              <h3 style={{ fontSize: '24px', fontWeight: 700, marginTop: '8px', marginBottom: '16px' }}>
+                {t('proPlannedTitle')}
+              </h3>
+              <div style={{ display: 'flex', alignItems: 'baseline', marginBottom: '24px' }}>
+                <span style={{ fontSize: '40px', fontWeight: 800, color: 'var(--gold-primary)' }}>
+                  {t('pricePlanned')}
+                </span>
+              </div>
+              <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 32px 0' }}>
+                <li style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '14px', color: 'var(--text-primary)', marginBottom: '12px', fontWeight: 500 }}>
+                  <Check size={14} style={{ color: 'var(--gold-primary)' }} />
+                  Everything in Local-First Core
+                </li>
+                {proFeatures.map((feature, idx) => (
+                  <li key={idx} style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '14px', color: 'var(--text-secondary)', marginBottom: '12px' }}>
+                    <Check size={14} style={{ color: 'var(--gold-primary)' }} />
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <button
+              disabled
+              style={{
+                width: '100%',
+                padding: '12px',
+                borderRadius: '6px',
+                backgroundColor: 'rgba(229, 195, 151, 0.08)',
+                border: '1px solid rgba(229, 195, 151, 0.2)',
+                color: 'var(--text-muted)',
+                textAlign: 'center',
+                fontSize: '14px',
                 fontWeight: 600,
+                cursor: 'not-allowed',
               }}
             >
-              {t('maintainerBtn')}
-              <ArrowRight size={14} />
-            </a>
+              {t('vaultPageCTA')}
+            </button>
           </div>
         </div>
       </div>
-    </section>
+
+      {/* FAQ Sektion */}
+      <div className="constrained-box" style={{ maxWidth: '800px' }}>
+        <h2 style={{
+          textAlign: 'center',
+          fontSize: '28px',
+          fontWeight: 700,
+          marginBottom: '48px',
+          fontFamily: 'var(--font-title)',
+        }}>
+          {t('toolPageFAQTitle')}
+        </h2>
+
+        <div style={{
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '16px',
+        }}>
+          {faqs.map((faq, index) => {
+            const isOpen = activeFaq === index;
+            return (
+              <div
+                key={index}
+                className="glass-panel"
+                style={{
+                  borderRadius: '8px',
+                  border: '1px solid rgba(229,195,151,0.08)',
+                  backgroundColor: 'rgba(18, 17, 14, 0.3)',
+                  overflow: 'hidden',
+                  transition: 'var(--transition-fast)',
+                }}
+              >
+                <button
+                  onClick={() => toggleFaq(index)}
+                  style={{
+                    width: '100%',
+                    padding: '20px 24px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                    background: 'none',
+                    border: 'none',
+                    color: 'var(--text-primary)',
+                    textAlign: 'left',
+                    cursor: 'pointer',
+                    fontFamily: 'var(--font-sans)',
+                    fontSize: '16px',
+                    fontWeight: 600,
+                  }}
+                >
+                  <span style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                    <HelpCircle size={18} style={{ color: 'var(--gold-primary)' }} />
+                    {faq.q}
+                  </span>
+                  <span style={{
+                    transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)',
+                    transition: 'transform 0.2s ease',
+                    color: 'var(--gold-primary)',
+                    fontSize: '18px',
+                  }}>
+                    ▾
+                  </span>
+                </button>
+                {isOpen && (
+                  <div style={{
+                    padding: '0 24px 20px 54px',
+                    color: 'var(--text-secondary)',
+                    fontSize: '14.5px',
+                    lineHeight: 1.6,
+                    borderTop: '1px solid rgba(255,255,255,0.03)',
+                    paddingTop: '16px',
+                  }}>
+                    {faq.a}
+                  </div>
+                )}
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </div>
   );
 };
