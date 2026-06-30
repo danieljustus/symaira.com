@@ -366,6 +366,7 @@ interface TranslationMap {
   vaultPageFAQ2Q: string;
   vaultPageFAQ2A: string;
   compareProBtn: string;
+  viewDetailsBtn: string;
   coreFreeTitle: string;
   coreFreeDesc: string;
   proPlannedTitle: string;
@@ -746,6 +747,7 @@ const translations: Record<Language, TranslationMap> = {
     vaultPageFAQ3Q: 'Where are the cloud features hosted?',
     vaultPageFAQ3A: 'All planned cloud and Pro components are hosted entirely on servers in Germany and built in strict compliance with the General Data Protection Regulation (GDPR). Since the core application is local-first, the majority of your data never leaves your own hardware.',
     compareProBtn: 'Compare Pro Features',
+    viewDetailsBtn: 'Learn More',
     coreFreeTitle: 'Local-First Core',
     coreFreeDesc: 'Open Source & self-hosted',
     proPlannedTitle: 'Pro Plan (Planned)',
@@ -1124,6 +1126,7 @@ const translations: Record<Language, TranslationMap> = {
     vaultPageFAQ3Q: 'Wo werden die Cloud-Features gehostet?',
     vaultPageFAQ3A: 'Alle geplanten Cloud- und Pro-Komponenten werden vollständig auf Servern in Deutschland gehostet und unter strenger Einhaltung der Datenschutz-Grundverordnung (DSGVO) entwickelt. Da die Kernanwendung local-first arbeitet, verlassen die meisten Daten Ihre eigene Hardware ohnehin nicht.',
     compareProBtn: 'Pro-Features vergleichen',
+    viewDetailsBtn: 'Mehr erfahren',
     coreFreeTitle: 'Lokaler Core',
     coreFreeDesc: 'Open Source & self-hosted',
     proPlannedTitle: 'Pro-Variante (Geplant)',

@@ -204,7 +204,7 @@ export const Tools: React.FC = () => {
                     margin: 0,
                   }}
                 >
-                  {t('compareProBtn')}
+                  {t('viewDetailsBtn')}
                   <ArrowRight size={14} />
                 </a>
               </div>

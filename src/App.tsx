@@ -32,9 +32,9 @@ function App() {
 
   const isLegalPage = hash === '#/impressum' || hash === '#/privacy' || hash === '#/datenschutz';
   const isStackPage = hash === '#/stack';
-  const isVaultPage = hash === '#/vault';
+  const isVaultPage = hash === '#/vault-pro';
   
-  const validTools = ['memory', 'seek', 'fetch', 'scope', 'eraseme', 'terminal', 'vibecoder', 'operate', 'tune', 'fritz', 'guard', 'print', 'skills', 'ingest', 'desktop'];
+  const validTools = ['vault', 'memory', 'seek', 'fetch', 'scope', 'eraseme', 'terminal', 'vibecoder', 'operate', 'tune', 'fritz', 'guard', 'print', 'skills', 'ingest', 'desktop'];
   const toolHashMatch = hash.match(/^#\/([a-z-]+)$/);
   const toolName = toolHashMatch ? toolHashMatch[1] : null;
   const isDynamicToolPage = toolName && validTools.includes(toolName);

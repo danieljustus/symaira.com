@@ -84,7 +84,7 @@ export const Navigation: React.FC = () => {
         }} className="nav-link">
           {t('navStack')}
         </a>
-        <a href="#/vault" style={{
+        <a href="#/vault-pro" style={{
           fontSize: '14px',
           fontWeight: 600,
           color: 'var(--gold-primary)',
