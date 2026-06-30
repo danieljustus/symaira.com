@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Terminal, ArrowRight, Copy, Check, Shield, Brain, Search, Globe, Eye, Compass, Cpu, MousePointerClick } from 'lucide-react';
+import { Terminal, ArrowRight, Copy, Check, Shield, Brain, Search, Globe, Eye, Compass, Cpu, MousePointerClick, Router, ShieldAlert, Printer, Layers, Upload, Layout } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 const mcpConfigJson = `{
@@ -35,6 +35,22 @@ const mcpConfigJson = `{
     "symeraseme": {
       "command": "symeraseme",
       "args": ["mcp", "serve"]
+    },
+    "symfritz": {
+      "command": "symfritz",
+      "args": ["mcp"]
+    },
+    "symprint": {
+      "command": "symprint",
+      "args": ["mcp"]
+    },
+    "symskills": {
+      "command": "symskills",
+      "args": ["serve", "--stdio"]
+    },
+    "symingest": {
+      "command": "symingest",
+      "args": ["mcp"]
     }
   }
 }`;
@@ -50,7 +66,7 @@ export const Stack: React.FC = () => {
     },
     {
       label: t('stackInstallStep2Label'),
-      command: 'brew install symvault symmemory symseek symeraseme symscope',
+      command: 'brew install symvault symmemory symseek symeraseme symscope symfetch symingest',
     },
     {
       label: t('stackInstallStep3Label'),
@@ -116,7 +132,7 @@ export const Stack: React.FC = () => {
     {
       icon: <Globe size={18} />,
       title: 'Symaira Fetch',
-      status: 'coming-soon',
+      status: 'available',
       tone: 'sky',
     },
     {
@@ -142,6 +158,42 @@ export const Stack: React.FC = () => {
       title: 'Symaira Tune',
       status: 'available',
       tone: 'amber',
+    },
+    {
+      icon: <Router size={18} />,
+      title: 'Symaira Fritz',
+      status: 'available',
+      tone: 'sky',
+    },
+    {
+      icon: <ShieldAlert size={18} />,
+      title: 'Symaira Guard',
+      status: 'available',
+      tone: 'indigo',
+    },
+    {
+      icon: <Printer size={18} />,
+      title: 'Symaira Print',
+      status: 'available',
+      tone: 'coral',
+    },
+    {
+      icon: <Layers size={18} />,
+      title: 'Symaira Skills',
+      status: 'available',
+      tone: 'mint',
+    },
+    {
+      icon: <Upload size={18} />,
+      title: 'Symaira Ingest',
+      status: 'available',
+      tone: 'amber',
+    },
+    {
+      icon: <Layout size={18} />,
+      title: 'Symaira Desktop',
+      status: 'coming-soon',
+      tone: 'violet',
     },
   ];
 

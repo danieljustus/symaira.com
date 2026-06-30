@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowRight, Eye, Shield, ShieldCheck, Terminal, Workflow, Brain, Search, Globe, Compass, Cpu, MousePointerClick } from 'lucide-react';
+import { ArrowRight, Eye, Shield, ShieldCheck, Terminal, Workflow, Brain, Search, Globe, Compass, Cpu, MousePointerClick, Router, ShieldAlert, Printer, Layers, Upload, Layout } from 'lucide-react';
 import { GitHubIcon } from './GitHubIcon';
 import { useLanguage } from '../context/LanguageContext';
 
@@ -20,6 +20,7 @@ export const Tools: React.FC = () => {
 
   const products = [
     {
+      cmd: 'symvault',
       badge: t('vaultBadge'),
       status: t('vaultStatus'),
       title: t('vaultTitle'),
@@ -36,6 +37,7 @@ export const Tools: React.FC = () => {
       category: 'security',
     },
     {
+      cmd: 'symmemory',
       badge: t('memoryBadge'),
       status: t('memoryStatus'),
       title: t('memoryTitle'),
@@ -52,12 +54,13 @@ export const Tools: React.FC = () => {
       category: 'context',
     },
     {
+      cmd: 'symseek',
       badge: t('seekBadge'),
       status: t('seekStatus'),
       title: t('seekTitle'),
       desc: t('seekDesc'),
       bestFor: t('seekBestFor'),
-      automates: t('seekBestFor'), // fallback or use seekAutomates
+      automates: t('seekBestFor'),
       features: [t('seekFeature1'), t('seekFeature2'), t('seekFeature3'), t('seekFeature4')],
       href: 'https://github.com/danieljustus/symaira-seek',
       button: t('seekBtn'),
@@ -68,6 +71,7 @@ export const Tools: React.FC = () => {
       category: 'context',
     },
     {
+      cmd: 'symfetch',
       badge: t('fetchBadge'),
       status: t('fetchStatus'),
       title: t('fetchTitle'),
@@ -84,6 +88,7 @@ export const Tools: React.FC = () => {
       category: 'context',
     },
     {
+      cmd: 'symscope',
       badge: t('scopeBadge'),
       status: t('scopeStatus'),
       title: t('scopeTitle'),
@@ -100,6 +105,7 @@ export const Tools: React.FC = () => {
       category: 'security',
     },
     {
+      cmd: 'symeraseme',
       badge: t('erasemeBadge'),
       status: t('erasemeStatus'),
       title: t('erasemeTitle'),
@@ -116,6 +122,7 @@ export const Tools: React.FC = () => {
       category: 'security',
     },
     {
+      cmd: 'symterminal',
       badge: t('terminalBadge'),
       status: t('terminalStatus'),
       title: t('terminalTitle'),
@@ -132,6 +139,7 @@ export const Tools: React.FC = () => {
       category: 'system',
     },
     {
+      cmd: 'symvibe',
       badge: t('vibecoderBadge'),
       status: t('vibecoderStatus'),
       title: t('vibecoderTitle'),
@@ -148,6 +156,7 @@ export const Tools: React.FC = () => {
       category: 'system',
     },
     {
+      cmd: 'symoperate',
       badge: t('operateBadge'),
       status: t('operateStatus'),
       title: t('operateTitle'),
@@ -164,6 +173,7 @@ export const Tools: React.FC = () => {
       category: 'system',
     },
     {
+      cmd: 'symtune',
       badge: t('tuneBadge'),
       status: t('tuneStatus'),
       title: t('tuneTitle'),
@@ -177,6 +187,108 @@ export const Tools: React.FC = () => {
       tone: 'amber',
       demoType: 'tune',
       proHint: t('tuneProHint'),
+      category: 'system',
+    },
+    {
+      cmd: 'symfritz',
+      badge: t('fritzBadge'),
+      status: t('fritzStatus'),
+      title: t('fritzTitle'),
+      desc: t('fritzDesc'),
+      bestFor: t('fritzBestFor'),
+      automates: t('fritzAutomates'),
+      features: [t('fritzFeature1'), t('fritzFeature2'), t('fritzFeature3'), t('fritzFeature4')],
+      href: 'https://github.com/danieljustus/symaira-fritz',
+      button: t('fritzBtn'),
+      icon: <Router size={24} />,
+      tone: 'sky',
+      demoType: 'fritz',
+      proHint: t('fritzProHint'),
+      category: 'system',
+    },
+    {
+      cmd: 'symguard',
+      badge: t('guardBadge'),
+      status: t('guardStatus'),
+      title: t('guardTitle'),
+      desc: t('guardDesc'),
+      bestFor: t('guardBestFor'),
+      automates: t('guardAutomates'),
+      features: [t('guardFeature1'), t('guardFeature2'), t('guardFeature3'), t('guardFeature4')],
+      href: 'https://github.com/danieljustus/symaira-guard',
+      button: t('guardBtn'),
+      icon: <ShieldAlert size={24} />,
+      tone: 'indigo',
+      demoType: 'guard',
+      proHint: t('guardProHint'),
+      category: 'security',
+    },
+    {
+      cmd: 'symprint',
+      badge: t('printBadge'),
+      status: t('printStatus'),
+      title: t('printTitle'),
+      desc: t('printDesc'),
+      bestFor: t('printBestFor'),
+      automates: t('printAutomates'),
+      features: [t('printFeature1'), t('printFeature2'), t('printFeature3'), t('printFeature4')],
+      href: 'https://github.com/danieljustus/symaira-print',
+      button: t('printBtn'),
+      icon: <Printer size={24} />,
+      tone: 'coral',
+      demoType: 'print',
+      proHint: t('printProHint'),
+      category: 'context',
+    },
+    {
+      cmd: 'symskills',
+      badge: t('skillsBadge'),
+      status: t('skillsStatus'),
+      title: t('skillsTitle'),
+      desc: t('skillsDesc'),
+      bestFor: t('skillsBestFor'),
+      automates: t('skillsAutomates'),
+      features: [t('skillsFeature1'), t('skillsFeature2'), t('skillsFeature3'), t('skillsFeature4')],
+      href: 'https://github.com/danieljustus/symaira-skills',
+      button: t('skillsBtn'),
+      icon: <Layers size={24} />,
+      tone: 'mint',
+      demoType: 'skills',
+      proHint: t('skillsProHint'),
+      category: 'system',
+    },
+    {
+      cmd: 'symingest',
+      badge: t('ingestBadge'),
+      status: t('ingestStatus'),
+      title: t('ingestTitle'),
+      desc: t('ingestDesc'),
+      bestFor: t('ingestBestFor'),
+      automates: t('ingestAutomates'),
+      features: [t('ingestFeature1'), t('ingestFeature2'), t('ingestFeature3'), t('ingestFeature4')],
+      href: 'https://github.com/danieljustus/symaira-ingest',
+      button: t('ingestBtn'),
+      icon: <Upload size={24} />,
+      tone: 'amber',
+      demoType: 'ingest',
+      proHint: t('ingestProHint'),
+      category: 'context',
+    },
+    {
+      cmd: 'symdesk',
+      badge: t('desktopBadge'),
+      status: t('desktopStatus'),
+      title: t('desktopTitle'),
+      desc: t('desktopDesc'),
+      bestFor: t('desktopBestFor'),
+      automates: t('desktopAutomates'),
+      features: [t('desktopFeature1'), t('desktopFeature2'), t('desktopFeature3'), t('desktopFeature4')],
+      href: 'https://github.com/danieljustus/symaira-desktop',
+      button: t('desktopBtn'),
+      icon: <Layout size={24} />,
+      tone: 'violet',
+      demoType: 'desktop',
+      proHint: t('desktopProHint'),
       category: 'system',
     },
   ];
@@ -274,11 +386,8 @@ export const Tools: React.FC = () => {
                   {product.icon}
                 </div>
                 <div className="sidebar-item-info">
-                  <div className="sidebar-item-title-row">
-                    <span className="sidebar-item-title">{product.title}</span>
-                    <span className="sidebar-item-category">{product.badge}</span>
-                  </div>
-                  <span className="sidebar-item-desc">{product.desc}</span>
+                  <span className="sidebar-item-title">{product.cmd}</span>
+                  <span className="sidebar-item-category">{product.badge}</span>
                 </div>
               </button>
             );
@@ -658,6 +767,186 @@ export const Tools: React.FC = () => {
                     <div className="vibecoder-card card-pending">
                       <div className="vibecoder-status-dot status-pending">○</div>
                       <span className="vibecoder-step-name">{t('vibecoderDemoPhase3')}</span>
+                    </div>
+                  </div>
+                </div>
+              ) : activeProduct.demoType === 'fritz' ? (
+                <div className="product-demo product-demo-terminal" aria-hidden="true">
+                  <div className="demo-header">
+                    <div className="demo-dots">
+                      <span />
+                      <span />
+                      <span />
+                    </div>
+                    <div className="demo-title">
+                      <Terminal size={12} />
+                      symfritz diagnose
+                    </div>
+                  </div>
+                  <div className="terminal-lines" style={{ padding: '14px 18px 18px' }}>
+                    <p><span>$</span> symfritz diagnose macmini</p>
+                    <p style={{ color: '#86efac' }}>✓ FRITZ!Box knows host       macmini</p>
+                    <p style={{ color: '#86efac' }}>✓ Host active (192.168.188.65)</p>
+                    <p style={{ color: '#86efac' }}>✓ LAN Link Medium verified</p>
+                    <p style={{ color: '#86efac' }}>✓ DNS resolves successfully</p>
+                    <p style={{ color: '#86efac' }}>✓ TCP 22 (SSH) open</p>
+                    <p style={{ color: '#86efac' }}>✓ TCP 8001 (Paperless) open</p>
+                  </div>
+                </div>
+              ) : activeProduct.demoType === 'guard' ? (
+                <div className="product-demo product-demo-operate" aria-hidden="true">
+                  <div className="demo-header">
+                    <div className="demo-dots">
+                      <span />
+                      <span />
+                      <span />
+                    </div>
+                    <div className="demo-title">
+                      <ShieldAlert size={12} />
+                      symguard proxy
+                    </div>
+                  </div>
+                  <div className="operate-flow" style={{ padding: '10px 0' }}>
+                    <div className="operate-step">
+                      <span className="operate-tag tag-query" style={{ color: 'var(--cyan-primary)', borderColor: 'rgba(0, 255, 200, 0.2)', background: 'rgba(0, 255, 200, 0.05)' }}>MATCH</span>
+                      <span className="operate-text">Call: filesystem.write_file</span>
+                    </div>
+                    <div className="operate-step">
+                      <span className="operate-tag tag-block" style={{ color: '#ffab91', borderColor: 'rgba(255, 171, 145, 0.2)', background: 'rgba(255, 171, 145, 0.05)' }}>POLICY</span>
+                      <span className="operate-text warning">Requires human confirmation</span>
+                    </div>
+                    <div className="operate-step" style={{ border: '1px solid rgba(229, 195, 151, 0.25)', background: 'rgba(229, 195, 151, 0.05)' }}>
+                      <span className="operate-tag tag-action" style={{ color: 'var(--gold-primary)', borderColor: 'rgba(229, 195, 151, 0.3)', background: 'rgba(229, 195, 151, 0.1)' }}>TUI</span>
+                      <span className="operate-text" style={{ color: 'var(--gold-primary)' }}>Awaiting approve token...</span>
+                    </div>
+                  </div>
+                </div>
+              ) : activeProduct.demoType === 'print' ? (
+                <div className="product-demo product-demo-terminal" aria-hidden="true">
+                  <div className="demo-header">
+                    <div className="demo-dots">
+                      <span />
+                      <span />
+                      <span />
+                    </div>
+                    <div className="demo-title">
+                      <Terminal size={12} />
+                      symprint render
+                    </div>
+                  </div>
+                  <div className="terminal-lines" style={{ padding: '14px 18px 18px' }}>
+                    <p><span>$</span> symprint render report.md --profile report</p>
+                    <p>Loading frontmatter contract...</p>
+                    <p>Calling Typst engine from PATH...</p>
+                    <p>Applying DIN 5008 grid alignments...</p>
+                    <p style={{ color: '#86efac' }}>✓ Generated accessible PDF/A-2a successfully</p>
+                    <p style={{ color: '#86efac' }}>✓ Output: report.pdf (1.2 MB)</p>
+                  </div>
+                </div>
+              ) : activeProduct.demoType === 'skills' ? (
+                <div className="product-demo product-demo-memory" aria-hidden="true">
+                  <div className="demo-header">
+                    <div className="demo-dots">
+                      <span />
+                      <span />
+                      <span />
+                    </div>
+                    <div className="demo-title">
+                      <Layers size={12} />
+                      symskills install
+                    </div>
+                  </div>
+                  <div className="memory-flow">
+                    <div className="memory-row-item" style={{ background: 'rgba(165, 214, 167, 0.035)', borderColor: 'rgba(165, 214, 167, 0.08)' }}>
+                      <span className="memory-tag tag-add" style={{ color: '#A5D6A7', background: 'rgba(165, 214, 167, 0.12)', borderColor: 'rgba(165, 214, 167, 0.2)' }}>VALIDATE</span>
+                      <span className="memory-text">SKILL.md contract OK</span>
+                      <span className="memory-status status-success">Passed</span>
+                    </div>
+                    <div className="memory-row-item" style={{ background: 'rgba(165, 214, 167, 0.035)', borderColor: 'rgba(165, 214, 167, 0.08)' }}>
+                      <span className="memory-tag tag-guard" style={{ color: 'var(--cyan-primary)', background: 'rgba(0, 255, 200, 0.05)', borderColor: 'rgba(0, 255, 200, 0.15)' }}>RENDER</span>
+                      <span className="memory-text">Target: Claude Code</span>
+                      <span className="memory-status status-sanitized" style={{ color: 'var(--cyan-primary)' }}>Rendered</span>
+                    </div>
+                    <div className="memory-row-item" style={{ background: 'rgba(165, 214, 167, 0.035)', borderColor: 'rgba(165, 214, 167, 0.08)' }}>
+                      <span className="memory-tag tag-sync" style={{ color: 'var(--blue-accent)', background: 'rgba(129, 212, 250, 0.05)', borderColor: 'rgba(129, 212, 250, 0.15)' }}>INSTALL</span>
+                      <span className="memory-text">Write to ~/.claude/skills/</span>
+                      <span className="memory-status status-success">Done</span>
+                    </div>
+                  </div>
+                </div>
+              ) : activeProduct.demoType === 'ingest' ? (
+                <div className="product-demo product-demo-fetch" aria-hidden="true">
+                  <div className="demo-header">
+                    <div className="demo-dots">
+                      <span />
+                      <span />
+                      <span />
+                    </div>
+                    <div className="demo-title">
+                      <Upload size={12} />
+                      symingest watch
+                    </div>
+                  </div>
+                  <div className="fetch-flow">
+                    <div className="fetch-input-line" style={{ border: '1px solid rgba(255, 224, 130, 0.15)', color: '#FFE082' }}>
+                      <Upload size={13} />
+                      <span>INBOX: scan_invoice_2026.pdf</span>
+                    </div>
+                    <div className="fetch-pipeline">
+                      <div className="fetch-step">
+                        <span className="fetch-step-icon">//</span>
+                        <span className="fetch-step-text">Page parsing (pdftoppm)</span>
+                        <span className="fetch-step-value highlight" style={{ color: '#FFE082' }}>2 pages</span>
+                      </div>
+                      <div className="fetch-step">
+                        <span className="fetch-step-icon">//</span>
+                        <span className="fetch-step-text">OCR extraction (Tesseract)</span>
+                        <span className="fetch-step-value">4.2k chars</span>
+                      </div>
+                      <div className="fetch-step">
+                        <span className="fetch-step-icon">//</span>
+                        <span className="fetch-step-text">Output to vault note</span>
+                        <span className="fetch-step-value highlight" style={{ color: '#FFE082' }}>Markdown + Frontmatter</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ) : activeProduct.demoType === 'desktop' ? (
+                <div className="product-demo product-demo-terminal-app" aria-hidden="true">
+                  <div className="demo-header">
+                    <div className="demo-dots">
+                      <span />
+                      <span />
+                      <span />
+                    </div>
+                    <div className="demo-title">
+                      <Layout size={12} />
+                      symdesk web dashboard
+                    </div>
+                  </div>
+                  <div className="terminal-split-view" style={{ gridTemplateColumns: '1fr' }}>
+                    <div className="terminal-pane" style={{ border: 'none' }}>
+                      <div className="pane-header" style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.05)' }}>
+                        <span className="pane-status-ring status-ring-active" style={{ background: '#B39DDB', boxShadow: '0 0 6px #B39DDB' }} />
+                        <span className="pane-name" style={{ color: 'var(--text-primary)' }}>Personal Vault Workspace</span>
+                      </div>
+                      <div className="pane-terminal-content" style={{ display: 'flex', flexDirection: 'column', gap: '8px', padding: '12px' }}>
+                        <p style={{ color: 'var(--text-secondary)', fontSize: '11px', margin: 0 }}>Composing active local services:</p>
+                        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px', fontSize: '10px' }}>
+                          <div style={{ padding: '6px', background: 'rgba(255, 255, 255, 0.02)', borderRadius: '4px', border: '1px solid rgba(255, 255, 255, 0.04)' }}>
+                            <strong style={{ color: 'var(--gold-primary)' }}>symvault:</strong> Connected (TouchID)
+                          </div>
+                          <div style={{ padding: '6px', background: 'rgba(255, 255, 255, 0.02)', borderRadius: '4px', border: '1px solid rgba(255, 255, 255, 0.04)' }}>
+                            <strong style={{ color: '#B39DDB' }}>symmemory:</strong> 128 context links
+                          </div>
+                          <div style={{ padding: '6px', background: 'rgba(255, 255, 255, 0.02)', borderRadius: '4px', border: '1px solid rgba(255, 255, 255, 0.04)' }}>
+                            <strong style={{ color: '#FFAB91' }}>symseek:</strong> 420 documents index
+                          </div>
+                          <div style={{ padding: '6px', background: 'rgba(255, 255, 255, 0.02)', borderRadius: '4px', border: '1px solid rgba(255, 255, 255, 0.04)' }}>
+                            <strong style={{ color: '#FFE082' }}>symingest:</strong> watcher active
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>

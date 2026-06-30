@@ -2626,8 +2626,8 @@ a {
 }
 
 .tools-console-sidebar {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 12px;
   max-height: 720px;
   overflow-y: auto;
@@ -2652,7 +2652,7 @@ a {
 }
 
 .console-sidebar-item {
-  padding: 14px 16px;
+  padding: 14px 10px;
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.05);
   background: rgba(5, 5, 8, 0.2);
@@ -2660,17 +2660,20 @@ a {
   cursor: pointer;
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 14px;
-  text-align: left;
+  justify-content: center;
+  gap: 8px;
+  text-align: center;
   position: relative;
   overflow: hidden;
+  height: 96px;
 }
 
 .console-sidebar-item:hover {
   border-color: rgba(255, 255, 255, 0.12);
   background: rgba(255, 255, 255, 0.025);
-  transform: translateY(-1px);
+  transform: translateY(-2px);
 }
 
 .console-sidebar-item.active {
@@ -2679,21 +2682,33 @@ a {
   box-shadow: inset 0 0 12px rgba(255, 255, 255, 0.015);
 }
 
+.console-sidebar-item.active::after {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: var(--item-accent);
+  filter: blur(25px);
+  opacity: 0.12;
+  z-index: -1;
+  border-radius: 50%;
+}
+
 .console-sidebar-item.active::before {
   content: "";
   position: absolute;
   left: 0;
+  right: 0;
   top: 0;
-  bottom: 0;
-  width: 3px;
+  height: 3px;
   background: var(--item-accent);
   box-shadow: 0 0 8px var(--item-accent);
 }
 
 .sidebar-item-icon {
-  width: 38px;
-  height: 38px;
-  border-radius: 8px;
+  width: 34px;
+  height: 34px;
+  border-radius: 6px;
   border: 1px solid rgba(255, 255, 255, 0.06);
   display: flex;
   align-items: center;
@@ -2713,21 +2728,14 @@ a {
 .sidebar-item-info {
   display: flex;
   flex-direction: column;
-  gap: 3px;
+  gap: 2px;
   min-width: 0;
 }
 
-.sidebar-item-title-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px;
-}
-
 .sidebar-item-title {
-  font-size: 14.5px;
-  font-family: var(--font-title);
-  font-weight: 600;
+  font-size: 13px;
+  font-family: var(--font-tech);
+  font-weight: 700;
   color: var(--text-secondary);
   transition: color 0.25s ease;
   white-space: nowrap;
@@ -2741,25 +2749,20 @@ a {
 
 .sidebar-item-category {
   font-family: var(--font-tech);
-  font-size: 8px;
+  font-size: 7.5px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   color: var(--item-accent);
-  opacity: 0.65;
+  opacity: 0.5;
 }
 
 .console-sidebar-item.active .sidebar-item-category {
-  opacity: 0.95;
+  opacity: 0.85;
 }
 
 .sidebar-item-desc {
-  font-size: 11.5px;
-  color: var(--text-muted);
-  line-height: 1.35;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  display: none;
 }
 
 /* Tone styling mapping */
@@ -3043,6 +3046,7 @@ a {
   }
 
   .tools-console-sidebar {
+    display: flex;
     flex-direction: row;
     max-height: none;
     overflow-x: auto;
@@ -3055,10 +3059,16 @@ a {
   }
 
   .console-sidebar-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    height: auto;
     flex: 0 0 auto;
     width: 250px;
     scroll-snap-align: start;
     padding: 12px 14px;
+    gap: 12px;
   }
 
   .console-sidebar-item.active::before {

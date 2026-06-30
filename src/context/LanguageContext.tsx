@@ -142,6 +142,78 @@ interface TranslationMap {
   vibecoderFeature3: string;
   vibecoderFeature4: string;
   vibecoderBtn: string;
+  fritzBadge: string;
+  fritzStatus: string;
+  fritzTitle: string;
+  fritzDesc: string;
+  fritzBestFor: string;
+  fritzAutomates: string;
+  fritzFeature1: string;
+  fritzFeature2: string;
+  fritzFeature3: string;
+  fritzFeature4: string;
+  fritzBtn: string;
+  fritzProHint: string;
+  guardBadge: string;
+  guardStatus: string;
+  guardTitle: string;
+  guardDesc: string;
+  guardBestFor: string;
+  guardAutomates: string;
+  guardFeature1: string;
+  guardFeature2: string;
+  guardFeature3: string;
+  guardFeature4: string;
+  guardBtn: string;
+  guardProHint: string;
+  printBadge: string;
+  printStatus: string;
+  printTitle: string;
+  printDesc: string;
+  printBestFor: string;
+  printAutomates: string;
+  printFeature1: string;
+  printFeature2: string;
+  printFeature3: string;
+  printFeature4: string;
+  printBtn: string;
+  printProHint: string;
+  skillsBadge: string;
+  skillsStatus: string;
+  skillsTitle: string;
+  skillsDesc: string;
+  skillsBestFor: string;
+  skillsAutomates: string;
+  skillsFeature1: string;
+  skillsFeature2: string;
+  skillsFeature3: string;
+  skillsFeature4: string;
+  skillsBtn: string;
+  skillsProHint: string;
+  ingestBadge: string;
+  ingestStatus: string;
+  ingestTitle: string;
+  ingestDesc: string;
+  ingestBestFor: string;
+  ingestAutomates: string;
+  ingestFeature1: string;
+  ingestFeature2: string;
+  ingestFeature3: string;
+  ingestFeature4: string;
+  ingestBtn: string;
+  ingestProHint: string;
+  desktopBadge: string;
+  desktopStatus: string;
+  desktopTitle: string;
+  desktopDesc: string;
+  desktopBestFor: string;
+  desktopAutomates: string;
+  desktopFeature1: string;
+  desktopFeature2: string;
+  desktopFeature3: string;
+  desktopFeature4: string;
+  desktopBtn: string;
+  desktopProHint: string;
   proLabel: string;
   heroBadgeGermany: string;
   proHostingTag: string;
@@ -366,8 +438,8 @@ const translations: Record<Language, TranslationMap> = {
     seekAutomates: 'Directory crawling, SQLite FTS5 keyword indexing, and RRF ranking.',
     seekFeature1: 'Hybrid retrieval: keyword search combined with vector embeddings.',
     seekFeature2: 'Reciprocal Rank Fusion (RRF) for optimal ranking of search results.',
-    seekFeature3: 'Built-in HTTP REST daemon for lightweight client access.',
-    seekFeature4: '100% CGO-free Go code with local-first vector fallback.',
+    seekFeature3: 'TurboQuant quantized 2-4 bit vector search for fast offline retrieval.',
+    seekFeature4: 'Ollama integration for HyDE query expansion, reranking, and local FNV-1a fallback.',
     seekBtn: 'View Seek on GitHub',
     fetchBadge: 'Web context fetch',
     fetchStatus: 'Beta',
@@ -377,8 +449,8 @@ const translations: Record<Language, TranslationMap> = {
     fetchAutomates: 'TLS/HTTP2 fingerprinting, semantic DOM filtering, data island extraction, and concurrent batch requests.',
     fetchFeature1: 'Browser-impersonating TLS/HTTP2 JA4 fingerprints.',
     fetchFeature2: 'Semantic DOM pipeline cleans HTML to token-compressed Markdown.',
-    fetchFeature3: 'Extracts data islands (__NEXT_DATA__, JSON-LD) without JS execution.',
-    fetchFeature4: 'Model Context Protocol (MCP) server for instant agent integration.',
+    fetchFeature3: 'Extracts data islands, CSS selectors, and JSON-LD schema paths without JS.',
+    fetchFeature4: 'Thin-content fallback (llms.txt) and SSRF protection built in.',
     fetchBtn: 'View Fetch on GitHub',
     terminalBadge: 'Agent terminal',
     terminalStatus: 'Beta',
@@ -435,6 +507,72 @@ const translations: Record<Language, TranslationMap> = {
     vibecoderFeature3: 'Smart scheduler with auto-skip rules based on Git or issues.',
     vibecoderFeature4: '100% CGO-free Go code with embedded web board.',
     vibecoderBtn: 'View Vibecoder on GitHub',
+    fritzBadge: 'Router & network',
+    fritzStatus: 'Beta',
+    fritzTitle: 'Symaira Fritz',
+    fritzDesc: 'A CLI and MCP server to administer, analyze, and control AVM FRITZ!Box routers. It maps network topology, controls guest WLAN, triggers Wake-on-LAN, and switches smart DECT devices.',
+    fritzBestFor: 'Developers and agents needing network diagnostics, guest Wi-Fi toggles, or DECT smart home control.',
+    fritzAutomates: 'Network scans, host resolution, port diagnostics, Wake-on-LAN, and smart home switching.',
+    fritzFeature1: 'Uses official, documented TR-064 (SOAP) and AHA-HTTP interfaces.',
+    fritzFeature2: 'End-to-end host diagnostics checking LAN/WLAN link, DNS, and open ports.',
+    fritzFeature3: 'Resolves credentials securely via env, symvault, macOS Keychain, or config.',
+    fritzFeature4: 'Local stdio Model Context Protocol (MCP) server for instant agent access.',
+    fritzBtn: 'View Fritz on GitHub',
+    guardBadge: 'Security gateway',
+    guardStatus: 'Alpha',
+    guardTitle: 'Symaira Guard',
+    guardDesc: 'A local-first security gateway and policy proxy for AI agents and MCP servers. It inspects tool calls, enforces custom risk limits, prompts for human consent, and chains tamper-evident audit logs.',
+    guardBestFor: 'Developers running autonomous coding agents who need strict boundaries and execution control.',
+    guardAutomates: 'MCP client discovery, tool risk classification, signature validation, and audit tracking.',
+    guardFeature1: 'Defines local-first rules deciding what tool calls to allow, deny, or ask.',
+    guardFeature2: 'Cryptographically chains audit logs inside an append-only local SQLite database.',
+    guardFeature3: 'Pins hashes of tool schemas and descriptions to detect hidden prompt updates.',
+    guardFeature4: 'Pure Go, CGO-free stdio proxy without network or cloud accounts.',
+    guardBtn: 'View Guard on GitHub',
+    printBadge: 'Document rendering',
+    printStatus: 'Beta',
+    printTitle: 'Symaira Print',
+    printDesc: 'Turn Markdown into beautiful PDFs via named use-case profiles. Renders locally using the fast, modern Typst engine, producing accessible, tagged documents without Pandoc or LaTeX pain.',
+    printBestFor: 'Developers, pipelines, and AI agents needing predictable, professional document generation.',
+    printAutomates: 'Contract validation, layout engine discovery, and Typst compilation.',
+    printFeature1: 'Profile-driven layouts like brief (letters), rechnung (invoices), and reports.',
+    printFeature2: 'Emits fully accessible PDF/A-2a and PDF/UA-1 compliant documents.',
+    printFeature3: 'Supports DIN 5008 letter placement, Infoblock, and fold markers for envelopes.',
+    printFeature4: 'MCP server tools: render_pdf, list_profiles, validate_document, and doctor.',
+    printBtn: 'View Print on GitHub',
+    skillsBadge: 'Skill management',
+    skillsStatus: 'Beta',
+    skillsTitle: 'Symaira Skills',
+    skillsDesc: 'A local-first single-source-of-truth manager for AI agent skills. Write one portable SKILL.md and render or install harness-specific configurations for OpenCode, Claude Code, Codex, and Hermes.',
+    skillsBestFor: 'Developers writing custom agent workflows who want to reuse them across multiple agent runtimes.',
+    skillsAutomates: 'Harness folder generation, target config mapping, and skill installation.',
+    skillsFeature1: 'Keeps portable skills in one folder with modular overlays and aliases.',
+    skillsFeature2: 'Safely manages installations using validation markers to prevent data loss.',
+    skillsFeature3: 'Renders optimized markdown and frontmatter customized per agent harness.',
+    skillsFeature4: 'MCP server tools to list, validate, inspect, and install skills locally.',
+    skillsBtn: 'View Skills on GitHub',
+    ingestBadge: 'Document ingestion',
+    ingestStatus: 'Beta',
+    ingestTitle: 'Symaira Ingest',
+    ingestDesc: 'Document ingestion and OCR core for the Symaira vault. Drop scanned PDFs or images into a folder and automatically output clean, classified Markdown notes with YAML frontmatter.',
+    ingestBestFor: 'AI agents and developers building local-first document pipelines and paperless archives.',
+    ingestAutomates: 'Folder watching, PDF rendering, Tesseract OCR runs, and vault path writing.',
+    ingestFeature1: 'Extracts text from scanned files and images using local Tesseract OCR.',
+    ingestFeature2: 'Standardized Markdown notes with frontmatter, stopping before database indexing.',
+    ingestFeature3: 'Watcher daemon scans folders automatically, keeping a local deduplication store.',
+    ingestFeature4: 'Exposes ingest_file tool via stdio MCP for AI agent processing pipelines.',
+    ingestBtn: 'View Ingest on GitHub',
+    desktopBadge: 'Visual workspace',
+    desktopStatus: 'Roadmap',
+    desktopTitle: 'Symaira Desktop',
+    desktopDesc: 'The visual workspace shell for the Symaira ecosystem. It unifies search, memory, document ingestion, and AI agent orchestration over a single, plain-Markdown local vault.',
+    desktopBestFor: 'Developers wanting a local-first visual hub that combines Obsidian, Notion AI, and Paperless.',
+    desktopAutomates: 'Tool composition, server orchestration, and vault indexing.',
+    desktopFeature1: 'Composes symseek, symmemory, symfetch, symingest, and symvault at runtime.',
+    desktopFeature2: 'Single binary containing CLI, MCP server, and embedded React/Vite SPA.',
+    desktopFeature3: 'Zero database lock-in: plain-text Markdown is the single source of truth.',
+    desktopFeature4: 'No cloud requirements, protecting your private files and workspace data.',
+    desktopBtn: 'View Desktop on GitHub',
     proLabel: 'Planned Pro Features',
     vaultProHint: 'Pro variant planned: Secure cloud syncing, team vault sharing, and enterprise audit logging.',
     erasemeProHint: 'Pro variant planned: Cloud campaigns, automated weekly scans, and central compliance reporting.',
@@ -446,6 +584,12 @@ const translations: Record<Language, TranslationMap> = {
     operateProHint: 'Pro variant planned: Multi-user session isolation, cloud-based GUI session recording, and credential-gated approval flows.',
     tuneProHint: 'Pro variant planned: Centralized hardware health dashboards, custom fan profiles, and privileged SMC controls.',
     vibecoderProHint: 'Pro variant planned: Shared cloud dashboards, multi-repo support, and team permission controls.',
+    fritzProHint: 'Pro variant planned: Centralized multi-box network monitoring, remote secure tunnels, and device presence alerts.',
+    guardProHint: 'Pro variant planned: Centralized team policy deployment, aggregated audit compliance logs, and remote approval companion apps.',
+    printProHint: 'Pro variant planned: Cloud compilation queues, team typographic templates, and automated compliance APIs.',
+    skillsProHint: 'Pro variant planned: Team skill repositories, remote skill sharing, and cryptographically signed skill files.',
+    ingestProHint: 'Pro variant planned: Managed OCR cluster scaling, advanced classification models, and cloud intake relays.',
+    desktopProHint: 'Pro variant planned: End-to-end encrypted multi-user sync, secure remote web access, and team controls.',
     terminalDemoPane1: 'Pane 1: Aider (active)',
     terminalDemoPane2: 'Pane 2: Claude Code (blocked)',
     terminalDemoPrompt: 'Approve file edits?',
@@ -540,7 +684,7 @@ const translations: Record<Language, TranslationMap> = {
     stackInstallStep1Label: 'Add the Homebrew tap',
     stackInstallStep2Label: 'Install CLI tools + MCP servers',
     stackInstallStep3Label: 'Install the native terminal',
-    stackInstallNote: 'symfetch joins the stack after its first tagged release.',
+    stackInstallNote: 'symfritz, symprint, symskills, and symguard are currently installed from source or via go install.',
     stackConfigTitle: 'MCP Configuration',
     stackConfigDesc: 'Drop this into your agent\'s MCP config directory. Each tool runs as a local stdio server — no network, no cloud.',
     stackWorkflowTitle: 'Example Workflows',
@@ -657,8 +801,8 @@ const translations: Record<Language, TranslationMap> = {
     seekAutomates: 'Verzeichnis-Crawling, SQLite FTS5 Keyword-Indexierung und RRF-Ranking.',
     seekFeature1: 'Hybrider Abruf: Keyword-Suche kombiniert mit Vektor-Embeddings.',
     seekFeature2: 'Reciprocal Rank Fusion (RRF) for optimal ranking of search results.',
-    seekFeature3: 'Integrierter HTTP REST-Daemon für leichtgewichtigen Client-Zugriff.',
-    seekFeature4: '100 % CGO-freier Go-Code mit lokalem Vektor-Fallback.',
+    seekFeature3: 'TurboQuant-vektorkomprimierte Suche (2-4 Bit) für schnellen Offline-Abruf.',
+    seekFeature4: 'Ollama-Integration für HyDE-Abfrageerweiterung, Re-ranking und FNV-1a-Fallback.',
     seekBtn: 'Seek auf GitHub ansehen',
     fetchBadge: 'Web-Kontext-Abruf',
     fetchStatus: 'Beta',
@@ -668,8 +812,8 @@ const translations: Record<Language, TranslationMap> = {
     fetchAutomates: 'TLS/HTTP2-Fingerprinting, semantische DOM-Filterung, Data-Island-Extraktion und parallele Batch-Anfragen.',
     fetchFeature1: 'Browser-imitierende TLS/HTTP2-JA4-Fingerprints.',
     fetchFeature2: 'Semantische DOM-Pipeline komprimiert HTML zu optimiertem Markdown.',
-    fetchFeature3: 'Extrahiert Data-Islands (__NEXT_DATA__, JSON-LD) ohne JS-Ausführung.',
-    fetchFeature4: 'Model Context Protocol (MCP) Server für direkte Agenten-Integration.',
+    fetchFeature3: 'Extrahiert Data-Islands, CSS-Selektoren und JSON-LD-Schema-Pfade ohne JS.',
+    fetchFeature4: 'Dünner-Inhalt-Fallback (llms.txt) und integrierter SSRF-Schutz.',
     fetchBtn: 'Fetch auf GitHub ansehen',
     terminalBadge: 'Agenten-Terminal',
     terminalStatus: 'Beta',
@@ -726,6 +870,72 @@ const translations: Record<Language, TranslationMap> = {
     vibecoderFeature3: 'Smarter Scheduler mit Auto-Skip-Regeln basierend auf Git/Issues.',
     vibecoderFeature4: '100 % CGO-freier Go-Code mit eingebettetem Web-Board.',
     vibecoderBtn: 'Vibecoder auf GitHub ansehen',
+    fritzBadge: 'Router & Netzwerk',
+    fritzStatus: 'Beta',
+    fritzTitle: 'Symaira Fritz',
+    fritzDesc: 'Ein CLI- und MCP-Server zur Verwaltung, Analyse und Steuerung von AVM FRITZ!Box-Routern. Kartografiert die Netzwerktopologie, steuert das Gast-WLAN, löst Wake-on-LAN aus und schaltet DECT-Smart-Home-Geräte.',
+    fritzBestFor: 'Entwickler und KI-Agenten, die Netzwerkdiagnosen, Gast-WLAN-Schalter oder DECT-Smart-Home-Steuerung benötigen.',
+    fritzAutomates: 'Netzwerkscans, Host-Auflösung, Port-Diagnose, Wake-on-LAN und Smart-Home-Schaltung.',
+    fritzFeature1: 'Nutzung offizieller, dokumentierter TR-064 (SOAP) und AHA-HTTP Schnittstellen.',
+    fritzFeature2: 'End-to-End-Host-Diagnose (LAN/WLAN-Verbindung, DNS-Auflösung und offene Ports).',
+    fritzFeature3: 'Sichere Auflösung von Anmeldedaten über env, symvault, macOS Keychain oder Config.',
+    fritzFeature4: 'Lokaler stdio Model Context Protocol (MCP) Server für direkten Agentenzugriff.',
+    fritzBtn: 'Fritz auf GitHub ansehen',
+    guardBadge: 'Sicherheits-Gateway',
+    guardStatus: 'Alpha',
+    guardTitle: 'Symaira Guard',
+    guardDesc: 'Ein lokales Sicherheits-Gateway und Richtlinien-Proxy für KI-Agenten und MCP-Server. Prüft Werkzeugaufrufe, setzt Risikolimits durch, bittet um Freigabe und führt ein fälschungssicheres Audit-Log.',
+    guardBestFor: 'Entwickler, die autonome Coding-Agenten ausführen und klare Sicherheitsgrenzen definieren möchten.',
+    guardAutomates: 'Erkennung lokaler MCP-Clients, Risikoklassifizierung von Tools und fälschungssichere Audit-Protokollierung.',
+    guardFeature1: 'Lokale Richtlinien entscheiden, ob Werkzeuge erlaubt, blockiert oder freigegeben werden.',
+    guardFeature2: 'Kryptographisch verkettete Audit-Logs in einer manipulationssicheren SQLite-Datenbank.',
+    guardFeature3: 'Überwacht Schema-Drift und veränderte Tool-Beschreibungen durch Hash-Pinning.',
+    guardFeature4: 'Reiner Go- und CGO-freier stdio-Proxy ohne Cloud-Zwang oder Benutzerkonto.',
+    guardBtn: 'Guard auf GitHub ansehen',
+    printBadge: 'Dokumenten-Rendering',
+    printStatus: 'Beta',
+    printTitle: 'Symaira Print',
+    printDesc: 'Verwandelt semantisches Markdown über vordefinierte Profile in professionelle PDFs. Rendert lokal über das schnelle, moderne Typst-System und erzeugt barrierefreie, getaggte Dokumente ohne Pandoc oder LaTeX.',
+    printBestFor: 'Entwickler, CI/CD-Pipelines und KI-Agenten, die eine zuverlässige Dokumentengenerierung benötigen.',
+    printAutomates: 'Metadaten-Validierung, Layout-Engine-Erkennung und Typst-Kompilierung.',
+    printFeature1: 'Profilgesteuerte Layouts wie brief (Briefe), rechnung (Rechnungen) und reports (Berichte).',
+    printFeature2: 'Erstellt konforme, voll barrierefreie PDF/A-2a und PDF/UA-1 Dokumente.',
+    printFeature3: 'Unterstützt DIN 5008 Layout-Vorgaben inklusive Falzmarken und Anschriftfeld.',
+    printFeature4: 'MCP-Schnittstellen: render_pdf, list_profiles, validate_document und doctor.',
+    printBtn: 'Print auf GitHub ansehen',
+    skillsBadge: 'Skill-Verwaltung',
+    skillsStatus: 'Beta',
+    skillsTitle: 'Symaira Skills',
+    skillsDesc: 'Ein lokaler Manager für KI-Agenten-Skills (Single Source of Truth). Schreibt eine portable SKILL.md und erzeugt oder installiert die passenden Zielformate für OpenCode, Claude Code, Codex und Hermes.',
+    skillsBestFor: 'Entwickler, die eigene Agenten-Workflows schreiben und in verschiedenen Runtimes nutzen möchten.',
+    skillsAutomates: 'Generierung von Harness-Ordnern, Konfigurations-Mapping und Skill-Installation.',
+    skillsFeature1: 'Verwaltung portabler Skills in einem Ordner mit modularen Overlays.',
+    skillsFeature2: 'Sichere Installation mit Validierungsmarkern gegen versehentliches Überschreiben.',
+    skillsFeature3: 'Erzeugt optimiertes Markdown und Frontmatter für die jeweilige Laufzeitumgebung.',
+    skillsFeature4: 'MCP-Server-Werkzeuge zum Auflisten, Validieren und Installieren lokaler Skills.',
+    skillsBtn: 'Skills auf GitHub ansehen',
+    ingestBadge: 'Dokumenten-Import',
+    ingestStatus: 'Beta',
+    ingestTitle: 'Symaira Ingest',
+    ingestDesc: 'Import- und OCR-Kern für den Symaira-Vault. Liest gescannte PDFs oder Bilder ein, extrahiert den Text per Tesseract OCR und gibt strukturierte Markdown-Dateien mit YAML-Frontmatter aus.',
+    ingestBestFor: 'KI-Agenten und Entwickler, die lokale Dokumenten-Pipelines und papierlose Archive aufbauen.',
+    ingestAutomates: 'Verzeichnisüberwachung (Watch-Mode), PDF-Rendering, OCR-Verarbeitung und Schreiben in den Vault.',
+    ingestFeature1: 'Textextraktion aus gescannten Dokumenten und Bildern via lokalem Tesseract OCR.',
+    ingestFeature2: 'Erstellt standardisiertes Markdown samt Metadaten, getrennt von der Suche-Indexierung.',
+    ingestFeature3: 'Watcher-Daemon überwacht Ordner und pflegt einen lokalen Duplikatschutz.',
+    ingestFeature4: 'Stellt das Werkzeug ingest_file über stdio MCP für KI-Agenten bereit.',
+    ingestBtn: 'Ingest auf GitHub ansehen',
+    desktopBadge: 'Visueller Workspace',
+    desktopStatus: 'Roadmap',
+    desktopTitle: 'Symaira Desktop',
+    desktopDesc: 'Die grafische Benutzeroberfläche des Symaira-Ökosystems. Vereint Indexierung, Suche, Gedächtnis, Dokumentenimport und KI-Orchestrierung über einen lokalen Markdown-Vault.',
+    desktopBestFor: 'Entwickler, die eine lokale Benutzeroberfläche ähnlich wie Obsidian, Notion AI und Paperless suchen.',
+    desktopAutomates: 'Laufzeit-Komposition der Einzeltools, Server-Steuerung und Vault-Indexierung.',
+    desktopFeature1: 'Komponiert symseek, symmemory, symfetch, symingest und symvault zur Laufzeit.',
+    desktopFeature2: 'Einzige Binärdatei mit CLI, MCP-Server und eingebetteter React/Vite SPA.',
+    desktopFeature3: 'Kein Datenbank-Lock-in: Klartext-Markdown bleibt die einzige Quelle der Wahrheit.',
+    desktopFeature4: 'Arbeitet vollständig lokal und schützt sensible Arbeitsbereich-Daten.',
+    desktopBtn: 'Desktop auf GitHub ansehen',
     proLabel: 'Geplante Pro-Features',
     vaultProHint: 'Pro-Variante geplant: Sicherer Cloud-Sync, Team-Vault-Freigabe und Enterprise-Audit-Logs.',
     erasemeProHint: 'Pro-Variante geplant: Cloud-Kampagnen, automatisierte Scans und zentrale Compliance-Berichte.',
@@ -737,6 +947,12 @@ const translations: Record<Language, TranslationMap> = {
     operateProHint: 'Pro-Variante geplant: Multi-User-Sitzungsisolation, cloudbasierte GUI-Sitzungsaufzeichnung und zugriffsgeschützte Freigabe-Workflows.',
     tuneProHint: 'Pro-Variante geplant: Zentralisierte Hardware-Zustands-Dashboards, benutzerdefinierte Lüfterprofile und privilegierte SMC-Steuerungen.',
     vibecoderProHint: 'Pro-Variante geplant: Geteilte Cloud-Dashboards, Multi-Repository-Support und Team-Berechtigungssteuerung.',
+    fritzProHint: 'Pro-Variante geplant: Zentralisierte Überwachung mehrerer Router, sichere Remote-Tunnel und Präsenzmeldungen.',
+    guardProHint: 'Pro-Variante geplant: Zentrale Verteilung von Team-Richtlinien, aggregierte Audit-Logs und Remote-Freigabe per Companion-App.',
+    printProHint: 'Pro-Variante geplant: Cloud-basierte Rendering-Pipelines, eigene Team-Schriftpakete und automatisierte Rechnungsprüfung.',
+    skillsProHint: 'Pro-Variante geplant: Gemeinsame Team-Skill-Bibliotheken, Remote-Synchronisierung und kryptographisch signierte Skills.',
+    ingestProHint: 'Pro-Variante geplant: Skalierbare Cloud-OCR-Cluster, eigene Klassifizierungsmodelle und Cloud-Import-Relays.',
+    desktopProHint: 'Pro-Variante geplant: Ende-zu-Ende verschlüsselter Multi-User-Sync, sicherer Remote-Webzugriff und Team-Berechtigungen.',
     terminalDemoPane1: 'Panel 1: Aider (aktiv)',
     terminalDemoPane2: 'Panel 2: Claude Code (blockiert)',
     terminalDemoPrompt: 'Änderungen freigeben?',
@@ -831,7 +1047,7 @@ const translations: Record<Language, TranslationMap> = {
     stackInstallStep1Label: 'Homebrew-Tap hinzufügen',
     stackInstallStep2Label: 'CLI-Tools + MCP-Server installieren',
     stackInstallStep3Label: 'Natives Terminal installieren',
-    stackInstallNote: 'symfetch wird nach dem ersten getaggten Release hinzugefügt.',
+    stackInstallNote: 'symfritz, symprint, symskills und symguard werden derzeit aus dem Quellcode oder per go install installiert.',
     stackConfigTitle: 'MCP-Konfiguration',
     stackConfigDesc: 'Leg diese Datei in das MCP-Konfigurationsverzeichnis deines Agenten. Jedes Tool läuft als lokaler stdio-Server — kein Netzwerk, keine Cloud.',
     stackWorkflowTitle: 'Workflow-Beispiele',
