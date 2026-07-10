@@ -13,6 +13,7 @@ import { Footer } from './components/Footer';
 import { LegalPages } from './components/LegalPages';
 import { SandBackground } from './components/SandBackground';
 import { CookieConsent } from './components/CookieConsent';
+import { SHOW_PRO } from './config/features';
 
 const DEFAULT_TITLE = 'Symaira | Open-Source, Local-First AI Tools & MCP Servers';
 
@@ -57,12 +58,13 @@ function App() {
   }, []);
 
   useEffect(() => {
-    document.title = ROUTE_TITLES[hash] ?? DEFAULT_TITLE;
+    const isHiddenProRoute = !SHOW_PRO && hash === '#/vault-pro';
+    document.title = isHiddenProRoute ? DEFAULT_TITLE : ROUTE_TITLES[hash] ?? DEFAULT_TITLE;
   }, [hash]);
 
   const isLegalPage = hash === '#/impressum' || hash === '#/privacy' || hash === '#/datenschutz';
   const isStackPage = hash === '#/stack';
-  const isVaultPage = hash === '#/vault-pro';
+  const isVaultPage = SHOW_PRO && hash === '#/vault-pro';
   
   const validTools = ['vault', 'memory', 'seek', 'fetch', 'scope', 'eraseme', 'terminal', 'vibecoder', 'operate', 'tune', 'fritz', 'guard', 'print', 'skills', 'ingest', 'desktop'];
   const toolHashMatch = hash.match(/^#\/([a-z-]+)$/);

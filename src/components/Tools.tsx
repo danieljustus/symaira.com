@@ -3,6 +3,7 @@ import { ArrowRight, Eye, Shield, ShieldCheck, Terminal, Workflow, Brain, Search
 import { GitHubIcon } from './GitHubIcon';
 import { useLanguage } from '../context/LanguageContext';
 import { getProducts, getRouteForCmd } from '../config/products';
+import { SHOW_PRO } from '../config/features';
 
 export const Tools: React.FC = () => {
   const { t } = useLanguage();
@@ -177,13 +178,15 @@ export const Tools: React.FC = () => {
                 ))}
               </div>
 
-              <div className="workspace-pro-note">
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', flexShrink: 0 }}>
-                  <span className="workspace-pro-tag">{t('proLabel')}</span>
-                  <span className="workspace-pro-tag" style={{ opacity: 0.8 }}>{t('proHostingTag')}</span>
+              {SHOW_PRO && (
+                <div className="workspace-pro-note">
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', flexShrink: 0 }}>
+                    <span className="workspace-pro-tag">{t('proLabel')}</span>
+                    <span className="workspace-pro-tag" style={{ opacity: 0.8 }}>{t('proHostingTag')}</span>
+                  </div>
+                  <p className="workspace-pro-text">{activeProduct.proHint}</p>
                 </div>
-                <p className="workspace-pro-text">{activeProduct.proHint}</p>
-              </div>
+              )}
 
               <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', marginTop: '16px' }}>
                 <a

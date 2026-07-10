@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { Heart, ShieldCheck } from 'lucide-react';
+import { SHOW_PRO } from '../config/features';
 
 export const Footer: React.FC = () => {
   const { t } = useLanguage();
@@ -116,9 +117,11 @@ export const Footer: React.FC = () => {
           fontSize: '13px',
           color: 'var(--text-muted)',
         }}>
-          <a href="#/vault" className="nav-link" style={{ transition: 'var(--transition-fast)' }}>
-            {t('navVaultPro')}
-          </a>
+          {SHOW_PRO && (
+            <a href="#/vault" className="nav-link" style={{ transition: 'var(--transition-fast)' }}>
+              {t('navVaultPro')}
+            </a>
+          )}
           <a href="#/impressum" className="nav-link" style={{ transition: 'var(--transition-fast)' }}>
             {t('footerImpressum')}
           </a>

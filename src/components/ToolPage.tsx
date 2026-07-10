@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { getProducts, getRouteForCmd } from '../config/products';
+import { SHOW_PRO } from '../config/features';
 import { 
   ArrowLeft, 
   Check, 
@@ -76,14 +77,13 @@ export const ToolPage: React.FC<ToolPageProps> = ({ toolId }) => {
   const proFeatures = getProFeaturesList(product.proHint);
 
   const faqs = [
-    {
-      q: t('toolPageFAQ1Q'),
-      a: t('toolPageFAQ1A'),
-    },
-    {
-      q: t('toolPageFAQ2Q'),
-      a: t('toolPageFAQ2A'),
-    },
+    // FAQ 1 + 2 describe the planned Pro/cloud offering — hidden with SHOW_PRO.
+    ...(SHOW_PRO
+      ? [
+          { q: t('toolPageFAQ1Q'), a: t('toolPageFAQ1A') },
+          { q: t('toolPageFAQ2Q'), a: t('toolPageFAQ2A') },
+        ]
+      : []),
     {
       q: t('toolPageFAQ3Q'),
       a: t('toolPageFAQ3A'),
@@ -760,7 +760,8 @@ export const ToolPage: React.FC<ToolPageProps> = ({ toolId }) => {
         </div>
       </div>
 
-      {/* Pricing Comparison */}
+      {/* Pricing Comparison (hidden while SHOW_PRO is false) */}
+      {SHOW_PRO && (
       <div className="constrained-box" style={{ marginBottom: '100px' }}>
         <h2 style={{
           textAlign: 'center',
@@ -903,6 +904,7 @@ export const ToolPage: React.FC<ToolPageProps> = ({ toolId }) => {
           </div>
         </div>
       </div>
+      )}
 
       {/* FAQ Sektion */}
       <div className="constrained-box" style={{ maxWidth: '800px' }}>

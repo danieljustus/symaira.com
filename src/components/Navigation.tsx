@@ -2,6 +2,7 @@ import React from 'react';
 import { GitHubIcon } from './GitHubIcon';
 import type { Language } from '../context/LanguageContext';
 import { useLanguage } from '../context/LanguageContext';
+import { SHOW_PRO } from '../config/features';
 
 const languageOptions: Language[] = ['en', 'de'];
 
@@ -84,15 +85,17 @@ export const Navigation: React.FC = () => {
         }} className="nav-link">
           {t('navStack')}
         </a>
-        <a href="#/vault-pro" style={{
-          fontSize: '14px',
-          fontWeight: 600,
-          color: 'var(--gold-primary)',
-          fontFamily: 'var(--font-tech)',
-          letterSpacing: '0.5px',
-        }} className="nav-link">
-          {t('navVaultPro')}
-        </a>
+        {SHOW_PRO && (
+          <a href="#/vault-pro" style={{
+            fontSize: '14px',
+            fontWeight: 600,
+            color: 'var(--gold-primary)',
+            fontFamily: 'var(--font-tech)',
+            letterSpacing: '0.5px',
+          }} className="nav-link">
+            {t('navVaultPro')}
+          </a>
+        )}
         <a href="#contact" style={{
           fontSize: '14px',
           fontWeight: 500,
