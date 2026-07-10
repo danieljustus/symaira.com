@@ -35,4 +35,3 @@ Install (macOS/Linux via Homebrew): `brew tap danieljustus/tap`, then `brew inst
 
 - [Symaira website](https://symaira.com/): Product overview in English and German.
 - [Homebrew tap](https://github.com/danieljustus/homebrew-tap): Distribution tap for all Symaira formulae and casks.
-- Planned Pro cloud services (Vault Pro, AI Suite): hosted entirely in Germany, GDPR-compliant, local-first encryption — not live yet.
