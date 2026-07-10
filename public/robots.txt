@@ -1,0 +1,8 @@
+# symaira.com — all crawlers welcome, including AI/LLM crawlers (GPTBot,
+# ClaudeBot, PerplexityBot, Google-Extended, etc.).
+# Machine-readable tool inventory: https://symaira.com/llms.txt
+
+User-agent: *
+Allow: /
+
+Sitemap: https://symaira.com/sitemap.xml

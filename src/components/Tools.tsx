@@ -72,12 +72,14 @@ export const Tools: React.FC = () => {
         <button
           className={`tools-filter-tab ${activeCategory === 'all' ? 'active' : ''}`}
           onClick={() => setActiveCategory('all')}
+          aria-pressed={activeCategory === 'all'}
         >
           {t('filterAll')}
         </button>
         <button
           className={`tools-filter-tab ${activeCategory === 'context' ? 'active' : ''}`}
           onClick={() => setActiveCategory('context')}
+          aria-pressed={activeCategory === 'context'}
         >
           <Brain size={14} />
           {t('filterContext')}
@@ -85,6 +87,7 @@ export const Tools: React.FC = () => {
         <button
           className={`tools-filter-tab ${activeCategory === 'security' ? 'active' : ''}`}
           onClick={() => setActiveCategory('security')}
+          aria-pressed={activeCategory === 'security'}
         >
           <Shield size={14} />
           {t('filterSecurity')}
@@ -92,6 +95,7 @@ export const Tools: React.FC = () => {
         <button
           className={`tools-filter-tab ${activeCategory === 'system' ? 'active' : ''}`}
           onClick={() => setActiveCategory('system')}
+          aria-pressed={activeCategory === 'system'}
         >
           <Terminal size={14} />
           {t('filterSystem')}
@@ -109,6 +113,8 @@ export const Tools: React.FC = () => {
                 className={`console-sidebar-item tone-${product.tone} ${isActive ? 'active' : ''}`}
                 onClick={() => setSelectedTitle(product.title)}
                 type="button"
+                aria-pressed={isActive}
+                aria-label={product.title}
               >
                 <div className="sidebar-item-icon">
                   {product.icon}

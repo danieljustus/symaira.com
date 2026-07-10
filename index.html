@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
+
     <!-- Primary Favicons & App Icons -->
     <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
@@ -13,22 +13,76 @@
     <link rel="manifest" href="/site.webmanifest" />
     <meta name="theme-color" content="#0D0C0A" />
 
-    <title>Symaira | Human-AI Collaboration, Privacy & Data Control</title>
-    <meta name="description" content="Symaira builds a product family for human-AI collaboration, privacy, secrets, and data control. Explore Symaira Vault for agent-safe secrets and Symaira EraseMe for data broker removal." />
+    <title>Symaira | Open-Source, Local-First AI Tools &amp; MCP Servers</title>
+    <meta name="description" content="Symaira builds 16 open-source, local-first tools for human-AI collaboration: Vault (agent-safe secrets), Memory, Seek, Fetch, Guard, EraseMe, Terminal, Desktop and more. Every tool ships a Model Context Protocol (MCP) server. Made in Germany, GDPR-first." />
+    <link rel="canonical" href="https://symaira.com/" />
+    <meta name="author" content="Daniel Justus" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Symaira" />
     <meta property="og:url" content="https://symaira.com/" />
-    <meta property="og:title" content="Symaira | Human-AI Collaboration, Privacy & Data Control" />
-    <meta property="og:description" content="Symaira builds a product family for human-AI collaboration, privacy, secrets, and data control. Explore Symaira Vault for agent-safe secrets and Symaira EraseMe for data broker removal." />
+    <meta property="og:title" content="Symaira | Open-Source, Local-First AI Tools & MCP Servers" />
+    <meta property="og:description" content="16 open-source, local-first tools for human-AI collaboration: agent-safe secrets, persistent memory, hybrid search, web fetch, security gateway, privacy automation, and more — all MCP-ready. Made in Germany." />
     <meta property="og:image" content="https://symaira.com/logo.png" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="de_DE" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="https://symaira.com/" />
-    <meta property="twitter:title" content="Symaira | Human-AI Collaboration, Privacy & Data Control" />
-    <meta property="twitter:description" content="Symaira builds a product family for human-AI collaboration, privacy, secrets, and data control. Explore Symaira Vault for agent-safe secrets and Symaira EraseMe for data broker removal." />
+    <meta property="twitter:title" content="Symaira | Open-Source, Local-First AI Tools & MCP Servers" />
+    <meta property="twitter:description" content="16 open-source, local-first tools for human-AI collaboration — agent-safe secrets, memory, hybrid search, web fetch, security gateway, privacy automation. All MCP-ready. Made in Germany." />
     <meta property="twitter:image" content="https://symaira.com/logo.png" />
+
+    <!-- Structured data for search engines and generative AI (SEO/GEO) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://symaira.com/#organization",
+          "name": "Symaira",
+          "url": "https://symaira.com/",
+          "logo": "https://symaira.com/logo.png",
+          "founder": { "@type": "Person", "name": "Daniel Justus", "url": "https://daniel-justus.de" },
+          "sameAs": ["https://github.com/danieljustus"],
+          "description": "Symaira builds open-source, local-first tools for human-AI collaboration: secrets management for AI agents, persistent agent memory, hybrid document search, web fetching, a security gateway for MCP tool calls, and privacy automation. Developed in Germany with a GDPR-first approach."
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://symaira.com/#website",
+          "url": "https://symaira.com/",
+          "name": "Symaira",
+          "publisher": { "@id": "https://symaira.com/#organization" },
+          "inLanguage": ["en", "de"]
+        },
+        {
+          "@type": "ItemList",
+          "name": "Symaira open-source tool family",
+          "itemListElement": [
+            { "@type": "SoftwareApplication", "position": 1, "name": "Symaira Vault", "url": "https://github.com/danieljustus/symaira-vault", "applicationCategory": "SecurityApplication", "operatingSystem": "macOS, Linux, Windows", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" }, "description": "Terminal-native, age-encrypted password and secrets manager for developers and AI agents, with scoped MCP tokens instead of raw secret sharing." },
+            { "@type": "SoftwareApplication", "position": 2, "name": "Symaira Memory", "url": "https://github.com/danieljustus/symaira-memory", "applicationCategory": "DeveloperApplication", "operatingSystem": "macOS, Linux, Windows", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" }, "description": "Persistent semantic memory layer for AI agents with local-first SQLite storage, PII Guard, and an MCP server." },
+            { "@type": "SoftwareApplication", "position": 3, "name": "Symaira Seek", "url": "https://github.com/danieljustus/symaira-seek", "applicationCategory": "DeveloperApplication", "operatingSystem": "macOS, Linux, Windows", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" }, "description": "Local-first hybrid document search engine fusing BM25 keyword matching and vector similarity via Reciprocal Rank Fusion (RRF)." },
+            { "@type": "SoftwareApplication", "position": 4, "name": "Symaira Fetch", "url": "https://github.com/danieljustus/symaira-fetch", "applicationCategory": "DeveloperApplication", "operatingSystem": "macOS, Linux, Windows", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" }, "description": "Terminal-native web fetch engine for LLM agents with browser-impersonating TLS/HTTP2 and a semantic DOM-to-Markdown pipeline." },
+            { "@type": "SoftwareApplication", "position": 5, "name": "Symaira Scope", "url": "https://github.com/danieljustus/symaira-scope", "applicationCategory": "DeveloperApplication", "operatingSystem": "macOS, Linux, Windows", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" }, "description": "Cross-platform scanner for listening ports, containers, and MCP servers registered in AI client configurations." },
+            { "@type": "SoftwareApplication", "position": 6, "name": "Symaira EraseMe", "url": "https://github.com/danieljustus/symaira-eraseme", "applicationCategory": "SecurityApplication", "operatingSystem": "macOS, Linux, Windows", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" }, "description": "CLI to plan, send, track, and verify data broker erasure campaigns across 1,277 brokers with GDPR/CCPA deadline monitoring." },
+            { "@type": "SoftwareApplication", "position": 7, "name": "Symaira Terminal", "url": "https://github.com/danieljustus/symaira-terminal", "applicationCategory": "DeveloperApplication", "operatingSystem": "macOS", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" }, "description": "Native macOS terminal for running multiple CLI coding agents in parallel with status rings and Git worktree isolation." },
+            { "@type": "SoftwareApplication", "position": 8, "name": "Symaira Vibecoder", "url": "https://github.com/danieljustus/symaira-vibecoder", "applicationCategory": "DeveloperApplication", "operatingSystem": "macOS, Linux, Windows", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" }, "description": "Local graphical dashboard to build and run autonomous agent coding cycles via drag-and-drop." },
+            { "@type": "SoftwareApplication", "position": 9, "name": "Symaira Operate", "url": "https://github.com/danieljustus/symaira-operate", "applicationCategory": "DeveloperApplication", "operatingSystem": "macOS", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" }, "description": "Native macOS desktop-automation MCP server letting AI agents observe and control the GUI via accessibility trees." },
+            { "@type": "SoftwareApplication", "position": 10, "name": "Symaira Tune", "url": "https://github.com/danieljustus/symaira-tune", "applicationCategory": "UtilitiesApplication", "operatingSystem": "macOS", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" }, "description": "macOS hardware tuning CLI and MCP server for thermal, power, and display monitoring with safety-gated adjustments." },
+            { "@type": "SoftwareApplication", "position": 11, "name": "Symaira Fritz", "url": "https://github.com/danieljustus/symaira-fritz", "applicationCategory": "UtilitiesApplication", "operatingSystem": "macOS, Linux, Windows", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" }, "description": "CLI and MCP server to administer AVM FRITZ!Box routers: network topology, guest WLAN, Wake-on-LAN, and DECT smart home." },
+            { "@type": "SoftwareApplication", "position": 12, "name": "Symaira Guard", "url": "https://github.com/danieljustus/symaira-guard", "applicationCategory": "SecurityApplication", "operatingSystem": "macOS, Linux, Windows", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" }, "description": "Local-first security gateway for AI agents and MCP servers: policy enforcement, human consent prompts, and tamper-evident audit logs." },
+            { "@type": "SoftwareApplication", "position": 13, "name": "Symaira Print", "url": "https://github.com/danieljustus/symaira-print", "applicationCategory": "UtilitiesApplication", "operatingSystem": "macOS, Linux, Windows", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" }, "description": "Markdown-to-PDF renderer with named profiles built on Typst, producing accessible PDF/A-2a and PDF/UA-1 documents." },
+            { "@type": "SoftwareApplication", "position": 14, "name": "Symaira Skills", "url": "https://github.com/danieljustus/symaira-skills", "applicationCategory": "DeveloperApplication", "operatingSystem": "macOS, Linux, Windows", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" }, "description": "Single-source-of-truth manager for AI agent skills: write one portable SKILL.md and install it for OpenCode, Claude Code, Codex, and Hermes." },
+            { "@type": "SoftwareApplication", "position": 15, "name": "Symaira Ingest", "url": "https://github.com/danieljustus/symaira-ingest", "applicationCategory": "UtilitiesApplication", "operatingSystem": "macOS, Linux, Windows", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" }, "description": "Document ingestion and OCR core: turns scanned PDFs, images, and Notion exports into clean Markdown notes with YAML frontmatter." },
+            { "@type": "SoftwareApplication", "position": 16, "name": "Symaira Desktop", "url": "https://github.com/danieljustus/symaira-desktop", "applicationCategory": "DeveloperApplication", "operatingSystem": "macOS", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" }, "description": "Visual workspace unifying block editing, hybrid search, memory, document ingestion, and AI agent orchestration over a plain-Markdown local vault." }
+          ]
+        }
+      ]
+    }
+    </script>
   </head>
   <body>
     <div id="root"></div>

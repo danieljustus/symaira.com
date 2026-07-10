@@ -85,7 +85,7 @@ export const getProducts = (t: any): Product[] => [
     title: t('seekTitle'),
     desc: t('seekDesc'),
     bestFor: t('seekBestFor'),
-    automates: t('seekBestFor'), // note: using bestFor as per original Tools.tsx line 63
+    automates: t('seekAutomates'),
     features: [t('seekFeature1'), t('seekFeature2'), t('seekFeature3'), t('seekFeature4')],
     href: 'https://github.com/danieljustus/symaira-seek',
     button: t('seekBtn'),

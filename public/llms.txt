@@ -1,0 +1,38 @@
+# Symaira
+
+> Symaira builds 16 open-source, local-first tools for human-AI collaboration. Every tool works standalone, runs on your machine (no cloud requirement, zero telemetry), and ships a Model Context Protocol (MCP) interface where applicable. Developed in Germany by Daniel Justus with a GDPR-first approach. Licenses: Apache-2.0 (AGPLv3 for Symaira Terminal).
+
+The name Symaira means: SYM = symbiosis, AI = artificial intelligence, RA = the new era. The product family focuses on secrets, identity, privacy, agent memory, and safe, repeatable agent workflows — keeping humans in control while AI agents do the work.
+
+Install (macOS/Linux via Homebrew): `brew tap danieljustus/tap`, then `brew install symvault symmemory symseek symeraseme symscope symfetch symingest symvibe symfritz symguard symskills symdesk` and `brew install --cask symterminal symoperate symtune`. Only symprint currently installs via `go install`.
+
+## Security & Privacy Tools
+
+- [Symaira Vault (symvault)](https://github.com/danieljustus/symaira-vault): Terminal-native, age-encrypted (X25519 + ChaCha20-Poly1305) password and secrets manager for developers and AI agents. Scoped MCP tokens instead of raw secret sharing, `symvault run` env injection, TOTP, autotype, Git sync.
+- [Symaira Guard (symguard)](https://github.com/danieljustus/symaira-guard): Local-first security gateway between AI clients and MCP servers. Inspects tool calls, classifies risk, enforces policy, asks for human consent, chains tamper-evident audit logs, detects tool poisoning via schema hash pinning.
+- [Symaira EraseMe (symeraseme)](https://github.com/danieljustus/symaira-eraseme): Plans, sends, tracks, and verifies data broker erasure campaigns. Curated registry of 1,277 brokers (EU, UK, US), automatic GDPR 30-day / CCPA 45-day deadline monitoring, event-sourced audit trail.
+- [Symaira Scope (symscope)](https://github.com/danieljustus/symaira-scope): Cross-platform scanner for listening ports, Docker containers, and MCP servers registered in AI client configs (Cursor, VS Code, Windsurf).
+
+## Context & Memory Tools
+
+- [Symaira Memory (symmemory)](https://github.com/danieljustus/symaira-memory): Persistent semantic memory layer for AI agents. Local-first SQLite, PII Guard sanitization, MCP server for cross-session agent recall.
+- [Symaira Seek (symseek)](https://github.com/danieljustus/symaira-seek): Local-first hybrid document search fusing BM25 keyword matching and vector similarity via Reciprocal Rank Fusion (RRF). TurboQuant 2–4-bit quantized vectors, Ollama integration.
+- [Symaira Fetch (symfetch)](https://github.com/danieljustus/symaira-fetch): Web fetch engine for LLM agents. Browser-impersonating TLS/HTTP2 (JA4), semantic DOM pipeline to token-compressed Markdown/JSON, llms.txt fallback, SSRF protection.
+- [Symaira Ingest (symingest)](https://github.com/danieljustus/symaira-ingest): Document ingestion and OCR core. Converts scanned PDFs, images, and full Notion exports into clean Markdown notes with YAML frontmatter via local Tesseract OCR.
+- [Symaira Print (symprint)](https://github.com/danieljustus/symaira-print): Markdown → PDF via named use-case profiles on the Typst engine. Emits accessible PDF/A-2a and PDF/UA-1 documents, DIN 5008 letter layouts.
+
+## System & Workflow Tools (macOS focus)
+
+- [Symaira Terminal](https://github.com/danieljustus/symaira-terminal): Native macOS terminal (Ghostty engine) for running multiple CLI coding agents in parallel — per-pane status rings, ACP support, Git worktree isolation. AGPLv3.
+- [Symaira Desktop (symdesk)](https://github.com/danieljustus/symaira-desktop): Visual workspace combining block editing, hybrid search, memory, document ingestion, and agent orchestration over one plain-Markdown local vault. Native SwiftUI app + Go core with CLI and MCP server.
+- [Symaira Operate (symoperate)](https://github.com/danieljustus/symaira-operate): macOS desktop-automation MCP server — AI agents observe and control the GUI via accessibility trees and screenshots, with destructive actions refused.
+- [Symaira Tune (symtune)](https://github.com/danieljustus/symaira-tune): macOS hardware tuning CLI and MCP server — thermal, power, and display telemetry with safety-gated writes and automatic restore.
+- [Symaira Vibecoder (symvibe)](https://github.com/danieljustus/symaira-vibecoder): Local graphical dashboard to design and run autonomous agent coding cycles via drag-and-drop.
+- [Symaira Fritz (symfritz)](https://github.com/danieljustus/symaira-fritz): CLI and MCP server for AVM FRITZ!Box routers — network topology, guest WLAN, Wake-on-LAN, DECT smart home switching via TR-064 and AHA-HTTP.
+- [Symaira Skills (symskills)](https://github.com/danieljustus/symaira-skills): Single source of truth for AI agent skills — write one portable SKILL.md, render and install harness-specific configs for OpenCode, Claude Code, Codex, and Hermes.
+
+## Optional
+
+- [Symaira website](https://symaira.com/): Product overview in English and German.
+- [Homebrew tap](https://github.com/danieljustus/homebrew-tap): Distribution tap for all Symaira formulae and casks.
+- Planned Pro cloud services (Vault Pro, AI Suite): hosted entirely in Germany, GDPR-compliant, local-first encryption — not live yet.

@@ -51,6 +51,10 @@ const mcpConfigJson = `{
     "symingest": {
       "command": "symingest",
       "args": ["mcp"]
+    },
+    "symdesk": {
+      "command": "symdesk",
+      "args": ["mcp"]
     }
   }
 }`;
@@ -66,7 +70,7 @@ export const Stack: React.FC = () => {
     },
     {
       label: t('stackInstallStep2Label'),
-      command: 'brew install symvault symmemory symseek symeraseme symscope symfetch symingest',
+      command: 'brew install symvault symmemory symseek symeraseme symscope symfetch symingest symvibe symfritz symguard symskills symdesk',
     },
     {
       label: t('stackInstallStep3Label'),
@@ -168,7 +172,7 @@ export const Stack: React.FC = () => {
     {
       icon: <ShieldAlert size={18} />,
       title: 'Symaira Guard',
-      status: 'available',
+      status: 'gateway',
       tone: 'indigo',
     },
     {
@@ -192,7 +196,7 @@ export const Stack: React.FC = () => {
     {
       icon: <Layout size={18} />,
       title: 'Symaira Desktop',
-      status: 'coming-soon',
+      status: 'available',
       tone: 'violet',
     },
   ];
@@ -272,7 +276,7 @@ export const Stack: React.FC = () => {
             <div className="stack-tool-info">
               <span className="stack-tool-name">{tool.title}</span>
               <span className={`stack-tool-status ${tool.status === 'coming-soon' ? 'stack-tool-status-coming' : ''}`}>
-                {tool.status === 'available' ? 'MCP' : 'Soon'}
+                {tool.status === 'available' ? 'MCP' : tool.status === 'gateway' ? 'Gateway' : 'Soon'}
               </span>
             </div>
           </div>
