@@ -11,7 +11,11 @@ const SafeContactInfo: React.FC<SafeContactInfoProps> = ({ type, lang = 'en' }) 
   const [mounted, setMounted] = React.useState(false);
 
   React.useEffect(() => {
-    setMounted(true);
+    // Defer the mounted flip out of the synchronous effect body so the
+    // placeholder renders first (anti-scrape) without a synchronous
+    // setState-in-effect (react-hooks/set-state-in-effect).
+    const timer = setTimeout(() => setMounted(true), 0);
+    return () => clearTimeout(timer);
   }, []);
 
   if (!mounted) {

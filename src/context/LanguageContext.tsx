@@ -3,7 +3,7 @@ import React, { createContext, useContext, useEffect, useState } from 'react';
 
 export type Language = 'en' | 'de';
 
-interface TranslationMap {
+export interface TranslationMap {
   navVision: string;
   navTools: string;
   navContact: string;
@@ -214,6 +214,23 @@ interface TranslationMap {
   desktopFeature4: string;
   desktopBtn: string;
   desktopProHint: string;
+  meetBadge: string;
+  meetStatus: string;
+  meetTitle: string;
+  meetDesc: string;
+  meetBestFor: string;
+  meetAutomates: string;
+  meetFeature1: string;
+  meetFeature2: string;
+  meetFeature3: string;
+  meetFeature4: string;
+  meetBtn: string;
+  meetProHint: string;
+  meetDemoTitle: string;
+  meetDemoLine1: string;
+  meetDemoLine2: string;
+  meetDemoLine3: string;
+  meetDemoLine4: string;
   proLabel: string;
   heroBadgeGermany: string;
   proHostingTag: string;
@@ -410,7 +427,7 @@ const translations: Record<Language, TranslationMap> = {
     visionPillar3Title: 'Useful Autonomy',
     visionPillar3Desc: 'Automation should be explainable, bounded, and safe enough to trust with repeatable work without ever sacrificing human oversight.',
     toolsTitle: 'The Symaira tools',
-    toolsSubtitle: '16 open-source, local-first tools for human-AI collaboration — every one MCP-ready and designed to put trust back in your hands, focusing on secrets, identity, privacy, and repeatable agent workflows.',
+    toolsSubtitle: '17 open-source, local-first tools for human-AI collaboration — every one MCP-ready and designed to put trust back in your hands, focusing on secrets, identity, privacy, and repeatable agent workflows.',
     bestForLabel: 'Best for',
     automatesLabel: 'What it automates',
     vaultBadge: 'Secrets & agents',
@@ -606,6 +623,23 @@ const translations: Record<Language, TranslationMap> = {
     skillsProHint: 'Pro variant planned: Team skill repositories, remote skill sharing, and cryptographically signed skill files.',
     ingestProHint: 'Pro variant planned: Managed OCR cluster scaling, advanced classification models, and cloud intake relays.',
     desktopProHint: 'Pro variant planned: End-to-end encrypted multi-user sync, secure remote web access, and team controls.',
+    meetBadge: 'Meeting capture',
+    meetStatus: 'Beta',
+    meetTitle: 'Symaira Meet',
+    meetDesc: 'A local-first, standalone CLI for durable meeting artifacts on macOS 15 or newer. Consent-first recording, on-device transcription, and meeting content that stays on your device by default — no cloud account or telemetry required. Cloud transcription, accounts, automatic meeting detection, live captions, Intel Mac support, and encryption at rest are not included in the current stable release.',
+    meetBestFor: 'People who want durable, searchable meeting artifacts with privacy by design — without uploading audio or transcripts to a cloud service.',
+    meetAutomates: 'Consent-first audio capture, local transcription, model management, export formats, and an MCP server.',
+    meetFeature1: 'Consent-first capture: every recording session requires a fresh, interactive authorization.',
+    meetFeature2: 'Local transcription with on-device WhisperKit models — downloading a model is not transmitting meeting content.',
+    meetFeature3: 'Standalone-first artifacts: portable files (Markdown, transcripts, exports), not proprietary database records.',
+    meetFeature4: 'Menu-bar recording agent and MCP server; optional runtime synergy with SymDesk, Memory, Seek, and Print.',
+    meetBtn: 'View Meet on GitHub',
+    meetProHint: 'Pro variant planned: Cloud meeting archives, team transcription workspaces, and centralized retention policies.',
+    meetDemoTitle: 'symmeet record',
+    meetDemoLine1: 'Consent granted — recording session started',
+    meetDemoLine2: 'Audio captured locally (no upload)',
+    meetDemoLine3: 'WhisperKit model ready — transcribing on-device',
+    meetDemoLine4: 'Artifact written: meetings/2026-08-06.md',
     terminalDemoPane1: 'Pane 1: Aider (active)',
     terminalDemoPane2: 'Pane 2: Claude Code (blocked)',
     terminalDemoPrompt: 'Approve file edits?',
@@ -789,7 +823,7 @@ const translations: Record<Language, TranslationMap> = {
     visionPillar3Title: 'Sinnvolle Autonomie',
     visionPillar3Desc: 'Automatisierung muss erklärbar, klar begrenzt und so sicher sein, dass man ihr wiederkehrende Aufgaben anvertrauen kann, ohne je die Kontrolle zu verlieren.',
     toolsTitle: 'Die Symaira-Tools',
-    toolsSubtitle: '16 Open-Source-Tools für die Mensch-KI-Zusammenarbeit – alle arbeiten rein lokal (local-first), sind MCP-fähig und legen das Vertrauen zurück in deine Hände: Secrets, Identität, Privatsphäre und verlässliche Agenten-Workflows.',
+    toolsSubtitle: '17 Open-Source-Tools für die Mensch-KI-Zusammenarbeit – alle arbeiten rein lokal (local-first), sind MCP-fähig und legen das Vertrauen zurück in deine Hände: Secrets, Identität, Privatsphäre und verlässliche Agenten-Workflows.',
     bestForLabel: 'Ideal für',
     automatesLabel: 'Automatisiert',
     vaultBadge: 'Secrets & Agents',
@@ -985,6 +1019,23 @@ const translations: Record<Language, TranslationMap> = {
     skillsProHint: 'Pro-Variante geplant: Gemeinsame Team-Skill-Bibliotheken, Remote-Synchronisierung und kryptographisch signierte Skills.',
     ingestProHint: 'Pro-Variante geplant: Skalierbare Cloud-OCR-Cluster, eigene Klassifizierungsmodelle und Cloud-Import-Relays.',
     desktopProHint: 'Pro-Variante geplant: Ende-zu-Ende verschlüsselter Multi-User-Sync, sicherer Remote-Webzugriff und Team-Berechtigungen.',
+    meetBadge: 'Meeting-Aufnahme',
+    meetStatus: 'Beta',
+    meetTitle: 'Symaira Meet',
+    meetDesc: 'Ein lokaler, eigenständiger CLI für dauerhafte Meeting-Artefakte unter macOS 15 oder neuer. Consent-first Aufnahme, Transkription auf dem Gerät und Meeting-Inhalte, die standardmäßig auf deinem Rechner bleiben — kein Cloud-Konto und keine Telemetrie nötig. Cloud-Transkription, Konten, automatische Meeting-Erkennung, Live-Untertitel, Intel-Mac-Support und Verschlüsselung im Ruhezustand sind in der aktuellen stabilen Version nicht enthalten.',
+    meetBestFor: 'Menschen, die dauerhafte, durchsuchbare Meeting-Artefakte mit Privacy by Design wünschen – ohne Audio oder Transkripte in einen Cloud-Dienst hochzuladen.',
+    meetAutomates: 'Consent-first Audio-Aufnahme, lokale Transkription, Modellverwaltung, Exportformate und ein MCP-Server.',
+    meetFeature1: 'Consent-first Aufnahme: Jede Aufnahmesitzung erfordert eine frische, interaktive Autorisierung.',
+    meetFeature2: 'Lokale Transkription mit On-Device-WhisperKit-Modellen – das Herunterladen eines Modells überträgt keine Meeting-Inhalte.',
+    meetFeature3: 'Standalone-first Artefakte: portable Dateien (Markdown, Transkripte, Exporte), keine proprietären Datenbankeinträge.',
+    meetFeature4: 'Menüleisten-Aufnahme-Agent und MCP-Server; optionale Laufzeit-Synergien mit SymDesk, Memory, Seek und Print.',
+    meetBtn: 'Meet auf GitHub ansehen',
+    meetProHint: 'Pro-Variante geplant: Cloud-Meeting-Archive, Team-Transkriptions-Workspaces und zentrale Aufbewahrungsrichtlinien.',
+    meetDemoTitle: 'symmeet record',
+    meetDemoLine1: 'Einwilligung erteilt – Aufnahmesitzung gestartet',
+    meetDemoLine2: 'Audio lokal aufgenommen (kein Upload)',
+    meetDemoLine3: 'WhisperKit-Modell bereit – Transkription auf dem Gerät',
+    meetDemoLine4: 'Artefakt geschrieben: meetings/2026-08-06.md',
     terminalDemoPane1: 'Panel 1: Aider (aktiv)',
     terminalDemoPane2: 'Panel 2: Claude Code (blockiert)',
     terminalDemoPrompt: 'Änderungen freigeben?',

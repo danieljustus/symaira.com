@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react';
+import type { TranslationMap } from '../context/LanguageContext';
 import { 
   Shield, 
   Brain, 
@@ -15,7 +16,8 @@ import {
   Printer, 
   Layers, 
   Upload, 
-  Layout 
+  Layout,
+  Mic
 } from 'lucide-react';
 
 export interface Product {
@@ -43,7 +45,7 @@ export const getRouteForCmd = (cmd: string): string => {
   return cmd.replace(/^sym/, '');
 };
 
-export const getProducts = (t: any): Product[] => [
+export const getProducts = (t: (key: keyof TranslationMap) => string): Product[] => [
   {
     cmd: 'symvault',
     badge: t('vaultBadge'),
@@ -314,6 +316,23 @@ export const getProducts = (t: any): Product[] => [
     tone: 'violet',
     demoType: 'desktop',
     proHint: t('desktopProHint'),
+    category: 'system',
+  },
+  {
+    cmd: 'symmeet',
+    badge: t('meetBadge'),
+    status: t('meetStatus'),
+    title: t('meetTitle'),
+    desc: t('meetDesc'),
+    bestFor: t('meetBestFor'),
+    automates: t('meetAutomates'),
+    features: [t('meetFeature1'), t('meetFeature2'), t('meetFeature3'), t('meetFeature4')],
+    href: 'https://github.com/danieljustus/symaira-meet',
+    button: t('meetBtn'),
+    icon: <Mic size={24} />,
+    tone: 'mint',
+    demoType: 'meet',
+    proHint: t('meetProHint'),
     category: 'system',
   },
 ];

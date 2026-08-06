@@ -1,6 +1,6 @@
 # Symaira
 
-> Symaira builds 16 open-source, local-first tools for human-AI collaboration. Every tool works standalone, runs on your machine (no cloud requirement, zero telemetry), and ships a Model Context Protocol (MCP) interface where applicable. Developed in Germany by Daniel Justus with a GDPR-first approach. Licenses: Apache-2.0 (AGPLv3 for Symaira Terminal).
+> Symaira builds 17 open-source, local-first tools for human-AI collaboration. Every tool works standalone, runs on your machine (no cloud requirement, zero telemetry), and ships a Model Context Protocol (MCP) interface where applicable. Developed in Germany by Daniel Justus with a GDPR-first approach. Licenses: Apache-2.0 (AGPLv3 for Symaira Terminal).
 
 The name Symaira means: SYM = symbiosis, AI = artificial intelligence, RA = the new era. The product family focuses on secrets, identity, privacy, agent memory, and safe, repeatable agent workflows — keeping humans in control while AI agents do the work.
 
@@ -30,6 +30,7 @@ Install (macOS/Linux via Homebrew): `brew tap danieljustus/tap`, then `brew inst
 - [Symaira Vibecoder (symvibe)](https://github.com/danieljustus/symaira-vibecoder): Local graphical dashboard to design and run autonomous agent coding cycles via drag-and-drop.
 - [Symaira Fritz (symfritz)](https://github.com/danieljustus/symaira-fritz): CLI and MCP server for AVM FRITZ!Box routers — network topology, guest WLAN, Wake-on-LAN, DECT smart home switching via TR-064 and AHA-HTTP.
 - [Symaira Skills (symskills)](https://github.com/danieljustus/symaira-skills): Single source of truth for AI agent skills — write one portable SKILL.md, render and install harness-specific configs for OpenCode, Claude Code, Codex, and Hermes.
+- [Symaira Meet (symmeet)](https://github.com/danieljustus/symaira-meet): Local-first, standalone CLI for durable meeting artifacts on macOS 15 or newer — consent-first recording, on-device transcription, export formats, and an MCP server; meeting content stays on the device by default. Install: `brew install danieljustus/tap/symmeet` and `brew install --cask danieljustus/tap/symmeet-agent`.
 
 ## Optional
 
