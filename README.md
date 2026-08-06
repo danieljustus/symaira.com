@@ -1,5 +1,7 @@
 # symaira.com
 
+![symaira.com social preview](docs/assets/social-preview.png)
+
 Public website for the Symaira ecosystem.
 
 Symaira tools follow one product model:
@@ -11,15 +13,14 @@ Symaira tools follow one product model:
 
 ## Current Public Story
 
-The site currently presents the first public tools:
+The site currently presents dedicated pages for 16 tools: Vault, Memory, Seek,
+Fetch, Scope, EraseMe, Terminal, Vibecoder, Operate, Tune, Fritz, Guard, Print,
+Skills, Ingest, and Desktop (see `src/config/products.tsx` and the route table
+in `src/App.tsx`).
 
-- Symaira Vault: local-first secrets and password management for humans and AI
-  agents.
-- Symaira EraseMe: privacy automation for data broker removal workflows.
-
-Memory and Seek are part of the broader ecosystem roadmap, but should only be
-promoted publicly once their self-hosted cores and Pro runtime contracts are
-release-ready.
+Pro pages/tiles (e.g. Vault Pro) are implemented but currently hidden behind
+the `SHOW_PRO` feature flag in `src/config/features.ts` until the corresponding
+Pro/Core runtime contracts are release-ready.
 
 ## Development
 
