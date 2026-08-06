@@ -64,10 +64,15 @@ export const TuneFunnel: React.FC = () => {
   // any page code (TUNE_FUNNEL_ENABLED in src/config/tune.ts).
   if (!TUNE_FUNNEL_ENABLED) return null;
 
-  const handleCopy = () => {
-    navigator.clipboard.writeText(TUNE_BREW_INSTALL);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(TUNE_BREW_INSTALL);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      // Clipboard unavailable (insecure context or denied permission):
+      // keep the button state unchanged instead of claiming success.
+    }
   };
 
   const handlePrimaryCta = () => {
