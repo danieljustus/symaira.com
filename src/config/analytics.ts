@@ -43,3 +43,43 @@ export const initGA = (): void => {
     cookie_flags: 'SameSite=None;Secure', // Modern cookie security flags
   });
 };
+
+/** Storage key shared with the CookieConsent component. */
+const CONSENT_STORAGE_KEY = 'symaira-cookie-consent';
+
+/**
+ * True only when the user explicitly accepted analytics cookies
+ * (localStorage 'symaira-cookie-consent' === 'accepted'). This mirrors the
+ * CookieConsent component's storage contract exactly, so events can never
+ * fire for users who declined or never chose. Any storage error returns
+ * false (fail closed).
+ */
+export const hasAnalyticsConsent = (): boolean => {
+  try {
+    return window.localStorage.getItem(CONSENT_STORAGE_KEY) === 'accepted';
+  } catch {
+    return false;
+  }
+};
+
+/**
+ * Fires a GA4 event, but only after explicit analytics consent AND only when
+ * the gtag function is actually loaded. A pure no-op otherwise — it never
+ * throws and never queues events.
+ *
+ * Params are deliberately restricted to string | number | boolean so no
+ * device identifiers, hardware data, or PII can be sent accidentally; the
+ * Tune funnel only ever passes edition, locale, cta_type, price_variant, and
+ * use_case values.
+ */
+export const trackEvent = (
+  eventName: string,
+  params?: Record<string, string | number | boolean>,
+): void => {
+  if (!hasAnalyticsConsent() || typeof window.gtag !== 'function') return;
+  if (params) {
+    window.gtag('event', eventName, params);
+  } else {
+    window.gtag('event', eventName);
+  }
+};
