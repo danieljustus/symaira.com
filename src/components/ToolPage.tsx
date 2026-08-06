@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { getProducts, getRouteForCmd } from '../config/products';
 import { SHOW_PRO } from '../config/features';
+import { TuneEditions } from './TuneEditions';
 import { 
   ArrowLeft, 
   Check, 
@@ -781,6 +782,9 @@ export const ToolPage: React.FC<ToolPageProps> = ({ toolId }) => {
           </div>
         </div>
       </div>
+
+      {/* Tune editions & pricing comparison (Symaira Tune only) */}
+      {product.cmd === 'symtune' && <TuneEditions />}
 
       {/* Pricing Comparison (hidden while SHOW_PRO is false) */}
       {SHOW_PRO && (

@@ -266,6 +266,42 @@ export interface TranslationMap {
   tuneDemoFan: string;
   tuneDemoPower: string;
   tuneDemoEDR: string;
+  tuneEditionsTitle: string;
+  tuneEditionsIntro: string;
+  tuneEditionStoreFreeName: string;
+  tuneEditionStoreFreePrice: string;
+  tuneEditionStoreFreePriceSub: string;
+  tuneEditionStoreProName: string;
+  tuneEditionStoreProPrice: string;
+  tuneEditionStoreProPriceSub: string;
+  tuneEditionHardwareName: string;
+  tuneEditionHardwarePrice: string;
+  tuneEditionHardwarePriceSub: string;
+  tuneEditionBadgeAvailable: string;
+  tuneEditionBadgePlanned: string;
+  tuneEditionsDraftTag: string;
+  tuneEditionsDraftNote: string;
+  tuneEditionsDirectOnlyTag: string;
+  tuneEditionsUseCasesTitle: string;
+  tuneUseCaseSunlight: string;
+  tuneUseCaseEvening: string;
+  tuneUseCaseFocus: string;
+  tuneUseCaseVideoCall: string;
+  tuneUseCaseRendering: string;
+  tuneUseCaseDeskMode: string;
+  tuneEditionsUpgradeCredit: string;
+  tuneEditionsFeatureDisplayAutomation: string;
+  tuneEditionsFeatureFocusPresets: string;
+  tuneEditionsFeatureMenuBar: string;
+  tuneEditionsFeatureStoreFreeEverything: string;
+  tuneEditionsFeatureAdvancedProfiles: string;
+  tuneEditionsFeatureAutomationRules: string;
+  tuneEditionsFeatureSmcFan: string;
+  tuneEditionsFeatureChargeLimit: string;
+  tuneEditionsFeatureCli: string;
+  tuneEditionsFeatureMcp: string;
+  tuneEditionsFeatureExtendedDisplay: string;
+  tuneEditionsFeatureSafetyRestore: string;
   vibecoderDemoTitle: string;
   vibecoderDemoPhase1: string;
   vibecoderDemoPhase2: string;
@@ -518,16 +554,16 @@ const translations: Record<Language, TranslationMap> = {
     operateFeature3: 'Screen Capture via ScreenCaptureKit with localized ROI processing.',
     operateFeature4: 'Zero daemon footprint – runs on-demand via secure local stdio MCP.',
     operateBtn: 'View Operate on GitHub',
-    tuneBadge: 'Hardware Tuning',
+    tuneBadge: 'Mac Automation',
     tuneStatus: 'Beta',
     tuneTitle: 'Symaira Tune',
-    tuneDesc: 'A native macOS hardware tuning CLI and MCP server. Lets AI agents monitor thermal, power, and display states, and safely adjust hardware limits.',
-    tuneBestFor: 'AI agents or developers needing local hardware telemetries and safety-gated system tuning.',
-    tuneAutomates: 'Thermal monitoring, display brightness scaling, SMC sensors reading, and power state restores.',
-    tuneFeature1: 'Monitors CPU thermals, fan speeds, and battery state via IOKit.',
-    tuneFeature2: 'Allows adjusting display brightness and dim overlays dynamically.',
-    tuneFeature3: 'Enforces automatic system-default restores on process exit.',
-    tuneFeature4: 'Clamps all writes through strict safety policies to prevent damage.',
+    tuneDesc: 'Automatic display, focus, energy, and cooling workflows for your Mac. The direct edition is available now as a menu-bar app plus the symtune CLI and MCP server, with a reduced Store edition planned.',
+    tuneBestFor: 'People who want their Mac to automatically adapt its display, energy, and cooling across everyday work modes like focus, video calls, or desk setups.',
+    tuneAutomates: 'Display brightness, dimming, and warmth; fan speed; battery charge limits; keep-awake; and safety-gated restore of system defaults.',
+    tuneFeature1: 'Extended and EDR brightness, software dimming, and warmth for any light situation.',
+    tuneFeature2: 'Fan speed and battery charge limits to keep your Mac cool and healthy.',
+    tuneFeature3: 'Keep-awake and display controls for focus, video calls, and desk setups.',
+    tuneFeature4: 'Every change is safety-gated and restored automatically on exit — available as CLI and MCP.',
     tuneBtn: 'View Tune on GitHub',
     vibecoderBadge: 'Vibe Coding',
     vibecoderStatus: 'Beta',
@@ -659,6 +695,42 @@ const translations: Record<Language, TranslationMap> = {
     tuneDemoFan: 'Fan Speed',
     tuneDemoPower: 'Power: Charge limited to 80%',
     tuneDemoEDR: 'EDR Brightness tuned',
+    tuneEditionsTitle: 'Editions & Pricing',
+    tuneEditionsIntro: 'Tune is available today as a direct, open-source hardware edition — the only edition with SMC, fan, charge, CLI, and MCP capabilities. The Store editions are planned as a reduced, App-Store-safe way to automate display and focus on your Mac. They are not available yet, and nothing below is for sale.',
+    tuneEditionStoreFreeName: 'Store — Free',
+    tuneEditionStoreFreePrice: 'Free',
+    tuneEditionStoreFreePriceSub: 'Basic display & focus automation',
+    tuneEditionStoreProName: 'Store Pro',
+    tuneEditionStoreProPrice: 'One-time purchase',
+    tuneEditionStoreProPriceSub: 'No subscription — pay once, keep forever',
+    tuneEditionHardwareName: 'Hardware Pro',
+    tuneEditionHardwarePrice: 'One-time purchase',
+    tuneEditionHardwarePriceSub: 'Open source on GitHub today — draft validation range',
+    tuneEditionBadgeAvailable: 'Available now',
+    tuneEditionBadgePlanned: 'Planned',
+    tuneEditionsDraftTag: 'Draft',
+    tuneEditionsDraftNote: 'All prices above are draft validation figures, not final commitments. Nothing can be purchased yet — the direct hardware edition is free and open source on GitHub.',
+    tuneEditionsDirectOnlyTag: 'Direct only',
+    tuneEditionsUseCasesTitle: 'Work scenarios it serves',
+    tuneUseCaseSunlight: 'Sunlight',
+    tuneUseCaseEvening: 'Evening',
+    tuneUseCaseFocus: 'Focus',
+    tuneUseCaseVideoCall: 'Video Call',
+    tuneUseCaseRendering: 'Rendering',
+    tuneUseCaseDeskMode: 'Desk Mode',
+    tuneEditionsUpgradeCredit: 'Upgrade credit policy: purchases of the direct hardware edition before the Store launch will receive credit toward the Store Pro edition.',
+    tuneEditionsFeatureDisplayAutomation: 'Display automation: brightness, dimming & warmth',
+    tuneEditionsFeatureFocusPresets: 'Focus presets for meetings & deep work',
+    tuneEditionsFeatureMenuBar: 'Menu-bar app with quick profiles',
+    tuneEditionsFeatureStoreFreeEverything: 'Everything in Store Free',
+    tuneEditionsFeatureAdvancedProfiles: 'Advanced display & focus automation profiles',
+    tuneEditionsFeatureAutomationRules: 'Automation rules across work modes',
+    tuneEditionsFeatureSmcFan: 'SMC sensor access & fan speed control',
+    tuneEditionsFeatureChargeLimit: 'Battery charge limiting',
+    tuneEditionsFeatureCli: 'symtune CLI for scripts & agents',
+    tuneEditionsFeatureMcp: 'MCP server for AI agents',
+    tuneEditionsFeatureExtendedDisplay: 'Extended & EDR brightness, dimming & warmth',
+    tuneEditionsFeatureSafetyRestore: 'Safety-gated, restores system defaults automatically on exit',
     vibecoderDemoTitle: 'symvibe serve',
     vibecoderDemoPhase1: '1. Review',
     vibecoderDemoPhase2: '2. Plan',
@@ -914,16 +986,16 @@ const translations: Record<Language, TranslationMap> = {
     operateFeature3: 'Bildschirmaufnahme via ScreenCaptureKit mit lokalisierter ROI-Verarbeitung.',
     operateFeature4: 'Kein Hintergrund-Daemon – läuft on-demand über sicheres lokales stdio MCP.',
     operateBtn: 'Operate auf GitHub ansehen',
-    tuneBadge: 'Hardware-Tuning',
+    tuneBadge: 'Mac-Automatisierung',
     tuneStatus: 'Beta',
     tuneTitle: 'Symaira Tune',
-    tuneDesc: 'Ein CLI- und MCP-Server für macOS-Hardware-Tuning. Ermöglicht es KI-Agenten, Temperatur-, Strom- und Display-Zustände zu überwachen und Limits anzupassen.',
-    tuneBestFor: 'KI-Agenten oder Entwickler, die lokale Hardware-Telemetrie und sicherheitsüberwachtes Systemtuning benötigen.',
-    tuneAutomates: 'Temperaturüberwachung, Helligkeitsskalierung, Lesen von SMC-Sensoren und Wiederherstellen des Systemzustands.',
-    tuneFeature1: 'Überwacht CPU-Temperatur, Lüftergeschwindigkeit und Batteriestatus via IOKit.',
-    tuneFeature2: 'Ermöglicht dynamisches Anpassen der Bildschirmhelligkeit und von Dimm-Overlays.',
-    tuneFeature3: 'Erzwingt automatische Wiederherstellung der Systemstandards beim Beenden.',
-    tuneFeature4: 'Begrenzt alle Schreibvorgänge durch strenge Sicherheitsrichtlinien zur Schadensvermeidung.',
+    tuneDesc: 'Automatische Display-, Fokus-, Energie- und Kühlungs-Workflows für deinen Mac. Die direkte Edition ist jetzt als Menüleisten-App plus symtune-CLI und MCP-Server verfügbar; eine reduzierte Store-Edition ist geplant.',
+    tuneBestFor: 'Für alle, die möchten, dass sich ihr Mac automatisch an alltägliche Arbeitsmodi wie Fokus, Videoanrufe oder Schreibtisch-Setups anpasst.',
+    tuneAutomates: 'Display-Helligkeit, Dimmen und Wärme; Lüftergeschwindigkeit; Batterie-Ladelimits; Keep-Awake; und sicherheitsgeschützte Wiederherstellung der Systemstandards.',
+    tuneFeature1: 'Erweiterte und EDR-Helligkeit, Software-Dimming und Wärme für jede Lichtsituation.',
+    tuneFeature2: 'Lüftergeschwindigkeit und Batterie-Ladelimits, um deinen Mac kühl und gesund zu halten.',
+    tuneFeature3: 'Keep-Awake und Display-Steuerung für Fokus, Videoanrufe und Schreibtisch-Setups.',
+    tuneFeature4: 'Jede Änderung ist sicherheitsgeschützt und wird beim Beenden automatisch wiederhergestellt – verfügbar als CLI und MCP.',
     tuneBtn: 'Tune auf GitHub ansehen',
     vibecoderBadge: 'Vibe-Coding',
     vibecoderStatus: 'Beta',
@@ -1055,6 +1127,42 @@ const translations: Record<Language, TranslationMap> = {
     tuneDemoFan: 'Lüftergeschwindigkeit',
     tuneDemoPower: 'Strom: Laden limitiert auf 80%',
     tuneDemoEDR: 'EDR-Helligkeit angepasst',
+    tuneEditionsTitle: 'Editionen & Preise',
+    tuneEditionsIntro: 'Tune ist heute als direkte, quelloffene Hardware-Edition verfügbar – die einzige Edition mit SMC-, Lüfter-, Lade-, CLI- und MCP-Fähigkeiten. Die Store-Editionen sind als reduzierte, App-Store-taugliche Möglichkeit zur Automatisierung von Display und Fokus auf deinem Mac geplant. Sie sind noch nicht verfügbar, und unten ist noch nichts käuflich.',
+    tuneEditionStoreFreeName: 'Store – Free',
+    tuneEditionStoreFreePrice: 'Kostenlos',
+    tuneEditionStoreFreePriceSub: 'Basis-Display- und Fokus-Automatisierung',
+    tuneEditionStoreProName: 'Store Pro',
+    tuneEditionStoreProPrice: 'Einmaliger Kauf',
+    tuneEditionStoreProPriceSub: 'Kein Abonnement – einmal zahlen, dauerhaft behalten',
+    tuneEditionHardwareName: 'Hardware Pro',
+    tuneEditionHardwarePrice: 'Einmaliger Kauf',
+    tuneEditionHardwarePriceSub: 'Aktuell quelloffen auf GitHub – Entwurfs-Validierungsbereich',
+    tuneEditionBadgeAvailable: 'Jetzt verfügbar',
+    tuneEditionBadgePlanned: 'Geplant',
+    tuneEditionsDraftTag: 'Entwurf',
+    tuneEditionsDraftNote: 'Alle Preise oben sind Entwurfs-Validierungswerte, keine verbindlichen Zusagen. Noch ist nichts käuflich – die direkte Hardware-Edition ist kostenlos und quelloffen auf GitHub.',
+    tuneEditionsDirectOnlyTag: 'Nur direkt',
+    tuneEditionsUseCasesTitle: 'Arbeitsszenarien, die es unterstützt',
+    tuneUseCaseSunlight: 'Tageslicht',
+    tuneUseCaseEvening: 'Abend',
+    tuneUseCaseFocus: 'Fokus',
+    tuneUseCaseVideoCall: 'Videoanruf',
+    tuneUseCaseRendering: 'Rendering',
+    tuneUseCaseDeskMode: 'Schreibtisch-Modus',
+    tuneEditionsUpgradeCredit: 'Upgrade-Gutschrift-Richtlinie: Käufe der direkten Hardware-Edition vor dem Store-Start werden auf die Store-Pro-Edition angerechnet.',
+    tuneEditionsFeatureDisplayAutomation: 'Display-Automatisierung: Helligkeit, Dimmen & Wärme',
+    tuneEditionsFeatureFocusPresets: 'Fokus-Vorlagen für Meetings & Deep Work',
+    tuneEditionsFeatureMenuBar: 'Menüleisten-App mit Schnellprofilen',
+    tuneEditionsFeatureStoreFreeEverything: 'Alles aus Store Free',
+    tuneEditionsFeatureAdvancedProfiles: 'Erweiterte Display- und Fokus-Automatisierungsprofile',
+    tuneEditionsFeatureAutomationRules: 'Automatisierungsregeln über Arbeitsmodi hinweg',
+    tuneEditionsFeatureSmcFan: 'SMC-Sensorzugriff & Lüftersteuerung',
+    tuneEditionsFeatureChargeLimit: 'Batterie-Ladelimit',
+    tuneEditionsFeatureCli: 'symtune-CLI für Skripte & Agenten',
+    tuneEditionsFeatureMcp: 'MCP-Server für KI-Agenten',
+    tuneEditionsFeatureExtendedDisplay: 'Erweiterte & EDR-Helligkeit, Dimmen & Wärme',
+    tuneEditionsFeatureSafetyRestore: 'Sicherheitsgeschützt, stellt Systemstandards beim Beenden automatisch wieder her',
     vibecoderDemoTitle: 'symvibe serve',
     vibecoderDemoPhase1: '1. Review',
     vibecoderDemoPhase2: '2. Planung',
