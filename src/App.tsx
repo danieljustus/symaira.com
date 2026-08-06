@@ -39,6 +39,7 @@ const ROUTE_TITLES: Record<string, string> = {
   '#/skills': 'Symaira Skills — Portable AI Agent Skill Manager',
   '#/ingest': 'Symaira Ingest — Local OCR & Document Ingestion',
   '#/desktop': 'Symaira Desktop — Local-First Markdown Workspace',
+  '#/meet': 'Symaira Meet — Consent-First Local Meeting Recording & Transcription CLI | Symaira',
 };
 
 function App() {
@@ -66,7 +67,7 @@ function App() {
   const isStackPage = hash === '#/stack';
   const isVaultPage = SHOW_PRO && hash === '#/vault-pro';
   
-  const validTools = ['vault', 'memory', 'seek', 'fetch', 'scope', 'eraseme', 'terminal', 'vibecoder', 'operate', 'tune', 'fritz', 'guard', 'print', 'skills', 'ingest', 'desktop'];
+  const validTools = ['vault', 'memory', 'seek', 'fetch', 'scope', 'eraseme', 'terminal', 'vibecoder', 'operate', 'tune', 'fritz', 'guard', 'print', 'skills', 'ingest', 'desktop', 'meet'];
   const toolHashMatch = hash.match(/^#\/([a-z-]+)$/);
   const toolName = toolHashMatch ? toolHashMatch[1] : null;
   const isDynamicToolPage = toolName && validTools.includes(toolName);

@@ -25,3 +25,4 @@ dist-ssr
 
 # Agent/developer workspace files
 AGENTS.md
+.worktrees/

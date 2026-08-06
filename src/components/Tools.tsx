@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowRight, Eye, Shield, ShieldCheck, Terminal, Workflow, Brain, Search, Globe, Compass, Cpu, MousePointerClick, ShieldAlert, Layers, Upload, Layout } from 'lucide-react';
+import { ArrowRight, Eye, Shield, ShieldCheck, Terminal, Workflow, Brain, Search, Globe, Compass, Cpu, MousePointerClick, ShieldAlert, Layers, Upload, Layout, Mic } from 'lucide-react';
 import { GitHubIcon } from './GitHubIcon';
 import { useLanguage } from '../context/LanguageContext';
 import { getProducts, getRouteForCmd } from '../config/products';
@@ -683,6 +683,27 @@ export const Tools: React.FC = () => {
                         </div>
                       </div>
                     </div>
+                  </div>
+                </div>
+              ) : activeProduct.demoType === 'meet' ? (
+                <div className="product-demo product-demo-terminal" aria-hidden="true">
+                  <div className="demo-header">
+                    <div className="demo-dots">
+                      <span />
+                      <span />
+                      <span />
+                    </div>
+                    <div className="demo-title">
+                      <Mic size={12} />
+                      {t('meetDemoTitle')}
+                    </div>
+                  </div>
+                  <div className="terminal-lines" style={{ padding: '14px 18px 18px' }}>
+                    <p><span>$</span> symmeet record</p>
+                    <p>{t('meetDemoLine1')}</p>
+                    <p>{t('meetDemoLine2')}</p>
+                    <p>{t('meetDemoLine3')}</p>
+                    <p className="success">{t('meetDemoLine4')}</p>
                   </div>
                 </div>
               ) : (
