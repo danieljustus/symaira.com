@@ -1,0 +1,25 @@
+name: Feature request
+description: Suggest an idea for symaira.com
+labels: ['feature']
+body:
+  - type: textarea
+    id: problem-motivation
+    attributes:
+      label: Problem / motivation
+      description: What problem would this feature solve?
+    validations:
+      required: true
+  - type: textarea
+    id: proposed-solution
+    attributes:
+      label: Proposed solution
+      description: How should the feature work?
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: What alternatives have you considered?
+    validations:
+      required: false
