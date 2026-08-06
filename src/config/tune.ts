@@ -95,3 +95,36 @@ export const TUNE_UPGRADE_CREDIT_POLICY = true;
 
 /** Primary "available" destination for the direct hardware edition. */
 export const TUNE_REPO_URL = 'https://github.com/danieljustus/symaira-tune';
+
+/**
+ * Master switch for the paid-demand validation funnel (TuneFunnel section).
+ * Flip to false to disable the whole funnel without removing any page code.
+ */
+export const TUNE_FUNNEL_ENABLED = true;
+
+/**
+ * Availability state machine for the funnel CTAs. Both are false today:
+ * there is NO signed trial build and NO preorder/payment infrastructure.
+ * - Set TUNE_TRIAL_AVAILABLE to true once a signed trial build exists; the
+ *   funnel then renders the trial CTA automatically (fires tune_trial_click).
+ * - Set TUNE_PREORDER_AVAILABLE to true once preorder/payment exists; the
+ *   funnel then renders the preorder CTA automatically (fires tune_preorder_click).
+ * The three states (trial / preorder / pricing interest) can never be
+ * confused: exactly one CTA type renders per flag, and the interest action
+ * is always labeled as interest, never as a purchase.
+ */
+export const TUNE_TRIAL_AVAILABLE = false;
+export const TUNE_PREORDER_AVAILABLE = false;
+
+/**
+ * The genuinely available action today: the v0.8.1 direct hardware build
+ * (notarized direct distribution, macOS Sonoma or newer). This is the only
+ * purchase-adjacent destination that exists; everything else is planned.
+ */
+export const TUNE_DOWNLOAD_URL = 'https://github.com/danieljustus/symaira-tune/releases/tag/v0.8.1';
+
+/** Homebrew cask install command for the direct hardware edition. */
+export const TUNE_BREW_INSTALL = 'brew install danieljustus/tap/symtune';
+
+/** Supported macOS for the direct hardware edition (used by trust content). */
+export const TUNE_SUPPORTED_MACOS = 'macOS Sonoma or newer';

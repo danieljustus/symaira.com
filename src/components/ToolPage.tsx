@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { getProducts, getRouteForCmd } from '../config/products';
 import { SHOW_PRO } from '../config/features';
+import { trackEvent } from '../config/analytics';
 import { TuneEditions } from './TuneEditions';
+import { TuneFunnel } from './TuneFunnel';
 import { 
   ArrowLeft, 
   Check, 
@@ -30,13 +32,22 @@ interface ToolPageProps {
 }
 
 export const ToolPage: React.FC<ToolPageProps> = ({ toolId }) => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const products = getProducts(t);
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
   const [copiedCmd, setCopiedCmd] = useState<string | null>(null);
 
   // Find the product matching the toolId
   const product = products.find(p => getRouteForCmd(p.cmd) === toolId);
+  const productCmd = product?.cmd;
+
+  // Tune page view — fires once per mount with the active locale. No state is
+  // set here (react-hooks/set-state-in-effect); trackEvent is consent-gated.
+  useEffect(() => {
+    if (productCmd === 'symtune') {
+      trackEvent('tune_page_view', { locale: language });
+    }
+  }, [productCmd, language]);
 
   if (!product) {
     return (
@@ -785,6 +796,9 @@ export const ToolPage: React.FC<ToolPageProps> = ({ toolId }) => {
 
       {/* Tune editions & pricing comparison (Symaira Tune only) */}
       {product.cmd === 'symtune' && <TuneEditions />}
+
+      {/* Tune paid-demand validation funnel (Symaira Tune only) */}
+      {product.cmd === 'symtune' && <TuneFunnel />}
 
       {/* Pricing Comparison (hidden while SHOW_PRO is false) */}
       {SHOW_PRO && (

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Check, ExternalLink } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import {
@@ -7,6 +7,8 @@ import {
   TUNE_UPGRADE_CREDIT_POLICY,
   TUNE_REPO_URL,
 } from '../config/tune';
+import type { TuneEditionId } from '../config/tune';
+import { trackEvent } from '../config/analytics';
 
 const TUNE_USE_CASES = [
   'tuneUseCaseSunlight',
@@ -17,26 +19,96 @@ const TUNE_USE_CASES = [
   'tuneUseCaseDeskMode',
 ] as const;
 
+/** Draft price string for an edition card, or null when unpriced (Store Free). */
+const priceFor = (id: string): string | null => {
+  if (id === 'store-pro') return TUNE_DRAFT_PRICING.storePro;
+  if (id === 'hardware-pro') {
+    return `${TUNE_DRAFT_PRICING.hardwareMin}–${TUNE_DRAFT_PRICING.hardwareMax}`;
+  }
+  return null;
+};
+
+const isDraftPriced = (id: string): boolean => id === 'store-pro' || id === 'hardware-pro';
+
+/** Stable price-variant identifier for analytics ('free' when unpriced). */
+const priceVariantFor = (id: TuneEditionId): string => priceFor(id) ?? 'free';
+
 /**
  * Editions & pricing comparison for Symaira Tune. Rendered only on the Tune
  * product page. Every price and availability label is read from
  * src/config/tune.ts — nothing here is hardcoded.
  */
 export const TuneEditions: React.FC = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const cardRefs = useRef<Array<HTMLDivElement | null>>([]);
+  const compareFired = useRef(false);
+  const exposureFired = useRef<Set<string>>(new Set());
 
-  const priceFor = (id: string): string | null => {
-    if (id === 'store-pro') return TUNE_DRAFT_PRICING.storePro;
-    if (id === 'hardware-pro') {
-      return `${TUNE_DRAFT_PRICING.hardwareMin}–${TUNE_DRAFT_PRICING.hardwareMax}`;
+  // Visibility instrumentation: fires tune_edition_compare once when the
+  // section becomes visible and tune_price_exposure once per edition card.
+  // Once-flags prevent duplicates across re-renders and locale switches;
+  // browsers without IntersectionObserver fall back to firing on mount.
+  useEffect(() => {
+    const cleanupObservers: Array<() => void> = [];
+    const fireCompare = () => {
+      if (compareFired.current) return;
+      compareFired.current = true;
+      trackEvent('tune_edition_compare', { locale: language });
+    };
+    const fireExposure = (id: TuneEditionId) => {
+      if (exposureFired.current.has(id)) return;
+      exposureFired.current.add(id);
+      trackEvent('tune_price_exposure', {
+        edition: id,
+        price_variant: priceVariantFor(id),
+        locale: language,
+      });
+    };
+
+    if (typeof IntersectionObserver === 'undefined') {
+      fireCompare();
+      TUNE_EDITIONS.forEach(edition => fireExposure(edition.id));
+      return;
     }
-    return null;
-  };
 
-  const isDraftPriced = (id: string): boolean => id === 'store-pro' || id === 'hardware-pro';
+    const section = sectionRef.current;
+    if (section) {
+      const compareObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            fireCompare();
+            compareObserver.disconnect();
+          }
+        });
+      }, { threshold: 0.25 });
+      compareObserver.observe(section);
+      // The compare observer disconnects itself after firing; keep a
+      // reference for cleanup below when the effect re-runs (locale change).
+      cleanupObservers.push(() => compareObserver.disconnect());
+    }
+
+    const exposureObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const id = (entry.target as HTMLElement).dataset.edition;
+        if (id === 'store-free' || id === 'store-pro' || id === 'hardware-pro') {
+          fireExposure(id);
+        }
+      });
+    }, { threshold: 0.25 });
+    cardRefs.current.forEach(card => {
+      if (card) exposureObserver.observe(card);
+    });
+
+    return () => {
+      cleanupObservers.forEach(cleanup => cleanup());
+      exposureObserver.disconnect();
+    };
+  }, [language]);
 
   return (
-    <div className="constrained-box" style={{ marginBottom: '100px' }}>
+    <div ref={sectionRef} className="constrained-box" style={{ marginBottom: '100px' }}>
       <h2 style={{
         textAlign: 'center',
         fontSize: '28px',
@@ -65,12 +137,16 @@ export const TuneEditions: React.FC = () => {
         maxWidth: '1100px',
         margin: '0 auto',
       }}>
-        {TUNE_EDITIONS.map(edition => {
+        {TUNE_EDITIONS.map((edition, index) => {
           const isAvailable = edition.status === 'available';
           const draftPrice = priceFor(edition.id);
           return (
             <div
               key={edition.id}
+              ref={(el) => {
+                cardRefs.current[index] = el;
+              }}
+              data-edition={edition.id}
               className="glass-panel"
               style={{
                 padding: '40px',
@@ -229,9 +305,21 @@ export const TuneEditions: React.FC = () => {
         </p>
         <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
           {TUNE_USE_CASES.map(useCase => (
-            <span key={useCase} className="product-badge" style={{ borderColor: 'rgba(229, 195, 151, 0.25)', color: 'var(--text-secondary)', background: 'rgba(229, 195, 151, 0.05)' }}>
+            <button
+              key={useCase}
+              type="button"
+              className="product-badge"
+              onClick={() => trackEvent('tune_use_case_click', { use_case: useCase, locale: language })}
+              style={{
+                borderColor: 'rgba(229, 195, 151, 0.25)',
+                color: 'var(--text-secondary)',
+                background: 'rgba(229, 195, 151, 0.05)',
+                cursor: 'pointer',
+                fontFamily: 'var(--font-tech)',
+              }}
+            >
               {t(useCase)}
-            </span>
+            </button>
           ))}
         </div>
       </div>
