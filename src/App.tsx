@@ -32,7 +32,7 @@ const ROUTE_TITLES: Record<string, string> = {
   '#/terminal': 'Symaira Terminal — Native macOS Terminal for Coding Agents',
   '#/vibecoder': 'Symaira Vibecoder — Visual Agent Cycle Dashboard',
   '#/operate': 'Symaira Operate — macOS GUI Automation MCP Server',
-  '#/tune': 'Symaira Tune — macOS Hardware Tuning CLI & MCP Server',
+  '#/tune': 'Symaira Tune — Automatic Display, Focus, Energy & Cooling Profiles for Mac | Symaira',
   '#/fritz': 'Symaira Fritz — FRITZ!Box CLI & MCP Server',
   '#/guard': 'Symaira Guard — Security Gateway for AI Agents & MCP',
   '#/print': 'Symaira Print — Markdown to Accessible PDF via Typst',
