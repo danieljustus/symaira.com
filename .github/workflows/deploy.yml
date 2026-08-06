@@ -40,7 +40,7 @@ jobs:
           npm ci
           npm run build
 
-      # Step 4: Deploy built files to all-inkl via FTP/SFTP
+      # Step 4: Deploy built files to all-inkl via FTPS
       # Using SamKirkland's widely trusted and optimized deployment action.
       - name: Deploy to All-Inkl Webhosting
         uses: SamKirkland/FTP-Deploy-Action@v4.4.0
@@ -48,8 +48,8 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          protocol: ftp
-          port: 21
+          protocol: ftps
+          port: 990
           local-dir: ./dist/
           # Change server-dir if you want to deploy to a specific subfolder on All-Inkl.
           # Default is the root of the connected FTP user.
