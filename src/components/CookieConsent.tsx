@@ -9,17 +9,23 @@ export const CookieConsent: React.FC = () => {
   const { language } = useLanguage();
   
   // Consent states: null = not chosen, 'accepted' = opt-in for all, 'declined' = opt-out (essential only)
-  const [consent, setConsentState] = useState<string | null>(null);
+  // Read the stored consent synchronously in the lazy initializer so no setState
+  // happens inside the mount effect (react-hooks/set-state-in-effect).
+  const [consent, setConsentState] = useState<string | null>(() => {
+    try {
+      return localStorage.getItem(CONSENT_STORAGE_KEY);
+    } catch {
+      return null;
+    }
+  });
   const [visible, setVisible] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
   const [analyticsChecked, setAnalyticsChecked] = useState(false);
 
   useEffect(() => {
-    // 1. Check existing consent state on mount
+    // 1. Existing consent state was already read on mount (lazy initializer).
     try {
       const storedConsent = localStorage.getItem(CONSENT_STORAGE_KEY);
-      setConsentState(storedConsent);
-      
       if (storedConsent === 'accepted') {
         // Automatically load GA4 if consent was already given in a previous session
         initGA();
@@ -30,7 +36,7 @@ export const CookieConsent: React.FC = () => {
         }, 1500);
         return () => clearTimeout(timer);
       }
-    } catch (e) {
+    } catch {
       // Storage blocked (e.g. strict private mode), trigger fallback display
       const timer = setTimeout(() => {
         setVisible(true);
@@ -56,7 +62,7 @@ export const CookieConsent: React.FC = () => {
   const saveConsent = (status: 'accepted' | 'declined') => {
     try {
       localStorage.setItem(CONSENT_STORAGE_KEY, status);
-    } catch (e) {
+    } catch {
       // Fallback if localStorage is unavailable
     }
     setConsentState(status);
