@@ -302,6 +302,27 @@ export interface TranslationMap {
   tuneEditionsFeatureMcp: string;
   tuneEditionsFeatureExtendedDisplay: string;
   tuneEditionsFeatureSafetyRestore: string;
+  tuneFunnelTitle: string;
+  tuneFunnelIntro: string;
+  tuneFunnelCtaDownload: string;
+  tuneFunnelCtaDownloadSub: string;
+  tuneFunnelInstallCopied: string;
+  tuneFunnelReleaseLink: string;
+  tuneFunnelInterestTitle: string;
+  tuneFunnelInterestDesc: string;
+  tuneFunnelInterestSelectStorePro: string;
+  tuneFunnelInterestSelectHardware: string;
+  tuneFunnelInterestButton: string;
+  tuneFunnelInterestSent: string;
+  tuneFunnelInterestSubject: string;
+  tuneFunnelPrivacyNote: string;
+  tuneFunnelTrustTitle: string;
+  tuneFunnelTrustLocal: string;
+  tuneFunnelTrustNotarized: string;
+  tuneFunnelTrustMacos: string;
+  tuneFunnelTrustRestore: string;
+  tuneFunnelTrialCta: string;
+  tuneFunnelPreorderCta: string;
   vibecoderDemoTitle: string;
   vibecoderDemoPhase1: string;
   vibecoderDemoPhase2: string;
@@ -731,6 +752,27 @@ const translations: Record<Language, TranslationMap> = {
     tuneEditionsFeatureMcp: 'MCP server for AI agents',
     tuneEditionsFeatureExtendedDisplay: 'Extended & EDR brightness, dimming & warmth',
     tuneEditionsFeatureSafetyRestore: 'Safety-gated, restores system defaults automatically on exit',
+    tuneFunnelTitle: 'Get Tune — or register interest',
+    tuneFunnelIntro: 'Tune v0.8.1 is available today: a free, open-source direct build for macOS. The Store editions are planned, and the prices below are draft validation figures — nothing is for sale yet. If you would buy a Store edition at its draft price, register your interest and we will email you when it ships.',
+    tuneFunnelCtaDownload: 'Get Tune v0.8.1',
+    tuneFunnelCtaDownloadSub: 'Free, open source, notarized direct build — install with Homebrew or download the release.',
+    tuneFunnelInstallCopied: 'Install command copied to clipboard.',
+    tuneFunnelReleaseLink: 'Download the v0.8.1 release',
+    tuneFunnelInterestTitle: 'Register pricing interest — not a purchase',
+    tuneFunnelInterestDesc: 'Tell us which edition you would buy at which price. This is not a purchase and creates no obligation — it only helps decide which Store edition ships first.',
+    tuneFunnelInterestSelectStorePro: 'Store Pro edition',
+    tuneFunnelInterestSelectHardware: 'Hardware Pro edition',
+    tuneFunnelInterestButton: "I'm interested — send pricing update",
+    tuneFunnelInterestSent: 'Done — your mail app opened with a pre-filled interest email.',
+    tuneFunnelInterestSubject: 'Tune pricing update',
+    tuneFunnelPrivacyNote: 'Privacy: the analytics event records only the selected edition and price. Your email address is never read by this page — the interest email is sent from your own mail app — and analytics only fire after explicit cookie consent.',
+    tuneFunnelTrustTitle: 'Direct build trust',
+    tuneFunnelTrustLocal: 'Local processing — nothing leaves your Mac',
+    tuneFunnelTrustNotarized: 'Notarized direct distribution',
+    tuneFunnelTrustMacos: 'Supported macOS',
+    tuneFunnelTrustRestore: 'Safety-gated writes with automatic restore on exit',
+    tuneFunnelTrialCta: 'Try Tune free for 14 days',
+    tuneFunnelPreorderCta: 'Pre-order the Store Pro edition',
     vibecoderDemoTitle: 'symvibe serve',
     vibecoderDemoPhase1: '1. Review',
     vibecoderDemoPhase2: '2. Plan',
@@ -1163,6 +1205,27 @@ const translations: Record<Language, TranslationMap> = {
     tuneEditionsFeatureMcp: 'MCP-Server für KI-Agenten',
     tuneEditionsFeatureExtendedDisplay: 'Erweiterte & EDR-Helligkeit, Dimmen & Wärme',
     tuneEditionsFeatureSafetyRestore: 'Sicherheitsgeschützt, stellt Systemstandards beim Beenden automatisch wieder her',
+    tuneFunnelTitle: 'Tune holen – oder Interesse anmelden',
+    tuneFunnelIntro: 'Tune v0.8.1 ist heute verfügbar: ein kostenloser, quelloffener Direkt-Build für macOS. Die Store-Editionen sind geplant, und die Preise unten sind reine Entwurfs-Validierungswerte – noch ist nichts käuflich. Wenn du eine Store-Edition zum Entwurfspreis kaufen würdest, melde dein Interesse an, und wir schreiben dir, sobald sie erscheint.',
+    tuneFunnelCtaDownload: 'Tune v0.8.1 herunterladen',
+    tuneFunnelCtaDownloadSub: 'Kostenlos, quelloffen, notarisierter Direkt-Build – per Homebrew installieren oder das Release herunterladen.',
+    tuneFunnelInstallCopied: 'Installationsbefehl in die Zwischenablage kopiert.',
+    tuneFunnelReleaseLink: 'v0.8.1-Release herunterladen',
+    tuneFunnelInterestTitle: 'Preis-Interesse anmelden – kein Kauf',
+    tuneFunnelInterestDesc: 'Sag uns, welche Edition du zu welchem Preis kaufen würdest. Das ist kein Kauf und keine Verpflichtung – es hilft nur zu entscheiden, welche Store-Edition zuerst erscheint.',
+    tuneFunnelInterestSelectStorePro: 'Store-Pro-Edition',
+    tuneFunnelInterestSelectHardware: 'Hardware-Pro-Edition',
+    tuneFunnelInterestButton: 'Ich bin interessiert – Preisupdate senden',
+    tuneFunnelInterestSent: 'Erledigt – deine Mail-App wurde mit einer vorausgefüllten Interesse-Mail geöffnet.',
+    tuneFunnelInterestSubject: 'Tune-Preisupdate',
+    tuneFunnelPrivacyNote: 'Datenschutz: Das Analytics-Ereignis erfasst nur die gewählte Edition und den Preis. Deine E-Mail-Adresse wird von dieser Seite nie ausgelesen – die Interesse-Mail sendest du aus deiner eigenen Mail-App – und Analytics feuert nur nach ausdrücklicher Cookie-Zustimmung.',
+    tuneFunnelTrustTitle: 'Vertrauen in den Direkt-Build',
+    tuneFunnelTrustLocal: 'Lokale Verarbeitung – nichts verlässt deinen Mac',
+    tuneFunnelTrustNotarized: 'Notarisierte Direkt-Distribution',
+    tuneFunnelTrustMacos: 'Unterstütztes macOS',
+    tuneFunnelTrustRestore: 'Sicherheitsgeschützte Schreibvorgänge mit automatischer Wiederherstellung beim Beenden',
+    tuneFunnelTrialCta: 'Tune 14 Tage kostenlos testen',
+    tuneFunnelPreorderCta: 'Store-Pro-Edition vorbestellen',
     vibecoderDemoTitle: 'symvibe serve',
     vibecoderDemoPhase1: '1. Review',
     vibecoderDemoPhase2: '2. Planung',

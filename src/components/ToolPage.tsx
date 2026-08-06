@@ -3,6 +3,7 @@ import { useLanguage } from '../context/LanguageContext';
 import { getProducts, getRouteForCmd } from '../config/products';
 import { SHOW_PRO } from '../config/features';
 import { TuneEditions } from './TuneEditions';
+import { TuneFunnel } from './TuneFunnel';
 import { 
   ArrowLeft, 
   Check, 
@@ -785,6 +786,9 @@ export const ToolPage: React.FC<ToolPageProps> = ({ toolId }) => {
 
       {/* Tune editions & pricing comparison (Symaira Tune only) */}
       {product.cmd === 'symtune' && <TuneEditions />}
+
+      {/* Tune paid-demand validation funnel (Symaira Tune only) */}
+      {product.cmd === 'symtune' && <TuneFunnel />}
 
       {/* Pricing Comparison (hidden while SHOW_PRO is false) */}
       {SHOW_PRO && (
