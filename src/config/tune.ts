@@ -103,18 +103,18 @@ export const TUNE_REPO_URL = 'https://github.com/danieljustus/symaira-tune';
 export const TUNE_FUNNEL_ENABLED = true;
 
 /**
- * Availability state machine for the funnel CTAs. Both are false today:
+ * Availability state machine for the funnel CTAs. Both default to false:
  * there is NO signed trial build and NO preorder/payment infrastructure.
- * - Set TUNE_TRIAL_AVAILABLE to true once a signed trial build exists; the
+ * - Set VITE_TUNE_TRIAL_AVAILABLE=true once a signed trial build exists; the
  *   funnel then renders the trial CTA automatically (fires tune_trial_click).
- * - Set TUNE_PREORDER_AVAILABLE to true once preorder/payment exists; the
+ * - Set VITE_TUNE_PREORDER_AVAILABLE=true once preorder/payment exists; the
  *   funnel then renders the preorder CTA automatically (fires tune_preorder_click).
  * The three states (trial / preorder / pricing interest) can never be
  * confused: exactly one CTA type renders per flag, and the interest action
  * is always labeled as interest, never as a purchase.
  */
-export const TUNE_TRIAL_AVAILABLE = false;
-export const TUNE_PREORDER_AVAILABLE = false;
+export const TUNE_TRIAL_AVAILABLE = import.meta.env.VITE_TUNE_TRIAL_AVAILABLE === 'true';
+export const TUNE_PREORDER_AVAILABLE = import.meta.env.VITE_TUNE_PREORDER_AVAILABLE === 'true';
 
 /**
  * The genuinely available action today: the v0.8.1 direct hardware build
