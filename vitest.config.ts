@@ -18,6 +18,12 @@ export default defineConfig({
         'src/config/analytics.ts',
         'src/components/TuneEditions.tsx',
         'src/components/TuneFunnel.tsx',
+        // Cycle_04 (audit 2026-08-13): behavior-focused suites landed for the
+        // most regression-prone untested code — consent matrix, language
+        // detection + t() fallback, and hash routing / document titles.
+        'src/components/CookieConsent.tsx',
+        'src/context/LanguageContext.tsx',
+        'src/App.tsx',
       ],
       exclude: ['src/**/*.test.{ts,tsx}', 'src/**/*.d.ts'],
       reporter: ['text'],
