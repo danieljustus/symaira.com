@@ -1,5 +1,8 @@
 # symaira.com
 
+[![CI - Lint & Build](https://github.com/danieljustus/symaira.com/actions/workflows/ci.yml/badge.svg)](https://github.com/danieljustus/symaira.com/actions/workflows/ci.yml)
+[![Release](https://img.shields.io/github/v/release/danieljustus/symaira.com)](https://github.com/danieljustus/symaira.com/releases/latest)
+
 ![symaira.com social preview](docs/assets/social-preview.png)
 
 Public website for the Symaira ecosystem.
