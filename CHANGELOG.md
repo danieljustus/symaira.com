@@ -5,6 +5,20 @@ All notable changes to the Symaira public website are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.1] - 2026-08-13
+
+### Changed
+- Smaller site payload: unreferenced product logos removed, referenced logos compressed (#40)
+- Runtime dependency updates: react 19.2.8, lucide-react 1.31.0, roboto-flex 5.3.0 (#32)
+
+### Fixed
+- Stale tool count (16 → 17) and missing Symaira Meet entry in meta/JSON-LD (#28)
+
+### Tests / CI
+- Coverage suites for cookie consent, language detection and routing; 61 tests, lines 96.95% (#39)
+- CI and release badges added to README (#30)
+- Dev/CI dependency bumps: @types/node 26, actions/checkout 7, actions/setup-node 7 (#29, #31, #34)
+
 ## [0.1.0] - 2026-08-07
 
 First release of the Symaira public website.
@@ -41,4 +55,5 @@ First release of the Symaira public website.
 - Manual dispatch trigger for the deploy workflow
 - Dependency bumps: vite 8.2.1, postcss 8.5.26, brace-expansion 5.0.9
 
+[0.1.1]: https://github.com/danieljustus/symaira.com/releases/tag/v0.1.1
 [0.1.0]: https://github.com/danieljustus/symaira.com/releases/tag/v0.1.0
