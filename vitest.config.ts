@@ -24,6 +24,10 @@ export default defineConfig({
         'src/components/CookieConsent.tsx',
         'src/context/LanguageContext.tsx',
         'src/App.tsx',
+        // Cycle_04 (issue #44): ToolPage — largest untested behavior component
+        // with route matching, FAQ accordion, copy-to-clipboard, proHint parsing,
+        // and consent-gated tracking.
+        'src/components/ToolPage.tsx',
       ],
       exclude: ['src/**/*.test.{ts,tsx}', 'src/**/*.d.ts'],
       reporter: ['text'],
