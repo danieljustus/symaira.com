@@ -5,6 +5,14 @@ All notable changes to the Symaira public website are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.2] - 2026-08-18
+
+### Fixed
+- Cookie consent reset no longer throws when browser storage is blocked; the consent banner now reliably re-appears on revocation (#43)
+
+### Tests / CI
+- ToolPage behavior suite added (15 tests: route matching, FAQ accordion, copy-to-clipboard, consent-gated tracking, demo types); coverage gate extended to ToolPage.tsx — 76 tests, lines 96.65% (#45)
+
 ## [0.1.1] - 2026-08-13
 
 ### Changed
@@ -55,5 +63,6 @@ First release of the Symaira public website.
 - Manual dispatch trigger for the deploy workflow
 - Dependency bumps: vite 8.2.1, postcss 8.5.26, brace-expansion 5.0.9
 
+[0.1.2]: https://github.com/danieljustus/symaira.com/releases/tag/v0.1.2
 [0.1.1]: https://github.com/danieljustus/symaira.com/releases/tag/v0.1.1
 [0.1.0]: https://github.com/danieljustus/symaira.com/releases/tag/v0.1.0
