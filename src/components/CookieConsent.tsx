@@ -48,7 +48,7 @@ export const CookieConsent: React.FC = () => {
   // Listen to external custom events (for revocation triggers from privacy policy)
   useEffect(() => {
     const handleResetConsent = () => {
-      localStorage.removeItem(CONSENT_STORAGE_KEY);
+      try { localStorage.removeItem(CONSENT_STORAGE_KEY); } catch { /* storage blocked */ }
       setConsentState(null);
       setAnalyticsChecked(false);
       setShowSettings(false);
