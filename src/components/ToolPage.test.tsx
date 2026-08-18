@@ -232,7 +232,9 @@ describe('ToolPage', () => {
     );
 
     // The fetch demo shows "Input: \"https://example.com/blog\""
-    expect(screen.getByText(/example\.com/)).toBeTruthy();
+    // CodeQL requires anchored regex; text is split across elements
+    const fetchUrlElements = screen.getAllByText(/https:\/\/example\.com\/blog/);
+    expect(fetchUrlElements.length).toBeGreaterThan(0);
   });
 
   it('renders the scope demo section for symscope', () => {
