@@ -392,8 +392,6 @@ export interface TranslationMap {
   viewDetailsBtn: string;
   coreFreeTitle: string;
   coreFreeDesc: string;
-  proPlannedTitle: string;
-  proPlannedDesc: string;
   priceFree: string;
   pricePlanned: string;
   toolPageFAQTitle: string;
@@ -791,8 +789,6 @@ const translations: Record<Language, TranslationMap> = {
     viewDetailsBtn: 'Learn More',
     coreFreeTitle: 'Local-First Core',
     coreFreeDesc: 'Open Source & self-hosted',
-    proPlannedTitle: 'Pro Plan (Planned)',
-    proPlannedDesc: 'Cloud features & orchestration',
     priceFree: 'Free',
     pricePlanned: 'Planned',
     toolPageFAQTitle: 'Frequently Asked Questions',
@@ -1188,8 +1184,6 @@ const translations: Record<Language, TranslationMap> = {
     viewDetailsBtn: 'Mehr erfahren',
     coreFreeTitle: 'Lokaler Core',
     coreFreeDesc: 'Open Source & self-hosted',
-    proPlannedTitle: 'Pro-Variante (Geplant)',
-    proPlannedDesc: 'Cloud-Features & Orchestrierung',
     priceFree: 'Kostenlos',
     pricePlanned: 'Geplant',
     toolPageFAQTitle: 'Häufig gestellte Fragen',
