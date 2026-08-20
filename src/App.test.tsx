@@ -69,28 +69,6 @@ describe('App routing and document titles', () => {
     expect(document.title).toBe(DEFAULT_TITLE);
   });
 
-  it('keeps the default title for the hidden Pro route when SHOW_PRO is false', () => {
-    // VITE_SHOW_PRO is unset in the test environment, so SHOW_PRO is false.
-    window.location.hash = '';
-    render(<App />);
-
-    setHash('#/vault-pro');
-    expect(document.title).toBe(DEFAULT_TITLE);
-  });
-
-  it('uses the Pro title for the vault-pro route when SHOW_PRO is true', async () => {
-    vi.resetModules();
-    vi.stubEnv('VITE_SHOW_PRO', 'true');
-    const { default: AppWithPro } = await import('./App');
-
-    window.location.hash = '#/vault-pro';
-    render(<AppWithPro />);
-
-    expect(document.title).toBe(
-      'Symaira Vault Pro — Secrets Management for Teams & AI Agents',
-    );
-  });
-
   it('handles the legal pages with legal titles', () => {
     window.location.hash = '';
     render(<App />);

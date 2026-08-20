@@ -7,19 +7,16 @@ import { Vision } from './components/Vision';
 import { Tools } from './components/Tools';
 import { Contact } from './components/Contact';
 import { Stack } from './components/Stack';
-import { VaultPage } from './components/VaultPage';
 import { ToolPage } from './components/ToolPage';
 import { Footer } from './components/Footer';
 import { LegalPages } from './components/LegalPages';
 import { SandBackground } from './components/SandBackground';
 import { CookieConsent } from './components/CookieConsent';
-import { SHOW_PRO } from './config/features';
 
 const DEFAULT_TITLE = 'Symaira | Open-Source, Local-First AI Tools & MCP Servers';
 
 const ROUTE_TITLES: Record<string, string> = {
   '#/stack': 'The Symaira AI Stack — MCP Servers & Local-First Agent Tools | Symaira',
-  '#/vault-pro': 'Symaira Vault Pro — Secrets Management for Teams & AI Agents',
   '#/impressum': 'Imprint | Symaira',
   '#/privacy': 'Privacy Policy | Symaira',
   '#/datenschutz': 'Datenschutzerklärung | Symaira',
@@ -59,13 +56,11 @@ function App() {
   }, []);
 
   useEffect(() => {
-    const isHiddenProRoute = !SHOW_PRO && hash === '#/vault-pro';
-    document.title = isHiddenProRoute ? DEFAULT_TITLE : ROUTE_TITLES[hash] ?? DEFAULT_TITLE;
+    document.title = ROUTE_TITLES[hash] ?? DEFAULT_TITLE;
   }, [hash]);
 
   const isLegalPage = hash === '#/impressum' || hash === '#/privacy' || hash === '#/datenschutz';
   const isStackPage = hash === '#/stack';
-  const isVaultPage = SHOW_PRO && hash === '#/vault-pro';
   
   const validTools = ['vault', 'memory', 'seek', 'fetch', 'scope', 'eraseme', 'terminal', 'vibecoder', 'operate', 'tune', 'fritz', 'guard', 'print', 'skills', 'ingest', 'desktop', 'meet'];
   const toolHashMatch = hash.match(/^#\/([a-z-]+)$/);
@@ -93,8 +88,6 @@ function App() {
               <LegalPages view={legalView} />
             ) : isStackPage ? (
               <Stack />
-            ) : isVaultPage ? (
-              <VaultPage />
             ) : isDynamicToolPage ? (
               <ToolPage toolId={toolName} />
             ) : (

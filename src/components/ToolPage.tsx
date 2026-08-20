@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { getProducts, getRouteForCmd } from '../config/products';
-import { SHOW_PRO } from '../config/features';
 import { trackEvent } from '../config/analytics';
 import { TuneEditions } from './TuneEditions';
 import { TuneFunnel } from './TuneFunnel';
 import { 
   ArrowLeft, 
-  Check, 
+  
   HelpCircle, 
   ExternalLink,
   Brain,
@@ -70,33 +69,7 @@ export const ToolPage: React.FC<ToolPageProps> = ({ toolId }) => {
     setTimeout(() => setCopiedCmd(null), 2000);
   };
 
-  // Parse Pro features from proHint
-  const getProFeaturesList = (proHint: string) => {
-    const parts = proHint.split(/:\s*/);
-    if (parts.length < 2) return [proHint];
-    const features = parts[1].split(/,\s*/);
-    return features.map(f => {
-      let cleaned = f.trim();
-      if (cleaned.endsWith('.')) {
-        cleaned = cleaned.slice(0, -1);
-      }
-      if (cleaned.length > 0) {
-        cleaned = cleaned[0].toUpperCase() + cleaned.slice(1);
-      }
-      return cleaned;
-    });
-  };
-
-  const proFeatures = getProFeaturesList(product.proHint);
-
   const faqs = [
-    // FAQ 1 + 2 describe the planned Pro/cloud offering — hidden with SHOW_PRO.
-    ...(SHOW_PRO
-      ? [
-          { q: t('toolPageFAQ1Q'), a: t('toolPageFAQ1A') },
-          { q: t('toolPageFAQ2Q'), a: t('toolPageFAQ2A') },
-        ]
-      : []),
     {
       q: t('toolPageFAQ3Q'),
       a: t('toolPageFAQ3A'),
@@ -781,151 +754,6 @@ export const ToolPage: React.FC<ToolPageProps> = ({ toolId }) => {
       {/* Tune paid-demand validation funnel (Symaira Tune only) */}
       {product.cmd === 'symtune' && <TuneFunnel />}
 
-      {/* Pricing Comparison (hidden while SHOW_PRO is false) */}
-      {SHOW_PRO && (
-      <div className="constrained-box" style={{ marginBottom: '100px' }}>
-        <h2 style={{
-          textAlign: 'center',
-          fontSize: '28px',
-          fontWeight: 700,
-          marginBottom: '48px',
-          fontFamily: 'var(--font-title)',
-        }}>
-          {t('toolPageCompareTitle')}
-        </h2>
-
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-          gap: '30px',
-          alignItems: 'stretch',
-          maxWidth: '900px',
-          margin: '0 auto',
-        }}>
-          {/* Card 1: Core (Free) */}
-          <div className="glass-panel" style={{
-            padding: '40px',
-            borderRadius: '16px',
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'space-between',
-            border: '1px solid rgba(255,255,255,0.05)',
-            backgroundColor: 'rgba(18, 17, 14, 0.45)',
-          }}>
-            <div>
-              <span style={{ fontSize: '12px', fontFamily: 'var(--font-tech)', color: 'var(--text-muted)', letterSpacing: '1px', textTransform: 'uppercase' }}>
-                {t('coreFreeDesc')}
-              </span>
-              <h3 style={{ fontSize: '24px', fontWeight: 700, marginTop: '8px', marginBottom: '16px' }}>
-                {t('coreFreeTitle')}
-              </h3>
-              <div style={{ display: 'flex', alignItems: 'baseline', marginBottom: '24px' }}>
-                <span style={{ fontSize: '40px', fontWeight: 800, color: 'var(--text-primary)' }}>
-                  {t('priceFree')}
-                </span>
-              </div>
-              <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 32px 0' }}>
-                {product.features.map((feature, idx) => (
-                  <li key={idx} style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '14px', color: 'var(--text-secondary)', marginBottom: '12px' }}>
-                    <Check size={14} style={{ color: 'var(--gold-primary)' }} />
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <a
-              href={product.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                width: '100%',
-                padding: '12px',
-                borderRadius: '6px',
-                border: '1px solid rgba(255, 255, 255, 0.08)',
-                color: 'var(--text-primary)',
-                textAlign: 'center',
-                fontSize: '14px',
-                fontWeight: 500,
-                backgroundColor: 'rgba(255,255,255,0.02)',
-              }}
-              className="action-button-secondary"
-            >
-              {product.button}
-            </a>
-          </div>
-
-          {/* Card 2: Pro Variant (Planned) */}
-          <div className="glass-panel" style={{
-            padding: '40px',
-            borderRadius: '16px',
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'space-between',
-            border: '1px solid var(--gold-primary)',
-            backgroundColor: 'rgba(229, 195, 151, 0.03)',
-            boxShadow: '0 10px 40px rgba(229, 195, 151, 0.08)',
-            position: 'relative',
-          }}>
-            <div className="pricing-badge" style={{
-              position: 'absolute',
-              top: '20px',
-              right: '20px',
-              backgroundColor: 'var(--gold-primary)',
-              color: '#000',
-              fontSize: '11px',
-              fontWeight: 700,
-              padding: '4px 10px',
-              borderRadius: '12px',
-              fontFamily: 'var(--font-tech)',
-            }}>
-              {t('pricePlanned').toUpperCase()}
-            </div>
-            <div>
-              <span style={{ fontSize: '12px', fontFamily: 'var(--font-tech)', color: 'var(--gold-primary)', letterSpacing: '1px', textTransform: 'uppercase' }}>
-                {t('proPlannedDesc')}
-              </span>
-              <h3 style={{ fontSize: '24px', fontWeight: 700, marginTop: '8px', marginBottom: '16px' }}>
-                {t('proPlannedTitle')}
-              </h3>
-              <div style={{ display: 'flex', alignItems: 'baseline', marginBottom: '24px' }}>
-                <span style={{ fontSize: '40px', fontWeight: 800, color: 'var(--gold-primary)' }}>
-                  {t('pricePlanned')}
-                </span>
-              </div>
-              <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 32px 0' }}>
-                <li style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '14px', color: 'var(--text-primary)', marginBottom: '12px', fontWeight: 500 }}>
-                  <Check size={14} style={{ color: 'var(--gold-primary)' }} />
-                  Everything in Local-First Core
-                </li>
-                {proFeatures.map((feature, idx) => (
-                  <li key={idx} style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '14px', color: 'var(--text-secondary)', marginBottom: '12px' }}>
-                    <Check size={14} style={{ color: 'var(--gold-primary)' }} />
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <button
-              disabled
-              style={{
-                width: '100%',
-                padding: '12px',
-                borderRadius: '6px',
-                backgroundColor: 'rgba(229, 195, 151, 0.08)',
-                border: '1px solid rgba(229, 195, 151, 0.2)',
-                color: 'var(--text-muted)',
-                textAlign: 'center',
-                fontSize: '14px',
-                fontWeight: 600,
-                cursor: 'not-allowed',
-              }}
-            >
-              {t('vaultPageCTA')}
-            </button>
-          </div>
-        </div>
-      </div>
-      )}
 
       {/* FAQ Sektion */}
       <div className="constrained-box" style={{ maxWidth: '800px' }}>
