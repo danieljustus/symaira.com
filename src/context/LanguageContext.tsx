@@ -153,7 +153,6 @@ export interface TranslationMap {
   fritzFeature3: string;
   fritzFeature4: string;
   fritzBtn: string;
-  fritzProHint: string;
   guardBadge: string;
   guardStatus: string;
   guardTitle: string;
@@ -165,7 +164,6 @@ export interface TranslationMap {
   guardFeature3: string;
   guardFeature4: string;
   guardBtn: string;
-  guardProHint: string;
   printBadge: string;
   printStatus: string;
   printTitle: string;
@@ -177,7 +175,6 @@ export interface TranslationMap {
   printFeature3: string;
   printFeature4: string;
   printBtn: string;
-  printProHint: string;
   skillsBadge: string;
   skillsStatus: string;
   skillsTitle: string;
@@ -189,7 +186,6 @@ export interface TranslationMap {
   skillsFeature3: string;
   skillsFeature4: string;
   skillsBtn: string;
-  skillsProHint: string;
   ingestBadge: string;
   ingestStatus: string;
   ingestTitle: string;
@@ -201,7 +197,6 @@ export interface TranslationMap {
   ingestFeature3: string;
   ingestFeature4: string;
   ingestBtn: string;
-  ingestProHint: string;
   desktopBadge: string;
   desktopStatus: string;
   desktopTitle: string;
@@ -213,7 +208,6 @@ export interface TranslationMap {
   desktopFeature3: string;
   desktopFeature4: string;
   desktopBtn: string;
-  desktopProHint: string;
   meetBadge: string;
   meetStatus: string;
   meetTitle: string;
@@ -225,28 +219,13 @@ export interface TranslationMap {
   meetFeature3: string;
   meetFeature4: string;
   meetBtn: string;
-  meetProHint: string;
   meetDemoTitle: string;
   meetDemoLine1: string;
   meetDemoLine2: string;
   meetDemoLine3: string;
   meetDemoLine4: string;
-  proLabel: string;
   heroBadgeGermany: string;
-  proHostingTag: string;
   footerMadeInGermany: string;
-  vaultPageFAQ3Q: string;
-  vaultPageFAQ3A: string;
-  vaultProHint: string;
-  erasemeProHint: string;
-  memoryProHint: string;
-  seekProHint: string;
-  fetchProHint: string;
-  terminalProHint: string;
-  scopeProHint: string;
-  operateProHint: string;
-  tuneProHint: string;
-  vibecoderProHint: string;
   terminalDemoPane1: string;
   terminalDemoPane2: string;
   terminalDemoPrompt: string;
@@ -409,50 +388,13 @@ export interface TranslationMap {
   stackWorkflow3Title: string;
   stackWorkflow3Desc: string;
   stackBackToTools: string;
-  navVaultPro: string;
-  vaultPageTitle: string;
-  vaultPageSubtitle: string;
-  vaultPageFreeTitle: string;
-  vaultPageFreePrice: string;
-  vaultPageFreePriceSub: string;
-  vaultPageProTitle: string;
-  vaultPageProPrice: string;
-  vaultPageProPriceSub: string;
-  vaultPageSuiteTitle: string;
-  vaultPageSuitePrice: string;
-  vaultPageSuitePriceSub: string;
-  vaultPageCompareTitle: string;
-  vaultPageFeatureSync: string;
-  vaultPageFeatureSyncDesc: string;
-  vaultPageFeatureSSO: string;
-  vaultPageFeatureSSODesc: string;
-  vaultPageFeatureWeb: string;
-  vaultPageFeatureWebDesc: string;
-  vaultPageFeatureEncryption: string;
-  vaultPageFeatureEncryptionDesc: string;
-  vaultPageFeatureMcp: string;
-  vaultPageFeatureMcpDesc: string;
-  vaultPageCTA: string;
-  vaultPageCTAFree: string;
-  vaultPageFAQTitle: string;
-  vaultPageFAQ1Q: string;
-  vaultPageFAQ1A: string;
-  vaultPageFAQ2Q: string;
-  vaultPageFAQ2A: string;
   compareProBtn: string;
   viewDetailsBtn: string;
   coreFreeTitle: string;
   coreFreeDesc: string;
-  proPlannedTitle: string;
-  proPlannedDesc: string;
   priceFree: string;
   pricePlanned: string;
-  toolPageCompareTitle: string;
   toolPageFAQTitle: string;
-  toolPageFAQ1Q: string;
-  toolPageFAQ1A: string;
-  toolPageFAQ2Q: string;
-  toolPageFAQ2A: string;
   toolPageFAQ3Q: string;
   toolPageFAQ3A: string;
 }
@@ -663,23 +605,6 @@ const translations: Record<Language, TranslationMap> = {
     desktopFeature3: 'Zero database lock-in: plain-text Markdown is the single source of truth.',
     desktopFeature4: 'Block editor, backlinks, graph view, saved database views, and an AI dock.',
     desktopBtn: 'View Desktop on GitHub',
-    proLabel: 'Planned Pro Features',
-    vaultProHint: 'Pro variant planned: Secure cloud syncing, team vault sharing, and enterprise audit logging.',
-    erasemeProHint: 'Pro variant planned: Cloud campaigns, automated weekly scans, and central compliance reporting.',
-    memoryProHint: 'Pro variant planned: Team context sync, shared agent memory spaces, and central administrative control.',
-    seekProHint: 'Pro variant planned: Cloud vector storage, distributed document ingestion pipelines, and multi-tenant index sharing.',
-    fetchProHint: 'Pro variant planned: Managed browser rendering (JS execution), CAPTCHA solving, and automated crawl pipelines.',
-    terminalProHint: 'Pro variant planned: Team session sharing, mobile companion relay, and secure hosted access tunnels.',
-    scopeProHint: 'Pro variant planned: Remote fleet scanning, centralized port audit logs, and continuous port state monitoring.',
-    operateProHint: 'Pro variant planned: Multi-user session isolation, cloud-based GUI session recording, and credential-gated approval flows.',
-    tuneProHint: 'Pro variant planned: Centralized hardware health dashboards, custom fan profiles, and privileged SMC controls.',
-    vibecoderProHint: 'Pro variant planned: Shared cloud dashboards, multi-repo support, and team permission controls.',
-    fritzProHint: 'Pro variant planned: Centralized multi-box network monitoring, remote secure tunnels, and device presence alerts.',
-    guardProHint: 'Pro variant planned: Centralized team policy deployment, aggregated audit compliance logs, and remote approval companion apps.',
-    printProHint: 'Pro variant planned: Cloud compilation queues, team typographic templates, and automated compliance APIs.',
-    skillsProHint: 'Pro variant planned: Team skill repositories, remote skill sharing, and cryptographically signed skill files.',
-    ingestProHint: 'Pro variant planned: Managed OCR cluster scaling, advanced classification models, and cloud intake relays.',
-    desktopProHint: 'Pro variant planned: End-to-end encrypted multi-user sync, secure remote web access, and team controls.',
     meetBadge: 'Meeting capture',
     meetStatus: 'Beta',
     meetTitle: 'Symaira Meet',
@@ -691,7 +616,6 @@ const translations: Record<Language, TranslationMap> = {
     meetFeature3: 'Standalone-first artifacts: portable files (Markdown, transcripts, exports), not proprietary database records.',
     meetFeature4: 'Menu-bar recording agent and MCP server; optional runtime synergy with SymDesk, Memory, Seek, and Print.',
     meetBtn: 'View Meet on GitHub',
-    meetProHint: 'Pro variant planned: Cloud meeting archives, team transcription workspaces, and centralized retention policies.',
     meetDemoTitle: 'symmeet record',
     meetDemoLine1: 'Consent granted — recording session started',
     meetDemoLine2: 'Audio captured locally (no upload)',
@@ -859,55 +783,15 @@ const translations: Record<Language, TranslationMap> = {
     stackWorkflow3Title: 'Knowledge Retrieval',
     stackWorkflow3Desc: 'Search indexed documents and fetch referenced URLs in one pipeline.',
     stackBackToTools: 'Back to Tools',
-    navVaultPro: 'Vault Pro',
-    vaultPageTitle: 'Symaira Vault Pro',
-    vaultPageSubtitle: 'Enterprise-grade secret management, synced securely across your devices and AI agents.',
-    vaultPageFreeTitle: 'Local-First Core',
-    vaultPageFreePrice: 'Free',
-    vaultPageFreePriceSub: 'Open Source & self-hosted',
-    vaultPageProTitle: 'Vault Pro',
-    vaultPageProPrice: '',
-    vaultPageProPriceSub: '',
-    vaultPageSuiteTitle: 'AI Suite Bundle',
-    vaultPageSuitePrice: '',
-    vaultPageSuitePriceSub: '',
-    vaultPageCompareTitle: 'Compare Core vs. Pro',
-    vaultPageFeatureSync: 'Cloud Secret Syncing',
-    vaultPageFeatureSyncDesc: 'Synchronize your vaults end-to-end encrypted via our secure cloud service.',
-    vaultPageFeatureSSO: 'Enterprise SSO & Teams',
-    vaultPageFeatureSSODesc: 'Authenticate via Okta, Entra ID, or Google. Manage access control for your team\'s agents.',
-    vaultPageFeatureWeb: 'Web Management Console',
-    vaultPageFeatureWebDesc: 'Manage memberships, view audit logs, and configure access tokens in a premium web dashboard.',
-    vaultPageFeatureEncryption: 'Local-First Encryption',
-    vaultPageFeatureEncryptionDesc: 'All secrets are age-encrypted on your machine before they ever touch the cloud.',
-    vaultPageFeatureMcp: 'Zero-Trust MCP Server',
-    vaultPageFeatureMcpDesc: 'Provide scoped credentials to AI agents instead of sharing raw passwords.',
-    vaultPageCTA: 'Coming Soon',
-    vaultPageCTAFree: 'Download Free Core',
-    vaultPageFAQTitle: 'Frequently Asked Questions',
-    vaultPageFAQ1Q: 'How is Vault Pro encrypted?',
-    vaultPageFAQ1A: 'Vault Pro is local-first. Your secrets are encrypted using age (X25519 and ChaCha20-Poly1305) on your local machine using your master key. The cloud service only stores encrypted blobs and cannot read your data.',
-    vaultPageFAQ2Q: 'Is this a live service?',
-    vaultPageFAQ2A: 'No, this is currently a draft and concept representation. The dashboard is interactive, but no real accounts can be created and no real payments are processed yet.',
     heroBadgeGermany: 'Made in Germany · GDPR compliant',
-    proHostingTag: 'German Hosting · GDPR',
     footerMadeInGermany: 'Made in Germany · 100% GDPR Compliant',
-    vaultPageFAQ3Q: 'Where are the cloud features hosted?',
-    vaultPageFAQ3A: 'All planned cloud and Pro components are hosted entirely on servers in Germany and built in strict compliance with the General Data Protection Regulation (GDPR). Since the core application is local-first, the majority of your data never leaves your own hardware.',
     compareProBtn: 'Compare Pro Features',
     viewDetailsBtn: 'Learn More',
     coreFreeTitle: 'Local-First Core',
     coreFreeDesc: 'Open Source & self-hosted',
-    proPlannedTitle: 'Pro Plan (Planned)',
-    proPlannedDesc: 'Cloud features & orchestration',
     priceFree: 'Free',
     pricePlanned: 'Planned',
-    toolPageCompareTitle: 'Compare Core vs. Pro Features',
     toolPageFAQTitle: 'Frequently Asked Questions',
-    toolPageFAQ1Q: 'Where are the cloud features hosted?',
-    toolPageFAQ1A: 'All planned cloud and Pro components are hosted entirely on servers in Germany and built in strict compliance with the General Data Protection Regulation (GDPR). Since the core application is local-first, the majority of your data never leaves your own hardware.',
-    toolPageFAQ2Q: 'Is this a live service?',
-    toolPageFAQ2A: 'No, this is currently a draft and concept representation. The dashboard is interactive, but no real accounts can be created and no real payments are processed yet.',
     toolPageFAQ3Q: 'Is the local core really free?',
     toolPageFAQ3A: 'Yes! The CLI tools, MCP servers, and local desktop applications are 100% open-source (Apache-2.0 or AGPLv3) and will remain free forever.',
   },
@@ -1116,23 +1000,6 @@ const translations: Record<Language, TranslationMap> = {
     desktopFeature3: 'Kein Datenbank-Lock-in: Klartext-Markdown bleibt die einzige Quelle der Wahrheit.',
     desktopFeature4: 'Block-Editor, Backlinks, Graph-Ansicht, gespeicherte Datenbank-Views und AI-Dock.',
     desktopBtn: 'Desktop auf GitHub ansehen',
-    proLabel: 'Geplante Pro-Features',
-    vaultProHint: 'Pro-Variante geplant: Sicherer Cloud-Sync, Team-Vault-Freigabe und Enterprise-Audit-Logs.',
-    erasemeProHint: 'Pro-Variante geplant: Cloud-Kampagnen, automatisierte Scans und zentrale Compliance-Berichte.',
-    memoryProHint: 'Pro-Variante geplant: Team-Kontext-Sync, geteilte Speicherbereiche für Agenten und und zentrale Administration.',
-    seekProHint: 'Pro-Variante geplant: Cloud-Vektorspeicher, verteilte Ingestion-Pipelines und mandantenfähige Index-Freigabe.',
-    fetchProHint: 'Pro-Variante geplant: Verwaltetes Browser-Rendering (JS-Ausführung), CAPTCHA-Lösung und automatisierte Crawl-Pipelines.',
-    terminalProHint: 'Pro-Variante geplant: Team-Session-Sharing, Mobile-Companion-Relay und sichere gehostete Tunnels.',
-    scopeProHint: 'Pro-Variante geplant: Remote-Fleet-Scanning, zentralisierte Port-Audit-Logs und kontinuierliche Überwachung des Port-Status.',
-    operateProHint: 'Pro-Variante geplant: Multi-User-Sitzungsisolation, cloudbasierte GUI-Sitzungsaufzeichnung und zugriffsgeschützte Freigabe-Workflows.',
-    tuneProHint: 'Pro-Variante geplant: Zentralisierte Hardware-Zustands-Dashboards, benutzerdefinierte Lüfterprofile und privilegierte SMC-Steuerungen.',
-    vibecoderProHint: 'Pro-Variante geplant: Geteilte Cloud-Dashboards, Multi-Repository-Support und Team-Berechtigungssteuerung.',
-    fritzProHint: 'Pro-Variante geplant: Zentralisierte Überwachung mehrerer Router, sichere Remote-Tunnel und Präsenzmeldungen.',
-    guardProHint: 'Pro-Variante geplant: Zentrale Verteilung von Team-Richtlinien, aggregierte Audit-Logs und Remote-Freigabe per Companion-App.',
-    printProHint: 'Pro-Variante geplant: Cloud-basierte Rendering-Pipelines, eigene Team-Schriftpakete und automatisierte Rechnungsprüfung.',
-    skillsProHint: 'Pro-Variante geplant: Gemeinsame Team-Skill-Bibliotheken, Remote-Synchronisierung und kryptographisch signierte Skills.',
-    ingestProHint: 'Pro-Variante geplant: Skalierbare Cloud-OCR-Cluster, eigene Klassifizierungsmodelle und Cloud-Import-Relays.',
-    desktopProHint: 'Pro-Variante geplant: Ende-zu-Ende verschlüsselter Multi-User-Sync, sicherer Remote-Webzugriff und Team-Berechtigungen.',
     meetBadge: 'Meeting-Aufnahme',
     meetStatus: 'Beta',
     meetTitle: 'Symaira Meet',
@@ -1144,7 +1011,6 @@ const translations: Record<Language, TranslationMap> = {
     meetFeature3: 'Standalone-first Artefakte: portable Dateien (Markdown, Transkripte, Exporte), keine proprietären Datenbankeinträge.',
     meetFeature4: 'Menüleisten-Aufnahme-Agent und MCP-Server; optionale Laufzeit-Synergien mit SymDesk, Memory, Seek und Print.',
     meetBtn: 'Meet auf GitHub ansehen',
-    meetProHint: 'Pro-Variante geplant: Cloud-Meeting-Archive, Team-Transkriptions-Workspaces und zentrale Aufbewahrungsrichtlinien.',
     meetDemoTitle: 'symmeet record',
     meetDemoLine1: 'Einwilligung erteilt – Aufnahmesitzung gestartet',
     meetDemoLine2: 'Audio lokal aufgenommen (kein Upload)',
@@ -1312,55 +1178,15 @@ const translations: Record<Language, TranslationMap> = {
     stackWorkflow3Title: 'Wissensabruf',
     stackWorkflow3Desc: 'Indexierte Dokumente durchsuchen und referenzierte URLs in einer Pipeline abrufen.',
     stackBackToTools: 'Zurück zu Tools',
-    navVaultPro: 'Vault Pro',
-    vaultPageTitle: 'Symaira Vault Pro',
-    vaultPageSubtitle: 'Sichere Verwaltung von Passwörtern und Secrets für dich, deine Teams und deine AI-Agenten.',
-    vaultPageFreeTitle: 'Lokaler Core',
-    vaultPageFreePrice: 'Kostenlos',
-    vaultPageFreePriceSub: 'Open Source & self-hosted',
-    vaultPageProTitle: 'Vault Pro',
-    vaultPageProPrice: '',
-    vaultPageProPriceSub: '',
-    vaultPageSuiteTitle: 'AI Suite Bundle',
-    vaultPageSuitePrice: '',
-    vaultPageSuitePriceSub: '',
-    vaultPageCompareTitle: 'Core vs. Pro im Vergleich',
-    vaultPageFeatureSync: 'Cloud-Sync für Secrets',
-    vaultPageFeatureSyncDesc: 'Synchronisiere deine Vaults Ende-zu-Ende verschlüsselt über unseren sicheren Cloud-Dienst.',
-    vaultPageFeatureSSO: 'Enterprise SSO & Teams',
-    vaultPageFeatureSSODesc: 'Authentifizierung über Okta, Entra ID oder Google. Verwalte Berechtigungen für Team-Agenten.',
-    vaultPageFeatureWeb: 'Web-Verwaltungskonsole',
-    vaultPageFeatureWebDesc: 'Verwalte Mitgliedschaften, prüfe Audit-Logs und erstelle Token in einem modernen Web-Dashboard.',
-    vaultPageFeatureEncryption: 'Local-First Verschlüsselung',
-    vaultPageFeatureEncryptionDesc: 'Alle Secrets werden lokal per Age verschlüsselt, bevor sie die Cloud berühren.',
-    vaultPageFeatureMcp: 'Zero-Trust MCP-Server',
-    vaultPageFeatureMcpDesc: 'Stelle AI-Agenten begrenzte Credentials bereit, statt rohe Passwörter zu teilen.',
-    vaultPageCTA: 'Coming Soon',
-    vaultPageCTAFree: 'Free Core herunterladen',
-    vaultPageFAQTitle: 'Häufig gestellte Fragen',
-    vaultPageFAQ1Q: 'Wie wird Vault Pro verschlüsselt?',
-    vaultPageFAQ1A: 'Vault Pro arbeitet local-first. Deine Secrets werden auf deinem Rechner mit age (X25519 und ChaCha20-Poly1305) verschlüsselt. Der Cloud-Dienst speichert nur verschlüsselte Blobs und kann deine Daten niemals lesen.',
-    vaultPageFAQ2Q: 'Ist dieser Dienst bereits live?',
-    vaultPageFAQ2A: 'Nein, dies ist derzeit ein Entwurf und Konzept-Visualisierung. Das Dashboard is interaktiv, aber es können noch keine echten Accounts erstellt oder Zahlungen durchgeführt werden.',
     heroBadgeGermany: 'Made in Germany · DSGVO-konform',
-    proHostingTag: 'Deutsches Hosting · DSGVO',
     footerMadeInGermany: 'Made in Germany · 100% DSGVO-konform',
-    vaultPageFAQ3Q: 'Wo werden die Cloud-Features gehostet?',
-    vaultPageFAQ3A: 'Alle geplanten Cloud- und Pro-Komponenten werden vollständig auf Servern in Deutschland gehostet und unter strenger Einhaltung der Datenschutz-Grundverordnung (DSGVO) entwickelt. Da die Kernanwendung local-first arbeitet, verlassen die meisten Daten Ihre eigene Hardware ohnehin nicht.',
     compareProBtn: 'Pro-Features vergleichen',
     viewDetailsBtn: 'Mehr erfahren',
     coreFreeTitle: 'Lokaler Core',
     coreFreeDesc: 'Open Source & self-hosted',
-    proPlannedTitle: 'Pro-Variante (Geplant)',
-    proPlannedDesc: 'Cloud-Features & Orchestrierung',
     priceFree: 'Kostenlos',
     pricePlanned: 'Geplant',
-    toolPageCompareTitle: 'Vergleich: Core vs. Pro Features',
     toolPageFAQTitle: 'Häufig gestellte Fragen',
-    toolPageFAQ1Q: 'Wo werden die Cloud-Features gehostet?',
-    toolPageFAQ1A: 'Alle geplanten Cloud- und Pro-Komponenten werden ausschließlich auf Servern in Deutschland gehostet und unter strenger Einhaltung der Datenschutz-Grundverordnung (DSGVO) entwickelt. Da die Kernanwendung lokal läuft (local-first), verlassen Ihre Daten Ihre eigene Hardware nicht.',
-    toolPageFAQ2Q: 'Ist dies ein aktiver Dienst?',
-    toolPageFAQ2A: 'Nein, dies ist derzeit ein Entwurf und eine Konzeptdarstellung. Die Benutzeroberfläche ist interaktiv, aber es können noch keine echten Konten erstellt oder Zahlungen abgewickelt werden.',
     toolPageFAQ3Q: 'Ist der lokale Core wirklich kostenlos?',
     toolPageFAQ3A: 'Ja! Die CLI-Tools, MCP-Server und lokalen Desktop-Anwendungen sind zu 100 % Open-Source (Apache-2.0 oder AGPLv3) und werden für immer kostenlos bleiben.',
   },

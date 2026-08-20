@@ -34,7 +34,6 @@ export interface Product {
   icon: ReactNode;
   tone: string;
   demoType: string;
-  proHint: string;
   category: 'context' | 'security' | 'system';
 }
 
@@ -60,7 +59,6 @@ export const getProducts = (t: (key: keyof TranslationMap) => string): Product[]
     icon: <Shield size={24} />,
     tone: 'gold',
     demoType: 'vault',
-    proHint: t('vaultProHint'),
     category: 'security',
   },
   {
@@ -77,7 +75,6 @@ export const getProducts = (t: (key: keyof TranslationMap) => string): Product[]
     icon: <Brain size={24} />,
     tone: 'violet',
     demoType: 'memory',
-    proHint: t('memoryProHint'),
     category: 'context',
   },
   {
@@ -94,7 +91,6 @@ export const getProducts = (t: (key: keyof TranslationMap) => string): Product[]
     icon: <Search size={24} />,
     tone: 'coral',
     demoType: 'seek',
-    proHint: t('seekProHint'),
     category: 'context',
   },
   {
@@ -111,7 +107,6 @@ export const getProducts = (t: (key: keyof TranslationMap) => string): Product[]
     icon: <Globe size={24} />,
     tone: 'sky',
     demoType: 'fetch',
-    proHint: t('fetchProHint'),
     category: 'context',
   },
   {
@@ -128,7 +123,6 @@ export const getProducts = (t: (key: keyof TranslationMap) => string): Product[]
     icon: <Compass size={24} />,
     tone: 'indigo',
     demoType: 'scope',
-    proHint: t('scopeProHint'),
     category: 'security',
   },
   {
@@ -145,7 +139,6 @@ export const getProducts = (t: (key: keyof TranslationMap) => string): Product[]
     icon: <Eye size={24} />,
     tone: 'ice',
     demoType: 'eraseme',
-    proHint: t('erasemeProHint'),
     category: 'security',
   },
   {
@@ -162,7 +155,6 @@ export const getProducts = (t: (key: keyof TranslationMap) => string): Product[]
     icon: <Terminal size={24} />,
     tone: 'mint',
     demoType: 'terminal-app',
-    proHint: t('terminalProHint'),
     category: 'system',
   },
   {
@@ -179,7 +171,6 @@ export const getProducts = (t: (key: keyof TranslationMap) => string): Product[]
     icon: <Workflow size={24} />,
     tone: 'violet',
     demoType: 'vibecoder',
-    proHint: t('vibecoderProHint'),
     category: 'system',
   },
   {
@@ -196,7 +187,6 @@ export const getProducts = (t: (key: keyof TranslationMap) => string): Product[]
     icon: <MousePointerClick size={24} />,
     tone: 'rose',
     demoType: 'operate',
-    proHint: t('operateProHint'),
     category: 'system',
   },
   {
@@ -213,7 +203,6 @@ export const getProducts = (t: (key: keyof TranslationMap) => string): Product[]
     icon: <Cpu size={24} />,
     tone: 'amber',
     demoType: 'tune',
-    proHint: t('tuneProHint'),
     category: 'system',
   },
   {
@@ -230,7 +219,6 @@ export const getProducts = (t: (key: keyof TranslationMap) => string): Product[]
     icon: <Router size={24} />,
     tone: 'sky',
     demoType: 'fritz',
-    proHint: t('fritzProHint'),
     category: 'system',
   },
   {
@@ -247,7 +235,6 @@ export const getProducts = (t: (key: keyof TranslationMap) => string): Product[]
     icon: <ShieldAlert size={24} />,
     tone: 'indigo',
     demoType: 'guard',
-    proHint: t('guardProHint'),
     category: 'security',
   },
   {
@@ -264,7 +251,6 @@ export const getProducts = (t: (key: keyof TranslationMap) => string): Product[]
     icon: <Printer size={24} />,
     tone: 'coral',
     demoType: 'print',
-    proHint: t('printProHint'),
     category: 'context',
   },
   {
@@ -281,7 +267,6 @@ export const getProducts = (t: (key: keyof TranslationMap) => string): Product[]
     icon: <Layers size={24} />,
     tone: 'mint',
     demoType: 'skills',
-    proHint: t('skillsProHint'),
     category: 'system',
   },
   {
@@ -298,7 +283,6 @@ export const getProducts = (t: (key: keyof TranslationMap) => string): Product[]
     icon: <Upload size={24} />,
     tone: 'amber',
     demoType: 'ingest',
-    proHint: t('ingestProHint'),
     category: 'context',
   },
   {
@@ -315,7 +299,6 @@ export const getProducts = (t: (key: keyof TranslationMap) => string): Product[]
     icon: <Layout size={24} />,
     tone: 'violet',
     demoType: 'desktop',
-    proHint: t('desktopProHint'),
     category: 'system',
   },
   {
@@ -332,7 +315,6 @@ export const getProducts = (t: (key: keyof TranslationMap) => string): Product[]
     icon: <Mic size={24} />,
     tone: 'mint',
     demoType: 'meet',
-    proHint: t('meetProHint'),
     category: 'system',
   },
 ];

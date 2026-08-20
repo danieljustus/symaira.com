@@ -7,12 +7,8 @@
 
 Public website for the Symaira ecosystem.
 
-Symaira tools follow one product model:
-
-- Free, open-source, self-hosted cores.
-- Paid cloud-hosted Pro variants built on top of those cores.
-- Shared Pro infrastructure for tenant operations, billing hooks, health,
-  lifecycle, deployment, and compatibility checks.
+Symaira tools follow one product model: free, open-source, self-hosted cores.
+There are no paid or cloud-hosted editions — each tool ships exactly once.
 
 ## Current Public Story
 
@@ -20,10 +16,6 @@ The site currently presents dedicated pages for 17 tools: Vault, Memory, Seek,
 Fetch, Scope, EraseMe, Terminal, Vibecoder, Operate, Tune, Fritz, Guard, Print,
 Skills, Ingest, Desktop, and Meet (see `src/config/products.tsx` and the route
 table in `src/App.tsx`).
-
-Pro pages/tiles (e.g. Vault Pro) are implemented but currently hidden behind
-the `SHOW_PRO` feature flag in `src/config/features.ts` until the corresponding
-Pro/Core runtime contracts are release-ready.
 
 ## Development
 

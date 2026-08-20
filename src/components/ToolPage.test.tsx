@@ -67,7 +67,7 @@ describe('ToolPage', () => {
       </LanguageProvider>,
     );
 
-    // With SHOW_PRO=false, only FAQ3 is shown: "Is the local core really free?"
+    // FAQ3 is the only FAQ: "Is the local core really free?"
     const faqBtn = screen.getByText('Is the local core really free?');
     const btn = faqBtn.closest('button')!;
     expect(btn).toBeTruthy();
@@ -175,19 +175,6 @@ describe('ToolPage', () => {
     );
 
     expect(screen.getByText('Frequently Asked Questions')).toBeTruthy();
-  });
-
-  // ---------- proHint parsing (getProFeaturesList) ----------
-
-  it('does not show pricing comparison when SHOW_PRO is false', () => {
-    render(
-      <LanguageProvider>
-        <ToolPage toolId="vault" />
-      </LanguageProvider>,
-    );
-
-    // With SHOW_PRO=false, the pricing comparison should not render
-    expect(screen.queryByText('Compare Core vs. Pro Features')).toBeNull();
   });
 
   // ---------- Different demo types render ----------
