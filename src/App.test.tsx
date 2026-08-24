@@ -52,12 +52,14 @@ describe('App routing and document titles', () => {
       'The Symaira AI Stack — MCP Servers & Local-First Agent Tools | Symaira',
     );
 
-    setHash('#/seek');
-    expect(document.title).toBe('Symaira Seek — Local Hybrid Search (BM25 + Vectors, RRF)');
-
-    setHash('#/tune');
+    setHash('#/brain');
     expect(document.title).toBe(
-      'Symaira Tune — Automatic Display, Focus, Energy & Cooling Profiles for Mac | Symaira',
+      'Symaira Brain — Portable Agent Context Layer (Memory, Skills, Credentials)',
+    );
+
+    setHash('#/cockpit');
+    expect(document.title).toBe(
+      'Symaira Cockpit — Mac Thermals, Ports & GUI Automation (CLI + MCP)',
     );
   });
 

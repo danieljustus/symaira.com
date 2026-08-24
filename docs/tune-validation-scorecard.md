@@ -1,3 +1,8 @@
+> **Historical (2026-08-24).** Symaira Tune is no longer a standalone tool —
+> it ships as the `tune` subcommand of `symcockpit`. The funnel this scorecard
+> tracked (`TuneEditions`, `TuneFunnel`, `src/config/tune.ts`) has been removed
+> from the site. This document is kept as a record of the experiment only.
+
 # Symaira Tune — Paid-Demand Validation Scorecard (30-day window)
 
 Status: **DRAFT** — decision thresholds below are proposals pending maintainer

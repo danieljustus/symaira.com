@@ -21,22 +21,14 @@ const ROUTE_TITLES: Record<string, string> = {
   '#/privacy': 'Privacy Policy | Symaira',
   '#/datenschutz': 'Datenschutzerklärung | Symaira',
   '#/vault': 'Symaira Vault — Agent-Safe Secrets Manager (CLI + MCP)',
-  '#/memory': 'Symaira Memory — Persistent Semantic Memory for AI Agents',
-  '#/seek': 'Symaira Seek — Local Hybrid Search (BM25 + Vectors, RRF)',
-  '#/fetch': 'Symaira Fetch — Web Fetch Engine for LLM Agents',
-  '#/scope': 'Symaira Scope — Port, Container & MCP Server Scanner',
+  '#/brain': 'Symaira Brain — Portable Agent Context Layer (Memory, Skills, Credentials)',
+  '#/desktop': 'Symaira Desktop — Local-First Markdown Workspace',
+  '#/browse': 'Symaira Browse — Agent Browser with Human Handoff',
   '#/eraseme': 'Symaira EraseMe — Data Broker Removal Automation',
   '#/terminal': 'Symaira Terminal — Native macOS Terminal for Coding Agents',
+  '#/cockpit': 'Symaira Cockpit — Mac Thermals, Ports & GUI Automation (CLI + MCP)',
   '#/vibecoder': 'Symaira Vibecoder — Visual Agent Cycle Dashboard',
-  '#/operate': 'Symaira Operate — macOS GUI Automation MCP Server',
-  '#/tune': 'Symaira Tune — Automatic Display, Focus, Energy & Cooling Profiles for Mac | Symaira',
   '#/fritz': 'Symaira Fritz — FRITZ!Box CLI & MCP Server',
-  '#/guard': 'Symaira Guard — Security Gateway for AI Agents & MCP',
-  '#/print': 'Symaira Print — Markdown to Accessible PDF via Typst',
-  '#/skills': 'Symaira Skills — Portable AI Agent Skill Manager',
-  '#/ingest': 'Symaira Ingest — Local OCR & Document Ingestion',
-  '#/desktop': 'Symaira Desktop — Local-First Markdown Workspace',
-  '#/meet': 'Symaira Meet — Consent-First Local Meeting Recording & Transcription CLI | Symaira',
 };
 
 function App() {
@@ -62,7 +54,7 @@ function App() {
   const isLegalPage = hash === '#/impressum' || hash === '#/privacy' || hash === '#/datenschutz';
   const isStackPage = hash === '#/stack';
   
-  const validTools = ['vault', 'memory', 'seek', 'fetch', 'scope', 'eraseme', 'terminal', 'vibecoder', 'operate', 'tune', 'fritz', 'guard', 'print', 'skills', 'ingest', 'desktop', 'meet'];
+  const validTools = ['vault', 'brain', 'desktop', 'browse', 'eraseme', 'terminal', 'cockpit', 'vibecoder', 'fritz'];
   const toolHashMatch = hash.match(/^#\/([a-z-]+)$/);
   const toolName = toolHashMatch ? toolHashMatch[1] : null;
   const isDynamicToolPage = toolName && validTools.includes(toolName);

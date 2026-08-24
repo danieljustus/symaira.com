@@ -1,36 +1,28 @@
 import React, { useState } from 'react';
-import { Terminal, ArrowRight, Copy, Check, Shield, Brain, Search, Globe, Eye, Compass, Cpu, MousePointerClick, Router, ShieldAlert, Printer, Layers, Upload, Layout } from 'lucide-react';
+import { Terminal, ArrowRight, Copy, Check, Shield, Brain, Globe, Eye, Cpu, Router, Workflow, Layout } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 const mcpConfigJson = `{
   "mcpServers": {
+    "symbrain": {
+      "command": "symbrain",
+      "args": ["mcp", "serve"]
+    },
     "symvault": {
       "command": "symvault",
       "args": ["mcp", "serve"]
     },
-    "symmemory": {
-      "command": "symmemory",
+    "symdesk": {
+      "command": "symdesk",
+      "args": ["mcp"]
+    },
+    "symbrowse": {
+      "command": "symbrowse",
       "args": ["mcp", "serve"]
     },
-    "symseek": {
-      "command": "symseek",
+    "symcockpit": {
+      "command": "symcockpit",
       "args": ["mcp", "serve"]
-    },
-    "symfetch": {
-      "command": "symfetch",
-      "args": ["mcp", "serve"]
-    },
-    "symscope": {
-      "command": "symscope",
-      "args": ["serve"]
-    },
-    "symoperate": {
-      "command": "symoperate",
-      "args": ["serve"]
-    },
-    "symtune": {
-      "command": "symtune",
-      "args": ["serve"]
     },
     "symeraseme": {
       "command": "symeraseme",
@@ -38,22 +30,6 @@ const mcpConfigJson = `{
     },
     "symfritz": {
       "command": "symfritz",
-      "args": ["mcp"]
-    },
-    "symprint": {
-      "command": "symprint",
-      "args": ["mcp"]
-    },
-    "symskills": {
-      "command": "symskills",
-      "args": ["serve", "--stdio"]
-    },
-    "symingest": {
-      "command": "symingest",
-      "args": ["mcp"]
-    },
-    "symdesk": {
-      "command": "symdesk",
       "args": ["mcp"]
     }
   }
@@ -70,11 +46,11 @@ export const Stack: React.FC = () => {
     },
     {
       label: t('stackInstallStep2Label'),
-      command: 'brew install symvault symmemory symseek symeraseme symscope symfetch symingest symvibe symfritz symguard symskills symdesk',
+      command: 'brew install symvault symbrain symdesk symbrowse symcockpit symeraseme symvibe symfritz',
     },
     {
       label: t('stackInstallStep3Label'),
-      command: 'brew install --cask symterminal symoperate symtune',
+      command: 'brew install --cask symterminal',
     },
   ];
 
@@ -94,17 +70,17 @@ export const Stack: React.FC = () => {
     {
       title: t('stackWorkflow1Title'),
       desc: t('stackWorkflow1Desc'),
-      command: 'symfetch get https://docs.example.com/api --format md | symseek index --stdin',
+      command: 'symbrowse read https://docs.example.com/api --max-tokens 8000 | symdesk import --stdin',
     },
     {
       title: t('stackWorkflow2Title'),
       desc: t('stackWorkflow2Desc'),
-      command: 'symvault run -- symmemory sync --encrypted --source local',
+      command: 'symvault run -- symbrain memory sync --source local',
     },
     {
       title: t('stackWorkflow3Title'),
       desc: t('stackWorkflow3Desc'),
-      command: 'symseek query "deployment guide" --format json --top 5',
+      command: 'symdesk search "deployment guide" --format json --top 5',
     },
   ];
 
@@ -116,52 +92,46 @@ export const Stack: React.FC = () => {
       tone: 'gold',
     },
     {
+      icon: <Brain size={18} />,
+      title: 'Symaira Brain',
+      status: 'gateway',
+      tone: 'violet',
+    },
+    {
+      icon: <Layout size={18} />,
+      title: 'Symaira Desktop',
+      status: 'available',
+      tone: 'amber',
+    },
+    {
+      icon: <Globe size={18} />,
+      title: 'Symaira Browse',
+      status: 'available',
+      tone: 'sky',
+    },
+    {
       icon: <Eye size={18} />,
       title: 'Symaira EraseMe',
       status: 'available',
       tone: 'ice',
     },
     {
-      icon: <Brain size={18} />,
-      title: 'Symaira Memory',
-      status: 'available',
-      tone: 'violet',
+      icon: <Terminal size={18} />,
+      title: 'Symaira Terminal',
+      status: 'app',
+      tone: 'mint',
     },
     {
-      icon: <Search size={18} />,
-      title: 'Symaira Seek',
-      status: 'available',
-      tone: 'coral',
-    },
-    {
-      icon: <Globe size={18} />,
-      title: 'Symaira Fetch',
-      status: 'available',
-      tone: 'sky',
-    },
-    {
-      icon: <Compass size={18} />,
-      title: 'Symaira Scope',
+      icon: <Cpu size={18} />,
+      title: 'Symaira Cockpit',
       status: 'available',
       tone: 'indigo',
     },
     {
-      icon: <Terminal size={18} />,
-      title: 'Symaira Terminal',
+      icon: <Workflow size={18} />,
+      title: 'Symaira Vibecoder',
       status: 'available',
-      tone: 'mint',
-    },
-    {
-      icon: <MousePointerClick size={18} />,
-      title: 'Symaira Operate',
-      status: 'available',
-      tone: 'rose',
-    },
-    {
-      icon: <Cpu size={18} />,
-      title: 'Symaira Tune',
-      status: 'available',
-      tone: 'amber',
+      tone: 'violet',
     },
     {
       icon: <Router size={18} />,
@@ -169,37 +139,8 @@ export const Stack: React.FC = () => {
       status: 'available',
       tone: 'sky',
     },
-    {
-      icon: <ShieldAlert size={18} />,
-      title: 'Symaira Guard',
-      status: 'gateway',
-      tone: 'indigo',
-    },
-    {
-      icon: <Printer size={18} />,
-      title: 'Symaira Print',
-      status: 'available',
-      tone: 'coral',
-    },
-    {
-      icon: <Layers size={18} />,
-      title: 'Symaira Skills',
-      status: 'available',
-      tone: 'mint',
-    },
-    {
-      icon: <Upload size={18} />,
-      title: 'Symaira Ingest',
-      status: 'available',
-      tone: 'amber',
-    },
-    {
-      icon: <Layout size={18} />,
-      title: 'Symaira Desktop',
-      status: 'available',
-      tone: 'violet',
-    },
   ];
+
 
   return (
     <section
@@ -276,7 +217,7 @@ export const Stack: React.FC = () => {
             <div className="stack-tool-info">
               <span className="stack-tool-name">{tool.title}</span>
               <span className={`stack-tool-status ${tool.status === 'coming-soon' ? 'stack-tool-status-coming' : ''}`}>
-                {tool.status === 'available' ? 'MCP' : tool.status === 'gateway' ? 'Gateway' : 'Soon'}
+                {tool.status === 'available' ? 'MCP' : tool.status === 'gateway' ? 'Gateway' : tool.status === 'app' ? 'App' : 'Soon'}
               </span>
             </div>
           </div>

@@ -14,10 +14,7 @@ export default defineConfig({
       // UI code without tests yet) is reported in .github/coverage/ but is
       // not gated until more suites land.
       include: [
-        'src/config/tune.ts',
         'src/config/analytics.ts',
-        'src/components/TuneEditions.tsx',
-        'src/components/TuneFunnel.tsx',
         // Cycle_04 (audit 2026-08-13): behavior-focused suites landed for the
         // most regression-prone untested code — consent matrix, language
         // detection + t() fallback, and hash routing / document titles.
