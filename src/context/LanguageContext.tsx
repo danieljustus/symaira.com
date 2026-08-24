@@ -43,6 +43,61 @@ export interface TranslationMap {
   vaultFeature3: string;
   vaultFeature4: string;
   vaultBtn: string;
+  brainBadge: string;
+  brainStatus: string;
+  brainTitle: string;
+  brainDesc: string;
+  brainBestFor: string;
+  brainAutomates: string;
+  brainFeature1: string;
+  brainFeature2: string;
+  brainFeature3: string;
+  brainFeature4: string;
+  brainFeature5: string;
+  brainFeature6: string;
+  brainBtn: string;
+  browseBadge: string;
+  browseStatus: string;
+  browseTitle: string;
+  browseDesc: string;
+  browseBestFor: string;
+  browseAutomates: string;
+  browseFeature1: string;
+  browseFeature2: string;
+  browseFeature3: string;
+  browseFeature4: string;
+  browseFeature5: string;
+  browseBtn: string;
+  cockpitBadge: string;
+  cockpitStatus: string;
+  cockpitTitle: string;
+  cockpitDesc: string;
+  cockpitBestFor: string;
+  cockpitAutomates: string;
+  cockpitFeature1: string;
+  cockpitFeature2: string;
+  cockpitFeature3: string;
+  cockpitFeature4: string;
+  cockpitFeature5: string;
+  cockpitFeature6: string;
+  cockpitBtn: string;
+  desktopFeature5: string;
+  desktopFeature6: string;
+  brainDemoMemory: string;
+  brainDemoSkills: string;
+  brainDemoVault: string;
+  brainDemoStatusExposed: string;
+  brainDemoStatusScoped: string;
+  brainDemoStatusDenied: string;
+  browseDemoInput: string;
+  browseDemoStatusEngine: string;
+  browseDemoStatusDom: string;
+  browseDemoStatusHandoff: string;
+  cockpitDemoTitle: string;
+  cockpitDemoScanning: string;
+  cockpitDemoConflict: string;
+  cockpitDemoThermals: string;
+  cockpitDemoOperate: string;
   erasemeBadge: string;
   erasemeStatus: string;
   erasemeTitle: string;
@@ -54,39 +109,6 @@ export interface TranslationMap {
   erasemeFeature3: string;
   erasemeFeature4: string;
   erasemeBtn: string;
-  memoryBadge: string;
-  memoryStatus: string;
-  memoryTitle: string;
-  memoryDesc: string;
-  memoryBestFor: string;
-  memoryAutomates: string;
-  memoryFeature1: string;
-  memoryFeature2: string;
-  memoryFeature3: string;
-  memoryFeature4: string;
-  memoryBtn: string;
-  seekBadge: string;
-  seekStatus: string;
-  seekTitle: string;
-  seekDesc: string;
-  seekBestFor: string;
-  seekAutomates: string;
-  seekFeature1: string;
-  seekFeature2: string;
-  seekFeature3: string;
-  seekFeature4: string;
-  seekBtn: string;
-  fetchBadge: string;
-  fetchStatus: string;
-  fetchTitle: string;
-  fetchDesc: string;
-  fetchBestFor: string;
-  fetchAutomates: string;
-  fetchFeature1: string;
-  fetchFeature2: string;
-  fetchFeature3: string;
-  fetchFeature4: string;
-  fetchBtn: string;
   terminalBadge: string;
   terminalStatus: string;
   terminalTitle: string;
@@ -98,39 +120,6 @@ export interface TranslationMap {
   terminalFeature3: string;
   terminalFeature4: string;
   terminalBtn: string;
-  scopeBadge: string;
-  scopeStatus: string;
-  scopeTitle: string;
-  scopeDesc: string;
-  scopeBestFor: string;
-  scopeAutomates: string;
-  scopeFeature1: string;
-  scopeFeature2: string;
-  scopeFeature3: string;
-  scopeFeature4: string;
-  scopeBtn: string;
-  operateBadge: string;
-  operateStatus: string;
-  operateTitle: string;
-  operateDesc: string;
-  operateBestFor: string;
-  operateAutomates: string;
-  operateFeature1: string;
-  operateFeature2: string;
-  operateFeature3: string;
-  operateFeature4: string;
-  operateBtn: string;
-  tuneBadge: string;
-  tuneStatus: string;
-  tuneTitle: string;
-  tuneDesc: string;
-  tuneBestFor: string;
-  tuneAutomates: string;
-  tuneFeature1: string;
-  tuneFeature2: string;
-  tuneFeature3: string;
-  tuneFeature4: string;
-  tuneBtn: string;
   vibecoderBadge: string;
   vibecoderStatus: string;
   vibecoderTitle: string;
@@ -153,50 +142,6 @@ export interface TranslationMap {
   fritzFeature3: string;
   fritzFeature4: string;
   fritzBtn: string;
-  guardBadge: string;
-  guardStatus: string;
-  guardTitle: string;
-  guardDesc: string;
-  guardBestFor: string;
-  guardAutomates: string;
-  guardFeature1: string;
-  guardFeature2: string;
-  guardFeature3: string;
-  guardFeature4: string;
-  guardBtn: string;
-  printBadge: string;
-  printStatus: string;
-  printTitle: string;
-  printDesc: string;
-  printBestFor: string;
-  printAutomates: string;
-  printFeature1: string;
-  printFeature2: string;
-  printFeature3: string;
-  printFeature4: string;
-  printBtn: string;
-  skillsBadge: string;
-  skillsStatus: string;
-  skillsTitle: string;
-  skillsDesc: string;
-  skillsBestFor: string;
-  skillsAutomates: string;
-  skillsFeature1: string;
-  skillsFeature2: string;
-  skillsFeature3: string;
-  skillsFeature4: string;
-  skillsBtn: string;
-  ingestBadge: string;
-  ingestStatus: string;
-  ingestTitle: string;
-  ingestDesc: string;
-  ingestBestFor: string;
-  ingestAutomates: string;
-  ingestFeature1: string;
-  ingestFeature2: string;
-  ingestFeature3: string;
-  ingestFeature4: string;
-  ingestBtn: string;
   desktopBadge: string;
   desktopStatus: string;
   desktopTitle: string;
@@ -208,100 +153,12 @@ export interface TranslationMap {
   desktopFeature3: string;
   desktopFeature4: string;
   desktopBtn: string;
-  meetBadge: string;
-  meetStatus: string;
-  meetTitle: string;
-  meetDesc: string;
-  meetBestFor: string;
-  meetAutomates: string;
-  meetFeature1: string;
-  meetFeature2: string;
-  meetFeature3: string;
-  meetFeature4: string;
-  meetBtn: string;
-  meetDemoTitle: string;
-  meetDemoLine1: string;
-  meetDemoLine2: string;
-  meetDemoLine3: string;
-  meetDemoLine4: string;
   heroBadgeGermany: string;
   footerMadeInGermany: string;
   terminalDemoPane1: string;
   terminalDemoPane2: string;
   terminalDemoPrompt: string;
   terminalDemoAction: string;
-  scopeDemoTitle: string;
-  scopeDemoScanning: string;
-  scopeDemoConflict: string;
-  scopeDemoMcp: string;
-  scopeDemoSuggest: string;
-  operateDemoTitle: string;
-  operateDemoQuery: string;
-  operateDemoSafety: string;
-  operateDemoAction: string;
-  operateDemoSuccess: string;
-  tuneDemoTitle: string;
-  tuneDemoCPU: string;
-  tuneDemoFan: string;
-  tuneDemoPower: string;
-  tuneDemoEDR: string;
-  tuneEditionsTitle: string;
-  tuneEditionsIntro: string;
-  tuneEditionStoreFreeName: string;
-  tuneEditionStoreFreePrice: string;
-  tuneEditionStoreFreePriceSub: string;
-  tuneEditionStoreProName: string;
-  tuneEditionStoreProPrice: string;
-  tuneEditionStoreProPriceSub: string;
-  tuneEditionHardwareName: string;
-  tuneEditionHardwarePrice: string;
-  tuneEditionHardwarePriceSub: string;
-  tuneEditionBadgeAvailable: string;
-  tuneEditionBadgePlanned: string;
-  tuneEditionsDraftTag: string;
-  tuneEditionsDraftNote: string;
-  tuneEditionsDirectOnlyTag: string;
-  tuneEditionsUseCasesTitle: string;
-  tuneUseCaseSunlight: string;
-  tuneUseCaseEvening: string;
-  tuneUseCaseFocus: string;
-  tuneUseCaseVideoCall: string;
-  tuneUseCaseRendering: string;
-  tuneUseCaseDeskMode: string;
-  tuneEditionsUpgradeCredit: string;
-  tuneEditionsFeatureDisplayAutomation: string;
-  tuneEditionsFeatureFocusPresets: string;
-  tuneEditionsFeatureMenuBar: string;
-  tuneEditionsFeatureStoreFreeEverything: string;
-  tuneEditionsFeatureAdvancedProfiles: string;
-  tuneEditionsFeatureAutomationRules: string;
-  tuneEditionsFeatureSmcFan: string;
-  tuneEditionsFeatureChargeLimit: string;
-  tuneEditionsFeatureCli: string;
-  tuneEditionsFeatureMcp: string;
-  tuneEditionsFeatureExtendedDisplay: string;
-  tuneEditionsFeatureSafetyRestore: string;
-  tuneFunnelTitle: string;
-  tuneFunnelIntro: string;
-  tuneFunnelCtaDownload: string;
-  tuneFunnelCtaDownloadSub: string;
-  tuneFunnelInstallCopied: string;
-  tuneFunnelReleaseLink: string;
-  tuneFunnelInterestTitle: string;
-  tuneFunnelInterestDesc: string;
-  tuneFunnelInterestSelectStorePro: string;
-  tuneFunnelInterestSelectHardware: string;
-  tuneFunnelInterestButton: string;
-  tuneFunnelInterestSent: string;
-  tuneFunnelInterestSubject: string;
-  tuneFunnelPrivacyNote: string;
-  tuneFunnelTrustTitle: string;
-  tuneFunnelTrustLocal: string;
-  tuneFunnelTrustNotarized: string;
-  tuneFunnelTrustMacos: string;
-  tuneFunnelTrustRestore: string;
-  tuneFunnelTrialCta: string;
-  tuneFunnelPreorderCta: string;
   vibecoderDemoTitle: string;
   vibecoderDemoPhase1: string;
   vibecoderDemoPhase2: string;
@@ -311,18 +168,6 @@ export interface TranslationMap {
   filterContext: string;
   filterSecurity: string;
   filterSystem: string;
-  memoryDemoAdd: string;
-  memoryDemoGuard: string;
-  memoryDemoSync: string;
-  memoryDemoStatusIngested: string;
-  memoryDemoStatusSanitized: string;
-  memoryDemoStatusPending: string;
-  seekDemoQuery: string;
-  seekDemoRRF: string;
-  fetchDemoInput: string;
-  fetchDemoStatusTls: string;
-  fetchDemoStatusDom: string;
-  fetchDemoStatusTokens: string;
   copyCommandLabel: string;
   copiedCommandLabel: string;
   vaultDemoLine1: string;
@@ -426,7 +271,7 @@ const translations: Record<Language, TranslationMap> = {
     visionPillar3Title: 'Useful Autonomy',
     visionPillar3Desc: 'Automation should be explainable, bounded, and safe enough to trust with repeatable work without ever sacrificing human oversight.',
     toolsTitle: 'The Symaira tools',
-    toolsSubtitle: '17 open-source, local-first tools for human-AI collaboration — every one MCP-ready and designed to put trust back in your hands, focusing on secrets, identity, privacy, and repeatable agent workflows.',
+    toolsSubtitle: 'Nine open-source, local-first tools for human-AI collaboration — every one MCP-ready and designed to put trust back in your hands, focusing on secrets, identity, privacy, and repeatable agent workflows.',
     bestForLabel: 'Best for',
     automatesLabel: 'What it automates',
     vaultBadge: 'Secrets & agents',
@@ -440,6 +285,61 @@ const translations: Record<Language, TranslationMap> = {
     vaultFeature3: 'symvault run injects secrets as environment variables for commands.',
     vaultFeature4: 'TOTP, autotype, Git sync, and zero telemetry built in.',
     vaultBtn: 'View Vault on GitHub',
+    brainBadge: 'Agent context',
+    brainStatus: 'Beta',
+    brainTitle: 'Symaira Brain',
+    brainDesc: 'The portable context layer for AI coding harnesses. Brain exposes your three state cores — memory and entities, the skill catalog, and vault credentials — behind one MCP gateway, with a profile per harness that decides exactly what Claude Code, Cursor, Codex, or opencode is allowed to see.',
+    brainBestFor: 'Anyone running several AI harnesses that should share one memory, one skill set, and one policy.',
+    brainAutomates: 'Profile-scoped MCP exposure, memory capture, skill sync, credential brokering, and audit logging.',
+    brainFeature1: 'Semantic long-term memory with entities, relations, and staged candidates for review.',
+    brainFeature2: 'Skill catalog as a single source of truth, installed and kept in sync across every harness.',
+    brainFeature3: 'One MCP gateway for all harnesses — one profile per connection, each with its own exposure.',
+    brainFeature4: 'Call-time policy enforcement through the built-in symguard module.',
+    brainFeature5: 'Credentials stay in the separate symvault process; Brain only brokers scoped access.',
+    brainFeature6: 'Go CLI plus native SwiftUI apps for macOS and iOS as companion dashboards.',
+    brainBtn: 'View Brain on GitHub',
+    browseBadge: 'Web access',
+    browseStatus: 'Beta',
+    browseTitle: 'Symaira Browse',
+    browseDesc: 'The browser an agent can operate while you take over at any time — without losing the session. Browse combines a Chrome CDP engine for real, JavaScript-heavy pages with a lightweight static fetch engine, and returns clean, token-budgeted Markdown.',
+    browseBestFor: 'Agents that need real web access, logins, and pages behind 2FA or CAPTCHAs.',
+    browseAutomates: 'Page reading, form flows, session handling, and human handoff for approvals.',
+    browseFeature1: 'Dual engine: Chrome via CDP for dynamic pages, static HTTP engine for plain documents.',
+    browseFeature2: 'Out-of-band handoff: you finish the 2FA, CAPTCHA, or approval, the agent keeps the session.',
+    browseFeature3: 'Markdown output with a stable schema, token budget, and page metadata.',
+    browseFeature4: 'Stable element references and reusable flows instead of brittle selectors.',
+    browseFeature5: 'CLI, MCP server, and daemon in one CGO-free binary.',
+    browseBtn: 'View Browse on GitHub',
+    cockpitBadge: 'Mac control',
+    cockpitStatus: 'Beta',
+    cockpitTitle: 'Symaira Cockpit',
+    cockpitDesc: 'One command for your Mac: see what is running — and control what it does. Cockpit tunes thermals, power, and displays, inventories ports, containers, and MCP servers, and automates the graphical interface. Everything answers in JSON, and everything doubles as an MCP server.',
+    cockpitBestFor: 'Mac developers who want ports, thermals, and GUI automation in one structured tool.',
+    cockpitAutomates: 'Display and focus profiles, fan and power policy, port scans, and GUI actions.',
+    cockpitFeature1: 'tune: display, focus, energy, and cooling profiles that switch automatically.',
+    cockpitFeature2: 'scope: local ports, containers, and MCP server inventory with free-port suggestions.',
+    cockpitFeature3: 'operate: macOS GUI automation with screenshots, OCR, and accessibility actions.',
+    cockpitFeature4: 'Structured JSON on every command instead of output you have to scrape.',
+    cockpitFeature5: 'Every capability is also exposed over MCP, so agents get the same surface you do.',
+    cockpitFeature6: 'Native Swift 6 universal binary for macOS 15+, installable via Homebrew.',
+    cockpitBtn: 'View Cockpit on GitHub',
+    desktopFeature5: 'Includes hybrid search, OCR ingestion, Markdown-to-PDF, meeting capture, and a signed project journal.',
+    desktopFeature6: 'Runs locally or self-hosted: HTTP API, Docker, distributed OCR workers, iOS companion app.',
+    brainDemoMemory: 'memory: project decisions, entities, relations',
+    brainDemoSkills: 'skills: catalog synced to every harness',
+    brainDemoVault: 'vault: credential brokered, never inlined',
+    brainDemoStatusExposed: 'exposed',
+    brainDemoStatusScoped: 'scoped',
+    brainDemoStatusDenied: 'brokered',
+    browseDemoInput: 'symbrowse open https://example.com --session research',
+    browseDemoStatusEngine: 'engine: chrome cdp',
+    browseDemoStatusDom: 'dom: rendered, links resolved',
+    browseDemoStatusHandoff: 'handoff: ready for human takeover',
+    cockpitDemoTitle: 'symcockpit',
+    cockpitDemoScanning: 'scope: 24 local ports inventoried',
+    cockpitDemoConflict: 'conflict: port 3000 already bound',
+    cockpitDemoThermals: 'tune: thermal pressure nominal, fans 1980 rpm',
+    cockpitDemoOperate: 'operate: screenshot, ocr, accessibility ready',
     erasemeBadge: 'Privacy automation',
     erasemeStatus: 'Beta',
     erasemeTitle: 'Symaira EraseMe',
@@ -451,39 +351,6 @@ const translations: Record<Language, TranslationMap> = {
     erasemeFeature3: 'Event-sourced SQLite audit trail records every request.',
     erasemeFeature4: 'Manual fallback covers web forms, CAPTCHA, and reports/export.',
     erasemeBtn: 'View EraseMe on GitHub',
-    memoryBadge: 'Context & memory',
-    memoryStatus: 'Beta',
-    memoryTitle: 'Symaira Memory',
-    memoryDesc: 'A persistent context layer and semantic memory base for the Human-AI Symbiosis. Memory enables seamless, long-term context sharing between you and your AI agents with local-first security.',
-    memoryBestFor: 'AI agents needing persistent long-term memory across sessions.',
-    memoryAutomates: 'PII filtering, context sync, memory pruning, and MCP recall.',
-    memoryFeature1: 'Persistent semantic memory layer across agent workflows.',
-    memoryFeature2: 'Local-first SQLite storage with optional end-to-end encrypted sync.',
-    memoryFeature3: 'Model Context Protocol (MCP) server for instant agent integration.',
-    memoryFeature4: 'PII Guard sanitizes sensitive personal data before ingestion.',
-    memoryBtn: 'View Memory on GitHub',
-    seekBadge: 'Hybrid search',
-    seekStatus: 'Beta',
-    seekTitle: 'Symaira Seek',
-    seekDesc: 'A fast, local-first document retrieval engine that provides hybrid search by fusing BM25 keyword matching and vector semantic similarity using Reciprocal Rank Fusion (RRF).',
-    seekBestFor: 'Developers and agents requiring fast, offline hybrid document search.',
-    seekAutomates: 'Directory crawling, SQLite FTS5 keyword indexing, and RRF ranking.',
-    seekFeature1: 'Hybrid retrieval: keyword search combined with vector embeddings.',
-    seekFeature2: 'Reciprocal Rank Fusion (RRF) for optimal ranking of search results.',
-    seekFeature3: 'TurboQuant quantized 2-4 bit vector search for fast offline retrieval.',
-    seekFeature4: 'Ollama integration for HyDE query expansion, reranking, and local FNV-1a fallback.',
-    seekBtn: 'View Seek on GitHub',
-    fetchBadge: 'Web context fetch',
-    fetchStatus: 'Beta',
-    fetchTitle: 'Symaira Fetch',
-    fetchDesc: 'A terminal-native web fetch engine for LLM agents. Fetch web pages using browser-impersonating TLS/HTTP2 and transform HTML into LLM-optimized Markdown or JSON via a semantic DOM pipeline—without JavaScript execution overhead.',
-    fetchBestFor: 'Developers and AI agents requiring clean, structured web content without browser overhead.',
-    fetchAutomates: 'TLS/HTTP2 fingerprinting, semantic DOM filtering, data island extraction, and concurrent batch requests.',
-    fetchFeature1: 'Browser-impersonating TLS/HTTP2 JA4 fingerprints.',
-    fetchFeature2: 'Semantic DOM pipeline cleans HTML to token-compressed Markdown.',
-    fetchFeature3: 'Extracts data islands, CSS selectors, and JSON-LD schema paths without JS.',
-    fetchFeature4: 'Thin-content fallback (llms.txt) and SSRF protection built in.',
-    fetchBtn: 'View Fetch on GitHub',
     terminalBadge: 'Agent terminal',
     terminalStatus: 'Beta',
     terminalTitle: 'Symaira Terminal',
@@ -495,39 +362,6 @@ const translations: Record<Language, TranslationMap> = {
     terminalFeature3: 'Dual-mode integration supporting plain PTY and structured ACP.',
     terminalFeature4: 'Git worktree isolation to review agent changes before merge.',
     terminalBtn: 'View Terminal on GitHub',
-    scopeBadge: 'Discovery & Ports',
-    scopeStatus: 'Beta',
-    scopeTitle: 'Symaira Scope',
-    scopeDesc: 'A cross-platform scanner to inventory listening ports, active containers, and MCP servers across your AI client configurations.',
-    scopeBestFor: 'Developers wanting to debug port conflicts or auto-discover active MCP servers.',
-    scopeAutomates: 'Port scanning, client configuration discovery, and container port mapping.',
-    scopeFeature1: 'Inventories listening TCP/UDP ports and suggests conflicts.',
-    scopeFeature2: 'Identifies active Docker containers and their published ports.',
-    scopeFeature3: 'Discovers MCP servers registered in Cursor, VS Code, and Windsurf.',
-    scopeFeature4: 'Pure Go, 100% CGO-free for safe, zero-telemetry local runs.',
-    scopeBtn: 'View Scope on GitHub',
-    operateBadge: 'GUI Automation',
-    operateStatus: 'Beta',
-    operateTitle: 'Symaira Operate',
-    operateDesc: 'A native macOS desktop-automation MCP server. Allows AI agents to securely observe and control the Mac GUI via accessibility trees and screenshots.',
-    operateBestFor: 'AI agents needing to perform native macOS app automation and UI interactions.',
-    operateAutomates: 'Accessibility tree parsing, screen capturing, keystroke simulation, and mouse actions.',
-    operateFeature1: 'Accessibility tree mapping using ephemeral element ID caching.',
-    operateFeature2: 'Refuses destructive actions (Delete, Trash, Unlock) automatically.',
-    operateFeature3: 'Screen Capture via ScreenCaptureKit with localized ROI processing.',
-    operateFeature4: 'Zero daemon footprint – runs on-demand via secure local stdio MCP.',
-    operateBtn: 'View Operate on GitHub',
-    tuneBadge: 'Mac Automation',
-    tuneStatus: 'Beta',
-    tuneTitle: 'Symaira Tune',
-    tuneDesc: 'Automatic display, focus, energy, and cooling workflows for your Mac. The direct edition is available now as a menu-bar app plus the symtune CLI and MCP server, with a reduced Store edition planned.',
-    tuneBestFor: 'People who want their Mac to automatically adapt its display, energy, and cooling across everyday work modes like focus, video calls, or desk setups.',
-    tuneAutomates: 'Display brightness, dimming, and warmth; fan speed; battery charge limits; keep-awake; and safety-gated restore of system defaults.',
-    tuneFeature1: 'Extended and EDR brightness, software dimming, and warmth for any light situation.',
-    tuneFeature2: 'Fan speed and battery charge limits to keep your Mac cool and healthy.',
-    tuneFeature3: 'Keep-awake and display controls for focus, video calls, and desk setups.',
-    tuneFeature4: 'Every change is safety-gated and restored automatically on exit — available as CLI and MCP.',
-    tuneBtn: 'View Tune on GitHub',
     vibecoderBadge: 'Vibe Coding',
     vibecoderStatus: 'Beta',
     vibecoderTitle: 'Symaira Vibecoder',
@@ -550,153 +384,21 @@ const translations: Record<Language, TranslationMap> = {
     fritzFeature3: 'Resolves credentials securely via env, symvault, macOS Keychain, or config.',
     fritzFeature4: 'Local stdio Model Context Protocol (MCP) server for instant agent access.',
     fritzBtn: 'View Fritz on GitHub',
-    guardBadge: 'Security gateway',
-    guardStatus: 'Alpha',
-    guardTitle: 'Symaira Guard',
-    guardDesc: 'A local-first security gateway and policy proxy for AI agents and MCP servers. It inspects tool calls, enforces custom risk limits, prompts for human consent, and chains tamper-evident audit logs.',
-    guardBestFor: 'Developers running autonomous coding agents who need strict boundaries and execution control.',
-    guardAutomates: 'MCP client discovery, tool risk classification, signature validation, and audit tracking.',
-    guardFeature1: 'Defines local-first rules deciding what tool calls to allow, deny, or ask.',
-    guardFeature2: 'Cryptographically chains audit logs inside an append-only local SQLite database.',
-    guardFeature3: 'Pins hashes of tool schemas and descriptions to detect hidden prompt updates.',
-    guardFeature4: 'Pure Go, CGO-free stdio proxy without network or cloud accounts.',
-    guardBtn: 'View Guard on GitHub',
-    printBadge: 'Document rendering',
-    printStatus: 'Beta',
-    printTitle: 'Symaira Print',
-    printDesc: 'Turn Markdown into beautiful PDFs via named use-case profiles. Renders locally using the fast, modern Typst engine, producing accessible, tagged documents without Pandoc or LaTeX pain.',
-    printBestFor: 'Developers, pipelines, and AI agents needing predictable, professional document generation.',
-    printAutomates: 'Contract validation, layout engine discovery, and Typst compilation.',
-    printFeature1: 'Profile-driven layouts like brief (letters), rechnung (invoices), and reports.',
-    printFeature2: 'Emits fully accessible PDF/A-2a and PDF/UA-1 compliant documents.',
-    printFeature3: 'Supports DIN 5008 letter placement, Infoblock, and fold markers for envelopes.',
-    printFeature4: 'MCP server tools: render_pdf, list_profiles, validate_document, and doctor.',
-    printBtn: 'View Print on GitHub',
-    skillsBadge: 'Skill management',
-    skillsStatus: 'Beta',
-    skillsTitle: 'Symaira Skills',
-    skillsDesc: 'A local-first single-source-of-truth manager for AI agent skills. Write one portable SKILL.md and render or install harness-specific configurations for OpenCode, Claude Code, Codex, and Hermes.',
-    skillsBestFor: 'Developers writing custom agent workflows who want to reuse them across multiple agent runtimes.',
-    skillsAutomates: 'Harness folder generation, target config mapping, and skill installation.',
-    skillsFeature1: 'Keeps portable skills in one folder with modular overlays and aliases.',
-    skillsFeature2: 'Safely manages installations using validation markers to prevent data loss.',
-    skillsFeature3: 'Renders optimized markdown and frontmatter customized per agent harness.',
-    skillsFeature4: 'MCP server tools to list, validate, inspect, and install skills locally.',
-    skillsBtn: 'View Skills on GitHub',
-    ingestBadge: 'Document ingestion',
-    ingestStatus: 'Beta',
-    ingestTitle: 'Symaira Ingest',
-    ingestDesc: 'Document ingestion and OCR core for the Symaira vault. Drop scanned PDFs or images into a folder and automatically output clean, classified Markdown notes with YAML frontmatter.',
-    ingestBestFor: 'AI agents and developers building local-first document pipelines and paperless archives.',
-    ingestAutomates: 'Folder watching, PDF rendering, Tesseract OCR runs, and vault path writing.',
-    ingestFeature1: 'Extracts text from scanned files and images using local Tesseract OCR.',
-    ingestFeature2: 'Imports full Notion exports (Markdown + CSV) into the local vault.',
-    ingestFeature3: 'Watcher daemon scans folders automatically, keeping a local deduplication store.',
-    ingestFeature4: 'Exposes ingest_file tool via stdio MCP for AI agent processing pipelines.',
-    ingestBtn: 'View Ingest on GitHub',
     desktopBadge: 'Visual workspace',
     desktopStatus: 'Beta',
     desktopTitle: 'Symaira Desktop',
-    desktopDesc: 'The visual workspace for the Symaira ecosystem. A native macOS app plus Go core that unifies block editing, hybrid search, memory, document ingestion, and AI agent orchestration over a single, plain-Markdown local vault.',
+    desktopDesc: 'The composition shell of the Symaira ecosystem: a local-first, agent-native workspace that unifies documents, notes, knowledge, and AI over a single plain-Markdown vault. A Go core runs as CLI, MCP server, self-hosted document server, or OCR worker, with native SwiftUI apps for macOS and iOS.',
     desktopBestFor: 'Developers wanting a local-first visual hub that combines Obsidian, Notion AI, and Paperless.',
     desktopAutomates: 'Tool composition, server orchestration, vault indexing, and document workflows.',
-    desktopFeature1: 'Composes symseek, symmemory, symfetch, symingest, and symvault at runtime.',
+    desktopFeature1: 'Composes symbrain, symbrowse, and symvault at runtime — and degrades gracefully without them.',
     desktopFeature2: 'Go core with CLI and stdio MCP server plus a native SwiftUI macOS app.',
     desktopFeature3: 'Zero database lock-in: plain-text Markdown is the single source of truth.',
     desktopFeature4: 'Block editor, backlinks, graph view, saved database views, and an AI dock.',
     desktopBtn: 'View Desktop on GitHub',
-    meetBadge: 'Meeting capture',
-    meetStatus: 'Beta',
-    meetTitle: 'Symaira Meet',
-    meetDesc: 'A local-first, standalone CLI for durable meeting artifacts on macOS 15 or newer. Consent-first recording, on-device transcription, and meeting content that stays on your device by default — no cloud account or telemetry required. Cloud transcription, accounts, automatic meeting detection, live captions, Intel Mac support, and encryption at rest are not included in the current stable release.',
-    meetBestFor: 'People who want durable, searchable meeting artifacts with privacy by design — without uploading audio or transcripts to a cloud service.',
-    meetAutomates: 'Consent-first audio capture, local transcription, model management, export formats, and an MCP server.',
-    meetFeature1: 'Consent-first capture: every recording session requires a fresh, interactive authorization.',
-    meetFeature2: 'Local transcription with on-device WhisperKit models — downloading a model is not transmitting meeting content.',
-    meetFeature3: 'Standalone-first artifacts: portable files (Markdown, transcripts, exports), not proprietary database records.',
-    meetFeature4: 'Menu-bar recording agent and MCP server; optional runtime synergy with SymDesk, Memory, Seek, and Print.',
-    meetBtn: 'View Meet on GitHub',
-    meetDemoTitle: 'symmeet record',
-    meetDemoLine1: 'Consent granted — recording session started',
-    meetDemoLine2: 'Audio captured locally (no upload)',
-    meetDemoLine3: 'WhisperKit model ready — transcribing on-device',
-    meetDemoLine4: 'Artifact written: meetings/2026-08-06.md',
     terminalDemoPane1: 'Pane 1: Aider (active)',
     terminalDemoPane2: 'Pane 2: Claude Code (blocked)',
     terminalDemoPrompt: 'Approve file edits?',
     terminalDemoAction: 'Awaiting human consent',
-    scopeDemoTitle: 'symscope scan',
-    scopeDemoScanning: 'Scanning ports & processes...',
-    scopeDemoConflict: '[Conflict] Port 3000: Node vs Go',
-    scopeDemoMcp: 'Found Cursor/VSCode MCP configs',
-    scopeDemoSuggest: 'Suggested Port: 8081',
-    operateDemoTitle: 'symoperate UI drive',
-    operateDemoQuery: 'Querying UI tree...',
-    operateDemoSafety: 'Clicking "Trash" blocked',
-    operateDemoAction: 'Keystroke: git commit',
-    operateDemoSuccess: 'Control input sent successfully',
-    tuneDemoTitle: 'symtune status',
-    tuneDemoCPU: 'CPU Temperature',
-    tuneDemoFan: 'Fan Speed',
-    tuneDemoPower: 'Power: Charge limited to 80%',
-    tuneDemoEDR: 'EDR Brightness tuned',
-    tuneEditionsTitle: 'Editions & Pricing',
-    tuneEditionsIntro: 'Tune is available today as a direct, open-source hardware edition — the only edition with SMC, fan, charge, CLI, and MCP capabilities. The Store editions are planned as a reduced, App-Store-safe way to automate display and focus on your Mac. They are not available yet, and nothing below is for sale.',
-    tuneEditionStoreFreeName: 'Store — Free',
-    tuneEditionStoreFreePrice: 'Free',
-    tuneEditionStoreFreePriceSub: 'Basic display & focus automation',
-    tuneEditionStoreProName: 'Store Pro',
-    tuneEditionStoreProPrice: 'One-time purchase',
-    tuneEditionStoreProPriceSub: 'No subscription — pay once, keep forever',
-    tuneEditionHardwareName: 'Hardware Pro',
-    tuneEditionHardwarePrice: 'One-time purchase',
-    tuneEditionHardwarePriceSub: 'Open source on GitHub today — draft validation range',
-    tuneEditionBadgeAvailable: 'Available now',
-    tuneEditionBadgePlanned: 'Planned',
-    tuneEditionsDraftTag: 'Draft',
-    tuneEditionsDraftNote: 'All prices above are draft validation figures, not final commitments. Nothing can be purchased yet — the direct hardware edition is free and open source on GitHub.',
-    tuneEditionsDirectOnlyTag: 'Direct only',
-    tuneEditionsUseCasesTitle: 'Work scenarios it serves',
-    tuneUseCaseSunlight: 'Sunlight',
-    tuneUseCaseEvening: 'Evening',
-    tuneUseCaseFocus: 'Focus',
-    tuneUseCaseVideoCall: 'Video Call',
-    tuneUseCaseRendering: 'Rendering',
-    tuneUseCaseDeskMode: 'Desk Mode',
-    tuneEditionsUpgradeCredit: 'Upgrade credit policy: purchases of the direct hardware edition before the Store launch will receive credit toward the Store Pro edition.',
-    tuneEditionsFeatureDisplayAutomation: 'Display automation: brightness, dimming & warmth',
-    tuneEditionsFeatureFocusPresets: 'Focus presets for meetings & deep work',
-    tuneEditionsFeatureMenuBar: 'Menu-bar app with quick profiles',
-    tuneEditionsFeatureStoreFreeEverything: 'Everything in Store Free',
-    tuneEditionsFeatureAdvancedProfiles: 'Advanced display & focus automation profiles',
-    tuneEditionsFeatureAutomationRules: 'Automation rules across work modes',
-    tuneEditionsFeatureSmcFan: 'SMC sensor access & fan speed control',
-    tuneEditionsFeatureChargeLimit: 'Battery charge limiting',
-    tuneEditionsFeatureCli: 'symtune CLI for scripts & agents',
-    tuneEditionsFeatureMcp: 'MCP server for AI agents',
-    tuneEditionsFeatureExtendedDisplay: 'Extended & EDR brightness, dimming & warmth',
-    tuneEditionsFeatureSafetyRestore: 'Safety-gated, restores system defaults automatically on exit',
-    tuneFunnelTitle: 'Get Tune — or register interest',
-    tuneFunnelIntro: 'Tune v0.8.1 is available today: a free, open-source direct build for macOS. The Store editions are planned, and the prices below are draft validation figures — nothing is for sale yet. If you would buy a Store edition at its draft price, register your interest and we will email you when it ships.',
-    tuneFunnelCtaDownload: 'Get Tune v0.8.1',
-    tuneFunnelCtaDownloadSub: 'Free, open source, notarized direct build — install with Homebrew or download the release.',
-    tuneFunnelInstallCopied: 'Install command copied to clipboard.',
-    tuneFunnelReleaseLink: 'Download the v0.8.1 release',
-    tuneFunnelInterestTitle: 'Register pricing interest — not a purchase',
-    tuneFunnelInterestDesc: 'Tell us which edition you would buy at which price. This is not a purchase and creates no obligation — it only helps decide which Store edition ships first.',
-    tuneFunnelInterestSelectStorePro: 'Store Pro edition',
-    tuneFunnelInterestSelectHardware: 'Hardware Pro edition',
-    tuneFunnelInterestButton: "I'm interested — send pricing update",
-    tuneFunnelInterestSent: 'Done — your mail app opened with a pre-filled interest email.',
-    tuneFunnelInterestSubject: 'Tune pricing update',
-    tuneFunnelPrivacyNote: 'Privacy: the analytics event records only the selected edition and price. Your email address is never read by this page — the interest email is sent from your own mail app — and analytics only fire after explicit cookie consent.',
-    tuneFunnelTrustTitle: 'Direct build trust',
-    tuneFunnelTrustLocal: 'Local processing — nothing leaves your Mac',
-    tuneFunnelTrustNotarized: 'Notarized direct distribution',
-    tuneFunnelTrustMacos: 'Supported macOS',
-    tuneFunnelTrustRestore: 'Safety-gated writes with automatic restore on exit',
-    tuneFunnelTrialCta: 'Try Tune free for 14 days',
-    tuneFunnelPreorderCta: 'Pre-order the Store Pro edition',
     vibecoderDemoTitle: 'symvibe serve',
     vibecoderDemoPhase1: '1. Review',
     vibecoderDemoPhase2: '2. Plan',
@@ -706,18 +408,6 @@ const translations: Record<Language, TranslationMap> = {
     filterContext: 'Context & Memory',
     filterSecurity: 'Security & Integrity',
     filterSystem: 'macOS System',
-    memoryDemoAdd: 'Memory ingested',
-    memoryDemoGuard: 'PII Guard active',
-    memoryDemoSync: 'E2E context sync',
-    memoryDemoStatusIngested: 'Ingested',
-    memoryDemoStatusSanitized: 'Sanitized',
-    memoryDemoStatusPending: 'Pending',
-    seekDemoQuery: 'Search query',
-    seekDemoRRF: 'Fused RRF rank',
-    fetchDemoInput: 'Fetch URL',
-    fetchDemoStatusTls: 'JA4 Fingerprint OK',
-    fetchDemoStatusDom: 'DOM Filtered',
-    fetchDemoStatusTokens: 'Markdown Token Savings',
     copyCommandLabel: 'Copy',
     copiedCommandLabel: 'Copied',
     vaultDemoLine1: 'policy: scoped token verified',
@@ -767,21 +457,21 @@ const translations: Record<Language, TranslationMap> = {
     navStack: 'AI Stack',
     stackTitle: 'The Symaira AI Stack',
     stackSubtitle: 'All Symaira tools speak MCP. Together, they form a complete local-first AI development stack.',
-    stackPitch: 'Every Symaira tool exposes a Model Context Protocol (MCP) server, making your local agent workflows composable, secure, and privacy-preserving. Install the stack, wire the config, and your AI agents have access to secrets, memory, search, web fetch, and privacy automation — all without sending data to the cloud.',
+    stackPitch: 'Every Symaira tool exposes a Model Context Protocol (MCP) server, making your local agent workflows composable, secure, and privacy-preserving. Install the stack, wire the config, and your AI agents have access to secrets, memory and skills, your document vault, real web access, and Mac control — all without sending data to the cloud.',
     stackInstallTitle: 'Install the Stack',
     stackInstallStep1Label: 'Add the Homebrew tap',
     stackInstallStep2Label: 'Install CLI tools + MCP servers',
     stackInstallStep3Label: 'Install the native terminal',
-    stackInstallNote: 'Only symprint is currently installed from source or via go install — everything else ships via Homebrew.',
+    stackInstallNote: 'Every tool ships via Homebrew — the CLIs as formulae, Symaira Terminal as a cask.',
     stackConfigTitle: 'MCP Configuration',
     stackConfigDesc: 'Drop this into your agent\'s MCP config directory. Each tool runs as a local stdio server — no network, no cloud.',
     stackWorkflowTitle: 'Example Workflows',
     stackWorkflow1Title: 'Web Research Pipeline',
-    stackWorkflow1Desc: 'Fetch a web page, convert it to clean Markdown, and index it for hybrid search.',
+    stackWorkflow1Desc: 'Read a web page with Browse, convert it to clean Markdown, and import it into your Desktop vault.',
     stackWorkflow2Title: 'Secure Agent Context',
-    stackWorkflow2Desc: 'Use Vault to securely inject secrets into a Memory sync session.',
+    stackWorkflow2Desc: 'Use Vault to securely inject secrets into a Brain memory sync session.',
     stackWorkflow3Title: 'Knowledge Retrieval',
-    stackWorkflow3Desc: 'Search indexed documents and fetch referenced URLs in one pipeline.',
+    stackWorkflow3Desc: 'Search your indexed vault documents and hand structured results straight to an agent.',
     stackBackToTools: 'Back to Tools',
     heroBadgeGermany: 'Made in Germany · GDPR compliant',
     footerMadeInGermany: 'Made in Germany · 100% GDPR Compliant',
@@ -821,7 +511,7 @@ const translations: Record<Language, TranslationMap> = {
     visionPillar3Title: 'Sinnvolle Autonomie',
     visionPillar3Desc: 'Automatisierung muss erklärbar, klar begrenzt und so sicher sein, dass man ihr wiederkehrende Aufgaben anvertrauen kann, ohne je die Kontrolle zu verlieren.',
     toolsTitle: 'Die Symaira-Tools',
-    toolsSubtitle: '17 Open-Source-Tools für die Mensch-KI-Zusammenarbeit – alle arbeiten rein lokal (local-first), sind MCP-fähig und legen das Vertrauen zurück in deine Hände: Secrets, Identität, Privatsphäre und verlässliche Agenten-Workflows.',
+    toolsSubtitle: 'Neun Open-Source-Tools für die Mensch-KI-Zusammenarbeit – alle arbeiten rein lokal (local-first), sind MCP-fähig und legen das Vertrauen zurück in deine Hände: Secrets, Identität, Privatsphäre und verlässliche Agenten-Workflows.',
     bestForLabel: 'Ideal für',
     automatesLabel: 'Automatisiert',
     vaultBadge: 'Secrets & Agents',
@@ -835,6 +525,61 @@ const translations: Record<Language, TranslationMap> = {
     vaultFeature3: 'symvault run injiziert Secrets als Umgebungsvariablen für Befehle.',
     vaultFeature4: 'TOTP, Autotype, Git-Sync und vollständig telemetriefrei integriert.',
     vaultBtn: 'Vault auf GitHub ansehen',
+    brainBadge: 'Agenten-Kontext',
+    brainStatus: 'Beta',
+    brainTitle: 'Symaira Brain',
+    brainDesc: 'Die portable Kontextschicht für KI-Coding-Harnesses. Brain stellt deine drei Zustandskerne — Gedächtnis und Entitäten, den Skill-Katalog und Vault-Credentials — hinter einem MCP-Gateway bereit. Ein Profil pro Harness entscheidet, was Claude Code, Cursor, Codex oder opencode jeweils sehen darf.',
+    brainBestFor: 'Alle, die mehrere KI-Harnesses nutzen und dabei ein Gedächtnis, einen Skill-Satz und eine Policy teilen wollen.',
+    brainAutomates: 'Profilbasierte MCP-Freigabe, Gedächtnis-Erfassung, Skill-Sync, Credential-Vermittlung und Audit-Log.',
+    brainFeature1: 'Semantisches Langzeitgedächtnis mit Entitäten, Relationen und Kandidaten zur Freigabe.',
+    brainFeature2: 'Skill-Katalog als Single Source of Truth, synchron installiert in jedem Harness.',
+    brainFeature3: 'Ein MCP-Gateway für alle Harnesses — ein Profil pro Verbindung mit eigener Freigabe.',
+    brainFeature4: 'Durchsetzung von Policies zur Aufrufzeit über das integrierte symguard-Modul.',
+    brainFeature5: 'Credentials bleiben im separaten symvault-Prozess; Brain vermittelt nur begrenzten Zugriff.',
+    brainFeature6: 'Go-CLI plus native SwiftUI-Apps für macOS und iOS als Begleit-Dashboards.',
+    brainBtn: 'Brain auf GitHub ansehen',
+    browseBadge: 'Web-Zugriff',
+    browseStatus: 'Beta',
+    browseTitle: 'Symaira Browse',
+    browseDesc: 'Der Browser, den ein Agent bedienen kann und den du jederzeit übernimmst — ohne die Session zu verlieren. Browse kombiniert eine Chrome-CDP-Engine für echte, JavaScript-lastige Seiten mit einer schlanken Static-Fetch-Engine und liefert sauberes, token-budgetiertes Markdown.',
+    browseBestFor: 'Agenten, die echten Web-Zugriff brauchen — inklusive Logins, 2FA und CAPTCHAs.',
+    browseAutomates: 'Seiten lesen, Formular-Flows, Session-Verwaltung und Übergabe an den Menschen.',
+    browseFeature1: 'Zwei Engines: Chrome via CDP für dynamische Seiten, Static-HTTP-Engine für einfache Dokumente.',
+    browseFeature2: 'Out-of-Band-Handoff: du erledigst 2FA, CAPTCHA oder Freigabe, der Agent behält die Session.',
+    browseFeature3: 'Markdown-Ausgabe mit stabilem Schema, Token-Budget und Seiten-Metadaten.',
+    browseFeature4: 'Stabile Element-Referenzen und wiederverwendbare Flows statt brüchiger Selektoren.',
+    browseFeature5: 'CLI, MCP-Server und Daemon in einer CGO-freien Binary.',
+    browseBtn: 'Browse auf GitHub ansehen',
+    cockpitBadge: 'Mac-Steuerung',
+    cockpitStatus: 'Beta',
+    cockpitTitle: 'Symaira Cockpit',
+    cockpitDesc: 'Ein Befehl für deinen Mac: sehen, was läuft — und steuern, was er tut. Cockpit regelt Thermik, Energie und Displays, inventarisiert Ports, Container und MCP-Server und automatisiert die grafische Oberfläche. Alles antwortet in JSON, und alles ist zugleich MCP-Server.',
+    cockpitBestFor: 'Mac-Entwickler, die Ports, Thermik und GUI-Automation in einem strukturierten Tool wollen.',
+    cockpitAutomates: 'Display- und Fokus-Profile, Lüfter- und Energie-Policy, Port-Scans und GUI-Aktionen.',
+    cockpitFeature1: 'tune: Display-, Fokus-, Energie- und Kühlprofile, die automatisch umschalten.',
+    cockpitFeature2: 'scope: lokale Ports, Container und MCP-Server im Überblick, inklusive freier Port-Vorschläge.',
+    cockpitFeature3: 'operate: macOS-GUI-Automation mit Screenshots, OCR und Accessibility-Aktionen.',
+    cockpitFeature4: 'Strukturiertes JSON bei jedem Befehl statt Ausgabe, die man parsen muss.',
+    cockpitFeature5: 'Jede Fähigkeit gibt es auch über MCP — Agenten bekommen exakt dieselbe Oberfläche.',
+    cockpitFeature6: 'Native Swift-6-Universal-Binary für macOS 15+, installierbar über Homebrew.',
+    cockpitBtn: 'Cockpit auf GitHub ansehen',
+    desktopFeature5: 'Enthält hybride Suche, OCR-Import, Markdown-zu-PDF, Meeting-Mitschnitt und ein signiertes Projekt-Journal.',
+    desktopFeature6: 'Lokal oder self-hosted: HTTP-API, Docker, verteilte OCR-Worker, iOS-Begleit-App.',
+    brainDemoMemory: 'memory: Projektentscheidungen, Entitäten, Relationen',
+    brainDemoSkills: 'skills: Katalog in alle Harnesses synchronisiert',
+    brainDemoVault: 'vault: Credential vermittelt, nie im Klartext',
+    brainDemoStatusExposed: 'freigegeben',
+    brainDemoStatusScoped: 'begrenzt',
+    brainDemoStatusDenied: 'vermittelt',
+    browseDemoInput: 'symbrowse open https://example.com --session research',
+    browseDemoStatusEngine: 'Engine: Chrome CDP',
+    browseDemoStatusDom: 'DOM: gerendert, Links aufgelöst',
+    browseDemoStatusHandoff: 'Handoff: bereit zur Übernahme',
+    cockpitDemoTitle: 'symcockpit',
+    cockpitDemoScanning: 'scope: 24 lokale Ports erfasst',
+    cockpitDemoConflict: 'Konflikt: Port 3000 bereits belegt',
+    cockpitDemoThermals: 'tune: Thermik nominal, Lüfter 1980 rpm',
+    cockpitDemoOperate: 'operate: Screenshot, OCR, Accessibility bereit',
     erasemeBadge: 'Privacy Automation',
     erasemeStatus: 'Beta',
     erasemeTitle: 'Symaira EraseMe',
@@ -846,39 +591,6 @@ const translations: Record<Language, TranslationMap> = {
     erasemeFeature3: 'Ein Event-sourced SQLite-Audit-Trail dokumentiert jede Anfrage.',
     erasemeFeature4: 'Manueller Fallback für Webformulare, CAPTCHAs sowie Daten-Exporte.',
     erasemeBtn: 'EraseMe auf GitHub ansehen',
-    memoryBadge: 'Kontext & Speicher',
-    memoryStatus: 'Beta',
-    memoryTitle: 'Symaira Memory',
-    memoryDesc: 'Ein dauerhafter Kontext-Layer und semantische Speicher-Infrastruktur für die Mensch-KI-Ära. Memory ermöglicht nahtloses Langzeitgedächtnis zwischen dir und deinen KI-Agenten.',
-    memoryBestFor: 'KI-Agenten, die ein dauerhaftes Langzeitgedächtnis über Sessions hinweg benötigen.',
-    memoryAutomates: 'DSGVO-Filterung, Kontext-Sync, Memory-Bereinigung und MCP-Abruf.',
-    memoryFeature1: 'Dauerhaftes semantisches Gedächtnis über Agenten-Workflows hinweg.',
-    memoryFeature2: 'Local-first SQLite-Speicher mit optionalem Ende-zu-Ende verschlüsseltem Sync.',
-    memoryFeature3: 'Model Context Protocol (MCP) Server für direkte Agenten-Integration.',
-    memoryFeature4: 'PII-Guard bereinigt sensible persönliche Daten vor der Ingestion.',
-    memoryBtn: 'Memory auf GitHub ansehen',
-    seekBadge: 'Hybride Suche',
-    seekStatus: 'Beta',
-    seekTitle: 'Symaira Seek',
-    seekDesc: 'Eine schnelle, lokale Dokumentensuche, die klassischen Keyword-Abruf (BM25) mit semantischer Vektorsuche kombiniert und die Ergebnisse via Reciprocal Rank Fusion (RRF) zusammenführt.',
-    seekBestFor: 'Entwickler und Agenten, die eine schnelle, lokale hybride Dokumentensuche benötigen.',
-    seekAutomates: 'Verzeichnis-Crawling, SQLite FTS5 Keyword-Indexierung und RRF-Ranking.',
-    seekFeature1: 'Hybrider Abruf: Keyword-Suche kombiniert mit Vektor-Embeddings.',
-    seekFeature2: 'Reciprocal Rank Fusion (RRF) for optimal ranking of search results.',
-    seekFeature3: 'TurboQuant-vektorkomprimierte Suche (2-4 Bit) für schnellen Offline-Abruf.',
-    seekFeature4: 'Ollama-Integration für HyDE-Abfrageerweiterung, Re-ranking und FNV-1a-Fallback.',
-    seekBtn: 'Seek auf GitHub ansehen',
-    fetchBadge: 'Web-Kontext-Abruf',
-    fetchStatus: 'Beta',
-    fetchTitle: 'Symaira Fetch',
-    fetchDesc: 'Eine terminal-native Web-Fetch-Engine für LLM-Agenten. Ruft Webseiten mittels Browser-imitierendem TLS/HTTP2 ab und transformiert HTML über eine semantische DOM-Pipeline ohne JavaScript-Overhead in LLM-optimiertes Markdown oder JSON.',
-    fetchBestFor: 'Entwickler und KI-Agenten, die saubere, strukturierte Webinhalte ohne den Overhead von Browser-Automatisierung benötigen.',
-    fetchAutomates: 'TLS/HTTP2-Fingerprinting, semantische DOM-Filterung, Data-Island-Extraktion und parallele Batch-Anfragen.',
-    fetchFeature1: 'Browser-imitierende TLS/HTTP2-JA4-Fingerprints.',
-    fetchFeature2: 'Semantische DOM-Pipeline komprimiert HTML zu optimiertem Markdown.',
-    fetchFeature3: 'Extrahiert Data-Islands, CSS-Selektoren und JSON-LD-Schema-Pfade ohne JS.',
-    fetchFeature4: 'Dünner-Inhalt-Fallback (llms.txt) und integrierter SSRF-Schutz.',
-    fetchBtn: 'Fetch auf GitHub ansehen',
     terminalBadge: 'Agenten-Terminal',
     terminalStatus: 'Beta',
     terminalTitle: 'Symaira Terminal',
@@ -890,39 +602,6 @@ const translations: Record<Language, TranslationMap> = {
     terminalFeature3: 'Duale Integration mit Unterstützung für PTY und Agent Client Protocol (ACP).',
     terminalFeature4: 'Git-Worktree-Isolierung isoliert Agenten-Änderungen vor dem Merge.',
     terminalBtn: 'Terminal auf GitHub ansehen',
-    scopeBadge: 'Discovery & Ports',
-    scopeStatus: 'Beta',
-    scopeTitle: 'Symaira Scope',
-    scopeDesc: 'Ein plattformübergreifender Scanner zur Inventarisierung von Listening-Ports, aktiven Containern und MCP-Servern in deinen KI-Client-Konfigurationen.',
-    scopeBestFor: 'Entwickler, die Port-Konflikte debuggen oder aktive MCP-Server automatisch erkennen wollen.',
-    scopeAutomates: 'Port-Scanning, Erkennung von Client-Konfigurationen und Container-Port-Mapping.',
-    scopeFeature1: 'Inventarisiert Listening-TCP/UDP-Ports und schlägt Konflikte vor.',
-    scopeFeature2: 'Identifiziert aktive Docker-Container und deren veröffentlichte Ports.',
-    scopeFeature3: 'Erkennt registrierte MCP-Server in Cursor, VS Code und Windsurf.',
-    scopeFeature4: 'Reines Go, 100 % CGO-frei für sichere, telemetriefreie lokale Ausführung.',
-    scopeBtn: 'Scope auf GitHub ansehen',
-    operateBadge: 'GUI-Automatisierung',
-    operateStatus: 'Beta',
-    operateTitle: 'Symaira Operate',
-    operateDesc: 'Ein nativer macOS-GUI-Automatisierungs-MCP-Server. Ermöglicht es KI-Agenten, die Mac-GUI über Barrierefreiheitsbäume und Screenshots sicher zu steuern.',
-    operateBestFor: 'KI-Agenten, die eine native macOS-App-Automatisierung und GUI-Interaktionen durchführen müssen.',
-    operateAutomates: 'Accessibility-Tree-Parsing, Screenshot-Erstellung, Tastatur-Simulation und Maus-Aktionen.',
-    operateFeature1: 'Accessibility-Tree-Mapping mit flüchtigem Element-ID-Caching.',
-    operateFeature2: 'Verweigert destruktive Aktionen (Löschen, Papierkorb, Freigabe) automatisch.',
-    operateFeature3: 'Bildschirmaufnahme via ScreenCaptureKit mit lokalisierter ROI-Verarbeitung.',
-    operateFeature4: 'Kein Hintergrund-Daemon – läuft on-demand über sicheres lokales stdio MCP.',
-    operateBtn: 'Operate auf GitHub ansehen',
-    tuneBadge: 'Mac-Automatisierung',
-    tuneStatus: 'Beta',
-    tuneTitle: 'Symaira Tune',
-    tuneDesc: 'Automatische Display-, Fokus-, Energie- und Kühlungs-Workflows für deinen Mac. Die direkte Edition ist jetzt als Menüleisten-App plus symtune-CLI und MCP-Server verfügbar; eine reduzierte Store-Edition ist geplant.',
-    tuneBestFor: 'Für alle, die möchten, dass sich ihr Mac automatisch an alltägliche Arbeitsmodi wie Fokus, Videoanrufe oder Schreibtisch-Setups anpasst.',
-    tuneAutomates: 'Display-Helligkeit, Dimmen und Wärme; Lüftergeschwindigkeit; Batterie-Ladelimits; Keep-Awake; und sicherheitsgeschützte Wiederherstellung der Systemstandards.',
-    tuneFeature1: 'Erweiterte und EDR-Helligkeit, Software-Dimming und Wärme für jede Lichtsituation.',
-    tuneFeature2: 'Lüftergeschwindigkeit und Batterie-Ladelimits, um deinen Mac kühl und gesund zu halten.',
-    tuneFeature3: 'Keep-Awake und Display-Steuerung für Fokus, Videoanrufe und Schreibtisch-Setups.',
-    tuneFeature4: 'Jede Änderung ist sicherheitsgeschützt und wird beim Beenden automatisch wiederhergestellt – verfügbar als CLI und MCP.',
-    tuneBtn: 'Tune auf GitHub ansehen',
     vibecoderBadge: 'Vibe-Coding',
     vibecoderStatus: 'Beta',
     vibecoderTitle: 'Symaira Vibecoder',
@@ -945,153 +624,21 @@ const translations: Record<Language, TranslationMap> = {
     fritzFeature3: 'Sichere Auflösung von Anmeldedaten über env, symvault, macOS Keychain oder Config.',
     fritzFeature4: 'Lokaler stdio Model Context Protocol (MCP) Server für direkten Agentenzugriff.',
     fritzBtn: 'Fritz auf GitHub ansehen',
-    guardBadge: 'Sicherheits-Gateway',
-    guardStatus: 'Alpha',
-    guardTitle: 'Symaira Guard',
-    guardDesc: 'Ein lokales Sicherheits-Gateway und Richtlinien-Proxy für KI-Agenten und MCP-Server. Prüft Werkzeugaufrufe, setzt Risikolimits durch, bittet um Freigabe und führt ein fälschungssicheres Audit-Log.',
-    guardBestFor: 'Entwickler, die autonome Coding-Agenten ausführen und klare Sicherheitsgrenzen definieren möchten.',
-    guardAutomates: 'Erkennung lokaler MCP-Clients, Risikoklassifizierung von Tools und fälschungssichere Audit-Protokollierung.',
-    guardFeature1: 'Lokale Richtlinien entscheiden, ob Werkzeuge erlaubt, blockiert oder freigegeben werden.',
-    guardFeature2: 'Kryptographisch verkettete Audit-Logs in einer manipulationssicheren SQLite-Datenbank.',
-    guardFeature3: 'Überwacht Schema-Drift und veränderte Tool-Beschreibungen durch Hash-Pinning.',
-    guardFeature4: 'Reiner Go- und CGO-freier stdio-Proxy ohne Cloud-Zwang oder Benutzerkonto.',
-    guardBtn: 'Guard auf GitHub ansehen',
-    printBadge: 'Dokumenten-Rendering',
-    printStatus: 'Beta',
-    printTitle: 'Symaira Print',
-    printDesc: 'Verwandelt semantisches Markdown über vordefinierte Profile in professionelle PDFs. Rendert lokal über das schnelle, moderne Typst-System und erzeugt barrierefreie, getaggte Dokumente ohne Pandoc oder LaTeX.',
-    printBestFor: 'Entwickler, CI/CD-Pipelines und KI-Agenten, die eine zuverlässige Dokumentengenerierung benötigen.',
-    printAutomates: 'Metadaten-Validierung, Layout-Engine-Erkennung und Typst-Kompilierung.',
-    printFeature1: 'Profilgesteuerte Layouts wie brief (Briefe), rechnung (Rechnungen) und reports (Berichte).',
-    printFeature2: 'Erstellt konforme, voll barrierefreie PDF/A-2a und PDF/UA-1 Dokumente.',
-    printFeature3: 'Unterstützt DIN 5008 Layout-Vorgaben inklusive Falzmarken und Anschriftfeld.',
-    printFeature4: 'MCP-Schnittstellen: render_pdf, list_profiles, validate_document und doctor.',
-    printBtn: 'Print auf GitHub ansehen',
-    skillsBadge: 'Skill-Verwaltung',
-    skillsStatus: 'Beta',
-    skillsTitle: 'Symaira Skills',
-    skillsDesc: 'Ein lokaler Manager für KI-Agenten-Skills (Single Source of Truth). Schreibt eine portable SKILL.md und erzeugt oder installiert die passenden Zielformate für OpenCode, Claude Code, Codex und Hermes.',
-    skillsBestFor: 'Entwickler, die eigene Agenten-Workflows schreiben und in verschiedenen Runtimes nutzen möchten.',
-    skillsAutomates: 'Generierung von Harness-Ordnern, Konfigurations-Mapping und Skill-Installation.',
-    skillsFeature1: 'Verwaltung portabler Skills in einem Ordner mit modularen Overlays.',
-    skillsFeature2: 'Sichere Installation mit Validierungsmarkern gegen versehentliches Überschreiben.',
-    skillsFeature3: 'Erzeugt optimiertes Markdown und Frontmatter für die jeweilige Laufzeitumgebung.',
-    skillsFeature4: 'MCP-Server-Werkzeuge zum Auflisten, Validieren und Installieren lokaler Skills.',
-    skillsBtn: 'Skills auf GitHub ansehen',
-    ingestBadge: 'Dokumenten-Import',
-    ingestStatus: 'Beta',
-    ingestTitle: 'Symaira Ingest',
-    ingestDesc: 'Import- und OCR-Kern für den Symaira-Vault. Liest gescannte PDFs oder Bilder ein, extrahiert den Text per Tesseract OCR und gibt strukturierte Markdown-Dateien mit YAML-Frontmatter aus.',
-    ingestBestFor: 'KI-Agenten und Entwickler, die lokale Dokumenten-Pipelines und papierlose Archive aufbauen.',
-    ingestAutomates: 'Verzeichnisüberwachung (Watch-Mode), PDF-Rendering, OCR-Verarbeitung und Schreiben in den Vault.',
-    ingestFeature1: 'Textextraktion aus gescannten Dokumenten und Bildern via lokalem Tesseract OCR.',
-    ingestFeature2: 'Importiert vollständige Notion-Exporte (Markdown + CSV) in den lokalen Vault.',
-    ingestFeature3: 'Watcher-Daemon überwacht Ordner und pflegt einen lokalen Duplikatschutz.',
-    ingestFeature4: 'Stellt das Werkzeug ingest_file über stdio MCP für KI-Agenten bereit.',
-    ingestBtn: 'Ingest auf GitHub ansehen',
     desktopBadge: 'Visueller Workspace',
     desktopStatus: 'Beta',
     desktopTitle: 'Symaira Desktop',
-    desktopDesc: 'Der visuelle Workspace des Symaira-Ökosystems. Eine native macOS-App mit Go-Kern vereint Block-Editor, hybride Suche, Gedächtnis, Dokumentenimport und KI-Orchestrierung über einen lokalen Markdown-Vault.',
+    desktopDesc: 'Die Kompositions-Schale des Symaira-Ökosystems: ein local-first, agenten-nativer Workspace, der Dokumente, Notizen, Wissen und KI über einen einzigen Klartext-Markdown-Vault vereint. Der Go-Kern läuft als CLI, MCP-Server, self-hosted Dokumenten-Server oder OCR-Worker, dazu native SwiftUI-Apps für macOS und iOS.',
     desktopBestFor: 'Entwickler, die eine lokale Benutzeroberfläche ähnlich wie Obsidian, Notion AI und Paperless suchen.',
     desktopAutomates: 'Laufzeit-Komposition der Einzeltools, Server-Steuerung, Vault-Indexierung und Dokumenten-Workflows.',
-    desktopFeature1: 'Komponiert symseek, symmemory, symfetch, symingest und symvault zur Laufzeit.',
+    desktopFeature1: 'Komponiert symbrain, symbrowse und symvault zur Laufzeit — und läuft auch ohne sie weiter.',
     desktopFeature2: 'Go-Kern mit CLI und stdio-MCP-Server plus native SwiftUI-macOS-App.',
     desktopFeature3: 'Kein Datenbank-Lock-in: Klartext-Markdown bleibt die einzige Quelle der Wahrheit.',
     desktopFeature4: 'Block-Editor, Backlinks, Graph-Ansicht, gespeicherte Datenbank-Views und AI-Dock.',
     desktopBtn: 'Desktop auf GitHub ansehen',
-    meetBadge: 'Meeting-Aufnahme',
-    meetStatus: 'Beta',
-    meetTitle: 'Symaira Meet',
-    meetDesc: 'Ein lokaler, eigenständiger CLI für dauerhafte Meeting-Artefakte unter macOS 15 oder neuer. Consent-first Aufnahme, Transkription auf dem Gerät und Meeting-Inhalte, die standardmäßig auf deinem Rechner bleiben — kein Cloud-Konto und keine Telemetrie nötig. Cloud-Transkription, Konten, automatische Meeting-Erkennung, Live-Untertitel, Intel-Mac-Support und Verschlüsselung im Ruhezustand sind in der aktuellen stabilen Version nicht enthalten.',
-    meetBestFor: 'Menschen, die dauerhafte, durchsuchbare Meeting-Artefakte mit Privacy by Design wünschen – ohne Audio oder Transkripte in einen Cloud-Dienst hochzuladen.',
-    meetAutomates: 'Consent-first Audio-Aufnahme, lokale Transkription, Modellverwaltung, Exportformate und ein MCP-Server.',
-    meetFeature1: 'Consent-first Aufnahme: Jede Aufnahmesitzung erfordert eine frische, interaktive Autorisierung.',
-    meetFeature2: 'Lokale Transkription mit On-Device-WhisperKit-Modellen – das Herunterladen eines Modells überträgt keine Meeting-Inhalte.',
-    meetFeature3: 'Standalone-first Artefakte: portable Dateien (Markdown, Transkripte, Exporte), keine proprietären Datenbankeinträge.',
-    meetFeature4: 'Menüleisten-Aufnahme-Agent und MCP-Server; optionale Laufzeit-Synergien mit SymDesk, Memory, Seek und Print.',
-    meetBtn: 'Meet auf GitHub ansehen',
-    meetDemoTitle: 'symmeet record',
-    meetDemoLine1: 'Einwilligung erteilt – Aufnahmesitzung gestartet',
-    meetDemoLine2: 'Audio lokal aufgenommen (kein Upload)',
-    meetDemoLine3: 'WhisperKit-Modell bereit – Transkription auf dem Gerät',
-    meetDemoLine4: 'Artefakt geschrieben: meetings/2026-08-06.md',
     terminalDemoPane1: 'Panel 1: Aider (aktiv)',
     terminalDemoPane2: 'Panel 2: Claude Code (blockiert)',
     terminalDemoPrompt: 'Änderungen freigeben?',
     terminalDemoAction: 'Wartet auf Freigabe',
-    scopeDemoTitle: 'symscope scan',
-    scopeDemoScanning: 'Scanne Ports & Prozesse...',
-    scopeDemoConflict: '[Konflikt] Port 3000: Node vs Go',
-    scopeDemoMcp: 'Cursor/VSCode MCP-Configs gefunden',
-    scopeDemoSuggest: 'Empfohlener Port: 8081',
-    operateDemoTitle: 'symoperate UI-Drive',
-    operateDemoQuery: 'Frage UI-Baum ab...',
-    operateDemoSafety: 'Klick auf "Papierkorb" blockiert',
-    operateDemoAction: 'Tastendruck: git commit',
-    operateDemoSuccess: 'Steuerungseingabe erfolgreich gesendet',
-    tuneDemoTitle: 'symtune status',
-    tuneDemoCPU: 'CPU-Temperatur',
-    tuneDemoFan: 'Lüftergeschwindigkeit',
-    tuneDemoPower: 'Strom: Laden limitiert auf 80%',
-    tuneDemoEDR: 'EDR-Helligkeit angepasst',
-    tuneEditionsTitle: 'Editionen & Preise',
-    tuneEditionsIntro: 'Tune ist heute als direkte, quelloffene Hardware-Edition verfügbar – die einzige Edition mit SMC-, Lüfter-, Lade-, CLI- und MCP-Fähigkeiten. Die Store-Editionen sind als reduzierte, App-Store-taugliche Möglichkeit zur Automatisierung von Display und Fokus auf deinem Mac geplant. Sie sind noch nicht verfügbar, und unten ist noch nichts käuflich.',
-    tuneEditionStoreFreeName: 'Store – Free',
-    tuneEditionStoreFreePrice: 'Kostenlos',
-    tuneEditionStoreFreePriceSub: 'Basis-Display- und Fokus-Automatisierung',
-    tuneEditionStoreProName: 'Store Pro',
-    tuneEditionStoreProPrice: 'Einmaliger Kauf',
-    tuneEditionStoreProPriceSub: 'Kein Abonnement – einmal zahlen, dauerhaft behalten',
-    tuneEditionHardwareName: 'Hardware Pro',
-    tuneEditionHardwarePrice: 'Einmaliger Kauf',
-    tuneEditionHardwarePriceSub: 'Aktuell quelloffen auf GitHub – Entwurfs-Validierungsbereich',
-    tuneEditionBadgeAvailable: 'Jetzt verfügbar',
-    tuneEditionBadgePlanned: 'Geplant',
-    tuneEditionsDraftTag: 'Entwurf',
-    tuneEditionsDraftNote: 'Alle Preise oben sind Entwurfs-Validierungswerte, keine verbindlichen Zusagen. Noch ist nichts käuflich – die direkte Hardware-Edition ist kostenlos und quelloffen auf GitHub.',
-    tuneEditionsDirectOnlyTag: 'Nur direkt',
-    tuneEditionsUseCasesTitle: 'Arbeitsszenarien, die es unterstützt',
-    tuneUseCaseSunlight: 'Tageslicht',
-    tuneUseCaseEvening: 'Abend',
-    tuneUseCaseFocus: 'Fokus',
-    tuneUseCaseVideoCall: 'Videoanruf',
-    tuneUseCaseRendering: 'Rendering',
-    tuneUseCaseDeskMode: 'Schreibtisch-Modus',
-    tuneEditionsUpgradeCredit: 'Upgrade-Gutschrift-Richtlinie: Käufe der direkten Hardware-Edition vor dem Store-Start werden auf die Store-Pro-Edition angerechnet.',
-    tuneEditionsFeatureDisplayAutomation: 'Display-Automatisierung: Helligkeit, Dimmen & Wärme',
-    tuneEditionsFeatureFocusPresets: 'Fokus-Vorlagen für Meetings & Deep Work',
-    tuneEditionsFeatureMenuBar: 'Menüleisten-App mit Schnellprofilen',
-    tuneEditionsFeatureStoreFreeEverything: 'Alles aus Store Free',
-    tuneEditionsFeatureAdvancedProfiles: 'Erweiterte Display- und Fokus-Automatisierungsprofile',
-    tuneEditionsFeatureAutomationRules: 'Automatisierungsregeln über Arbeitsmodi hinweg',
-    tuneEditionsFeatureSmcFan: 'SMC-Sensorzugriff & Lüftersteuerung',
-    tuneEditionsFeatureChargeLimit: 'Batterie-Ladelimit',
-    tuneEditionsFeatureCli: 'symtune-CLI für Skripte & Agenten',
-    tuneEditionsFeatureMcp: 'MCP-Server für KI-Agenten',
-    tuneEditionsFeatureExtendedDisplay: 'Erweiterte & EDR-Helligkeit, Dimmen & Wärme',
-    tuneEditionsFeatureSafetyRestore: 'Sicherheitsgeschützt, stellt Systemstandards beim Beenden automatisch wieder her',
-    tuneFunnelTitle: 'Tune holen – oder Interesse anmelden',
-    tuneFunnelIntro: 'Tune v0.8.1 ist heute verfügbar: ein kostenloser, quelloffener Direkt-Build für macOS. Die Store-Editionen sind geplant, und die Preise unten sind reine Entwurfs-Validierungswerte – noch ist nichts käuflich. Wenn du eine Store-Edition zum Entwurfspreis kaufen würdest, melde dein Interesse an, und wir schreiben dir, sobald sie erscheint.',
-    tuneFunnelCtaDownload: 'Tune v0.8.1 herunterladen',
-    tuneFunnelCtaDownloadSub: 'Kostenlos, quelloffen, notarisierter Direkt-Build – per Homebrew installieren oder das Release herunterladen.',
-    tuneFunnelInstallCopied: 'Installationsbefehl in die Zwischenablage kopiert.',
-    tuneFunnelReleaseLink: 'v0.8.1-Release herunterladen',
-    tuneFunnelInterestTitle: 'Preis-Interesse anmelden – kein Kauf',
-    tuneFunnelInterestDesc: 'Sag uns, welche Edition du zu welchem Preis kaufen würdest. Das ist kein Kauf und keine Verpflichtung – es hilft nur zu entscheiden, welche Store-Edition zuerst erscheint.',
-    tuneFunnelInterestSelectStorePro: 'Store-Pro-Edition',
-    tuneFunnelInterestSelectHardware: 'Hardware-Pro-Edition',
-    tuneFunnelInterestButton: 'Ich bin interessiert – Preisupdate senden',
-    tuneFunnelInterestSent: 'Erledigt – deine Mail-App wurde mit einer vorausgefüllten Interesse-Mail geöffnet.',
-    tuneFunnelInterestSubject: 'Tune-Preisupdate',
-    tuneFunnelPrivacyNote: 'Datenschutz: Das Analytics-Ereignis erfasst nur die gewählte Edition und den Preis. Deine E-Mail-Adresse wird von dieser Seite nie ausgelesen – die Interesse-Mail sendest du aus deiner eigenen Mail-App – und Analytics feuert nur nach ausdrücklicher Cookie-Zustimmung.',
-    tuneFunnelTrustTitle: 'Vertrauen in den Direkt-Build',
-    tuneFunnelTrustLocal: 'Lokale Verarbeitung – nichts verlässt deinen Mac',
-    tuneFunnelTrustNotarized: 'Notarisierte Direkt-Distribution',
-    tuneFunnelTrustMacos: 'Unterstütztes macOS',
-    tuneFunnelTrustRestore: 'Sicherheitsgeschützte Schreibvorgänge mit automatischer Wiederherstellung beim Beenden',
-    tuneFunnelTrialCta: 'Tune 14 Tage kostenlos testen',
-    tuneFunnelPreorderCta: 'Store-Pro-Edition vorbestellen',
     vibecoderDemoTitle: 'symvibe serve',
     vibecoderDemoPhase1: '1. Review',
     vibecoderDemoPhase2: '2. Planung',
@@ -1101,18 +648,6 @@ const translations: Record<Language, TranslationMap> = {
     filterContext: 'Kontext & Speicher',
     filterSecurity: 'Sicherheit & Integrität',
     filterSystem: 'macOS-System',
-    memoryDemoAdd: 'Fakt erfasst',
-    memoryDemoGuard: 'PII-Guard aktiv',
-    memoryDemoSync: 'E2E Kontext-Sync',
-    memoryDemoStatusIngested: 'Gesichert',
-    memoryDemoStatusSanitized: 'Bereinigt',
-    memoryDemoStatusPending: 'Ausstehend',
-    seekDemoQuery: 'Suchanfrage',
-    seekDemoRRF: 'Zusammengeführtes RRF',
-    fetchDemoInput: 'URL abrufen',
-    fetchDemoStatusTls: 'JA4-Fingerprint OK',
-    fetchDemoStatusDom: 'DOM gefiltert',
-    fetchDemoStatusTokens: 'Markdown Token-Ersparnis',
     copyCommandLabel: 'Kopieren',
     copiedCommandLabel: 'Kopiert',
     vaultDemoLine1: 'policy: Scoped-Token verifiziert',
@@ -1162,21 +697,21 @@ const translations: Record<Language, TranslationMap> = {
     navStack: 'AI Stack',
     stackTitle: 'Der Symaira AI Stack',
     stackSubtitle: 'Alle Symaira-Tools sprechen MCP. Zusammen ergeben sie einen vollständigen lokalen AI-Entwicklungs-Stack.',
-    stackPitch: 'Jedes Symaira-Tool stellt einen Model Context Protocol (MCP) Server bereit und macht deine lokalen Agent-Workflows zusammensetzbar, sicher und datenschutzkonform. Installiere den Stack, konfiguriere ihn, und deine AI-Agenten haben Zugriff auf Secrets, Speicher, Suche, Web-Fetch und Privacy-Automatisierung — ohne Daten in die Cloud zu senden.',
+    stackPitch: 'Jedes Symaira-Tool stellt einen Model Context Protocol (MCP) Server bereit und macht deine lokalen Agent-Workflows zusammensetzbar, sicher und datenschutzkonform. Installiere den Stack, konfiguriere ihn, und deine AI-Agenten haben Zugriff auf Secrets, Gedächtnis und Skills, deinen Dokumenten-Vault, echten Web-Zugriff und die Steuerung deines Macs — ohne Daten in die Cloud zu senden.',
     stackInstallTitle: 'Stack installieren',
     stackInstallStep1Label: 'Homebrew-Tap hinzufügen',
     stackInstallStep2Label: 'CLI-Tools + MCP-Server installieren',
     stackInstallStep3Label: 'Natives Terminal installieren',
-    stackInstallNote: 'Nur symprint wird derzeit aus dem Quellcode oder per go install installiert — alle anderen Tools kommen über Homebrew.',
+    stackInstallNote: 'Alle Tools kommen über Homebrew — die CLIs als Formula, Symaira Terminal als Cask.',
     stackConfigTitle: 'MCP-Konfiguration',
     stackConfigDesc: 'Leg diese Datei in das MCP-Konfigurationsverzeichnis deines Agenten. Jedes Tool läuft als lokaler stdio-Server — kein Netzwerk, keine Cloud.',
     stackWorkflowTitle: 'Workflow-Beispiele',
     stackWorkflow1Title: 'Web-Recherche-Pipeline',
-    stackWorkflow1Desc: 'Eine Webseite abrufen, in sauberes Markdown umwandeln und für hybride Suche indexieren.',
+    stackWorkflow1Desc: 'Eine Webseite mit Browse lesen, in sauberes Markdown umwandeln und in den Desktop-Vault importieren.',
     stackWorkflow2Title: 'Sicherer Agent-Kontext',
-    stackWorkflow2Desc: 'Vault nutzen, um Secrets sicher in eine Memory-Sync-Sitzung zu injizieren.',
+    stackWorkflow2Desc: 'Vault nutzen, um Secrets sicher in eine Brain-Memory-Sync-Sitzung zu injizieren.',
     stackWorkflow3Title: 'Wissensabruf',
-    stackWorkflow3Desc: 'Indexierte Dokumente durchsuchen und referenzierte URLs in einer Pipeline abrufen.',
+    stackWorkflow3Desc: 'Indexierte Vault-Dokumente durchsuchen und strukturierte Ergebnisse direkt an einen Agenten geben.',
     stackBackToTools: 'Zurück zu Tools',
     heroBadgeGermany: 'Made in Germany · DSGVO-konform',
     footerMadeInGermany: 'Made in Germany · 100% DSGVO-konform',

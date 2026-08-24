@@ -12,10 +12,15 @@ There are no paid or cloud-hosted editions — each tool ships exactly once.
 
 ## Current Public Story
 
-The site currently presents dedicated pages for 17 tools: Vault, Memory, Seek,
-Fetch, Scope, EraseMe, Terminal, Vibecoder, Operate, Tune, Fritz, Guard, Print,
-Skills, Ingest, Desktop, and Meet (see `src/config/products.tsx` and the route
-table in `src/App.tsx`).
+The site presents dedicated pages for the nine tools that remain after the
+August 2026 repo consolidation: Vault, Brain, Desktop, Browse, EraseMe,
+Terminal, Cockpit, Vibecoder, and Fritz (see `src/config/products.tsx` and the
+route table in `src/App.tsx`).
+
+The absorbed tools no longer have their own pages or routes: Memory, Skills and
+Guard live inside Brain; Seek, Print, Ingest, Meet, Relate and Room inside
+Desktop; Fetch inside Browse; Tune, Operate and Scope inside Cockpit. Their
+capabilities are described as features of the surviving tool.
 
 ## Development
 

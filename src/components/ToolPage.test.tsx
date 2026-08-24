@@ -5,21 +5,10 @@ import { ToolPage } from './ToolPage';
 
 // --- Mocks ---
 
-const { trackEvent } = vi.hoisted(() => ({
-  trackEvent: vi.fn(),
-}));
-
-vi.mock('../config/analytics', () => ({ trackEvent }));
-
-vi.mock('./TuneEditions', () => ({ TuneEditions: () => <div data-testid="tune-editions" /> }));
-vi.mock('./TuneFunnel', () => ({ TuneFunnel: () => <div data-testid="tune-funnel" /> }));
-vi.mock('./MeetTerminalDemo', () => ({ MeetTerminalDemo: () => <div data-testid="meet-demo" /> }));
-
 // --- Helpers ---
 
 beforeEach(() => {
   vi.useFakeTimers();
-  trackEvent.mockClear();
 });
 
 afterEach(() => {
@@ -130,30 +119,6 @@ describe('ToolPage', () => {
     expect(screen.getByText(/Copy/i)).toBeTruthy();
   });
 
-  // ---------- Consent-gated tracking ----------
-
-  it('fires tune_page_view only for the symtune product', () => {
-    render(
-      <LanguageProvider>
-        <ToolPage toolId="tune" />
-      </LanguageProvider>,
-    );
-
-    expect(trackEvent).toHaveBeenCalledWith('tune_page_view', expect.objectContaining({
-      locale: expect.any(String),
-    }));
-  });
-
-  it('does not fire tune_page_view for non-tune products', () => {
-    render(
-      <LanguageProvider>
-        <ToolPage toolId="vault" />
-      </LanguageProvider>,
-    );
-
-    expect(trackEvent).not.toHaveBeenCalled();
-  });
-
   // ---------- Product sections ----------
 
   it('renders specifications and features for a known product', () => {
@@ -179,67 +144,43 @@ describe('ToolPage', () => {
 
   // ---------- Different demo types render ----------
 
-  it('renders the tune demo section for symtune', () => {
+  it('renders the cockpit demo section for symcockpit', () => {
     render(
       <LanguageProvider>
-        <ToolPage toolId="tune" />
+        <ToolPage toolId="cockpit" />
       </LanguageProvider>,
     );
 
-    expect(screen.getByText(/CPU Temp/i)).toBeTruthy();
+    expect(screen.getByText(/local ports inventoried/i)).toBeTruthy();
   });
 
-  it('renders TuneEditions and TuneFunnel for symtune', () => {
+  it('renders the browse demo section for symbrowse', () => {
     render(
       <LanguageProvider>
-        <ToolPage toolId="tune" />
+        <ToolPage toolId="browse" />
       </LanguageProvider>,
     );
 
-    expect(screen.getByTestId('tune-editions')).toBeTruthy();
-    expect(screen.getByTestId('tune-funnel')).toBeTruthy();
-  });
-
-  it('renders the seek demo section for symseek', () => {
-    render(
-      <LanguageProvider>
-        <ToolPage toolId="seek" />
-      </LanguageProvider>,
-    );
-
-    // The seek demo shows "Search query: \"security policy\""
-    expect(screen.getByText(/Search query/)).toBeTruthy();
-  });
-
-  it('renders the fetch demo section for symfetch', () => {
-    render(
-      <LanguageProvider>
-        <ToolPage toolId="fetch" />
-      </LanguageProvider>,
-    );
-
-    // The fetch demo renders the input line with the URL
     expect(document.querySelector('.fetch-input-line')).toBeTruthy();
   });
 
-  it('renders the scope demo section for symscope', () => {
+  it('renders the brain demo section for symbrain', () => {
     render(
       <LanguageProvider>
-        <ToolPage toolId="scope" />
+        <ToolPage toolId="brain" />
       </LanguageProvider>,
     );
 
-    // The scope demo shows "Scanning ports & processes..."
-    expect(screen.getByText(/Scanning ports/)).toBeTruthy();
+    expect(screen.getByText(/symbrain profile/i)).toBeTruthy();
   });
 
-  it('renders the memory demo section for symmemory', () => {
+  it('renders the desktop demo section for symdesk', () => {
     render(
       <LanguageProvider>
-        <ToolPage toolId="memory" />
+        <ToolPage toolId="desktop" />
       </LanguageProvider>,
     );
 
-    expect(screen.getByText(/symmemory sync/i)).toBeTruthy();
+    expect(screen.getByText(/symdesk web dashboard/i)).toBeTruthy();
   });
 });

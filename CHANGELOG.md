@@ -5,6 +5,18 @@ All notable changes to the Symaira public website are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Changed
+- Site now reflects the August 2026 repo consolidation: 17 tool pages reduced to the nine remaining tools (Vault, Brain, Desktop, Browse, EraseMe, Terminal, Cockpit, Vibecoder, Fritz), with the absorbed tools described as features of their new home
+- New product pages, demos, routes and EN/DE copy for Symaira Brain, Symaira Browse and Symaira Cockpit; Desktop copy rewritten around the composition shell and its nested modules
+- Stack page updated: Homebrew install commands, MCP config sample, example workflows and tool grid rebuilt around the nine tools
+- SEO/GEO surfaces refreshed: index.html meta + JSON-LD ItemList, `public/llms.txt` (including a note on which tool absorbed which), and `public/sitemap.xml`
+
+### Removed
+- Product pages, routes, demos and translation keys for Memory, Seek, Fetch, Scope, Operate, Tune, Guard, Print, Skills, Ingest and Meet
+- Symaira Tune paid-demand funnel: `TuneEditions`, `TuneFunnel`, `src/config/tune.ts` and their suites, plus the Tune-only page-view tracking
+
 ## [0.1.2] - 2026-08-18
 
 ### Fixed

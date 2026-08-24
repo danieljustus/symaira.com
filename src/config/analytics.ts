@@ -68,9 +68,7 @@ export const hasAnalyticsConsent = (): boolean => {
  * throws and never queues events.
  *
  * Params are deliberately restricted to string | number | boolean so no
- * device identifiers, hardware data, or PII can be sent accidentally; the
- * Tune funnel only ever passes edition, locale, cta_type, price_variant, and
- * use_case values.
+ * device identifiers, hardware data, or PII can be sent accidentally.
  */
 export const trackEvent = (
   eventName: string,

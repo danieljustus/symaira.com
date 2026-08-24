@@ -40,7 +40,7 @@ describe('trackEvent', () => {
     const gtag = vi.fn();
     vi.stubGlobal('gtag', gtag);
 
-    trackEvent('tune_cta_click', { cta_type: 'download_primary' });
+    trackEvent('cta_click', { cta_type: 'download_primary' });
 
     expect(gtag).not.toHaveBeenCalled();
   });
@@ -49,7 +49,7 @@ describe('trackEvent', () => {
     window.localStorage.setItem(CONSENT_STORAGE_KEY, 'accepted');
     vi.stubGlobal('gtag', undefined);
 
-    expect(() => trackEvent('tune_page_view')).not.toThrow();
+    expect(() => trackEvent('page_view')).not.toThrow();
   });
 
   it('pushes typed params via gtag when consent is given', () => {
@@ -57,14 +57,14 @@ describe('trackEvent', () => {
     const gtag = vi.fn();
     vi.stubGlobal('gtag', gtag);
 
-    trackEvent('tune_cta_click', {
+    trackEvent('cta_click', {
       cta_type: 'download_primary',
       edition: 'hardware-pro',
       locale: 'en',
     });
 
     expect(gtag).toHaveBeenCalledTimes(1);
-    expect(gtag).toHaveBeenCalledWith('event', 'tune_cta_click', {
+    expect(gtag).toHaveBeenCalledWith('event', 'cta_click', {
       cta_type: 'download_primary',
       edition: 'hardware-pro',
       locale: 'en',
@@ -76,9 +76,9 @@ describe('trackEvent', () => {
     const gtag = vi.fn();
     vi.stubGlobal('gtag', gtag);
 
-    trackEvent('tune_metric', { label: 'x', count: 3, valid: true });
+    trackEvent('metric', { label: 'x', count: 3, valid: true });
 
-    expect(gtag).toHaveBeenCalledWith('event', 'tune_metric', {
+    expect(gtag).toHaveBeenCalledWith('event', 'metric', {
       label: 'x',
       count: 3,
       valid: true,
@@ -90,9 +90,9 @@ describe('trackEvent', () => {
     const gtag = vi.fn();
     vi.stubGlobal('gtag', gtag);
 
-    trackEvent('tune_page_view');
+    trackEvent('page_view');
 
-    expect(gtag).toHaveBeenCalledWith('event', 'tune_page_view');
+    expect(gtag).toHaveBeenCalledWith('event', 'page_view');
   });
 });
 
