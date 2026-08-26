@@ -1,10 +1,10 @@
 # Symaira
 
-> Symaira builds nine open-source, local-first tools for human-AI collaboration. Every tool works standalone, runs on your machine (no cloud requirement, zero telemetry), and ships a Model Context Protocol (MCP) interface where applicable. Developed in Germany by Daniel Justus with a GDPR-first approach. Licenses: Apache-2.0 (MIT for Symaira Terminal).
+> Symaira builds seven open-source, local-first tools for human-AI collaboration. Every tool works standalone, runs on your machine (no cloud requirement, zero telemetry), and ships a Model Context Protocol (MCP) interface where applicable. Developed in Germany by Daniel Justus with a GDPR-first approach. License: Apache-2.0.
 
 The name Symaira means: SYM = symbiosis, AI = artificial intelligence, RA = the new era. The product family focuses on secrets, identity, privacy, agent context, and safe, repeatable agent workflows — keeping humans in control while AI agents do the work.
 
-Install (macOS/Linux via Homebrew): `brew tap danieljustus/tap`, then `brew install symvault symbrain symdesk symbrowse symcockpit symeraseme symvibe symfritz` and `brew install --cask symterminal`.
+Install (macOS/Linux via Homebrew): `brew tap danieljustus/tap`, then `brew install symvault symbrain symdesk symbrowse symcockpit symeraseme symfritz`.
 
 Note on history: several earlier standalone tools were consolidated into these nine in August 2026. symmemory, symskills and symguard now live inside Symaira Brain; symseek, symprint, symingest, symmeet, symrelate and symroom inside Symaira Desktop; symfetch inside Symaira Browse; symtune, symoperate and symscope inside Symaira Cockpit. Their repositories are archived.
 
@@ -21,9 +21,7 @@ Note on history: several earlier standalone tools were consolidated into these n
 
 ## System & Workflow Tools (macOS focus)
 
-- [Symaira Terminal](https://github.com/danieljustus/symaira-terminal): Native macOS terminal (Ghostty engine) for running multiple CLI coding agents in parallel — per-pane status rings, ACP support, Git worktree isolation, BYOK with keys in the Keychain. MIT.
 - [Symaira Cockpit (symcockpit)](https://github.com/danieljustus/symaira-cockpit): One native macOS CLI and MCP server with three subcommands — `tune` (display, focus, energy and cooling profiles), `scope` (local ports, containers, MCP server inventory, free-port suggestions), and `operate` (GUI automation with screenshots, OCR, accessibility). Every command answers in structured JSON.
-- [Symaira Vibecoder (symvibe)](https://github.com/danieljustus/symaira-vibecoder): Local graphical dashboard to design and run autonomous agent coding cycles via drag-and-drop, with per-category and per-step model selection, driving opencode headless.
 - [Symaira Fritz (symfritz)](https://github.com/danieljustus/symaira-fritz): CLI and MCP server for AVM FRITZ!Box routers — network topology, host diagnosis, guest WLAN, Wake-on-LAN, DECT smart home switching via TR-064 and AHA-HTTP.
 
 ## Optional

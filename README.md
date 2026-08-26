@@ -14,7 +14,7 @@ There are no paid or cloud-hosted editions — each tool ships exactly once.
 
 The site presents dedicated pages for the nine tools that remain after the
 August 2026 repo consolidation: Vault, Brain, Desktop, Browse, EraseMe,
-Terminal, Cockpit, Vibecoder, and Fritz (see `src/config/products.tsx` and the
+Cockpit, and Fritz (see `src/config/products.tsx` and the
 route table in `src/App.tsx`).
 
 The absorbed tools no longer have their own pages or routes: Memory, Skills and
