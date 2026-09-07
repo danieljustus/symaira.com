@@ -1,0 +1,72 @@
+{
+  "id": "symaira-com",
+  "name": "Symaira.com",
+  "role": "website-brand",
+  "approved_clarity_reference": null,
+  "package": "/Users/daniel/workspace/symaira-icons-release/symaira-com/AppIcon.icon",
+  "renders": [
+    {
+      "platform": "macOS",
+      "mode": "Default",
+      "path": "/Users/daniel/workspace/symaira-icons-release/symaira-com/exports/macOS-Default.png",
+      "sha256": "1c688b8f04465ffe1fff9e91732d6d91427826ef0eabf99f7930b9f8c3f6964d"
+    },
+    {
+      "platform": "macOS",
+      "mode": "Dark",
+      "path": "/Users/daniel/workspace/symaira-icons-release/symaira-com/exports/macOS-Dark.png",
+      "sha256": "1ad68ebc5b912a48ed5a53c1a7ded350663469e90c5c67cbc07ffea4e44c3be9"
+    },
+    {
+      "platform": "macOS",
+      "mode": "TintedDark",
+      "path": "/Users/daniel/workspace/symaira-icons-release/symaira-com/exports/macOS-TintedDark.png",
+      "sha256": "534b57b59ca5f1f4d3a364c6ac0688ee0b59e5941d793682436758701c911f73"
+    },
+    {
+      "platform": "iOS",
+      "mode": "Default",
+      "path": "/Users/daniel/workspace/symaira-icons-release/symaira-com/exports/iOS-Default.png",
+      "sha256": "1c688b8f04465ffe1fff9e91732d6d91427826ef0eabf99f7930b9f8c3f6964d"
+    },
+    {
+      "platform": "iOS",
+      "mode": "Dark",
+      "path": "/Users/daniel/workspace/symaira-icons-release/symaira-com/exports/iOS-Dark.png",
+      "sha256": "1ad68ebc5b912a48ed5a53c1a7ded350663469e90c5c67cbc07ffea4e44c3be9"
+    },
+    {
+      "platform": "iOS",
+      "mode": "TintedDark",
+      "path": "/Users/daniel/workspace/symaira-icons-release/symaira-com/exports/iOS-TintedDark.png",
+      "sha256": "534b57b59ca5f1f4d3a364c6ac0688ee0b59e5941d793682436758701c911f73"
+    }
+  ],
+  "files": {
+    "AppIcon.iconset/icon_32x32@2x.png": "a37d3cc29b115e478be3d8989d026866113a7422b0543a5ba9460fc8933c133a",
+    "AppIcon.iconset/icon_128x128.png": "509e072f9a47199a064423ec4534376ab2012296d19a9185699629b12f873731",
+    "AppIcon.iconset/icon_256x256@2x.png": "58f8fac6e9d6428743bda5f266a4d4039ed79d6b7f252229b7dbd2a1ee4831cc",
+    "AppIcon.iconset/icon_32x32.png": "2212ffff8cbde360d1b29a566dc5f6837993392afc943dcd000855b54aef94ed",
+    "AppIcon.iconset/icon_512x512.png": "58f8fac6e9d6428743bda5f266a4d4039ed79d6b7f252229b7dbd2a1ee4831cc",
+    "AppIcon.iconset/icon_16x16.png": "459cfa3bbd0f80e8293ffc0493832d255ed67dc707e0b889cc11d883b7fa23d8",
+    "AppIcon.iconset/icon_16x16@2x.png": "2212ffff8cbde360d1b29a566dc5f6837993392afc943dcd000855b54aef94ed",
+    "AppIcon.iconset/icon_128x128@2x.png": "4ddc881a3bac6d9d43681e9de0ae6e59aa55f28f3d39651e07c877a5a5bd1eb1",
+    "AppIcon.iconset/icon_512x512@2x.png": "e8652191f0aaeb45577a11a564e9511fae3a8ddcfa862b8da62e4d032b97f4bc",
+    "AppIcon.iconset/icon_256x256.png": "4ddc881a3bac6d9d43681e9de0ae6e59aa55f28f3d39651e07c877a5a5bd1eb1",
+    "source/Symaira-original.png": "829b29edbb38cfec7448bd08c2d54e64de2b49b760773affddb457e2857de987",
+    "source/signet.svg": "b840621b8bd47dd5a4c7c0436a16208bf2a8cd42984acb860e9749b9a6f92c8c",
+    "source/S-original-A3.png": "55fc4288d340f972acbbd22f2a11c4ba1c1c19f7faf16891b478f06b2ab26ab3",
+    "source/occlusion-mask.png": "c6b26e9390f2bb46f3762626c089d18a705e44b0af71dcaf1fdf34d07db6088d",
+    "exports/ios-1024-opaque.png": "38b45dd17caea2cb0413e0eae1087da87fe892d957ad5167462e86cba12a785f",
+    "exports/AppIcon.icns": "e3c022d40a7c9c22a67ff9c8ba1e29dc2b0f8efe84a53128b970401f850db390",
+    "exports/iOS-Default.png": "1c688b8f04465ffe1fff9e91732d6d91427826ef0eabf99f7930b9f8c3f6964d",
+    "exports/iOS-Dark.png": "1ad68ebc5b912a48ed5a53c1a7ded350663469e90c5c67cbc07ffea4e44c3be9",
+    "exports/macOS-TintedDark.png": "534b57b59ca5f1f4d3a364c6ac0688ee0b59e5941d793682436758701c911f73",
+    "exports/macOS-Default.png": "1c688b8f04465ffe1fff9e91732d6d91427826ef0eabf99f7930b9f8c3f6964d",
+    "exports/iOS-TintedDark.png": "534b57b59ca5f1f4d3a364c6ac0688ee0b59e5941d793682436758701c911f73",
+    "exports/macOS-Dark.png": "1ad68ebc5b912a48ed5a53c1a7ded350663469e90c5c67cbc07ffea4e44c3be9",
+    "AppIcon.icon/icon.json": "8fc045241874d7e9912ce6d61a19ce8c80bde5dd4b9dcefe1b717a4e4aafec5c",
+    "AppIcon.icon/Assets/signet.png": "38eb1c38bd03e1af6d0d212bc29390faae3d5a54ecf58682145983076b7b591b",
+    "AppIcon.icon/Assets/S.png": "4e20c6b19ef221aa92c143a1ba998640720022ec34d551d3767f42b07725919d"
+  }
+}
