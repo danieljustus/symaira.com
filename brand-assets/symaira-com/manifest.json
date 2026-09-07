@@ -67,6 +67,9 @@
     "exports/macOS-Dark.png": "1ad68ebc5b912a48ed5a53c1a7ded350663469e90c5c67cbc07ffea4e44c3be9",
     "AppIcon.icon/icon.json": "8fc045241874d7e9912ce6d61a19ce8c80bde5dd4b9dcefe1b717a4e4aafec5c",
     "AppIcon.icon/Assets/signet.png": "38eb1c38bd03e1af6d0d212bc29390faae3d5a54ecf58682145983076b7b591b",
-    "AppIcon.icon/Assets/S.png": "4e20c6b19ef221aa92c143a1ba998640720022ec34d551d3767f42b07725919d"
+    "AppIcon.icon/Assets/S.png": "4e20c6b19ef221aa92c143a1ba998640720022ec34d551d3767f42b07725919d",
+    "web/favicon.ico": "f22a6328c6821f69b0a17d31a80eb1ff0b2bfc313d73a615bc1481d87038ba90",
+    "web/apple-touch-icon.png": "81aaaec52d0b47bfa3fa747b8737bfc1bf5c9c69602cfc73863635aec97a9400",
+    "web/favicon.svg": "1e35ebba7822711addbc86eb30f888449b393afb4348a7653fb5c352c80aa0f8"
   }
 }
