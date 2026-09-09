@@ -1,5 +1,7 @@
 # symaira.com
 
+> **Accepted product direction — implementation pending:** The accepted target presents Desktop and Brain as primary products, Cockpit/EraseMe/Fritz as specialized products, Browse/Operate as optional Brain capabilities, and Vault as an independent technical credential service with future management UI in Brain. Live pages must distinguish this target from shipped capabilities and preserve working installation links until release cutovers. See [PB-2026-09-09](docs/product-boundaries.md).
+
 [![CI - Lint & Build](https://github.com/danieljustus/symaira.com/actions/workflows/ci.yml/badge.svg)](https://github.com/danieljustus/symaira.com/actions/workflows/ci.yml)
 [![Release](https://img.shields.io/github/v/release/danieljustus/symaira.com)](https://github.com/danieljustus/symaira.com/releases/latest)
 
