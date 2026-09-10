@@ -14,7 +14,8 @@ on:
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
+  # Never cancel an in-flight deployment; the latest commit can follow it.
+  cancel-in-progress: false
 
 permissions:
   contents: read
@@ -33,6 +34,7 @@ jobs:
         uses: actions/setup-node@v7
         with:
           node-version: '20'
+          cache: npm
 
       # Step 3: Install dependencies and build static assets
       - name: Install dependencies & Build
