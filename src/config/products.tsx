@@ -111,7 +111,7 @@ export const getProducts = (t: (key: keyof TranslationMap) => string): Product[]
       t('browseFeature4'),
       t('browseFeature5'),
     ],
-    href: 'https://github.com/danieljustus/symaira-browse',
+    href: 'https://github.com/danieljustus/symaira-brain/tree/main/browse',
     button: t('browseBtn'),
     icon: <Globe size={24} />,
     tone: 'sky',

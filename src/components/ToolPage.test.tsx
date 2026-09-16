@@ -151,7 +151,7 @@ describe('ToolPage', () => {
       </LanguageProvider>,
     );
 
-    expect(screen.getByText(/local ports inventoried/i)).toBeTruthy();
+    expect(screen.getByText(/hardware sensors ready/i)).toBeTruthy();
   });
 
   it('renders the browse demo section for symbrowse', () => {
