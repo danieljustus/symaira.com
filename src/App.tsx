@@ -25,9 +25,7 @@ const ROUTE_TITLES: Record<string, string> = {
   '#/desktop': 'Symaira Desktop — Local-First Markdown Workspace',
   '#/browse': 'Symaira Browse — Agent Browser with Human Handoff',
   '#/eraseme': 'Symaira EraseMe — Data Broker Removal Automation',
-  '#/terminal': 'Symaira Terminal — Native macOS Terminal for Coding Agents',
   '#/cockpit': 'Symaira Cockpit — Mac Thermals, Ports & GUI Automation (CLI + MCP)',
-  '#/vibecoder': 'Symaira Vibecoder — Visual Agent Cycle Dashboard',
   '#/fritz': 'Symaira Fritz — FRITZ!Box CLI & MCP Server',
 };
 
@@ -54,7 +52,7 @@ function App() {
   const isLegalPage = hash === '#/impressum' || hash === '#/privacy' || hash === '#/datenschutz';
   const isStackPage = hash === '#/stack';
   
-  const validTools = ['vault', 'brain', 'desktop', 'browse', 'eraseme', 'terminal', 'cockpit', 'vibecoder', 'fritz'];
+  const validTools = ['vault', 'brain', 'desktop', 'browse', 'eraseme', 'cockpit', 'fritz'];
   const toolHashMatch = hash.match(/^#\/([a-z-]+)$/);
   const toolName = toolHashMatch ? toolHashMatch[1] : null;
   const isDynamicToolPage = toolName && validTools.includes(toolName);

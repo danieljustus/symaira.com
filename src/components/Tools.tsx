@@ -359,35 +359,6 @@ export const Tools: React.FC = () => {
                     </div>
                   </div>
                 </div>
-              ) : activeProduct.demoType === 'vibecoder' ? (
-                <div className="product-demo product-demo-vibecoder" aria-hidden="true">
-                  <div className="demo-header">
-                    <div className="demo-dots">
-                      <span />
-                      <span />
-                      <span />
-                    </div>
-                    <div className="demo-title">
-                      <Workflow size={12} />
-                      {t('vibecoderDemoTitle')}
-                    </div>
-                  </div>
-                  <div className="vibecoder-flow">
-                    <div className="vibecoder-card card-done">
-                      <div className="vibecoder-status-dot status-done">✔</div>
-                      <span className="vibecoder-step-name">{t('vibecoderDemoPhase1')}</span>
-                    </div>
-                    <div className="vibecoder-card card-running">
-                      <div className="vibecoder-status-dot status-running animate-pulse">◐</div>
-                      <span className="vibecoder-step-name">{t('vibecoderDemoPhase2')}</span>
-                      <span className="vibecoder-running-text">{t('vibecoderDemoStatusRunning')}</span>
-                    </div>
-                    <div className="vibecoder-card card-pending">
-                      <div className="vibecoder-status-dot status-pending">○</div>
-                      <span className="vibecoder-step-name">{t('vibecoderDemoPhase3')}</span>
-                    </div>
-                  </div>
-                </div>
               ) : activeProduct.demoType === 'fritz' ? (
                 <div className="product-demo product-demo-terminal" aria-hidden="true">
                   <div className="demo-header">
@@ -411,7 +382,7 @@ export const Tools: React.FC = () => {
                     <p style={{ color: '#86efac' }}>✓ TCP 8001 (Paperless) open</p>
                   </div>
                 </div>
-              ) : activeProduct.demoType === 'desktop' ? (
+              ) : (
                 <div className="product-demo product-demo-terminal-app" aria-hidden="true">
                   <div className="demo-header">
                     <div className="demo-dots">
@@ -450,57 +421,7 @@ export const Tools: React.FC = () => {
                     </div>
                   </div>
                 </div>
-              ) : (
-                <div className="product-demo product-demo-terminal-app" aria-hidden="true">
-                  <div className="demo-header">
-                    <div className="demo-dots">
-                      <span />
-                      <span />
-                      <span />
-                    </div>
-                    <div className="demo-title">
-                      <Terminal size={12} />
-                      symaira-terminal // session-1
-                    </div>
-                  </div>
-                  <div className="terminal-split-view">
-                    <div className="terminal-pane terminal-pane-left">
-                      <div className="pane-header">
-                        <span className="pane-status-ring status-ring-active"></span>
-                        <span className="pane-name">{t('terminalDemoPane1')}</span>
-                      </div>
-                      <div className="pane-terminal-content">
-                        <p className="line-cmd"><span>$</span> aider app.py</p>
-                        <p className="line-log">// Analyzing codebase...</p>
-                        <p className="line-log">// Modifying files...</p>
-                        <p className="line-diff-add">+ def process_secrets():</p>
-                        <p className="line-diff-add">+     return symvault.get()</p>
-                      </div>
-                    </div>
-                    <div className="terminal-pane terminal-pane-right">
-                      <div className="pane-header">
-                        <span className="pane-status-ring status-ring-blocked animate-pulse-ring"></span>
-                        <span className="pane-name">{t('terminalDemoPane2')}</span>
-                      </div>
-                      <div className="pane-terminal-content">
-                        <p className="line-cmd"><span>$</span> claude dev</p>
-                        <div className="terminal-prompt-box">
-                          <div className="prompt-header">
-                            <span>{t('terminalDemoPrompt')}</span>
-                          </div>
-                          <div className="prompt-body">
-                            <p>Write to: index.html</p>
-                            <div className="prompt-actions">
-                              <span className="prompt-btn btn-approve">Approve</span>
-                              <span className="prompt-btn btn-reject">Reject</span>
-                            </div>
-                          </div>
-                        </div>
-                        <p className="line-status-alert">{t('terminalDemoAction')}</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+
               )}
             </div>
           </div>

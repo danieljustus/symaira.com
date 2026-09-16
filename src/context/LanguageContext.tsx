@@ -109,28 +109,6 @@ export interface TranslationMap {
   erasemeFeature3: string;
   erasemeFeature4: string;
   erasemeBtn: string;
-  terminalBadge: string;
-  terminalStatus: string;
-  terminalTitle: string;
-  terminalDesc: string;
-  terminalBestFor: string;
-  terminalAutomates: string;
-  terminalFeature1: string;
-  terminalFeature2: string;
-  terminalFeature3: string;
-  terminalFeature4: string;
-  terminalBtn: string;
-  vibecoderBadge: string;
-  vibecoderStatus: string;
-  vibecoderTitle: string;
-  vibecoderDesc: string;
-  vibecoderBestFor: string;
-  vibecoderAutomates: string;
-  vibecoderFeature1: string;
-  vibecoderFeature2: string;
-  vibecoderFeature3: string;
-  vibecoderFeature4: string;
-  vibecoderBtn: string;
   fritzBadge: string;
   fritzStatus: string;
   fritzTitle: string;
@@ -155,15 +133,6 @@ export interface TranslationMap {
   desktopBtn: string;
   heroBadgeGermany: string;
   footerMadeInGermany: string;
-  terminalDemoPane1: string;
-  terminalDemoPane2: string;
-  terminalDemoPrompt: string;
-  terminalDemoAction: string;
-  vibecoderDemoTitle: string;
-  vibecoderDemoPhase1: string;
-  vibecoderDemoPhase2: string;
-  vibecoderDemoPhase3: string;
-  vibecoderDemoStatusRunning: string;
   filterAll: string;
   filterContext: string;
   filterSecurity: string;
@@ -221,7 +190,6 @@ export interface TranslationMap {
   stackInstallTitle: string;
   stackInstallStep1Label: string;
   stackInstallStep2Label: string;
-  stackInstallStep3Label: string;
   stackInstallNote: string;
   stackConfigTitle: string;
   stackConfigDesc: string;
@@ -271,7 +239,7 @@ const translations: Record<Language, TranslationMap> = {
     visionPillar3Title: 'Useful Autonomy',
     visionPillar3Desc: 'Automation should be explainable, bounded, and safe enough to trust with repeatable work without ever sacrificing human oversight.',
     toolsTitle: 'The Symaira tools',
-    toolsSubtitle: 'Nine open-source, local-first tools for human-AI collaboration — every one MCP-ready and designed to put trust back in your hands, focusing on secrets, identity, privacy, and repeatable agent workflows.',
+    toolsSubtitle: 'Seven open-source, local-first tools for human-AI collaboration — every one MCP-ready and designed to put trust back in your hands, focusing on secrets, identity, privacy, and repeatable agent workflows.',
     bestForLabel: 'Best for',
     automatesLabel: 'What it automates',
     vaultBadge: 'Secrets & agents',
@@ -351,28 +319,6 @@ const translations: Record<Language, TranslationMap> = {
     erasemeFeature3: 'Event-sourced SQLite audit trail records every request.',
     erasemeFeature4: 'Manual fallback covers web forms, CAPTCHA, and reports/export.',
     erasemeBtn: 'View EraseMe on GitHub',
-    terminalBadge: 'Agent terminal',
-    terminalStatus: 'Beta',
-    terminalTitle: 'Symaira Terminal',
-    terminalDesc: 'A native macOS terminal built for the Human-AI era. It allows running multiple CLI coding agents in parallel with per-pane status rings, shell integration, and Git worktree isolation.',
-    terminalBestFor: 'Developers running CLI coding agents who need to monitor status and manage permissions.',
-    terminalAutomates: 'Pane management, agent status tracking, Git worktree isolation, and structured permission prompts.',
-    terminalFeature1: 'Swift 6 & SwiftUI wrapper around Metal-accelerated Ghostty.',
-    terminalFeature2: 'Per-pane agent status rings (active, blocked, error).',
-    terminalFeature3: 'Dual-mode integration supporting plain PTY and structured ACP.',
-    terminalFeature4: 'Git worktree isolation to review agent changes before merge.',
-    terminalBtn: 'View Terminal on GitHub',
-    vibecoderBadge: 'Vibe Coding',
-    vibecoderStatus: 'Beta',
-    vibecoderTitle: 'Symaira Vibecoder',
-    vibecoderDesc: 'A local graphical dashboard to build, edit, and run autonomous agent cycles via drag-and-drop. It orchestrates opencode runs with custom model settings and real-time status tracking.',
-    vibecoderBestFor: 'Developers looking for a visual board to design and run multi-step agent coding pipelines.',
-    vibecoderAutomates: 'symvibe serve, phase scheduling, auto-skipping sensors, and SSE-based status updates.',
-    vibecoderFeature1: 'Visual cycle builder with drag-and-drop workflow phases.',
-    vibecoderFeature2: 'Supports opencode for executing tasks with model overrides.',
-    vibecoderFeature3: 'Smart scheduler with auto-skip rules based on Git or issues.',
-    vibecoderFeature4: '100% CGO-free Go code with embedded web board.',
-    vibecoderBtn: 'View Vibecoder on GitHub',
     fritzBadge: 'Router & network',
     fritzStatus: 'Beta',
     fritzTitle: 'Symaira Fritz',
@@ -395,15 +341,6 @@ const translations: Record<Language, TranslationMap> = {
     desktopFeature3: 'Zero database lock-in: plain-text Markdown is the single source of truth.',
     desktopFeature4: 'Block editor, backlinks, graph view, saved database views, and an AI dock.',
     desktopBtn: 'View Desktop on GitHub',
-    terminalDemoPane1: 'Pane 1: Aider (active)',
-    terminalDemoPane2: 'Pane 2: Claude Code (blocked)',
-    terminalDemoPrompt: 'Approve file edits?',
-    terminalDemoAction: 'Awaiting human consent',
-    vibecoderDemoTitle: 'symvibe serve',
-    vibecoderDemoPhase1: '1. Review',
-    vibecoderDemoPhase2: '2. Plan',
-    vibecoderDemoPhase3: '3. Code',
-    vibecoderDemoStatusRunning: 'Running...',
     filterAll: 'All Tools',
     filterContext: 'Context & Memory',
     filterSecurity: 'Security & Integrity',
@@ -461,8 +398,7 @@ const translations: Record<Language, TranslationMap> = {
     stackInstallTitle: 'Install the Stack',
     stackInstallStep1Label: 'Add the Homebrew tap',
     stackInstallStep2Label: 'Install CLI tools + MCP servers',
-    stackInstallStep3Label: 'Install the native terminal',
-    stackInstallNote: 'Every tool ships via Homebrew — the CLIs as formulae, Symaira Terminal as a cask.',
+    stackInstallNote: 'Every tool ships via Homebrew as a formula; the desktop app as a cask.',
     stackConfigTitle: 'MCP Configuration',
     stackConfigDesc: 'Drop this into your agent\'s MCP config directory. Each tool runs as a local stdio server — no network, no cloud.',
     stackWorkflowTitle: 'Example Workflows',
@@ -511,7 +447,7 @@ const translations: Record<Language, TranslationMap> = {
     visionPillar3Title: 'Sinnvolle Autonomie',
     visionPillar3Desc: 'Automatisierung muss erklärbar, klar begrenzt und so sicher sein, dass man ihr wiederkehrende Aufgaben anvertrauen kann, ohne je die Kontrolle zu verlieren.',
     toolsTitle: 'Die Symaira-Tools',
-    toolsSubtitle: 'Neun Open-Source-Tools für die Mensch-KI-Zusammenarbeit – alle arbeiten rein lokal (local-first), sind MCP-fähig und legen das Vertrauen zurück in deine Hände: Secrets, Identität, Privatsphäre und verlässliche Agenten-Workflows.',
+    toolsSubtitle: 'Sieben Open-Source-Tools für die Mensch-KI-Zusammenarbeit – alle arbeiten rein lokal (local-first), sind MCP-fähig und legen das Vertrauen zurück in deine Hände: Secrets, Identität, Privatsphäre und verlässliche Agenten-Workflows.',
     bestForLabel: 'Ideal für',
     automatesLabel: 'Automatisiert',
     vaultBadge: 'Secrets & Agents',
@@ -591,28 +527,6 @@ const translations: Record<Language, TranslationMap> = {
     erasemeFeature3: 'Ein Event-sourced SQLite-Audit-Trail dokumentiert jede Anfrage.',
     erasemeFeature4: 'Manueller Fallback für Webformulare, CAPTCHAs sowie Daten-Exporte.',
     erasemeBtn: 'EraseMe auf GitHub ansehen',
-    terminalBadge: 'Agenten-Terminal',
-    terminalStatus: 'Beta',
-    terminalTitle: 'Symaira Terminal',
-    terminalDesc: 'Ein natives macOS-Terminal für die Mensch-KI-Ära. Ermöglicht das parallele Ausführen mehrerer CLI-Coding-Agenten mit Statusringen pro Panel, Shell-Integration und Git-Worktree-Isolierung.',
-    terminalBestFor: 'Entwickler, die CLI-Coding-Agenten ausführen und Status/Berechtigungen überwachen wollen.',
-    terminalAutomates: 'Panel-Management, Agenten-Statusverfolgung, Git-Worktree-Isolierung und strukturierte Berechtigungsabfragen.',
-    terminalFeature1: 'Swift 6 & SwiftUI Wrapper auf der Metal-beschleunigten Ghostty-Engine.',
-    terminalFeature2: 'Agenten-Statusringe pro Panel (aktiv, blockiert, fehlerhaft).',
-    terminalFeature3: 'Duale Integration mit Unterstützung für PTY und Agent Client Protocol (ACP).',
-    terminalFeature4: 'Git-Worktree-Isolierung isoliert Agenten-Änderungen vor dem Merge.',
-    terminalBtn: 'Terminal auf GitHub ansehen',
-    vibecoderBadge: 'Vibe-Coding',
-    vibecoderStatus: 'Beta',
-    vibecoderTitle: 'Symaira Vibecoder',
-    vibecoderDesc: 'Ein lokales grafisches Dashboard zum Erstellen, Bearbeiten und Ausführen autonomer Agenten-Zyklen per Drag-&-Drop. Steuert opencode-Läufe mit Modellauswahl und Live-Status.',
-    vibecoderBestFor: 'Entwickler, die eine visuelle Oberfläche zum Entwerfen und Ausführen mehrstufiger Coding-Pipelines suchen.',
-    vibecoderAutomates: 'symvibe serve, Phasen-Scheduling, Auto-Skip-Sensoren und SSE-Status-Updates.',
-    vibecoderFeature1: 'Visueller Cycle-Baukasten mit Drag-&-Drop-Verschiebung der Phasen.',
-    vibecoderFeature2: 'Unterstützt opencode für die Ausführung der Einzelschritte.',
-    vibecoderFeature3: 'Smarter Scheduler mit Auto-Skip-Regeln basierend auf Git/Issues.',
-    vibecoderFeature4: '100 % CGO-freier Go-Code mit eingebettetem Web-Board.',
-    vibecoderBtn: 'Vibecoder auf GitHub ansehen',
     fritzBadge: 'Router & Netzwerk',
     fritzStatus: 'Beta',
     fritzTitle: 'Symaira Fritz',
@@ -635,15 +549,6 @@ const translations: Record<Language, TranslationMap> = {
     desktopFeature3: 'Kein Datenbank-Lock-in: Klartext-Markdown bleibt die einzige Quelle der Wahrheit.',
     desktopFeature4: 'Block-Editor, Backlinks, Graph-Ansicht, gespeicherte Datenbank-Views und AI-Dock.',
     desktopBtn: 'Desktop auf GitHub ansehen',
-    terminalDemoPane1: 'Panel 1: Aider (aktiv)',
-    terminalDemoPane2: 'Panel 2: Claude Code (blockiert)',
-    terminalDemoPrompt: 'Änderungen freigeben?',
-    terminalDemoAction: 'Wartet auf Freigabe',
-    vibecoderDemoTitle: 'symvibe serve',
-    vibecoderDemoPhase1: '1. Review',
-    vibecoderDemoPhase2: '2. Planung',
-    vibecoderDemoPhase3: '3. Coden',
-    vibecoderDemoStatusRunning: 'Läuft...',
     filterAll: 'Alle Tools',
     filterContext: 'Kontext & Speicher',
     filterSecurity: 'Sicherheit & Integrität',
@@ -701,8 +606,7 @@ const translations: Record<Language, TranslationMap> = {
     stackInstallTitle: 'Stack installieren',
     stackInstallStep1Label: 'Homebrew-Tap hinzufügen',
     stackInstallStep2Label: 'CLI-Tools + MCP-Server installieren',
-    stackInstallStep3Label: 'Natives Terminal installieren',
-    stackInstallNote: 'Alle Tools kommen über Homebrew — die CLIs als Formula, Symaira Terminal als Cask.',
+    stackInstallNote: 'Alle Tools kommen über Homebrew als Formula; die Desktop-App als Cask.',
     stackConfigTitle: 'MCP-Konfiguration',
     stackConfigDesc: 'Leg diese Datei in das MCP-Konfigurationsverzeichnis deines Agenten. Jedes Tool läuft als lokaler stdio-Server — kein Netzwerk, keine Cloud.',
     stackWorkflowTitle: 'Workflow-Beispiele',

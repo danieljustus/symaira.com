@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Terminal, ArrowRight, Copy, Check, Shield, Brain, Globe, Eye, Cpu, Router, Workflow, Layout } from 'lucide-react';
+import { Terminal, ArrowRight, Copy, Check, Shield, Brain, Globe, Eye, Cpu, Router, Layout } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 const mcpConfigJson = `{
@@ -46,11 +46,7 @@ export const Stack: React.FC = () => {
     },
     {
       label: t('stackInstallStep2Label'),
-      command: 'brew install symvault symbrain symdesk symbrowse symcockpit symeraseme symvibe symfritz',
-    },
-    {
-      label: t('stackInstallStep3Label'),
-      command: 'brew install --cask symterminal',
+      command: 'brew install symvault symbrain symdesk symbrowse symcockpit symeraseme symfritz',
     },
   ];
 
@@ -116,22 +112,10 @@ export const Stack: React.FC = () => {
       tone: 'ice',
     },
     {
-      icon: <Terminal size={18} />,
-      title: 'Symaira Terminal',
-      status: 'app',
-      tone: 'mint',
-    },
-    {
       icon: <Cpu size={18} />,
       title: 'Symaira Cockpit',
       status: 'available',
       tone: 'indigo',
-    },
-    {
-      icon: <Workflow size={18} />,
-      title: 'Symaira Vibecoder',
-      status: 'available',
-      tone: 'violet',
     },
     {
       icon: <Router size={18} />,
