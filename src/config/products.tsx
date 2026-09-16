@@ -5,8 +5,6 @@ import {
   Brain,
   Globe,
   Eye,
-  Terminal,
-  Workflow,
   Cpu,
   Router,
   Layout,
@@ -31,7 +29,6 @@ export interface Product {
 
 export const getRouteForCmd = (cmd: string): string => {
   if (cmd === 'symeraseme') return 'eraseme';
-  if (cmd === 'symvibe') return 'vibecoder';
   if (cmd === 'symdesk') return 'desktop';
   return cmd.replace(/^sym/, '');
 };
@@ -138,22 +135,6 @@ export const getProducts = (t: (key: keyof TranslationMap) => string): Product[]
     category: 'security',
   },
   {
-    cmd: 'symterminal',
-    badge: t('terminalBadge'),
-    status: t('terminalStatus'),
-    title: t('terminalTitle'),
-    desc: t('terminalDesc'),
-    bestFor: t('terminalBestFor'),
-    automates: t('terminalAutomates'),
-    features: [t('terminalFeature1'), t('terminalFeature2'), t('terminalFeature3'), t('terminalFeature4')],
-    href: 'https://github.com/danieljustus/symaira-terminal',
-    button: t('terminalBtn'),
-    icon: <Terminal size={24} />,
-    tone: 'mint',
-    demoType: 'terminal-app',
-    category: 'system',
-  },
-  {
     cmd: 'symcockpit',
     badge: t('cockpitBadge'),
     status: t('cockpitStatus'),
@@ -174,22 +155,6 @@ export const getProducts = (t: (key: keyof TranslationMap) => string): Product[]
     icon: <Cpu size={24} />,
     tone: 'indigo',
     demoType: 'cockpit',
-    category: 'system',
-  },
-  {
-    cmd: 'symvibe',
-    badge: t('vibecoderBadge'),
-    status: t('vibecoderStatus'),
-    title: t('vibecoderTitle'),
-    desc: t('vibecoderDesc'),
-    bestFor: t('vibecoderBestFor'),
-    automates: t('vibecoderAutomates'),
-    features: [t('vibecoderFeature1'), t('vibecoderFeature2'), t('vibecoderFeature3'), t('vibecoderFeature4')],
-    href: 'https://github.com/danieljustus/symaira-vibecoder',
-    button: t('vibecoderBtn'),
-    icon: <Workflow size={24} />,
-    tone: 'violet',
-    demoType: 'vibecoder',
     category: 'system',
   },
   {
