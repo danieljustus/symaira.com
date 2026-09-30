@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Symaira Terminal und Symaira Vibecoder wurden eingestellt: Produktseiten, Routen (`#/terminal`, `#/vibecoder`), Demos, EN/DE-Copy, Homebrew-Befehle, JSON-LD-Einträge und `llms.txt`-Abschnitte entfernt. Die Tool-Zahl sinkt von neun auf sieben; alte Deep-Links fallen auf die Startseite zurück
 
 ### Changed
+- README aligned with the shared Symaira structure and PB-2026-09-09: linked license badge, current source ownership, development checks and explicit website-license boundary (#54)
 - Site now reflects the August 2026 repo consolidation: 17 tool pages reduced to the nine remaining tools (Vault, Brain, Desktop, Browse, EraseMe, Terminal, Cockpit, Vibecoder, Fritz), with the absorbed tools described as features of their new home
 - New product pages, demos, routes and EN/DE copy for Symaira Brain, Symaira Browse and Symaira Cockpit; Desktop copy rewritten around the composition shell and its nested modules
 - Stack page updated: Homebrew install commands, MCP config sample, example workflows and tool grid rebuilt around the nine tools
