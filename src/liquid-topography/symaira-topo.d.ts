@@ -4,6 +4,7 @@ export type TopoState = 'idle' | 'thinking' | 'problem' | 'input';
 export interface TopoHandle {
   supported: boolean;
   setState(state: TopoState, target?: Element): void;
+  setMotionEnabled(enabled: boolean): void;
   ripple(target: Element | [number, number], strength?: number, key?: unknown): void;
   destroy(): void;
 }

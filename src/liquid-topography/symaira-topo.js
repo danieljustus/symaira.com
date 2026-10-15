@@ -34,20 +34,21 @@ void main(){
  vec2 q=sp/scale;
  vec2 w=vec2(fbm(vec3(q*.7,t*.6)),fbm(vec3(q*.7+5.2,t*.6)));
  float h=fbm(vec3(q+w*warp,t));
- h+=prob*.05*(n3(vec3(sp/26.,rt*2.2))-.5);
+ h+=prob*.025*(n3(vec3(sp/26.,rt*.9))-.5);
  h-=press*pD*exp(-md*md/(pR*pR*1.6));
- float mask=1.;
+ float mask=1.,hill=0.;
  for(int i=0;i<20;i++){if(i>=NR)break;float sd=sdBox(px,R[i],12.);
-  if(K[i]>.5)h+=.11*exp(-max(sd,0.)/34.);
-  mask*=smoothstep(6.,22.,sd);}
- for(int i=0;i<8;i++){vec4 r=RP[i];if(r.w<=0.)continue;float d=length(px-r.xy),front=r.z*260.;
-  h+=r.w*.06*exp(-pow((d-front)/40.,2.))*exp(-r.z*1.2);}
- if(ask>0.){float d=length(px-askP);h+=ask*.05*sin(d/30.+rt*2.2)*exp(-d/380.);}
+  if(K[i]>.5)hill=max(hill,.025*exp(-max(sd,0.)/24.));
+  mask=min(mask,smoothstep(2.,8.,sd));}
+ h+=hill;
+ for(int i=0;i<8;i++){vec4 r=RP[i];if(r.w<=0.)continue;float d=length(px-r.xy),front=r.z*180.;
+  h+=r.w*.03*exp(-pow((d-front)/40.,2.))*exp(-r.z*1.2);}
+ if(ask>0.){float d=length(px-askP);h+=ask*.025*sin(d/30.+rt*1.2)*exp(-d/380.);}
  float v=h*levels;
  float line=iso(v,.65*dpr,.5),idx=iso(v/5.,1.*dpr,1.6),band=floor(v)/levels;
  vec2 e=(px-vec2(res.x*.6,res.y*.55))/vec2(res.x*.36,res.y*.5);
  float vis=mix(1.,clamp((length(e)-.78)/.42,0.,1.),basin);
- float pulse=1.+think*.18*sin(rt*3.);
+ float pulse=1.+think*.08*sin(rt*1.5);
  float a=min((max(line*lineA,idx*idxA)+band*bandA)*vis*pulse,maxA)*mask*k;
  vec3 c=mix(col,tint,tintA);
  o=vec4(c*a,a);
@@ -71,7 +72,7 @@ export function mountTopo(host, {
   if (getComputedStyle(host).position === "static") host.style.position = "relative";
   host.prepend(cv);
   const gl = cv.getContext("webgl2", { premultipliedAlpha: true, alpha: true, antialias: false });
-  if (!gl) return { setState() {}, ripple() {}, destroy() { cv.remove(); }, supported: false };
+  if (!gl) return { setState() {}, setMotionEnabled() {}, ripple() {}, destroy() { cv.remove(); }, supported: false };
 
   const sh = (type, src) => { const s = gl.createShader(type); gl.shaderSource(s, src); gl.compileShader(s);
     if (!gl.getShaderParameter(s, gl.COMPILE_STATUS)) throw new Error(gl.getShaderInfoLog(s)); return s; };
@@ -89,7 +90,7 @@ export function mountTopo(host, {
   const hexRGB = (h) => { h = h.replace("#", ""); return [0, 2, 4].map((i) => parseInt(h.slice(i, i + 2), 16) / 255); };
   const tintFor = (s) => s.tint === "none" ? hexRGB(css("--sym-topo")) : hexRGB(css(`--sym-${s.tint}`));
 
-  let state = "idle", askEl = null;
+  let state = "idle", askEl = null, motionEnabled = true;
   const cur = Object.fromEntries(KEYS.map((k) => [k, params.states.idle[k]]));
   let tintCur = tintFor(params.states.idle);
   const rip = [], mouse = { x: -1e4, y: -1e4, tx: -1e4, ty: -1e4, amt: 0, tAmt: 0, vel: 0, down: false, press: 0, travel: 0 };
@@ -100,7 +101,7 @@ export function mountTopo(host, {
   const local = (x, y) => { const r = host.getBoundingClientRect(); return [x - r.left, y - r.top]; };
   const center = (el) => { const r = el.getBoundingClientRect(); return local(r.left + r.width / 2, r.top + r.height / 2); };
   function ripple(target, str = 1, key) {
-    if (reduce.matches || !target) return;
+    if (reduce.matches || !motionEnabled || !target) return;
     if (key) { const n = performance.now(); if (n - (keyed.get(key) || 0) < params.layout.rippleThrottleSeconds * 1000) return; keyed.set(key, n); }
     const [x, y] = target instanceof Element ? center(target) : target;
     rip.push({ x, y, age: 0, str }); if (rip.length > 8) rip.shift();
@@ -157,7 +158,7 @@ export function mountTopo(host, {
   function frame(ts) {
     raf = null;
     if (!alive || document.hidden) return;
-    const still = reduce.matches, cap = 1000 / params.fps.web;
+    const still = reduce.matches || !motionEnabled, cap = 1000 / params.fps.web;
     if (!still && last && ts - last < cap - 1) { schedule(); return; }
     const dt = last ? Math.min(0.06, (ts - last) / 1000) : 0; last = ts;
     const tg = params.states[state], f = 1 - Math.exp(-dt / params.transitionSeconds);
@@ -227,6 +228,7 @@ export function mountTopo(host, {
 
   return {
     supported: true, setState, ripple,
+    setMotionEnabled(enabled) { motionEnabled = Boolean(enabled); onReduce(); },
     destroy() { alive = false; if (raf !== null) cancelAnimationFrame(raf); document.removeEventListener("visibilitychange", onVis);
       resize.disconnect(); mutations.disconnect(); reduce.removeEventListener('change', onReduce);
       colorScheme.removeEventListener('change', schedule);
