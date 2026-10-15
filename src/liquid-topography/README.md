@@ -1,10 +1,10 @@
 # Liquid Topography source
 
 `symaira-topo.js` is vendored unchanged from
-[`symaira-appkit/design/liquid-topography/web`](https://github.com/danieljustus/symaira-appkit/tree/c0091bc/design/liquid-topography/web),
-commit `c0091bc`.
+[`symaira-appkit/design/liquid-topography/web`](https://github.com/danieljustus/symaira-appkit/tree/560f791/design/liquid-topography/web),
+commit `560f791`.
 
-SHA-256: `af7f5aa254817dd8c689f1705e81b3728385961c360f41c2cdee510579d0856c`.
+SHA-256: `03ac6a69f70fce4b2189883008f6f428917bbf6d87f9336fd8d99bcfb5b8e8c4`.
 
 The design source is AppKit's `design/liquid-topography/DESIGN.md` and
 `topo.json`; `tokens.css` is produced by its `build.py`. Change the source there
