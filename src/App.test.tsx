@@ -7,7 +7,7 @@ import App from './App';
 // the suite stays focused on routing and titles, matching the audit's
 // "Test observable behavior, not implementation details" guidance.
 // Note: App.tsx imports these as named exports, so the mocks must mirror that.
-vi.mock('./components/SandBackground', () => ({ SandBackground: () => null }));
+vi.mock('./components/TopoBackground', () => ({ TopoBackground: () => null }));
 vi.mock('./components/Navigation', () => ({ Navigation: () => null }));
 vi.mock('./components/Hero', () => ({ Hero: () => null }));
 vi.mock('./components/Vision', () => ({ Vision: () => null }));

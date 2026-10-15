@@ -10,7 +10,7 @@ import { Stack } from './components/Stack';
 import { ToolPage } from './components/ToolPage';
 import { Footer } from './components/Footer';
 import { LegalPages } from './components/LegalPages';
-import { SandBackground } from './components/SandBackground';
+import { TopoBackground } from './components/TopoBackground';
 import { CookieConsent } from './components/CookieConsent';
 
 const DEFAULT_TITLE = 'Symaira | Open-Source, Local-First AI Tools & MCP Servers';
@@ -63,7 +63,7 @@ function App() {
     <ThemeProvider>
       <LanguageProvider>
         <div style={{ position: 'relative', minHeight: '100vh', overflowX: 'hidden' }}>
-          <SandBackground />
+          <TopoBackground />
 
           {/* Ambient glow blobs */}
           <div className="bg-ambient-glow glow-cyan-top" />
