@@ -3,18 +3,20 @@
    ========================================================================== */
 
 @import "@fontsource-variable/roboto-flex";
+@import "./liquid-topography/tokens.css";
 
 :root {
-  /* Colors - Champagne Gold & Warm Sand Theme */
-  --bg-dark: #0D0C0A; /* Deep Warm Charcoal Obsidian */
-  --bg-darker: #070605;
-  --bg-card: rgba(18, 17, 14, 0.65);
-  --bg-card-hover: rgba(26, 24, 20, 0.8);
+  /* Liquid Topography palette (tokens from src/liquid-topography/tokens.css).
+     Legacy variable names are kept so existing components follow automatically. */
+  --bg-dark: #1C1C1B;
+  --bg-darker: #171716;
+  --bg-card: #242423; /* opaque: no glass imitation on the web */
+  --bg-card-hover: #2B2B2A;
   
   /* Brand Color Concept: Warm Sand & Champagne Gold Theme */
-  --gold-primary: #E5C397;
-  --gold-secondary: #F8E6CD;
-  --gold-shadow: #C29965;
+  --gold-primary: #C7B89E;
+  --gold-secondary: #DCD1BE;
+  --gold-shadow: #A8987D;
   
   --ice-primary: #EEDCC4;
   --ice-secondary: #D4B285;
@@ -32,11 +34,11 @@
   --indigo-glow: rgba(212, 178, 133, 0.05);
   
   /* High contrast text on warm dark background */
-  --text-primary: #F5F4F0; /* Warm Bone */
-  --text-secondary: #B5AEA5; /* Warm Sand Silver */
-  --text-muted: #6E6860; /* Soft warm gray */
+  --text-primary: #EEEDEA;
+  --text-secondary: #B0AEA9;
+  --text-muted: #97958F; /* 5.7:1 on --bg-dark (was 3.3:1) */
   
-  --border-glass: rgba(255, 255, 255, 0.05);
+  --border-glass: #363634;
   --border-glass-hover: rgba(229, 195, 151, 0.18);
   
   --font-sans: 'Roboto Flex Variable', system-ui, -apple-system, sans-serif;
@@ -46,8 +48,8 @@
   --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   --transition-fast: all 0.2s ease;
 
-  --grid-color: rgba(255, 255, 255, 0.022);
-  --glow-opacity: 0.7;
+  --grid-color: transparent; /* topography replaces the blueprint grid */
+  --glow-opacity: 0;
   --bg-footer: rgba(3, 3, 4, 0.4);
 }
 
@@ -242,11 +244,9 @@ a {
 /* Glassmorphism panel utility */
 .glass-panel {
   background: var(--bg-card);
-  backdrop-filter: blur(20px) saturate(140%);
-  -webkit-backdrop-filter: blur(20px) saturate(140%);
   border: 1px solid var(--border-glass);
-  border-radius: 12px;
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+  border-radius: 14px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), 0 10px 28px rgba(0, 0, 0, 0.10);
   transition: var(--transition-smooth);
 }
 
