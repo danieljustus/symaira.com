@@ -17,14 +17,6 @@ export const Hero: React.FC = () => {
 
     // Dispatch the custom event to propagate physical ripple into background canvas
     window.dispatchEvent(new CustomEvent('logo-shockwave', { detail: { x, y } }));
-
-    const shockwaves = stage.querySelectorAll('.hero-mark-shockwave');
-    shockwaves.forEach((shockwave) => {
-      const el = shockwave as HTMLElement;
-      el.classList.remove('active');
-      void el.offsetWidth; // Force DOM reflow to reset/restart animation
-      el.classList.add('active');
-    });
   };
 
   useEffect(() => {
@@ -97,13 +89,6 @@ export const Hero: React.FC = () => {
         zIndex: 1,
       }}
     >
-      <img
-        src="/logo.png"
-        alt=""
-        aria-hidden="true"
-        className="hero-logo-watermark"
-      />
-
       {/* Hero Content */}
       <div style={{
         flex: '1 1 50%',
@@ -127,16 +112,14 @@ export const Hero: React.FC = () => {
             gap: '8px',
             padding: '6px 14px',
             borderRadius: '30px',
-            background: 'rgba(229, 195, 151, 0.05)',
-            border: '1px solid rgba(229, 195, 151, 0.25)',
-            boxShadow: '0 0 20px rgba(229, 195, 151, 0.08)',
+            background: 'var(--sym-primary-soft)',
+            border: '1px solid var(--border-glass)',
           }}>
             <span style={{
               width: '6px',
               height: '6px',
               borderRadius: '50%',
               backgroundColor: 'var(--cyan-primary)',
-              boxShadow: '0 0 8px var(--cyan-primary)',
             }} className="animate-pulse" />
             <span style={{
               fontFamily: 'var(--font-tech)',
@@ -156,11 +139,9 @@ export const Hero: React.FC = () => {
             gap: '8px',
             padding: '6px 14px',
             borderRadius: '30px',
-            background: 'rgba(229, 195, 151, 0.05)',
-            border: '1px solid rgba(229, 195, 151, 0.25)',
-            boxShadow: '0 0 20px rgba(229, 195, 151, 0.08)',
+            background: 'var(--sym-primary-soft)',
+            border: '1px solid var(--border-glass)',
           }}>
-            <span style={{ fontSize: '12px', lineHeight: 1 }}>🇩🇪</span>
             <span style={{
               fontFamily: 'var(--font-tech)',
               fontSize: '11px',
@@ -179,7 +160,7 @@ export const Hero: React.FC = () => {
           fontSize: 'clamp(38px, 4rem, 64px)',
           lineHeight: 1.1,
           fontFamily: 'var(--font-title)',
-          fontWeight: 800,
+          fontWeight: 700,
           letterSpacing: '0',
           marginBottom: '24px',
           color: 'var(--text-primary)',
@@ -195,17 +176,14 @@ export const Hero: React.FC = () => {
             color: 'var(--text-secondary)',
             fontSize: '80%',
             fontFamily: 'var(--font-sans)',
-            fontWeight: 300,
+            fontWeight: 500,
             margin: '6px 0',
           }}>
             {t('heroTitle2')}
           </span>
           <span style={{
             display: 'block',
-            background: 'linear-gradient(90deg, var(--cyan-primary) 20%, var(--blue-accent) 100%)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            textShadow: '0 0 60px rgba(229, 195, 151, 0.15)',
+            color: 'var(--text-primary)',
           }}>
             {t('heroTitle3')}
           </span>
@@ -218,7 +196,7 @@ export const Hero: React.FC = () => {
           lineHeight: '1.65',
           maxWidth: '540px',
           marginBottom: '14px',
-          fontWeight: 400,
+          fontWeight: 500,
         }}>
           {t('heroSubtitle')}
         </p>
@@ -238,10 +216,9 @@ export const Hero: React.FC = () => {
             style={{
               padding: '14px 28px',
               borderRadius: '8px',
-              color: '#000',
+              color: 'var(--sym-surface)',
               fontWeight: 600,
               fontSize: '15px',
-              boxShadow: '0 4px 20px rgba(229, 195, 151, 0.2)',
               transition: 'var(--transition-fast)',
             }}
             className="action-button-primary"
@@ -253,11 +230,11 @@ export const Hero: React.FC = () => {
             style={{
               padding: '14px 28px',
               borderRadius: '8px',
-              backgroundColor: 'rgba(255, 255, 255, 0.03)',
+              backgroundColor: 'transparent',
               color: 'var(--text-primary)',
               fontWeight: 500,
               fontSize: '15px',
-              border: '1px solid rgba(255, 255, 255, 0.08)',
+              border: '1px solid var(--border-glass)',
               transition: 'var(--transition-fast)',
             }}
             className="action-button-secondary"
@@ -279,15 +256,6 @@ export const Hero: React.FC = () => {
         }}
       >
         <div ref={markStageRef} className="hero-mark-stage" aria-hidden="true">
-          <div className="hero-mark-aura" />
-          <div className="hero-mark-grid" />
-          <div className="hero-mark-ring hero-mark-ring-outer" />
-          <div className="hero-mark-ring hero-mark-ring-inner" />
-          
-          {/* Shockwave energy ripples (rendered under the logo parts but on top of rings) */}
-          <div className="hero-mark-shockwave wave-1" />
-          <div className="hero-mark-shockwave wave-2" />
-
           <img
             src="/logo-top.png"
             alt=""

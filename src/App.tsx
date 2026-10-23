@@ -65,10 +65,6 @@ function App() {
         <div style={{ position: 'relative', minHeight: '100vh', overflowX: 'hidden' }}>
           <TopoBackground />
 
-          {/* Ambient glow blobs */}
-          <div className="bg-ambient-glow glow-cyan-top" />
-          <div className="bg-ambient-glow glow-blue-right" />
-          <div className="bg-ambient-glow glow-indigo-bottom" />
 
           {/* Global Page Content */}
           <Navigation />

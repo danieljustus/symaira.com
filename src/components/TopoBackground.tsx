@@ -1,11 +1,13 @@
 import { useEffect, useRef } from 'react';
-// Vendored from symaira-appkit design/liquid-topography (source of truth). Do not edit here.
+// Vendored from symaira-appkit design/liquid-topography (source of truth, see
+// src/liquid-topography/README.md). Do not edit the vendored files here.
 import { mountTopo } from '../liquid-topography/symaira-topo.js';
 import params from '../liquid-topography/topo.json';
 
-// Text and controls stay line-free; cards act as hills the contours wrap around.
-const PROTECT = 'h1, h2, h3, p, .site-nav, .action-button-primary, .action-button-secondary, .icon-button, .language-toggle';
-const HILL = '.glass-panel:not(.site-nav)';
+// Text and controls stay line-free at their own bounds (never whole stacks);
+// opaque cards act as hills the contours wrap around.
+const PROTECT = 'h1, h2, h3, p, .back-link, .product-badge, .product-status-badge, .site-nav, .action-button-primary, .action-button-secondary, .icon-button, .language-toggle';
+const HILL = '.glass-panel:not(.site-nav), .maintainer-panel, .brand-meaning-panel, .tools-console-workspace, .console-sidebar-item, .stack-install-block';
 
 export function TopoBackground() {
   const ref = useRef<HTMLDivElement>(null);

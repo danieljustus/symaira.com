@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Terminal, ArrowRight, Copy, Check, Shield, Brain, Globe, Eye, Cpu, Router, Layout } from 'lucide-react';
+import { Terminal, ArrowRight, Copy, Check, Vault, Brain, Globe, Eye, Cpu, Router, Layout } from './icons';
 import { useLanguage } from '../context/LanguageContext';
 
 const mcpConfigJson = `{
@@ -82,7 +82,7 @@ export const Stack: React.FC = () => {
 
   const stackTools = [
     {
-      icon: <Shield size={18} />,
+      icon: <Vault size={18} />,
       title: 'Symaira Vault',
       status: 'available',
       tone: 'gold',
@@ -137,17 +137,15 @@ export const Stack: React.FC = () => {
         zIndex: 2,
       }}
     >
-      <img src="/logo-top.png" alt="" aria-hidden="true" className="section-logo-accent section-logo-accent-top" />
-      <img src="/logo-bottom.png" alt="" aria-hidden="true" className="section-logo-accent section-logo-accent-bottom" />
 
       {/* Hero */}
       <div style={{ textAlign: 'center', marginBottom: '64px' }}>
         <span
           className="product-badge"
           style={{
-            borderColor: 'rgba(0, 255, 200, 0.3)',
+            borderColor: 'var(--border-glass)',
             color: 'var(--cyan-primary)',
-            background: 'rgba(0, 255, 200, 0.05)',
+            background: 'var(--sym-primary-soft)',
             marginBottom: '20px',
             display: 'inline-block',
           }}
@@ -161,9 +159,7 @@ export const Stack: React.FC = () => {
             fontWeight: 700,
             letterSpacing: '0',
             marginBottom: '20px',
-            background: 'linear-gradient(135deg, var(--text-primary) 0%, var(--cyan-primary) 100%)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
+            color: 'var(--text-primary)',
           }}
         >
           {t('stackTitle')}
@@ -345,7 +341,7 @@ export const Stack: React.FC = () => {
           href="#tools"
           className="action-button-primary"
           style={{
-            color: '#000',
+            color: 'var(--sym-surface)',
             display: 'inline-flex',
             alignItems: 'center',
             gap: '8px',

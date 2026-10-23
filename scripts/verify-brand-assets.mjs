@@ -3,6 +3,8 @@ import fs from 'node:fs'
 import path from 'node:path'
 
 const root = path.resolve(import.meta.dirname, '..')
+// DIST_DIR lets builds go to the Dev builds area instead of ./dist.
+const distRoot = process.env.DIST_DIR ? path.resolve(process.env.DIST_DIR) : path.join(root, 'dist')
 const brandRoot = path.join(root, 'brand-assets', 'symaira-com')
 const manifest = JSON.parse(fs.readFileSync(path.join(brandRoot, 'manifest.json'), 'utf8'))
 
@@ -63,7 +65,7 @@ for (const [sourceRelative, publicRelative, width, height] of assets) {
 
   const sourcePath = path.join(brandRoot, sourceRelative)
   const publicPath = path.join(root, 'public', publicRelative)
-  const distPath = path.join(root, 'dist', publicRelative)
+  const distPath = path.join(distRoot, publicRelative)
   verify(sourcePath, expectedHash, width, height)
   verify(publicPath, expectedHash, width, height)
   verify(distPath, expectedHash, width, height)
