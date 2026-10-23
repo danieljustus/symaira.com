@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowRight, Eye, Shield, ShieldCheck, Terminal, Workflow, Brain, Globe, Cpu, Layout } from 'lucide-react';
+import { ArrowRight, Eye, Shield, ShieldCheck, Terminal, Workflow, Brain, Globe, Cpu, Layout } from './icons';
 import { GitHubIcon } from './GitHubIcon';
 import { useLanguage } from '../context/LanguageContext';
 import { getProducts, getRouteForCmd } from '../config/products';
@@ -38,8 +38,6 @@ export const Tools: React.FC = () => {
         zIndex: 2,
       }}
     >
-      <img src="/logo-top.png" alt="" aria-hidden="true" className="section-logo-accent section-logo-accent-top" />
-      <img src="/logo-bottom.png" alt="" aria-hidden="true" className="section-logo-accent section-logo-accent-bottom" />
 
       <div style={{
         textAlign: 'center',
@@ -51,9 +49,7 @@ export const Tools: React.FC = () => {
           fontWeight: 700,
           letterSpacing: '0',
           marginBottom: '16px',
-          background: 'linear-gradient(180deg, var(--text-primary) 0%, var(--text-secondary) 100%)',
-          WebkitBackgroundClip: 'text',
-          WebkitTextFillColor: 'transparent',
+          color: 'var(--text-primary)',
         }}>
           {t('toolsTitle')}
         </h2>
@@ -130,7 +126,6 @@ export const Tools: React.FC = () => {
 
         {/* Workspace displaying active tool's profile & interactive demo */}
         <div className={`tools-console-workspace tone-${activeProduct.tone}`} key={activeProduct.title}>
-          <div className="workspace-glow" />
           
           <div className="workspace-split">
             {/* Left: Info profile */}
@@ -140,7 +135,7 @@ export const Tools: React.FC = () => {
                   {activeProduct.icon}
                 </div>
                 <div className="workspace-tool-badges">
-                  <span className="product-badge" style={{ borderColor: 'rgba(229, 195, 151, 0.3)', color: 'var(--text-primary)', background: 'rgba(229, 195, 151, 0.05)' }}>
+                  <span className="product-badge" style={{ borderColor: 'var(--border-glass)', color: 'var(--text-primary)', background: 'var(--sym-primary-soft)' }}>
                     Open Source
                   </span>
                   <span className="product-badge">
@@ -183,11 +178,8 @@ export const Tools: React.FC = () => {
                   href={activeProduct.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="workspace-action-btn"
-                  style={{
-                    color: '#000',
-                    margin: 0,
-                  }}
+                  className="workspace-action-btn action-button-primary"
+                  style={{ margin: 0 }}
                 >
                   <GitHubIcon size={16} />
                   {activeProduct.button}
@@ -195,13 +187,8 @@ export const Tools: React.FC = () => {
                 </a>
                 <a
                   href={`#/${getRouteForCmd(activeProduct.cmd)}`}
-                  className="workspace-action-btn"
-                  style={{
-                    color: 'var(--item-accent)',
-                    border: '1px solid var(--item-accent-alpha)',
-                    backgroundColor: 'transparent',
-                    margin: 0,
-                  }}
+                  className="workspace-action-btn action-button-secondary"
+                  style={{ margin: 0 }}
                 >
                   {t('viewDetailsBtn')}
                   <ArrowRight size={14} />
@@ -374,12 +361,12 @@ export const Tools: React.FC = () => {
                   </div>
                   <div className="terminal-lines" style={{ padding: '14px 18px 18px' }}>
                     <p><span>$</span> symfritz diagnose macmini</p>
-                    <p style={{ color: '#86efac' }}>✓ FRITZ!Box knows host       macmini</p>
-                    <p style={{ color: '#86efac' }}>✓ Host active (192.168.188.65)</p>
-                    <p style={{ color: '#86efac' }}>✓ LAN Link Medium verified</p>
-                    <p style={{ color: '#86efac' }}>✓ DNS resolves successfully</p>
-                    <p style={{ color: '#86efac' }}>✓ TCP 22 (SSH) open</p>
-                    <p style={{ color: '#86efac' }}>✓ TCP 8001 (Paperless) open</p>
+                    <p style={{ color: 'var(--text-secondary)' }}>✓ FRITZ!Box knows host       macmini</p>
+                    <p style={{ color: 'var(--text-secondary)' }}>✓ Host active (192.168.188.65)</p>
+                    <p style={{ color: 'var(--text-secondary)' }}>✓ LAN Link Medium verified</p>
+                    <p style={{ color: 'var(--text-secondary)' }}>✓ DNS resolves successfully</p>
+                    <p style={{ color: 'var(--text-secondary)' }}>✓ TCP 22 (SSH) open</p>
+                    <p style={{ color: 'var(--text-secondary)' }}>✓ TCP 8001 (Paperless) open</p>
                   </div>
                 </div>
               ) : (
@@ -397,24 +384,24 @@ export const Tools: React.FC = () => {
                   </div>
                   <div className="terminal-split-view" style={{ gridTemplateColumns: '1fr' }}>
                     <div className="terminal-pane" style={{ border: 'none' }}>
-                      <div className="pane-header" style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.05)' }}>
-                        <span className="pane-status-ring status-ring-active" style={{ background: '#B39DDB', boxShadow: '0 0 6px #B39DDB' }} />
+                      <div className="pane-header" style={{ borderBottom: '1px solid var(--border-glass)' }}>
+                        <span className="pane-status-ring status-ring-active" style={{ background: 'var(--sym-primary)', }} />
                         <span className="pane-name" style={{ color: 'var(--text-primary)' }}>Personal Vault Workspace</span>
                       </div>
                       <div className="pane-terminal-content" style={{ display: 'flex', flexDirection: 'column', gap: '8px', padding: '12px' }}>
                         <p style={{ color: 'var(--text-secondary)', fontSize: '11px', margin: 0 }}>Composing active local services:</p>
                         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px', fontSize: '10px' }}>
-                          <div style={{ padding: '6px', background: 'rgba(255, 255, 255, 0.02)', borderRadius: '4px', border: '1px solid rgba(255, 255, 255, 0.04)' }}>
+                          <div style={{ padding: '6px', background: 'transparent', borderRadius: '4px', border: '1px solid var(--border-glass)' }}>
                             <strong style={{ color: 'var(--gold-primary)' }}>symvault:</strong> Connected (TouchID)
                           </div>
-                          <div style={{ padding: '6px', background: 'rgba(255, 255, 255, 0.02)', borderRadius: '4px', border: '1px solid rgba(255, 255, 255, 0.04)' }}>
-                            <strong style={{ color: '#B39DDB' }}>symbrain:</strong> 128 context links
+                          <div style={{ padding: '6px', background: 'transparent', borderRadius: '4px', border: '1px solid var(--border-glass)' }}>
+                            <strong style={{ color: 'var(--text-primary)' }}>symbrain:</strong> 128 context links
                           </div>
-                          <div style={{ padding: '6px', background: 'rgba(255, 255, 255, 0.02)', borderRadius: '4px', border: '1px solid rgba(255, 255, 255, 0.04)' }}>
-                            <strong style={{ color: '#FFAB91' }}>seek:</strong> 420 documents indexed
+                          <div style={{ padding: '6px', background: 'transparent', borderRadius: '4px', border: '1px solid var(--border-glass)' }}>
+                            <strong style={{ color: 'var(--text-primary)' }}>seek:</strong> 420 documents indexed
                           </div>
-                          <div style={{ padding: '6px', background: 'rgba(255, 255, 255, 0.02)', borderRadius: '4px', border: '1px solid rgba(255, 255, 255, 0.04)' }}>
-                            <strong style={{ color: '#FFE082' }}>ingest:</strong> OCR watcher active
+                          <div style={{ padding: '6px', background: 'transparent', borderRadius: '4px', border: '1px solid var(--border-glass)' }}>
+                            <strong style={{ color: 'var(--text-primary)' }}>ingest:</strong> OCR watcher active
                           </div>
                         </div>
                       </div>
@@ -430,14 +417,9 @@ export const Tools: React.FC = () => {
 
       {/* Creator & Maintainer Panel */}
       <div className="maintainer-panel">
-        <div className="maintainer-glow" />
-        <div className="maintainer-accent-top" />
-        <div className="maintainer-accent-bottom" />
         
         <div className="maintainer-content">
           <div className="maintainer-avatar-wrapper">
-            <div className="maintainer-avatar-ring-outer" />
-            <div className="maintainer-avatar-ring-inner" />
             <div className="maintainer-avatar">
               <img src="/portrait.jpg" alt="Daniel Justus" />
             </div>
@@ -459,7 +441,7 @@ export const Tools: React.FC = () => {
               rel="noopener noreferrer"
               className="action-button-primary"
               style={{
-                color: '#000',
+                color: 'var(--sym-surface)',
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: '8px',

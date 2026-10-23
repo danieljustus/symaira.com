@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Copy, Check, ShieldCheck } from 'lucide-react';
+import { Mail, Copy, Check, ShieldCheck } from './icons';
 import { useLanguage } from '../context/LanguageContext';
 
 export const Contact: React.FC = () => {
@@ -42,25 +42,9 @@ export const Contact: React.FC = () => {
           margin: '0 auto',
           position: 'relative',
           overflow: 'hidden',
-          border: '1px solid rgba(229, 195, 151, 0.15)',
-          boxShadow: '0 20px 50px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.05)',
+          border: '1px solid var(--border-glass)',
         }}
       >
-        {/* Glow effect matching other premium elements */}
-        <div
-          style={{
-            position: 'absolute',
-            top: '-20%',
-            left: '50%',
-            transform: 'translateX(-50%)',
-            width: '200px',
-            height: '200px',
-            background: 'radial-gradient(circle, rgba(229, 195, 151, 0.08) 0%, rgba(229, 195, 151, 0) 70%)',
-            pointerEvents: 'none',
-            zIndex: 1,
-          }}
-        />
-
         <div style={{ position: 'relative', zIndex: 2 }}>
           {/* Header Icon */}
           <div
@@ -68,14 +52,13 @@ export const Contact: React.FC = () => {
               width: '60px',
               height: '60px',
               borderRadius: '50%',
-              background: 'rgba(229, 195, 151, 0.06)',
-              border: '1px solid rgba(229, 195, 151, 0.2)',
+              background: 'var(--sym-primary-soft)',
+              border: '1px solid var(--border-glass)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               color: 'var(--cyan-primary)',
               margin: '0 auto 24px',
-              boxShadow: '0 0 15px rgba(229, 195, 151, 0.05)',
             }}
           >
             <Mail size={28} />
@@ -88,9 +71,7 @@ export const Contact: React.FC = () => {
               fontFamily: 'var(--font-title)',
               fontWeight: 700,
               marginBottom: '16px',
-              background: 'linear-gradient(180deg, var(--text-primary) 0%, var(--text-secondary) 100%)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
+              color: 'var(--text-primary)',
             }}
           >
             {t('contactTitle')}
@@ -138,8 +119,7 @@ export const Contact: React.FC = () => {
                 transition: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)',
                 border: 'none',
                 backgroundColor: 'var(--cyan-primary)',
-                color: '#000',
-                boxShadow: '0 4px 20px rgba(229, 195, 151, 0.15)',
+                color: 'var(--sym-surface)',
               }}
             >
               <Mail size={18} />
@@ -161,11 +141,10 @@ export const Contact: React.FC = () => {
                 fontFamily: 'var(--font-tech)',
                 cursor: 'pointer',
                 transition: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)',
-                border: '1px solid rgba(229, 195, 151, 0.25)',
-                background: copied ? 'rgba(229, 195, 151, 0.08)' : 'rgba(255, 255, 255, 0.02)',
+                border: '1px solid var(--border-glass)',
+                background: copied ? 'var(--sym-primary-soft)' : 'var(--sym-raised)',
                 color: copied ? 'var(--cyan-primary)' : 'var(--text-primary)',
-                borderColor: copied ? 'var(--cyan-primary)' : 'rgba(229, 195, 151, 0.25)',
-                boxShadow: copied ? '0 0 15px rgba(229, 195, 151, 0.1)' : 'none',
+                borderColor: copied ? 'var(--sym-primary)' : 'var(--border-glass)',
               }}
             >
               {copied ? <Check size={18} /> : <Copy size={18} />}
@@ -181,8 +160,8 @@ export const Contact: React.FC = () => {
               gap: '8px',
               padding: '8px 16px',
               borderRadius: '20px',
-              backgroundColor: 'rgba(229, 195, 151, 0.04)',
-              border: '1px solid rgba(229, 195, 151, 0.1)',
+              backgroundColor: 'var(--sym-primary-soft)',
+              border: '1px solid var(--border-glass)',
             }}
           >
             <ShieldCheck size={14} style={{ color: 'var(--cyan-primary)', opacity: 0.8 }} />

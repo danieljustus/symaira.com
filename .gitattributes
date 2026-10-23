@@ -1,0 +1,2 @@
+# Normalize the vendored license text without changing the original font.
+src/assets/fonts/google-sans-flex/GoogleSansFlex-OFL.txt text eol=lf

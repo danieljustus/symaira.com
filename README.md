@@ -37,7 +37,7 @@ npm run build
 - React
 - TypeScript
 - Vite
-- lucide-react
+- Liquid Topography design source vendored from `symaira-appkit` (tokens, WebGL2 topography, Google Sans Flex font, line icons); see [`src/liquid-topography/README.md`](src/liquid-topography/README.md)
 
 ## Ecosystem Rule
 

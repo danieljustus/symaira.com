@@ -1,14 +1,14 @@
 import type { ReactNode } from 'react';
 import type { TranslationMap } from '../context/LanguageContext';
 import {
-  Shield,
+  Vault,
   Brain,
   Globe,
   Eye,
   Cpu,
   Router,
   Layout,
-} from 'lucide-react';
+} from '../components/icons';
 
 export interface Product {
   cmd: string;
@@ -45,7 +45,7 @@ export const getProducts = (t: (key: keyof TranslationMap) => string): Product[]
     features: [t('vaultFeature1'), t('vaultFeature2'), t('vaultFeature3'), t('vaultFeature4')],
     href: 'https://github.com/danieljustus/symaira-vault',
     button: t('vaultBtn'),
-    icon: <Shield size={24} />,
+    icon: <Vault size={24} />,
     tone: 'gold',
     demoType: 'vault',
     category: 'security',
