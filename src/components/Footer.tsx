@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
-import { Heart, ShieldCheck } from 'lucide-react';
+import { Heart, ShieldCheck } from './icons';
 
 export const Footer: React.FC = () => {
   const { t } = useLanguage();
@@ -49,8 +49,7 @@ export const Footer: React.FC = () => {
                 height: '20px', 
                 width: '20px', 
                 objectFit: 'contain',
-                filter: 'drop-shadow(0 0 4px rgba(229, 195, 151, 0.2))' 
-              }} 
+              }}
             />
             SYMAIRA
           </div>
@@ -72,8 +71,8 @@ export const Footer: React.FC = () => {
             gap: '8px',
             padding: '8px 16px',
             borderRadius: '20px',
-            backgroundColor: 'rgba(229, 195, 151, 0.06)',
-            border: '1px solid rgba(229, 195, 151, 0.18)',
+            backgroundColor: 'var(--sym-primary-soft)',
+            border: '1px solid var(--border-glass)',
           }}>
             <ShieldCheck size={12} style={{ color: 'var(--cyan-primary)' }} />
             <span style={{
@@ -92,10 +91,9 @@ export const Footer: React.FC = () => {
             gap: '8px',
             padding: '8px 16px',
             borderRadius: '20px',
-            backgroundColor: 'rgba(229, 195, 151, 0.06)',
-            border: '1px solid rgba(229, 195, 151, 0.18)',
+            backgroundColor: 'var(--sym-primary-soft)',
+            border: '1px solid var(--border-glass)',
           }}>
-            <span style={{ fontSize: '12px', lineHeight: 1 }}>🇩🇪</span>
             <span style={{
               fontSize: '11px',
               fontFamily: 'var(--font-tech)',
@@ -123,7 +121,7 @@ export const Footer: React.FC = () => {
             {t('footerPrivacy')}
           </a>
           <span>
-            {t('footerSignature')} <Heart size={10} style={{ color: 'var(--cyan-primary)', fill: 'var(--cyan-primary)', display: 'inline', margin: '0 2px' }} />
+            {t('footerSignature')} <Heart size={10} style={{ color: 'var(--cyan-primary)', margin: '0 2px' }} />
           </span>
         </div>
       </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
-import { ArrowLeft, Scale, Shield } from 'lucide-react';
+import { ArrowLeft, Scale, Shield } from './icons';
 
 interface SafeContactInfoProps {
   type: 'name' | 'address' | 'email';
@@ -98,8 +98,8 @@ export const LegalPages: React.FC<LegalPagesProps> = ({ view }) => {
             gap: '8px',
             padding: '10px 18px',
             borderRadius: '8px',
-            border: '1px solid rgba(229, 195, 151, 0.15)',
-            background: 'rgba(255, 255, 255, 0.02)',
+            border: '1px solid var(--border-glass)',
+            background: 'transparent',
             color: 'var(--cyan-primary)',
             fontSize: '14px',
             fontFamily: 'var(--font-tech)',
@@ -114,8 +114,8 @@ export const LegalPages: React.FC<LegalPagesProps> = ({ view }) => {
 
       {view === 'impressum' ? (
         <article className="glass-panel animate-fade-in" style={{ padding: '40px', borderRadius: '16px' }}>
-          <header style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '32px', borderBottom: '1px solid rgba(229, 195, 151, 0.15)', paddingBottom: '20px' }}>
-            <div style={{ width: '48px', height: '48px', borderRadius: '10px', background: 'rgba(229, 195, 151, 0.08)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--cyan-primary)', border: '1px solid rgba(229, 195, 151, 0.2)' }}>
+          <header style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '32px', borderBottom: '1px solid var(--border-glass)', paddingBottom: '20px' }}>
+            <div style={{ width: '48px', height: '48px', borderRadius: '10px', background: 'var(--sym-primary-soft)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--cyan-primary)', border: '1px solid var(--border-glass)' }}>
               <Scale size={24} />
             </div>
             <div>
@@ -159,7 +159,7 @@ export const LegalPages: React.FC<LegalPagesProps> = ({ view }) => {
                   </div>
                 </section>
 
-                <section style={{ borderTop: '1px solid rgba(255, 255, 255, 0.05)', paddingTop: '20px', marginTop: '20px' }}>
+                <section style={{ borderTop: '1px solid var(--border-glass)', paddingTop: '20px', marginTop: '20px' }}>
                   <h2 style={{ fontSize: '18px', color: 'var(--text-primary)', marginBottom: '8px', fontFamily: 'var(--font-title)' }}>Streitschlichtung</h2>
                   <p>
                     Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:{' '}
@@ -208,7 +208,7 @@ export const LegalPages: React.FC<LegalPagesProps> = ({ view }) => {
                   </div>
                 </section>
 
-                <section style={{ borderTop: '1px solid rgba(255, 255, 255, 0.05)', paddingTop: '20px', marginTop: '20px' }}>
+                <section style={{ borderTop: '1px solid var(--border-glass)', paddingTop: '20px', marginTop: '20px' }}>
                   <h2 style={{ fontSize: '18px', color: 'var(--text-primary)', marginBottom: '8px', fontFamily: 'var(--font-title)' }}>Consumer Dispute Resolution</h2>
                   <p>
                     The European Commission provides a platform for online dispute resolution (ODR):{' '}
@@ -232,8 +232,8 @@ export const LegalPages: React.FC<LegalPagesProps> = ({ view }) => {
         </article>
       ) : (
         <article className="glass-panel animate-fade-in" style={{ padding: '40px', borderRadius: '16px' }}>
-          <header style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '32px', borderBottom: '1px solid rgba(229, 195, 151, 0.15)', paddingBottom: '20px' }}>
-            <div style={{ width: '48px', height: '48px', borderRadius: '10px', background: 'rgba(229, 195, 151, 0.08)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--cyan-primary)', border: '1px solid rgba(229, 195, 151, 0.2)' }}>
+          <header style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '32px', borderBottom: '1px solid var(--border-glass)', paddingBottom: '20px' }}>
+            <div style={{ width: '48px', height: '48px', borderRadius: '10px', background: 'var(--sym-primary-soft)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--cyan-primary)', border: '1px solid var(--border-glass)' }}>
               <Shield size={24} />
             </div>
             <div>
@@ -330,8 +330,8 @@ export const LegalPages: React.FC<LegalPagesProps> = ({ view }) => {
                       gap: '6px',
                       padding: '8px 14px',
                       borderRadius: '6px',
-                      border: '1px solid rgba(229, 195, 151, 0.15)',
-                      background: 'rgba(255, 255, 255, 0.02)',
+                      border: '1px solid var(--border-glass)',
+                      background: 'transparent',
                       color: 'var(--cyan-primary)',
                       fontSize: '13px',
                       fontFamily: 'var(--font-tech)',
@@ -444,8 +444,8 @@ export const LegalPages: React.FC<LegalPagesProps> = ({ view }) => {
                       gap: '6px',
                       padding: '8px 14px',
                       borderRadius: '6px',
-                      border: '1px solid rgba(229, 195, 151, 0.15)',
-                      background: 'rgba(255, 255, 255, 0.02)',
+                      border: '1px solid var(--border-glass)',
+                      background: 'transparent',
                       color: 'var(--cyan-primary)',
                       fontSize: '13px',
                       fontFamily: 'var(--font-tech)',

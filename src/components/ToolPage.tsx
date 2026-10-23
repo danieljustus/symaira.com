@@ -2,9 +2,8 @@ import React, { useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { getProducts, getRouteForCmd } from '../config/products';
 import { 
-  ArrowLeft, 
-  
-  HelpCircle, 
+  ArrowLeft,
+  Info,
   ExternalLink,
   Brain,
   Globe,
@@ -14,7 +13,7 @@ import {
   Cpu,
   Layout,
   ShieldCheck
-} from 'lucide-react';
+} from './icons';
 
 interface ToolPageProps {
   toolId: string;
@@ -86,18 +85,17 @@ export const ToolPage: React.FC<ToolPageProps> = ({ toolId }) => {
           display: 'inline-flex',
           padding: '20px',
           borderRadius: '50%',
-          backgroundColor: `rgba(229, 195, 151, 0.05)`,
-          border: '1px solid rgba(229, 195, 151, 0.15)',
+          backgroundColor: 'var(--sym-primary-soft)',
+          border: '1px solid var(--border-glass)',
           marginBottom: '24px',
-          boxShadow: '0 0 30px rgba(229, 195, 151, 0.1)',
         }}>
-          <div style={{ color: `var(--gold-primary)` }}>
+          <div style={{ color: `var(--sym-primary)` }}>
             {product.icon}
           </div>
         </div>
         
         <div style={{ display: 'flex', justifyContent: 'center', gap: '8px', marginBottom: '16px', flexWrap: 'wrap' }}>
-          <span className="product-badge" style={{ borderColor: 'rgba(229, 195, 151, 0.3)', color: 'var(--text-primary)', background: 'rgba(229, 195, 151, 0.05)' }}>
+          <span className="product-badge" style={{ borderColor: 'var(--border-glass)', color: 'var(--text-primary)', background: 'var(--sym-primary-soft)' }}>
             Open Source
           </span>
           <span className="product-badge">
@@ -112,11 +110,9 @@ export const ToolPage: React.FC<ToolPageProps> = ({ toolId }) => {
 
         <h1 style={{
           fontSize: 'clamp(32px, 3.5rem, 52px)',
-          fontWeight: 800,
+          fontWeight: 700,
           marginBottom: '20px',
-          background: 'linear-gradient(180deg, var(--text-primary) 0%, var(--text-secondary) 100%)',
-          WebkitBackgroundClip: 'text',
-          WebkitTextFillColor: 'transparent',
+          color: 'var(--text-primary)',
         }}>
           {product.title}
         </h1>
@@ -144,10 +140,9 @@ export const ToolPage: React.FC<ToolPageProps> = ({ toolId }) => {
             style={{
               padding: '14px 28px',
               borderRadius: '8px',
-              color: '#000',
+              color: 'var(--sym-surface)',
               fontWeight: 600,
               fontSize: '15px',
-              boxShadow: '0 4px 20px rgba(229, 195, 151, 0.2)',
               display: 'inline-flex',
               alignItems: 'center',
               gap: '8px',
@@ -175,7 +170,7 @@ export const ToolPage: React.FC<ToolPageProps> = ({ toolId }) => {
                 Specifications
               </h3>
               <div className="workspace-context-box" style={{ border: 'none', background: 'none', padding: 0 }}>
-                <div className="workspace-context-row" style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.05)', paddingBottom: '12px', marginBottom: '12px' }}>
+                <div className="workspace-context-row" style={{ borderBottom: '1px solid var(--border-glass)', paddingBottom: '12px', marginBottom: '12px' }}>
                   <span style={{ fontSize: '12px', fontFamily: 'var(--font-tech)', color: 'var(--text-muted)' }}>{t('bestForLabel')}</span>
                   <p style={{ fontSize: '14.5px', color: 'var(--text-primary)', marginTop: '4px' }}>{product.bestFor}</p>
                 </div>
@@ -191,7 +186,7 @@ export const ToolPage: React.FC<ToolPageProps> = ({ toolId }) => {
               <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
                 {product.features.map((feature, idx) => (
                   <div key={idx} style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
-                    <span style={{ color: `var(--gold-primary)`, fontWeight: 'bold', fontFamily: 'var(--font-tech)' }}>//</span>
+                    <span style={{ color: `var(--sym-primary)`, fontWeight: 'bold', fontFamily: 'var(--font-tech)' }}>//</span>
                     <p style={{ fontSize: '13.5px', color: 'var(--text-secondary)', margin: 0 }}>{feature}</p>
                   </div>
                 ))}
@@ -200,7 +195,7 @@ export const ToolPage: React.FC<ToolPageProps> = ({ toolId }) => {
           </div>
 
           {/* Demo Panel */}
-          <div className="tools-console-workspace" style={{ border: '1px solid rgba(255,255,255,0.06)', padding: '0', background: 'rgba(7, 6, 5, 0.4)' }}>
+          <div className="tools-console-workspace" style={{ border: '1px solid var(--border-glass)', padding: '0', background: 'transparent' }}>
             <div style={{ padding: '24px' }}>
               {product.demoType === 'vault' ? (
                 <div className="product-demo product-demo-terminal">
@@ -369,12 +364,12 @@ export const ToolPage: React.FC<ToolPageProps> = ({ toolId }) => {
                   </div>
                   <div className="terminal-lines" style={{ padding: '14px 18px 18px' }}>
                     <p><span>$</span> symfritz diagnose macmini</p>
-                    <p style={{ color: '#86efac' }}>✓ FRITZ!Box knows host       macmini</p>
-                    <p style={{ color: '#86efac' }}>✓ Host active (192.168.188.65)</p>
-                    <p style={{ color: '#86efac' }}>✓ LAN Link Medium verified</p>
-                    <p style={{ color: '#86efac' }}>✓ DNS resolves successfully</p>
-                    <p style={{ color: '#86efac' }}>✓ TCP 22 (SSH) open</p>
-                    <p style={{ color: '#86efac' }}>✓ TCP 8001 (Paperless) open</p>
+                    <p style={{ color: 'var(--text-secondary)' }}>✓ FRITZ!Box knows host       macmini</p>
+                    <p style={{ color: 'var(--text-secondary)' }}>✓ Host active (192.168.188.65)</p>
+                    <p style={{ color: 'var(--text-secondary)' }}>✓ LAN Link Medium verified</p>
+                    <p style={{ color: 'var(--text-secondary)' }}>✓ DNS resolves successfully</p>
+                    <p style={{ color: 'var(--text-secondary)' }}>✓ TCP 22 (SSH) open</p>
+                    <p style={{ color: 'var(--text-secondary)' }}>✓ TCP 8001 (Paperless) open</p>
                   </div>
                 </div>
               ) : (
@@ -392,24 +387,24 @@ export const ToolPage: React.FC<ToolPageProps> = ({ toolId }) => {
                   </div>
                   <div className="terminal-split-view" style={{ gridTemplateColumns: '1fr' }}>
                     <div className="terminal-pane" style={{ border: 'none' }}>
-                      <div className="pane-header" style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.05)' }}>
-                        <span className="pane-status-ring status-ring-active" style={{ background: '#B39DDB', boxShadow: '0 0 6px #B39DDB' }} />
+                      <div className="pane-header" style={{ borderBottom: '1px solid var(--border-glass)' }}>
+                        <span className="pane-status-ring status-ring-active" style={{ background: 'var(--sym-primary)', }} />
                         <span className="pane-name" style={{ color: 'var(--text-primary)' }}>Personal Vault Workspace</span>
                       </div>
                       <div className="pane-terminal-content" style={{ display: 'flex', flexDirection: 'column', gap: '8px', padding: '12px' }}>
                         <p style={{ color: 'var(--text-secondary)', fontSize: '11px', margin: 0 }}>Composing active local services:</p>
                         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px', fontSize: '10px' }}>
-                          <div style={{ padding: '6px', background: 'rgba(255, 255, 255, 0.02)', borderRadius: '4px', border: '1px solid rgba(255, 255, 255, 0.04)' }}>
-                            <strong style={{ color: 'var(--gold-primary)' }}>symvault:</strong> Connected (TouchID)
+                          <div style={{ padding: '6px', background: 'transparent', borderRadius: '4px', border: '1px solid var(--border-glass)' }}>
+                            <strong style={{ color: 'var(--sym-primary)' }}>symvault:</strong> Connected (TouchID)
                           </div>
-                          <div style={{ padding: '6px', background: 'rgba(255, 255, 255, 0.02)', borderRadius: '4px', border: '1px solid rgba(255, 255, 255, 0.04)' }}>
-                            <strong style={{ color: '#B39DDB' }}>symbrain:</strong> 128 context links
+                          <div style={{ padding: '6px', background: 'transparent', borderRadius: '4px', border: '1px solid var(--border-glass)' }}>
+                            <strong style={{ color: 'var(--text-primary)' }}>symbrain:</strong> 128 context links
                           </div>
-                          <div style={{ padding: '6px', background: 'rgba(255, 255, 255, 0.02)', borderRadius: '4px', border: '1px solid rgba(255, 255, 255, 0.04)' }}>
-                            <strong style={{ color: '#FFAB91' }}>seek:</strong> 420 documents indexed
+                          <div style={{ padding: '6px', background: 'transparent', borderRadius: '4px', border: '1px solid var(--border-glass)' }}>
+                            <strong style={{ color: 'var(--text-primary)' }}>seek:</strong> 420 documents indexed
                           </div>
-                          <div style={{ padding: '6px', background: 'rgba(255, 255, 255, 0.02)', borderRadius: '4px', border: '1px solid rgba(255, 255, 255, 0.04)' }}>
-                            <strong style={{ color: '#FFE082' }}>ingest:</strong> OCR watcher active
+                          <div style={{ padding: '6px', background: 'transparent', borderRadius: '4px', border: '1px solid var(--border-glass)' }}>
+                            <strong style={{ color: 'var(--text-primary)' }}>ingest:</strong> OCR watcher active
                           </div>
                         </div>
                       </div>
@@ -449,8 +444,8 @@ export const ToolPage: React.FC<ToolPageProps> = ({ toolId }) => {
                 className="glass-panel"
                 style={{
                   borderRadius: '8px',
-                  border: '1px solid rgba(229,195,151,0.08)',
-                  backgroundColor: 'rgba(18, 17, 14, 0.3)',
+                  border: '1px solid var(--border-glass)',
+                  backgroundColor: 'transparent',
                   overflow: 'hidden',
                   transition: 'var(--transition-fast)',
                 }}
@@ -474,13 +469,13 @@ export const ToolPage: React.FC<ToolPageProps> = ({ toolId }) => {
                   }}
                 >
                   <span style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                    <HelpCircle size={18} style={{ color: 'var(--gold-primary)' }} />
+                    <Info size={18} style={{ color: 'var(--sym-primary)' }} />
                     {faq.q}
                   </span>
                   <span style={{
                     transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)',
                     transition: 'transform 0.2s ease',
-                    color: 'var(--gold-primary)',
+                    color: 'var(--sym-primary)',
                     fontSize: '18px',
                   }}>
                     ▾
@@ -492,7 +487,7 @@ export const ToolPage: React.FC<ToolPageProps> = ({ toolId }) => {
                     color: 'var(--text-secondary)',
                     fontSize: '14.5px',
                     lineHeight: 1.6,
-                    borderTop: '1px solid rgba(255,255,255,0.03)',
+                    borderTop: '1px solid var(--border-glass)',
                     paddingTop: '16px',
                   }}>
                     {faq.a}
