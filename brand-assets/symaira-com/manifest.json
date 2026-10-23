@@ -8,71 +8,76 @@
     {
       "platform": "macOS",
       "mode": "Default",
-      "sha256": "70cb65f148a96f81bfc568b01eb56a4caf9d3c8732626198ffcc8bfc7b772b35",
+      "sha256": "c4fb195f697731ec0e03e5efa2a22c345d0869a228ab778ad13aa46c1bb7bad0",
       "path": "exports/macOS-Default.png"
     },
     {
       "platform": "macOS",
       "mode": "Dark",
-      "sha256": "134795a09a22eea0e0b31480858144c815a3b20e57309a4c78f8c4c95cb2a073",
+      "sha256": "33ba01cea2eebd25dd295415634824ac9e84c56daec8570633eea2c823ff773c",
       "path": "exports/macOS-Dark.png"
     },
     {
       "platform": "macOS",
       "mode": "TintedDark",
-      "sha256": "534b57b59ca5f1f4d3a364c6ac0688ee0b59e5941d793682436758701c911f73",
+      "sha256": "68af4a8c8abd2a62abe1f9ee8fec3a8dcbc611211b922561b90baadde12aebf9",
       "path": "exports/macOS-TintedDark.png"
     },
     {
       "platform": "iOS",
       "mode": "Default",
-      "sha256": "70cb65f148a96f81bfc568b01eb56a4caf9d3c8732626198ffcc8bfc7b772b35",
+      "sha256": "c4fb195f697731ec0e03e5efa2a22c345d0869a228ab778ad13aa46c1bb7bad0",
       "path": "exports/iOS-Default.png"
     },
     {
       "platform": "iOS",
       "mode": "Dark",
-      "sha256": "134795a09a22eea0e0b31480858144c815a3b20e57309a4c78f8c4c95cb2a073",
+      "sha256": "33ba01cea2eebd25dd295415634824ac9e84c56daec8570633eea2c823ff773c",
       "path": "exports/iOS-Dark.png"
     },
     {
       "platform": "iOS",
       "mode": "TintedDark",
-      "sha256": "534b57b59ca5f1f4d3a364c6ac0688ee0b59e5941d793682436758701c911f73",
+      "sha256": "68af4a8c8abd2a62abe1f9ee8fec3a8dcbc611211b922561b90baadde12aebf9",
       "path": "exports/iOS-TintedDark.png"
     }
   ],
   "files": {
-    "AppIcon.icon/Assets/S.png": "4e20c6b19ef221aa92c143a1ba998640720022ec34d551d3767f42b07725919d",
-    "AppIcon.icon/Assets/signet.png": "38eb1c38bd03e1af6d0d212bc29390faae3d5a54ecf58682145983076b7b591b",
-    "AppIcon.icon/icon.json": "a8f6d9898b14dbed978afaaab89e12d653eedb6aee7364bf9e615c740a90b24d",
-    "AppIcon.iconset/icon_128x128.png": "15aa91ebf93c2a598baa50ea11907f12b316c1e36a0c31de5e706c5c17ef693a",
-    "AppIcon.iconset/icon_128x128@2x.png": "c8d705caa9a41136975526c83987600b2d582e2702cfcf0c51c6332ecb8b8c37",
-    "AppIcon.iconset/icon_16x16.png": "d37cad0e8fa175604862679f80cc6618465922ca9bd7200ef582218336c6c183",
-    "AppIcon.iconset/icon_16x16@2x.png": "d214ea7d67b386fe8fcb5f47aaf079bfc48a20ce388bcea6a92e38fdd46613bb",
-    "AppIcon.iconset/icon_256x256.png": "c8d705caa9a41136975526c83987600b2d582e2702cfcf0c51c6332ecb8b8c37",
-    "AppIcon.iconset/icon_256x256@2x.png": "4de85256271ac23b3b199891f8724f822732b9e44eca80819ac14e10e37bd08c",
-    "AppIcon.iconset/icon_32x32.png": "d214ea7d67b386fe8fcb5f47aaf079bfc48a20ce388bcea6a92e38fdd46613bb",
-    "AppIcon.iconset/icon_32x32@2x.png": "430768d2dc7082cc6c10fa9bea466c1410fd89158a710f60c62be3d6edade715",
-    "AppIcon.iconset/icon_512x512.png": "4de85256271ac23b3b199891f8724f822732b9e44eca80819ac14e10e37bd08c",
-    "AppIcon.iconset/icon_512x512@2x.png": "468014997c19f5ad0e9473c4dbf326a228767e57f7405912984fc8ebdbf226f3",
-    "exports/AppIcon.icns": "de4976ab0fe75727ae8383ac657e322fb4688c35c016a532cd62a4a614c301c6",
-    "exports/iOS-Dark.png": "134795a09a22eea0e0b31480858144c815a3b20e57309a4c78f8c4c95cb2a073",
-    "exports/iOS-Default.png": "70cb65f148a96f81bfc568b01eb56a4caf9d3c8732626198ffcc8bfc7b772b35",
-    "exports/iOS-TintedDark.png": "534b57b59ca5f1f4d3a364c6ac0688ee0b59e5941d793682436758701c911f73",
-    "exports/ios-1024-opaque.png": "0e2de23c620d8fa5357fd10d702ccb96fcb6614972d1ea22d9771becffe0834e",
-    "exports/macOS-Dark.png": "134795a09a22eea0e0b31480858144c815a3b20e57309a4c78f8c4c95cb2a073",
-    "exports/macOS-Default.png": "70cb65f148a96f81bfc568b01eb56a4caf9d3c8732626198ffcc8bfc7b772b35",
-    "exports/macOS-TintedDark.png": "534b57b59ca5f1f4d3a364c6ac0688ee0b59e5941d793682436758701c911f73",
+    "AppIcon.icon/Assets/bot.png": "91029db6a32488b2567860e578782315f533c78f853028a83a60274d57ab2301",
+    "AppIcon.icon/Assets/index.png": "3024b9f3d324a3311026690dcdad4d01a775bdefe00b459a7ffcff4eb7482cab",
+    "AppIcon.icon/Assets/lines.png": "eae19ce6002187d9dd67ea1dfdff5b934090609d3f556b6116dcb57910dbab58",
+    "AppIcon.icon/Assets/signet.png": "701afd3bb02bc53762884622b877f932747042c54a356b11bcdbd0996486cdcc",
+    "AppIcon.icon/Assets/top.png": "31acbee4bc3a714885bc0fc0394349f519c6326dad98e65fa7ade28bcd21d279",
+    "AppIcon.icon/icon.json": "6d7276971492d4db73ff4ed0569d78d4d2cda4e4f96d4744c723caf5dfa55f3b",
+    "AppIcon.iconset/icon_128x128.png": "4b61f2b6d2a0a33fe67aec6914384a760d60c372fc1e9eff7c8a4e5b721b1089",
+    "AppIcon.iconset/icon_128x128@2x.png": "4a417ebe13d2d7c728b77333cd2298a63a8f65d9dbee7505a3a398e65d06f747",
+    "AppIcon.iconset/icon_16x16.png": "447b7543cf57c9b7583b04176e1082ed59eb875c102356b79c6664443ed83fa1",
+    "AppIcon.iconset/icon_16x16@2x.png": "6d72b8eaf160f5fb86eeb6616a15dd4c0a42b082b1099434f477a8bd9a52a903",
+    "AppIcon.iconset/icon_256x256.png": "4a417ebe13d2d7c728b77333cd2298a63a8f65d9dbee7505a3a398e65d06f747",
+    "AppIcon.iconset/icon_256x256@2x.png": "2412614d83c58a321b277aeb4bbb24d7b1388e8e28312c97227001489918d9fe",
+    "AppIcon.iconset/icon_32x32.png": "6d72b8eaf160f5fb86eeb6616a15dd4c0a42b082b1099434f477a8bd9a52a903",
+    "AppIcon.iconset/icon_32x32@2x.png": "a3de7015485214abce9fb99c1b4e6752b5e9fb7a326f40b9ad11af261d123a93",
+    "AppIcon.iconset/icon_512x512.png": "2412614d83c58a321b277aeb4bbb24d7b1388e8e28312c97227001489918d9fe",
+    "AppIcon.iconset/icon_512x512@2x.png": "0da598eca0c1365fb5ba7560eee2520b47ddbcadbff5dbb8603a9e8f15f08760",
+    "exports/AppIcon.icns": "9af975db0feeb7e1204c35fb48d9ac48ccad6b48ed7d2730fbd227843903c450",
+    "exports/iOS-Dark.png": "33ba01cea2eebd25dd295415634824ac9e84c56daec8570633eea2c823ff773c",
+    "exports/iOS-Default.png": "c4fb195f697731ec0e03e5efa2a22c345d0869a228ab778ad13aa46c1bb7bad0",
+    "exports/iOS-TintedDark.png": "68af4a8c8abd2a62abe1f9ee8fec3a8dcbc611211b922561b90baadde12aebf9",
+    "exports/ios-1024-opaque.png": "382e8d4e60f68adb1256f1fa6c73e2778b4e151e89a70bfeeb9ba36e0ec9b6de",
+    "exports/macOS-Dark.png": "33ba01cea2eebd25dd295415634824ac9e84c56daec8570633eea2c823ff773c",
+    "exports/macOS-Default.png": "c4fb195f697731ec0e03e5efa2a22c345d0869a228ab778ad13aa46c1bb7bad0",
+    "exports/macOS-TintedDark.png": "68af4a8c8abd2a62abe1f9ee8fec3a8dcbc611211b922561b90baadde12aebf9",
     "source/signet.svg": "b840621b8bd47dd5a4c7c0436a16208bf2a8cd42984acb860e9749b9a6f92c8c",
-    "web/apple-touch-icon.png": "f8431e1cd1210883e30377b27cbf4dcd7227d5d6a15eb4fe3ae9b45a3f875912",
-    "web/favicon.ico": "80eccc532d512d34d51871b607961b527e05a5414a24ca22703ad578eed1b5fd",
-    "web/favicon.svg": "2e8754240c3090ca2d3ea29a13e671d8238073d26a00c092809fd59db26dde8b"
+    "web/apple-touch-icon.png": "34d8ec759cb1424603dabaaa852263a9fe3b14ed869a45e5e5dfe1016751e0ef",
+    "web/favicon.ico": "aef2e14e9a54eaa10d69d03a95f8802d86fb1cd44cb32e1975058725d93b7cda",
+    "web/favicon.svg": "9ac58eb557a3699ff4a004f88d09c37da504d952343e5ec11dc1883c32daa1e1"
   },
-  "refresh": {
-    "design": "Liquid Topography",
-    "background_only": true,
-    "foreground_hashes_preserved": true,
-    "source_design_sha256": "03f5e47f3903e5311c9f4a7f4287f619a0472d589af0f13bf492a73606730f26"
+  "design": {
+    "name": "K1v2",
+    "description": "K1v2 (R1 relief S + champagne glass glyph)",
+    "approved": "2026-10-23",
+    "design_system": "Liquid Topography",
+    "source_design_sha256": "03f5e47f3903e5311c9f4a7f4287f619a0472d589af0f13bf492a73606730f26",
+    "clear_system_appearance": "rendered, not device-verified"
   }
 }
