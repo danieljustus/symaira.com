@@ -253,7 +253,7 @@ export const LegalPages: React.FC<LegalPagesProps> = ({ view }) => {
                   <h2 style={{ fontSize: '18px', color: 'var(--text-primary)', marginBottom: '8px', fontFamily: 'var(--font-title)' }}>1. Datenschutz auf einen Blick</h2>
                   <p>
                     Der Schutz Ihrer persönlichen Daten ist uns ein wichtiges Anliegen. Nachfolgend informieren wir Sie darüber, 
-                    welche Daten bei der Nutzung unserer Website verarbeitet werden.
+                    welche Daten bei der Nutzung unserer Website und unserer Apps verarbeitet werden.
                   </p>
                 </section>
 
@@ -345,7 +345,24 @@ export const LegalPages: React.FC<LegalPagesProps> = ({ view }) => {
                 </section>
 
                 <section>
-                  <h2 style={{ fontSize: '18px', color: 'var(--text-primary)', marginBottom: '8px', fontFamily: 'var(--font-title)' }}>6. Ihre Rechte</h2>
+                  <h2 style={{ fontSize: '18px', color: 'var(--text-primary)', marginBottom: '8px', fontFamily: 'var(--font-title)' }}>6. Apps: Symaira Media</h2>
+                  <p>
+                    Die Apps „Symaira Media“ (Mac, später iPhone, iPad und Apple TV) und „Symaira Media Server“ übermitteln uns keine Daten.
+                    Sie enthalten kein Tracking, keine Analyse, keine Werbung und kein Benutzerkonto bei uns.
+                  </p>
+                  <ul style={{ paddingLeft: '20px', marginTop: '8px', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                    <li><strong>Eigener Server:</strong> Die App verbindet sich nur mit dem Medienserver, den Sie selbst betreiben oder zu dem Sie eingeladen wurden. Konto, Profile, Wiedergabeverlauf, Wünsche und gekoppelte Geräte liegen auf diesem Server. Verantwortlich für diese Daten ist, wer den Server betreibt, nicht wir.</li>
+                    <li><strong>Auf Ihrem Gerät:</strong> Serveradresse und Gerätezugang liegen im Schlüsselbund des Geräts, das Erscheinungsbild in den Einstellungen der App. „Abmelden“ entfernt beides.</li>
+                    <li><strong>Lokales Netzwerk:</strong> Mit Ihrer Erlaubnis sucht die App per Bonjour im lokalen Netz nach Servern. Diese Suche verlässt Ihr Netz nicht.</li>
+                    <li><strong>Demo-Modus:</strong> Die Demo öffnet keine Netzverbindung und speichert nichts.</li>
+                    <li><strong>Konto löschen:</strong> In den Einstellungen der App löschen Sie Ihr Konto auf dem Server samt Profilen, Verlauf und Geräten.</li>
+                    <li><strong>Server-App und Updates:</strong> „Symaira Media Server“ läuft auf Ihrem eigenen Mac. Die Update-Prüfung fragt die Release-Liste bei GitHub ab (GitHub erhält dabei Ihre IP-Adresse); sie lässt sich im Menü abschalten. Abrufe des Servers bei Metadatenquellen und Indexern richtet der Betreiber des Servers selbst ein.</li>
+                    <li><strong>TestFlight und App Store:</strong> Bei Beta-Versionen über TestFlight und beim Laden aus dem App Store verarbeitet Apple Daten nach der Datenschutzrichtlinie von Apple, etwa Absturzberichte und Feedback, wenn Sie dem zustimmen. Wir sehen davon nur, was Apple uns in App Store Connect anzeigt.</li>
+                  </ul>
+                </section>
+
+                <section>
+                  <h2 style={{ fontSize: '18px', color: 'var(--text-primary)', marginBottom: '8px', fontFamily: 'var(--font-title)' }}>7. Ihre Rechte</h2>
                   <p>Sie haben im Rahmen der gesetzlichen Bestimmungen der DSGVO folgende Rechte bezüglich Ihrer personenbezogenen Daten:</p>
                   <ul style={{ paddingLeft: '20px', marginTop: '8px', display: 'flex', flexDirection: 'column', gap: '4px' }}>
                     <li><strong>Recht auf Auskunft (Art. 15 DSGVO):</strong> Sie können Auskunft darüber verlangen, ob und welche Daten wir verarbeiten.</li>
@@ -367,7 +384,7 @@ export const LegalPages: React.FC<LegalPagesProps> = ({ view }) => {
                   <h2 style={{ fontSize: '18px', color: 'var(--text-primary)', marginBottom: '8px', fontFamily: 'var(--font-title)' }}>1. Privacy at a Glance</h2>
                   <p>
                     The protection of your personal data is a key concern for us. Below, we inform you about the details of how 
-                    data is processed when you use our website.
+                    data is processed when you use our website and our apps.
                   </p>
                 </section>
 
@@ -459,7 +476,24 @@ export const LegalPages: React.FC<LegalPagesProps> = ({ view }) => {
                 </section>
 
                 <section>
-                  <h2 style={{ fontSize: '18px', color: 'var(--text-primary)', marginBottom: '8px', fontFamily: 'var(--font-title)' }}>6. Your Rights</h2>
+                  <h2 style={{ fontSize: '18px', color: 'var(--text-primary)', marginBottom: '8px', fontFamily: 'var(--font-title)' }}>6. Apps: Symaira Media</h2>
+                  <p>
+                    The apps "Symaira Media" (Mac, later iPhone, iPad and Apple TV) and "Symaira Media Server" send no data to us.
+                    They contain no tracking, no analytics, no advertising and no account with us.
+                  </p>
+                  <ul style={{ paddingLeft: '20px', marginTop: '8px', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                    <li><strong>Your own server:</strong> The app only connects to the media server that you run yourself or that you were invited to. Account, profiles, watch history, requests and paired devices are stored on that server. Whoever runs the server is responsible for this data, not us.</li>
+                    <li><strong>On your device:</strong> The server address and device access are stored in the device keychain, the appearance setting in the app settings. "Sign Out" removes both.</li>
+                    <li><strong>Local network:</strong> With your permission the app looks for servers in the local network via Bonjour. This search does not leave your network.</li>
+                    <li><strong>Demo mode:</strong> The demo opens no network connection and stores nothing.</li>
+                    <li><strong>Delete account:</strong> In the app settings you delete your account on the server together with its profiles, history and devices.</li>
+                    <li><strong>Server app and updates:</strong> "Symaira Media Server" runs on your own Mac. The update check reads the release list from GitHub (GitHub receives your IP address); you can turn it off in the menu. Requests of the server to metadata sources and indexers are set up by whoever runs the server.</li>
+                    <li><strong>TestFlight and App Store:</strong> For beta versions through TestFlight and downloads from the App Store, Apple processes data under Apple's privacy policy, for example crash reports and feedback if you agree. We only see what Apple shows us in App Store Connect.</li>
+                  </ul>
+                </section>
+
+                <section>
+                  <h2 style={{ fontSize: '18px', color: 'var(--text-primary)', marginBottom: '8px', fontFamily: 'var(--font-title)' }}>7. Your Rights</h2>
                   <p>Under the provisions of the GDPR, you have the following rights regarding your personal data:</p>
                   <ul style={{ paddingLeft: '20px', marginTop: '8px', display: 'flex', flexDirection: 'column', gap: '4px' }}>
                     <li><strong>Right of Access (Art. 15 GDPR):</strong> You have the right to request information about the data we process.</li>
