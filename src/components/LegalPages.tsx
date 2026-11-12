@@ -162,18 +162,6 @@ export const LegalPages: React.FC<LegalPagesProps> = ({ view }) => {
                 <section style={{ borderTop: '1px solid rgba(255, 255, 255, 0.05)', paddingTop: '20px', marginTop: '20px' }}>
                   <h2 style={{ fontSize: '18px', color: 'var(--text-primary)', marginBottom: '8px', fontFamily: 'var(--font-title)' }}>Streitschlichtung</h2>
                   <p>
-                    Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:{' '}
-                    <a 
-                      href="https://ec.europa.eu/consumers/odr/" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      style={{ color: 'var(--cyan-primary)', textDecoration: 'underline' }}
-                    >
-                      https://ec.europa.eu/consumers/odr
-                    </a>.
-                    Unsere E-Mail-Adresse finden Sie oben im Impressum.
-                  </p>
-                  <p style={{ marginTop: '10px' }}>
                     Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
                   </p>
                 </section>
@@ -211,18 +199,6 @@ export const LegalPages: React.FC<LegalPagesProps> = ({ view }) => {
                 <section style={{ borderTop: '1px solid rgba(255, 255, 255, 0.05)', paddingTop: '20px', marginTop: '20px' }}>
                   <h2 style={{ fontSize: '18px', color: 'var(--text-primary)', marginBottom: '8px', fontFamily: 'var(--font-title)' }}>Consumer Dispute Resolution</h2>
                   <p>
-                    The European Commission provides a platform for online dispute resolution (ODR):{' '}
-                    <a 
-                      href="https://ec.europa.eu/consumers/odr/" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      style={{ color: 'var(--cyan-primary)', textDecoration: 'underline' }}
-                    >
-                      https://ec.europa.eu/consumers/odr
-                    </a>.
-                    You can find our email address at the top of this legal notice.
-                  </p>
-                  <p style={{ marginTop: '10px' }}>
                     We are neither willing nor obliged to participate in dispute resolution proceedings before a consumer arbitration board.
                   </p>
                 </section>
