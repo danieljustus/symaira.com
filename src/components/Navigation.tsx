@@ -21,21 +21,18 @@ export const Navigation: React.FC = () => {
       alignItems: 'center',
       justifyContent: 'space-between',
       gap: '20px',
-      border: '1px solid rgba(229, 195, 151, 0.15)',
-      boxShadow: '0 8px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(229, 195, 151, 0.02)',
+      border: '1px solid var(--border-glass)',
     }}>
       {/* Brand Logo & Name */}
       <a href="#hero" className="site-nav-brand" style={{
         display: 'flex',
         alignItems: 'center',
         gap: '12px',
-        fontWeight: 800,
+        fontWeight: 700,
         fontFamily: 'var(--font-tech)',
         fontSize: '20px',
         letterSpacing: '2.5px',
-        background: 'linear-gradient(45deg, var(--text-primary) 30%, var(--cyan-primary) 100%)',
-        WebkitBackgroundClip: 'text',
-        WebkitTextFillColor: 'transparent',
+        color: 'var(--text-primary)',
       }}>
         <img 
           src="/logo.png" 
@@ -44,8 +41,7 @@ export const Navigation: React.FC = () => {
             height: '26px', 
             width: '26px', 
             objectFit: 'contain',
-            filter: 'drop-shadow(0 0 6px rgba(229, 195, 151, 0.25))' 
-          }} 
+          }}
         />
         SYMAIRA
       </a>
@@ -123,8 +119,8 @@ export const Navigation: React.FC = () => {
             width: '36px',
             height: '36px',
             borderRadius: '50%',
-            backgroundColor: 'rgba(255,255,255,0.03)',
-            border: '1px solid rgba(229, 195, 151, 0.12)',
+            backgroundColor: 'var(--sym-raised)',
+            border: '1px solid var(--border-glass)',
             color: 'var(--text-primary)',
           }}
           className="icon-button"

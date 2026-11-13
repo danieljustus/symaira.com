@@ -1,23 +1,23 @@
 import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
-import { ShieldCheck, Zap, Brain } from 'lucide-react';
+import { ShieldCheck, Zap, Brain } from './icons';
 
 export const Vision: React.FC = () => {
   const { t } = useLanguage();
 
   const pillars = [
     {
-      icon: <ShieldCheck size={28} style={{ color: 'var(--cyan-primary)', strokeWidth: 1.5 }} />,
+      icon: <ShieldCheck size={28} style={{ color: 'var(--text-primary)' }} />,
       titleKey: 'visionPillar1Title' as const,
       descKey: 'visionPillar1Desc' as const,
     },
     {
-      icon: <Zap size={28} style={{ color: 'var(--blue-accent)', strokeWidth: 1.5 }} />,
+      icon: <Zap size={28} style={{ color: 'var(--text-primary)' }} />,
       titleKey: 'visionPillar2Title' as const,
       descKey: 'visionPillar2Desc' as const,
     },
     {
-      icon: <Brain size={28} style={{ color: 'var(--cyan-secondary)', strokeWidth: 1.5 }} />,
+      icon: <Brain size={28} style={{ color: 'var(--text-primary)' }} />,
       titleKey: 'visionPillar3Title' as const,
       descKey: 'visionPillar3Desc' as const,
     },
@@ -45,9 +45,7 @@ export const Vision: React.FC = () => {
           fontWeight: 700,
           letterSpacing: '0',
           marginBottom: '16px',
-          background: 'linear-gradient(180deg, var(--text-primary) 0%, var(--text-secondary) 100%)',
-          WebkitBackgroundClip: 'text',
-          WebkitTextFillColor: 'transparent',
+          color: 'var(--text-primary)',
         }}>
           {t('visionTitle')}
         </h2>
@@ -80,49 +78,22 @@ export const Vision: React.FC = () => {
               textAlign: 'left',
               position: 'relative',
               overflow: 'hidden',
-              border: '1px solid rgba(229, 195, 151, 0.12)',
-              boxShadow: '0 8px 32px rgba(0, 0, 0, 0.4)',
+              border: '1px solid var(--border-glass)',
             }}
           >
-            {/* Visual glow element behind icon */}
-            <div style={{
-              position: 'absolute',
-              top: '20px',
-              left: '20px',
-              width: '60px',
-              height: '60px',
-              borderRadius: '50%',
-              background: idx === 1 ? 'var(--blue-glow)' : 'var(--cyan-glow)',
-              filter: 'blur(20px)',
-              zIndex: 0,
-              pointerEvents: 'none',
-            }} />
-
-            {/* Tech line markings in corners to match Antigravity aesthetic */}
-            <div style={{
-              position: 'absolute',
-              top: 0,
-              right: 0,
-              width: '12px',
-              height: '12px',
-              borderTop: '1px solid rgba(229, 195, 151, 0.25)',
-              borderRight: '1px solid rgba(229, 195, 151, 0.25)',
-            }} />
-
             {/* Icon Wrapper */}
             <div style={{
               width: '48px',
               height: '48px',
               borderRadius: '10px',
-              backgroundColor: 'rgba(255, 255, 255, 0.02)',
-              border: '1px solid rgba(229, 195, 151, 0.2)',
+              backgroundColor: 'transparent',
+              border: '1px solid var(--border-glass)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               marginBottom: '28px',
               position: 'relative',
               zIndex: 1,
-              boxShadow: 'inset 0 0 10px rgba(229, 195, 151, 0.05)',
             }}>
               {pillar.icon}
             </div>
@@ -157,17 +128,11 @@ export const Vision: React.FC = () => {
         marginTop: '42px',
         padding: '34px',
         borderRadius: '18px',
-        border: '1px solid rgba(229, 195, 151, 0.14)',
-        background: 'linear-gradient(135deg, rgba(229, 195, 151, 0.06), rgba(238, 220, 196, 0.04))',
+        border: '1px solid var(--border-glass)',
+        color: 'var(--text-primary)',
         position: 'relative',
         overflow: 'hidden',
       }}>
-        <img
-          src="/logo.png"
-          alt=""
-          aria-hidden="true"
-          className="brand-meaning-watermark"
-        />
         <div style={{
           position: 'relative',
           zIndex: 1,
@@ -206,8 +171,8 @@ export const Vision: React.FC = () => {
               <div key={part} style={{
                 padding: '18px 16px',
                 borderRadius: '12px',
-                border: '1px solid rgba(255, 255, 255, 0.08)',
-                background: 'rgba(5, 5, 8, 0.28)',
+                border: '1px solid var(--border-glass)',
+                background: 'transparent',
                 fontFamily: 'var(--font-tech)',
                 fontSize: '12px',
                 color: 'var(--text-primary)',

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { initGA } from '../config/analytics';
-import { Cookie, Settings, Check } from 'lucide-react';
+import { Cookie, Settings, Check } from './icons';
 
 const CONSENT_STORAGE_KEY = 'symaira-cookie-consent';
 
@@ -138,12 +138,12 @@ export const CookieConsent: React.FC = () => {
               width: '36px',
               height: '36px',
               borderRadius: '8px',
-              background: 'rgba(229, 195, 151, 0.08)',
+              background: 'var(--sym-primary-soft)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               color: 'var(--cyan-primary)',
-              border: '1px solid rgba(229, 195, 151, 0.15)',
+              border: '1px solid var(--border-glass)',
             }}
           >
             <Cookie size={20} />
@@ -182,7 +182,7 @@ export const CookieConsent: React.FC = () => {
               gap: '12px',
               marginTop: '8px',
               paddingTop: '16px',
-              borderTop: '1px solid rgba(255, 255, 255, 0.06)',
+              borderTop: '1px solid var(--border-glass)',
             }}
           >
             {/* Essential Category */}
@@ -192,7 +192,7 @@ export const CookieConsent: React.FC = () => {
                   width: '20px',
                   height: '20px',
                   borderRadius: '4px',
-                  background: 'rgba(229, 195, 151, 0.15)',
+                  background: 'var(--sym-primary-soft)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -249,9 +249,9 @@ export const CookieConsent: React.FC = () => {
                     borderRadius: '4px',
                     border: analyticsChecked
                       ? '1px solid var(--cyan-primary)'
-                      : '1px solid rgba(255, 255, 255, 0.2)',
+                      : '1px solid var(--sym-ink-3)',
                     background: analyticsChecked
-                      ? 'rgba(229, 195, 151, 0.1)'
+                      ? 'var(--sym-primary-soft)'
                       : 'transparent',
                     display: 'flex',
                     alignItems: 'center',
@@ -302,7 +302,7 @@ export const CookieConsent: React.FC = () => {
                     padding: '10px 16px',
                     borderRadius: '8px',
                     border: 0,
-                    color: '#050504',
+                    color: 'var(--sym-surface)',
                     fontSize: '13px',
                     fontWeight: 700,
                     cursor: 'pointer',
@@ -317,8 +317,8 @@ export const CookieConsent: React.FC = () => {
                     flex: 1,
                     padding: '10px 16px',
                     borderRadius: '8px',
-                    border: '1px solid rgba(255, 255, 255, 0.1)',
-                    background: 'rgba(255, 255, 255, 0.02)',
+                    border: '1px solid var(--border-glass)',
+                    background: 'transparent',
                     color: 'var(--text-primary)',
                     fontSize: '13px',
                     fontWeight: 650,
@@ -338,7 +338,7 @@ export const CookieConsent: React.FC = () => {
                     padding: '10px 16px',
                     borderRadius: '8px',
                     border: 0,
-                    color: '#050504',
+                    color: 'var(--sym-surface)',
                     fontSize: '13px',
                     fontWeight: 700,
                     cursor: 'pointer',
@@ -353,8 +353,8 @@ export const CookieConsent: React.FC = () => {
                     flex: 1,
                     padding: '10px 16px',
                     borderRadius: '8px',
-                    border: '1px solid rgba(255, 255, 255, 0.1)',
-                    background: 'rgba(255, 255, 255, 0.02)',
+                    border: '1px solid var(--border-glass)',
+                    background: 'transparent',
                     color: 'var(--text-secondary)',
                     fontSize: '13px',
                     fontWeight: 650,

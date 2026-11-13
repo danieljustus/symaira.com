@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+- Brand refresh to the approved Liquid Topography system from `symaira-appkit`: canvas `#1C1C1B` / surface `#141413` / champagne `#E0D2BA` tokens, Google Sans Flex (original font served locally, no CDN) replacing Roboto Flex, AppKit line icons replacing the Lucide icon package, current topography shader (no per-level band tint, random start terrain)
+- Surfaces are opaque with 1px lines: removed glows, gradients on text/surfaces, drop shadows, ambient blobs, hero aura/rings/shockwave, logo watermarks and per-product accent hues (champagne is the only accent); primary action is ink-filled, selection uses the `selected` role, and a 2px `:focus-visible` ring is global
+- `og:image`/`twitter:image` now point at `https://symaira.com/og-image.png` (1200x630) with alt text; `theme-color` is `#1C1C1B`; `public/vault/index.html` redirect stub uses the same canvas/ink/champagne
+- Regenerated the complete favicon/touch-icon family, README preview and 1200x630 OpenGraph image from the reviewed AppKit assets; webmanifest colors use the same canvas
+- `npm run build` verifies both the approved icon family and byte-identical marketing exports in the output directory; `DIST_DIR` supports isolated external build output
+- Mobile navigation uses real 44px minimum touch bounds instead of overlapping invisible hit areas
+
 ### Removed
 - Symaira Terminal und Symaira Vibecoder wurden eingestellt: Produktseiten, Routen (`#/terminal`, `#/vibecoder`), Demos, EN/DE-Copy, Homebrew-Befehle, JSON-LD-Einträge und `llms.txt`-Abschnitte entfernt. Die Tool-Zahl sinkt von neun auf sieben; alte Deep-Links fallen auf die Startseite zurück
 
