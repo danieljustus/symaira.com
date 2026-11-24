@@ -1,0 +1,44 @@
+{
+  "project": "symaira-com",
+  "repository": "symaira.com",
+  "role": "Public bilingual website",
+  "entry": "symaira-com-complete-program.html",
+  "journeys": [
+    {
+      "id": "W1",
+      "title": "Ökosystem entdecken",
+      "steps": 5,
+      "states": 5
+    },
+    {
+      "id": "W2",
+      "title": "Produkt und Installation prüfen",
+      "steps": 6,
+      "states": 5
+    },
+    {
+      "id": "W3",
+      "title": "Stack und Vertrauensgrenzen",
+      "steps": 5,
+      "states": 4
+    },
+    {
+      "id": "W4",
+      "title": "Sprache, Recht und Kontakt",
+      "steps": 5,
+      "states": 4
+    },
+    {
+      "id": "W5",
+      "title": "Cookie und Accessibility",
+      "steps": 6,
+      "states": 6
+    },
+    {
+      "id": "W6",
+      "title": "Content-, Social- und Deploy-Release",
+      "steps": 6,
+      "states": 6
+    }
+  ]
+}
